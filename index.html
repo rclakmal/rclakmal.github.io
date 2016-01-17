@@ -19,6 +19,15 @@
     <link rel="icon"
           type="image/png"
           href="image/yodafav.png">
+    <script>
+
+    function sendMail() {
+        var link = "mailto:lakmalpadmakumara@gmail.com"
+             + "&subject=" + escape(document.getElementById('subject').value)
+             + "&body=" + escape(document.getElementById('message').value);
+
+         window.location.href = link;
+    </script>
 </head>
 <body>
 
@@ -28,7 +37,7 @@
         <li><a href="#top">About Me</a></li>
         <li><a href="#work">More About Me</a></li>
         <li><a href="#portfolio">Memories</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Get In Touch</a></li>
     </ul>
 </nav>
 
@@ -240,7 +249,7 @@
                             <div class="row 200%">
                                 <div class="12u">
                                     <ul class="actions">
-                                        <li><input type="submit" value="Send Message"/></li>
+                                        <li><input onclick="sendMail();" type="submit" value="Send Message"/></li>
                                         <li><input type="reset" value="Clear Form" class="alt"/></li>
                                     </ul>
                                 </div>
