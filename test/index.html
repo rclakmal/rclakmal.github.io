@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+<head><script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
+<meta content='text/html;charset=utf-8' http-equiv='Content-Type'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<meta content='yes' name='mobile-web-app-capable'>
+<meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
+<meta content='webkit' name='renderer'>
+<title>
+CropChecker
+</title>
+<link href='images/icon_android.png' rel='icon' sizes='192x192'>
+<link href='images/icon_retina.png' rel='apple-touch-icon' sizes='120x120'>
+<link href='images/icon_retina3x.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='images/icon_ipad.png' rel='apple-touch-icon' sizes='144x144'>
+<link href='images/icon_ipad.png' rel='apple-touch-icon' sizes='152x152'>
+<link href='images/splashes/retina.png' media='(device-width: 320px) and (device-height: 568px)' rel='apple-touch-startup-image'>
+<link href='images/splashes/iphone4_portrait_retina.png' media='(device-width: 320px) and (device-height: 480px)' rel='apple-touch-startup-image'>
+<link href='images/splashes/iphone6_portrait_retina.png' media='(device-width: 375px) and (device-height: 667px)' rel='apple-touch-startup-image'>
+<link href='images/splashes/iphone6plus_portrait_retina.png' media='(device-width: 414px) and (device-height: 736px)' rel='apple-touch-startup-image'>
+<link href='images/splashes/ipad_portrait_retina.png' media='(device-width: 768px) and (device-height: 1024px) and (orientation:portrait)' rel='apple-touch-startup-image'>
+<link href='images/splashes/ipad_landscape_retina.png' media='(device-width: 768px) and (device-height: 1024px) and (orientation:landscape)' rel='apple-touch-startup-image'>
+<style>
+  html, body {
+    color: #333333;
+    font-family: -apple-system, ".SFNSText-Regular", "SF UI Text", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Zen Hei", sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 18px;
+    overflow: hidden; }
+  
+  body {
+    background-color: #efefef;
+    color: #333333; }
+    body.mobile {
+      background-color: white; }
+  
+  .modal.fade {
+    display: none; }
+  
+  #header {
+    position: absolute;
+    top: 0;
+    left: -167px; }
+    #header .ltoggle {
+      display: none; }
+  
+  #notification {
+    position: fixed;
+    top: -70px;
+    left: 0; }
+  
+  .notice {
+    padding: 10px;
+    font-size: 14px; }
+    .notice p {
+      margin-bottom: 10px; }
+  
+  .spinner {
+    width: 30px;
+    height: 30px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgba(51, 54, 58, 0.6) transparent;
+    border-radius: 100%;
+    transform-origin: 50% 50% 0px;
+    -webkit-animation: mb-spin 0.8s infinite linear;
+    animation: mb-spin 0.8s infinite linear;
+    display: inline-block; }
+  
+  @-webkit-keyframes mb-spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg); }
+  
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg); } }
+  
+  @keyframes mb-spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg); }
+  
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg); } }
+  
+  #sharing, .actions {
+    visibility: hidden; }
+  
+  #download, #safemode, #nonsupport, #logo, #install, .cover, #device {
+    display: none; }
+  
+  #fontawesome {
+    position: absolute;
+    top: -65535px;
+    left: -65535px; }
+    #fontawesome .aw {
+      position: absolute;
+      width: auto;
+      white-space: nowrap; }
+    #fontawesome .ah {
+      position: absolute;
+      height: auto;
+      word-break: break-word; }
+      #fontawesome .ah p {
+        margin-bottom: 5px;
+        white-space: pre-wrap; }
+        #fontawesome .ah p:last-child {
+          margin-bottom: 0px; }
+  
+  #loading {
+    width: 86px;
+    height: 86px;
+    z-index: 2;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -43px;
+    text-align: center;
+    font-size: 12px; }
+    #loading .logo, #loading .indicator {
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 86px;
+      height: 86px;
+      overflow: hidden;
+      background: url("images/loading.gif"); }
+    #loading .logo {
+      opacity: 0.3; }
+    #loading .indicator {
+      opacity: 1;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      height: 0%; }
+    #loading span {
+      position: absolute;
+      width: 300px;
+      left: 50%;
+      top: 110px;
+      margin-left: -150px;
+      font-size: 14px;
+      line-height: 28px;
+      color: #888888; }
+</style>
+
+<style>
+  #splash {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f0f0f2; }
+    #splash img {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    #splash img.landscape {
+      display: none; }
+    #splash .spinner {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      margin-left: -15px; }
+  
+  @media all and (orientation: landscape) {
+    #splash img {
+      position: absolute;
+      left: 0;
+      -webkit-transform: rotate(90deg);
+      -webkit-transform-origin: bottom left; }
+  
+    #splash .spinner {
+      position: absolute;
+      top: 50%;
+      margin-top: -16px; } }
+</style>
+
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="h7osUp7G3f5ItryvG08JpphJuIb04ss2243kyBfvwrRXMVA7ogpYu/1Hkw9zHoPP6pO4RbL97aOBKP6jxWOo2Q==" />
+</head>
+<body>
+<div id='fontawesome'>
+<i class='fa fa-user'></i>
+<div class='aw'></div>
+<div class='ah'></div>
+</div>
+<div id='loading'>
+<div class='logo'></div>
+<div class='indicator'></div>
+<span>
+loading CropChecker...
+</span>
+</div>
+<div id='workspace'>
+<div id='install'>
+<div class='app-inner'>
+<img class='app-icon' src='images/icon_android.png'>
+<h1 class='app-name'>
+CropChecker
+</h1>
+<div class='app-update-time'>
+<span>
+Last updated
+:
+</span>
+<abbr class='timeago' title='2016-04-01T14:58:53Z'></abbr>
+</div>
+<a class='install-btn' href='/app/b7ad80b4ebdabfcef16b5ef5ca56c92ab6bc16bf?inapp=1'>
+View in Browser
+</a>
+<a class='install install-btn'>
+Install
+</a>
+</div>
+</div>
+<div class='cover wechat'>
+<p class='tip'>
+Open in broswer.
+</p>
+<img class='arrow' src='images/short-arrow.png'>
+</div>
+<div class='cover ipad'>
+<p class='tip'>
+Tap
+<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAA1BAMAAADfUYSoAAAAFVBMVEUAAAAGfv8Eff8Xh/8Ae/cAgfcDev8kxpS2AAAABnRSTlMAgGPrExbGXyRsAAAAYUlEQVQ4y+3MsQ2AMBADQMMEofk6VSZgEyZ4Cu8/Ai+QXgpOmTJuYp2cR+aAZGMRM7rOKENzmss1/i/aDaJ5P6thO0s/C0OLJ3PV1/YTfZhtuvFLlOxjk7/LphmWTTPJ0B64+0mEocrEDQAAAABJRU5ErkJggg==' width='19'>
+,
+then Choose &quot;Add to Home Screen&quot;
+</p>
+<img class='arrow' src='images/short-arrow.png'>
+</div>
+<div class='cover ios'>
+<div class='tip-wrapper'>
+<p class='tip'>
+Tap
+<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAA1BAMAAADfUYSoAAAAFVBMVEUAAAAGfv8Eff8Xh/8Ae/cAgfcDev8kxpS2AAAABnRSTlMAgGPrExbGXyRsAAAAYUlEQVQ4y+3MsQ2AMBADQMMEofk6VSZgEyZ4Cu8/Ai+QXgpOmTJuYp2cR+aAZGMRM7rOKENzmss1/i/aDaJ5P6thO0s/C0OLJ3PV1/YTfZhtuvFLlOxjk7/LphmWTTPJ0B64+0mEocrEDQAAAABJRU5ErkJggg==' width='19'>
+,
+then Choose &quot;Add to Home Screen&quot;
+</p>
+<img class='arrow' src='images/down-arrow.png'>
+</div>
+</div>
+</div>
+<div class='safe-mask' id='safemode'>
+<div class='indicator restore'>
+<div class='spinner'></div>
+<div class='text'>
+This may take several minutes, have a cup of tea...
+<span class='progress'>0%</span>
+</div>
+</div>
+<div class='indicator success'>
+<span class='icon'>
+<i class='fa fa-smile-o'></i>
+</span>
+<div class='text'>
+All data saved successfully, please refresh this page to continue. <a onclick="window.location.reload()"> Refresh Now</a>
+</div>
+</div>
+</div>
+
+<div class='notice' id='nonsupport'>
+<p>
+We're sorry but we havn't support your browser yet.
+</p>
+<p>
+Please download our Desktop version: <a href='https://s3.cn-north-1.amazonaws.com.cn/modao/downloads/MockingBot.dmg'>Mac</a> <a href='https://s3.cn-north-1.amazonaws.com.cn/modao/downloads/MockingBot.zip'>Windows</a>
+</p>
+</div>
+
+<div id='modals'>
+<div class='modal fade' id='choose-device'></div>
+<div class='modal fade' id='app-modal'></div>
+<div class='modal fade' id='template-modal'></div>
+<div class='modal fade' id='import-modal'></div>
+<div class='modal fade' id='transfer-modal'></div>
+<div class='modal fade' id='dup-modal'></div>
+<div class='modal fade' id='team-modal'></div>
+<div class='modal fade' id='collaborators-modal'></div>
+<div class='modal fade' id='tag-modal'></div>
+<div class='modal fade' id='chrome-warning'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<button aria-label='Close' class='close' data-dismiss='modal' type='button'>
+<span aria-hidden='true'>
+&times
+</span>
+</button>
+<h4 class='modal-title'>
+<i class='fa fa-warning'></i>
+<span class="translation_missing" title="translation missing: en.warning">Warning</span>
+</h4>
+</div>
+<div class='modal-body'>
+<p>
+We've detected that your browser has restricted the minimum font size that can be displayed, so you may need change this setting to make text copies display correctly.
+</p>
+<p>
+<a href='https://modao.cc/posts/63' target='blank'>
+Click here to read instructions.
+</a>
+</p>
+</div>
+<div class='modal-footer'>
+<button class='btn btn-default' data-dismiss='modal' type='button'>
+Got it
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class='modal fade' id='global-state-warning'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<button aria-label='Close' class='close' data-dismiss='modal' type='button'>
+<span aria-hidden='true'>
+&times
+</span>
+</button>
+<h4 class='modal-title'>
+<i class='fa fa-warning'></i>
+<span class="translation_missing" title="translation missing: en.warning">Warning</span>
+</h4>
+</div>
+<div class='modal-body'>
+<p>
+<p>You have more than 1 screen state, please switch to global state (state 0) to add new widget.</p><p><b>Notice: changes in global state will be synced to all states.</b></p>
+</p>
+<p style='margin-top: 20px;margin-bottom:0;text-align:center'>
+<img src='images/workspace/global_state_en.png'>
+</p>
+</div>
+<div class='modal-footer'>
+<button class='btn btn-default' data-dismiss='modal' type='button'>
+Got it
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class='modal fade' id='sharing-modal'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<a aria-hidden='true' class='close' data-dismiss='modal' href='#'>×</a>
+<h4>Share this app</h4>
+</div>
+<form>
+<div class='modal-body'></div>
+</form>
+</div>
+</div>
+</div>
+<div class='modal fade' id='system-updates'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<a aria-hidden='true' class='close' data-dismiss='modal' href='#'>×</a>
+<h4>New Features Available!</h4>
+</div>
+<div class='modal-body'>
+</div>
+<div class='modal-footer'>
+<button class='btn btn-default' data-dismiss='modal' type='button'>
+Got it
+</button>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script>
+  (function() {
+    var splash;
+  
+    window.MBLocale = 'en';
+  
+    window.I18N = {
+      "new_app": "Create App",
+      "preview_demo": "View Demo",
+      "create": "Create",
+      "setting": "Settings",
+      "update": "Update",
+      "are_you_sure": "Are you sure?",
+      "screen_remove_confirmation": " will be removed are you sure?",
+      "cant_remove_screen": "You need at least 1 screen.",
+      "last_updated": "Last updated",
+      "support": "Support",
+      "carrier": "AT\u0026T",
+      "w.text_view_placeholder": "If you can't explain it simply you don't understand it well enough.\n -- Albert Einstein",
+      "w.navbar_title": "Title",
+      "w.search": "Search",
+      "drag_to_link_screen": "drag circle to link screens",
+      "password": "Password",
+      "screen": "Screen",
+      "home": "Home",
+      "goto_classic": "This app was built with MockingBot classic are you willing to go to MB classic?",
+      "pay_with_alipay": "Alipay",
+      "share": "Share",
+      "rotate": "Rotate",
+      "launch": "Launch",
+      "new_screen": "New Screen",
+      "back": "Back",
+      "return": "return",
+      "login_from_desktop": "To create new app you need log into MockingBot with a desktop browser.",
+      "install": "Install",
+      "tap": "Tap",
+      "public": "Public",
+      "private": "Encrypted",
+      "add_to_home_screen": "then Choose \"Add to Home Screen\"",
+      "open_in_broswer": "translation missing: en.open_in_broswer",
+      "view_on_device": "View on Device",
+      "dup_app_confirmation": "This app will be duplicated are you sure?",
+      "data_lost_warning": "Data is still being sent to the server; Your changes will be lost if you close this page, are you sure to quit?",
+      "inspector.width": "Width",
+      "inspector.height": "Height",
+      "inspector.font_size": "Font Size",
+      "inspector.tc": "Foreground",
+      "inspector.bc": "Border Color",
+      "inspector.f": "Font",
+      "inspector.bs": "Border Width",
+      "inspector.radius": "Border Radius",
+      "inspector.sc": "Shadow Color",
+      "inspector.bg": "Background",
+      "drag_to_create_screen": "Drag image files here to create new screen(s).",
+      "inspector.is": "Icon Size",
+      "inspector.search": "search icon, e.g. user",
+      "inspector.drop_image": "Drop image here or",
+      "inspector.o": "Opacity",
+      "inspector.ds": "Drop Shadow",
+      "inspector.click_to_upload": "click to upload.",
+      "network_error": "Failed to contact server please check network setting.",
+      "save": "Save",
+      "unsupported": "Unsupported file type.",
+      "link_back": "Prev Screen",
+      "save_tip": "Save(Ctrl-s)",
+      "inspector.asset_search": "Search Image",
+      "remove_children_first": "Please remove sub-screens at first.",
+      "inspector.z": "Layer",
+      "inspector.fixed": "Fixed Position",
+      "drag_to_start": "Drag component or image file here to start",
+      "home_screen": "Home Screen",
+      "signup_required": "You need sign up at first before using this feature.",
+      "copy_tip": "Copy",
+      "credential_required": "This app is protected please input your credential:",
+      "state": "State",
+      "new": "New",
+      "widgets": "Widgets(1)",
+      "templates": "Templates(2)",
+      "combos": "Combos(3)",
+      "new_combo": "New Combo",
+      "invalid_credential": "Invalid credential refresh to try again.",
+      "icons.all": "All",
+      "icons.basics": "Basic",
+      "icons.brand": "Brand",
+      "icons.text": "Text",
+      "icons.directional": "Directional",
+      "icons.form": "Form",
+      "icons.video": "Video",
+      "app_device": "Device Type",
+      "tr.none": "None",
+      "tr.slideleft": "R Slide",
+      "tr.slideright": "L Slide",
+      "tr.popin": "B Push",
+      "tr.popout": "B Pop",
+      "tr.leftmenu": "L Menu",
+      "tr.rightmenu": "R Menu",
+      "tr.slideleft2": "L Push",
+      "tr.slideright2": "R Push",
+      "tr.leftout": "L Pop",
+      "tr.rightout": "R Pop",
+      "tr.topin": "T Push",
+      "tr.topout": "T Pop",
+      "target": "Target",
+      "my_templates": "My Templates",
+      "png_only": "Please upload PNG file for Icon/Splash.",
+      "view_in_browser": "View in Browser",
+      "view_in_wechat": "View in Wechat",
+      "has_difference": "(May be different with original design)",
+      "all_apps": "My Active Apps",
+      "inbox": "Move into Inbox",
+      "inspector.line_height": "Line Height",
+      "sharing_url": "Sharing URL",
+      "toolbox.text": "Text(T)",
+      "toolbox.ruler": "Size(R)",
+      "toolbox.icons": "Icons(I)",
+      "toolbox.uploader": "Image Uploader(U)",
+      "toolbox.palette": "Color(O)",
+      "inspector.ts": "Text Shadow",
+      "inspector.tsc": "Shadow Color",
+      "last_saved": "Last saved",
+      "link_line": "Show/Hide Links",
+      "archive": "Archive",
+      "download": "Download",
+      "unknown_error": "We're sorry but something went wrong, please refresh this page to continue. \u003cbr/\u003e\u003cbr/\u003e\u003ca onclick='window.location.reload()'\u003e Refresh Now\u003c/a\u003e",
+      "inspector.p": "Zoom Proportional",
+      "inspector.circularize": "Circle",
+      "archived": "My Archives",
+      "del_app_confirmation": "This app will be deleted are you sure?",
+      "wait_for_saving": "This screen hasn't been saved yet, please wait a moment and try again.",
+      "fix_data": "We've detected you have unsaved changes do you want to save them now?",
+      "undo": "Undo(Ctrl-z)",
+      "redo": "Redo(Ctrl-y)",
+      "cut": "Cut(Ctrl-x)",
+      "copy": "Copy(Ctrl-c)",
+      "paste": "Paste(Ctrl-v)",
+      "upload_image": "Upload Image",
+      "site_title": "MockingBot",
+      "send_front": "Send front",
+      "send_back": "Send back",
+      "forward": "Forward",
+      "backward": "Backward",
+      "wechat": "translation missing: en.wechat",
+      "wechat_help": "Check this option if you'd like your app displayed in Wechat/Browser directly without installation instructions.",
+      "choose_screen": "Choose screen to Nav",
+      "hdistribute": "Distribute horizontally",
+      "vdistribute": "Distribute vertically",
+      "group": "Group(Ctrl-g)",
+      "ungroup": "Ungroup(Ctrl-u)",
+      "inspector.squareize": "Square",
+      "inspector.ro": "Rotate Degree",
+      "tr.slidebottom": "B Slide",
+      "tr.slidetop": "T Slide",
+      "unsaved": "unsaved",
+      "all_saved": "done",
+      "timer": "Timer",
+      "no_timer": "Not set",
+      "cant_delete_template": "Can't delete this template you need delete all instances of this template at first.",
+      "archive_confirmation": "This app will be archived are you sure?",
+      "unarchive_confirmation": "This app will be moved to home are you sure?",
+      "dc_confirm": "This screen has sub-screens, do you like to duplicate all sub-screens?",
+      "grid": "Show/Hide Grid",
+      "hleft": "Left Alignment",
+      "hcenter": "Horizon Center",
+      "hright": "Right Alignment",
+      "vtop": "Top Alignment",
+      "vbottom": "Bottom Alignment",
+      "vcenter": "Vertical Center",
+      "zoomin": "Zoom In",
+      "zoomout": "Zoom Out",
+      "delete": "Delete",
+      "expand_screen": "Expand Screen",
+      "shrink_screen": "Shrink Screen",
+      "watch_tutorial": "Watch Tutorial",
+      "edit": "Edit",
+      "new_version_detected": "New version detected please refresh to continue. \u003ca onclick=\"window.location.reload()\"\u003e Refresh Now\u003c/a\u003e",
+      "builtin_theme": "Built-in Style",
+      "custom_theme": "Custom Style",
+      "screen_bgcolor": "Set Background Color",
+      "screen_bgimage": "Set Background Image",
+      "inspector.padding": "Padding",
+      "pg_tooltip": "Global Gesture",
+      "icon_tooltip": "Icon",
+      "menu_offset": "Menu(%)",
+      "edit_demo": "Edit Demo App",
+      "create_new": "Create A New App",
+      "blank_app": "Blank App",
+      "basic": "Basic",
+      "shapes": "Shapes",
+      "bars": "Bars",
+      "others": "Others",
+      "webpage": "Webpage",
+      "drag_to_resize": "Drag to Resize",
+      "https_only": "Double click to edit URL (https only).",
+      "template_search": "Search Template",
+      "no_archived_app": "You don't have any archived app.",
+      "archive_app": "Visit the site on a computer to archive apps",
+      "no_app": "You don't have any app.",
+      "visit_via_computer": "Visit the site on a computer",
+      "view_demo": "Check this demo",
+      "sharing_password": "Sharing password",
+      "click_to_edit": "Click to Edit",
+      "state_link_tutorial": "Template Link Tutorial",
+      "highlight_clickable": "Hightlight link areas on screen clicking.",
+      "keepmenu": "Keep side screen",
+      "type2search": "Type to search",
+      "current_templates": "Project Templates",
+      "inspector.ls": "Border Style",
+      "all_assets": "All Images",
+      "current_assets": "Current Project",
+      "text_color": "Text Color",
+      "toolbox.states": "Choose a state to create link",
+      "combo_search": "Search Combos",
+      "all_combos": "All Combos",
+      "my_combos": "My Combos",
+      "builtin": "Built-in",
+      "width": "Width",
+      "height": "Height",
+      "sticky": "Sticky",
+      "new_template": "New Template",
+      "auto_scale": "Auto Scale",
+      "auto_scale_tip": "Auto scale to fill different screens e.g combo for iPhone 5s will scale 1.17x to fit iPhone 6 and 1.29x for iPhone 6 plus.",
+      "drag_widgets_2create": "Drag widgets to create a combo",
+      "upgrade_prompt": "New version has fixed file downloading bug visit mockingbot.com with browser to download.",
+      "inspector.checked": "Checked",
+      "embed": "Embed in Webpage",
+      "submit_app_proposal": "Need more templates? \u003ca href=\"#feedback_modal\" data-toggle=\"modal\"\u003eLell us know.\u003c/a\u003e",
+      "inspector.numeric": "Numeric Keyboard",
+      "shell_type": "Shell Type",
+      "device_shell": "Real Device",
+      "default_shell": "Default Gray Shell",
+      "none_shell": "None Shell",
+      "portrait": "Portrait",
+      "landscape": "Landscape",
+      "upload_own": "Upload your own",
+      "app_name": "Name",
+      "free_trial": "Free trial check pricing.",
+      "restricted": "White list",
+      "public_intro": "Visible to everyone free forever.",
+      "private_intro": "Set an access password. ",
+      "restricted_intro": "Only users in whitelist can view this app. ",
+      "renew": "Renew",
+      "expired": "Expired",
+      "manage_collaborators": "Manage Collaborators",
+      "roles.admin": "Administrator",
+      "roles.editor": "Designer",
+      "roles.viewer": "Reviewer",
+      "invite": "Invite",
+      "pending": "Pending",
+      "others_apps": "'s Apps",
+      "remove_me": "Leave",
+      "invalid_email": "Invalid Email",
+      "cant_invite_self": "Can't invite yourself",
+      "already_invited": "Already invited",
+      "inspector.placement": "Placement",
+      "left": "left",
+      "right": "right",
+      "top": "top",
+      "down": "down",
+      "inspector.offset": "Triangle Offset",
+      "inspector.arrow_size": "Triangle Size",
+      "dip_help": "What's device independent width and height?",
+      "dblclick_to_edit": "Double Click to Edit",
+      "name_copy": " Copy",
+      "load_project": "Loading project please wait a moment...",
+      "connect_to_push_server": "Connecting to push server...",
+      "reconnect_push_server": "Failed to contact push server reconnecting...",
+      "cant_invite_yourself": "Can't invite yourself",
+      "exceed_limit": "Exceed collaborator limitation of your plan upgrading needed.",
+      "turn_on_whitelist": "You can turn whitelist on in app settings. ",
+      "in_progress": "This may take several minutes, have a cup of tea...",
+      "screen_list": "Screen List",
+      "text_mode": "Select Text",
+      "link_mode": "Link Mode",
+      "order_period": "Choose Period",
+      "current_plan": "Current plan",
+      "next_billing_on": "Next billing on",
+      "balance_left": "Balance Left",
+      "switch_plan": "Switch",
+      "actually_pay": "Pay Due",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "save_17": "Save 17%",
+      "pro": "Pro",
+      "free": "Free",
+      "standard": "Standard",
+      "startup": "Startup",
+      "new_billing_date": "New Billing Date",
+      "new_plan": "New Plan",
+      "invalid_comment": "Comment can't be blank",
+      "electron_download_alert": "Have trouble downloading it? Please try downloading it from browser.",
+      "no_permission": "Sorry you don't have permission to edit this template.",
+      "w.label": "Label",
+      "w.text_view": "Text",
+      "w.pg": "Gesture",
+      "w.lr": "Link Region",
+      "w.icon_button": "Icon",
+      "w.image_view": "Image",
+      "w.button": "Button",
+      "w.text_input": "translation missing: en.w.text_input",
+      "w.webpage": "Webpage",
+      "w.mtooltip": "Tooltip",
+      "w.rounded_rect": "Rectangle",
+      "w.circle_rect": "Circle",
+      "w.hr": "Horizon Line",
+      "w.ve": "Vertical Line",
+      "w.triangleb": "Triangle 1",
+      "w.triangletl": "Triangle 2",
+      "w.navigation_bar": "Nav Bar",
+      "w.search_bar": "Search Bar",
+      "w.tab_bar": "Tab Bar",
+      "w.tab_item": "Tab Item",
+      "w.rectangle": "List Item",
+      "w.switch": "Switch",
+      "w.map_view": "Map",
+      "w.keyboard": "Keyboard",
+      "w.sticky": "Sticky",
+      "w.status_bar": "Status Bar",
+      "w.panel": "Panel",
+      "w.group": "Group",
+      "widget_list": "Widget List",
+      "roles.owner": "Owner",
+      "roles.viewer_desc": "View",
+      "roles.editor_desc": "Edit",
+      "roles.admin_desc": "Admin",
+      "no_team": "You don't have any team, click here to create one.",
+      "team": "team",
+      "role": "Role",
+      "projects_count": "Projects",
+      "choose_team": "Choose Team",
+      "no_joined_team": "You didn't join any team.",
+      "my_assets": "My Images",
+      "created_teams": "My teams",
+      "joined_teams": "Joined teams",
+      "team_app_tips": "This team don't have any app click here to create one.",
+      "create_app_tips": "You don't have any app, click here to create one.",
+      "new_team": "Create Team",
+      "team_intro": "Learn more about teams.",
+      "import_app": "Import App",
+      "choose_app": "Choose an app",
+      "dup_and_import": "Duplicate this app and import copy",
+      "no_privilege": "You don't have enough privilege for this operation.",
+      "delete_projects_first": "Please delete all project in this team at first.",
+      "refresh_token_confirmation": "This will re-generate sharing url of your app are you sure?",
+      "main_state": "Main State",
+      "ani_name": "Animation",
+      "ani_delay": "Delay",
+      "ani_duration": "Duration",
+      "ani_count": "Iteration",
+      "animate": "Animate",
+      "none": "None",
+      "default": "Default",
+      "infinite": "Infinite",
+      "ani.attention_seekers": "Attention Seekers",
+      "ani.bouncing_entrances": "Bouncing Entrances",
+      "ani.flippers": "Flippers",
+      "ani.rotating_entrances": "Rotating Entrances",
+      "ani.sliding_entrances": "Sliding Entrances",
+      "ani.zoom_entrances": "Zoom Entrances",
+      "ani.specials": "Specials",
+      "ani.bounce": "bounce",
+      "ani.fadeIn": "fadeIn",
+      "ani.flash": "flash",
+      "ani.pulse": "pulse",
+      "ani.rubberBand": "rubberBand",
+      "ani.shake": "shake",
+      "ani.swing": "swing",
+      "ani.tada": "tada",
+      "ani.wobble": "wobble",
+      "ani.jello": "jello",
+      "ani.bounceIn": "bounceIn",
+      "ani.bounceInDown": "bounceInDown",
+      "ani.bounceInLeft": "bounceInLeft",
+      "ani.bounceInRight": "bounceInRight",
+      "ani.bounceInUp": "bounceInUp",
+      "ani.flipInX": "flipInX",
+      "ani.flipInY": "flipInY",
+      "ani.rotateIn": "rotateIn",
+      "ani.rotateInDownLeft": "rotateInDownLeft",
+      "ani.rotateInDownRight": "rotateInDownRight",
+      "ani.rotateInUpLeft": "rotateInUpLeft",
+      "ani.rotateInUpRight": "rotateInUpRight",
+      "ani.slideInDown": "slideInDown",
+      "ani.slideInLeft": "slideInLeft",
+      "ani.slideInRight": "slideInRight",
+      "ani.slideInUp": "slideInUp",
+      "ani.zoomIn": "zoomIn",
+      "ani.zoomInDown": "zoomInDown",
+      "ani.zoomInLeft": "zoomInLeft",
+      "ani.zoomInRight": "zoomInRight",
+      "ani.zoomInUp": "zoomInUp",
+      "ani.rollIn": "rollIn",
+      "ani.lightSpeedIn": "lightSpeedIn",
+      "powered_by_animate_css": "Powered by Animate.css",
+      "link_to_screen2": "This is a link to Screen 2",
+      "move_the_circle": "This will move the circle",
+      "move_circle_back": "This will move circle back",
+      "link_back_to_home": "This'll link you back to home",
+      "whats_this": "What's this?",
+      "new_state": "New State",
+      "tutorial": "Tutorial",
+      "inspector.visible": "(V)isible in this state.",
+      "reset_target_screen": "Reset target screen to initial state",
+      "android.customize": "Customize",
+      "unsaved_changes": "You have unsaved changes, please make sure all your changes are saved and then try again.",
+      "transfer_screen": "Transfer screen to other project",
+      "transfer": "Transfer",
+      "minputs": "Inputs",
+      "w.mtextarea": "Text Area",
+      "w.mfile_input": "File Input",
+      "w.mselect": "Droplist",
+      "w.mtext_input": "Text Input",
+      "w.mradiobutton": "Radio Button",
+      "w.mcheckbox2": "Checkbox",
+      "export_to_personal": "Export to personal projects",
+      "global_state": "Global State",
+      "global_state_link_error": "You can't create state link in global state.",
+      "input_types.text": "Text",
+      "input_types.number": "Number",
+      "input_types.search": "Search",
+      "input_types.password": "Password",
+      "inspector.input_type": "Keyboard",
+      "discount": "Discount",
+      "g.tap": "Tap",
+      "g.left": "Swipe Left",
+      "g.right": "Swipe Right",
+      "g.up": "Swipe Up",
+      "g.down": "Swipe Down",
+      "g.hold": "Tap and Hold",
+      "g.dtap": "Double Tap",
+      "g.shake": "Shake",
+      "input_types.date": "Date",
+      "input_types.time": "Time",
+      "input_types.datetime": "Datetime",
+      "assets_manager": "Open Assets Manager(A)",
+      "tags": "Tags",
+      "tags_placeholder": "Select an image to add tag.",
+      "name": "Name",
+      "choose_tag": "Choose a Tag",
+      "create_tag": "New Tag",
+      "insert_to_current": "Insert to Screen",
+      "create_new_screen": "Create a new Screen",
+      "my_apps": "My Apps",
+      "team_apps": "Team Apps",
+      "free_upgrade": "This is a paid feature, and your account will be upgraded to Pro plan with 14 days free trial, are you sure?",
+      "g.timer": "Timer",
+      "remove_clip": "Remove Clip Path",
+      "update_colorset": "Update Style",
+      "colorset_tips": "Tips: use Shift-NUM to apply style, click to add/update.",
+      "new_colorset": "Add Style",
+      "replace_image": "Replace Image",
+      "cancel": "Cancel",
+      "duplicate_all": "Duplicate with Sub-screens",
+      "duplicate_parent_only": "Duplicate Parent Only",
+      "coupon": "Coupon"
+    };
+  
+    splash = document.getElementById('splashimg');
+  
+    if (splash && window.innerWidth > window.innerHeight) {
+      splash.style.width = window.innerHeight + 'px';
+      splash.style.height = window.innerWidth + 'px';
+      splash.style.top = (0 - window.innerWidth) + 'px';
+    }
+  
+  }).call(this);
+</script>
+<link href='css/font-awesome.min.css' media='screen' rel='stylesheet'>
+<link rel="stylesheet" media="screen" href="assets/sharing-3393fe9bf24ef2858d1361cb8cd095b8.css" />
+<script>
+  document.getElementsByClassName("indicator")[0].style.height = '30%';
+</script>
+<script src="assets/sharing-f6f6deff535eccedc79979360e63494a.js"></script>
+<script>
+  (function() {
+    MB.play = function() {
+      return MB.load('b7ad80b4ebdabfcef16b5ef5ca56c92ab6bc16bf', false, '');
+    };
+  
+    $(function() {
+      if (!window.navigator.standalone && !false && MB.isMobile() && !MB.isLocal()) {
+        return MB.initInstall();
+      } else if (MB.isPhantom()) {
+        return $("body").addClass('phantom');
+      } else {
+        return MB.play();
+      }
+    });
+  
+  }).call(this);
+</script>
+
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";
+e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
+  "js-agent.newrelic.com/nr-100.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","bam.nr-data.net","d84101a834","7070417","IQxbTEcNVFpdFElLWwMRXFZSTVlGSA==",0,211,new Date().getTime(),"","","","",""]);</script></body>
+</html>
+<script>window.MBData=
+{"templates":[],"project":{"owner_id":23207,"owner_name":"Lakmal","owner_avatar":"/images/avatar.png","limitation":1,"cid":"p2da6fdbbd91f95713fae94","team_cid":null,"name":"CropChecker","updated_at":"2016-04-01T14:58:53Z","access":"public","access_token":"b7ad80b4ebdabfcef16b5ef5ca56c92ab6bc16bf","version":"v2","icon":"/images/icon_retina.png","splash":null,"width":320,"height":568,"device":"iphone","model":"iphone_5","scale":100,"archived":false,"template":false,"timestamp":"1459522733","combo":false,"behavior":"inherit","master":true,"builtin":false,"auto_scale":true,"parent_cid":"p4C33A0160BFB62","host_cid":null,"clones":651,"shell_type":"device","password":null,"wechat":false,"highlight":true,"expired":false},"screens":[{"cid":"s03cbb61fabc2bea96fc69f","project_cid":"p2da6fdbbd91f95713fae94","parent_cid":null,"expanded":true,"name":"Home","orientation":"portrait","position":0,"width":null,"height":568,"hh":null,"fh":45,"bgcolor":"#F0F0F2","bgimage":null},{"cid":"sa7de9edeaf9907532600b8","project_cid":"p2da6fdbbd91f95713fae94","parent_cid":null,"expanded":false,"name":"Take Photo","orientation":"portrait","position":2,"width":null,"height":568,"hh":null,"fh":null,"bgcolor":"#F0F0F2","bgimage":null},{"cid":"s26ea4cf6196a80309d5715","project_cid":"p2da6fdbbd91f95713fae94","parent_cid":null,"expanded":true,"name":"Explore","orientation":"portrait","position":1,"width":null,"height":568,"hh":null,"fh":null,"bgcolor":"#F0F0F2","bgimage":null},{"cid":"sfd94d4bd0d604702ccda88","project_cid":"p2da6fdbbd91f95713fae94","parent_cid":null,"expanded":false,"name":"Following","orientation":"portrait","position":3,"width":null,"height":568,"hh":null,"fh":null,"bgcolor":"#F0F0F2","bgimage":null},{"cid":"sa9392f3c18cbf92097cf44","project_cid":"p2da6fdbbd91f95713fae94","parent_cid":null,"expanded":null,"name":"Me","orientation":"portrait","position":4,"width":null,"height":568,"hh":null,"fh":null,"bgcolor":"#F0F0F2","bgimage":null},{"cid":"sac8331bd91fc9a13907463","project_cid":"p2da6fdbbd91f95713fae94","parent_cid":"s03cbb61fabc2bea96fc69f","expanded":false,"name":"Direct","orientation":"portrait","position":3,"width":null,"height":null,"hh":null,"fh":null,"bgcolor":"#F0F0F2","bgimage":null},{"cid":"sc5e674c5b57d8b8566e184","project_cid":"p2da6fdbbd91f95713fae94","parent_cid":"s03cbb61fabc2bea96fc69f","expanded":false,"name":"Comment","orientation":"portrait","position":1,"width":null,"height":null,"hh":null,"fh":null,"bgcolor":"#F0F0F2","bgimage":null},{"cid":"s04f97f1a1f426bb47e6aa4","project_cid":"p2da6fdbbd91f95713fae94","parent_cid":"s03cbb61fabc2bea96fc69f","expanded":false,"name":"Profile","orientation":"portrait","position":2,"width":null,"height":null,"hh":null,"fh":null,"bgcolor":"#F0F0F2","bgimage":null},{"cid":"sb969a1dda329cdfc5b9f7d","project_cid":"p2da6fdbbd91f95713fae94","parent_cid":"s26ea4cf6196a80309d5715","expanded":false,"name":"Photo","orientation":"portrait","position":0,"width":null,"height":null,"hh":null,"fh":null,"bgcolor":"#F0F0F2","bgimage":null}],"widgets":[{"cid":"w9a8e262adcb394f21c8b76","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602019,"v":true,"name":"status_bar","left":0.0,"top":0.0,"width":320.0,"height":20.0,"gid":null,"text":"AT&amp;T","th":"grey","bg":null,"tc":null,"bc":null,"o":null,"z":4},{"cid":"wc931e9d62124330ca042fb","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602020,"v":true,"name":"tab_bar","left":0.0,"top":523.0,"width":320.0,"height":45.0,"gid":null,"z":4,"th":"dark","bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wc9b48e8bbf8edb73c55c5d","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602021,"v":true,"name":"tab_item","left":10.0,"top":523.0,"width":60.0,"height":45.0,"gid":null,"text":"","is":30,"icon":"home","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wed67507ae780c3a9a2da47","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602022,"v":true,"name":"tab_item","left":70.0,"top":523.0,"width":60.0,"height":45.0,"gid":"l92b29e15fdffc8d6c966a6","text":"","is":30,"icon":"asterisk","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9937f1661d92a90be8b1ad","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602023,"v":true,"name":"tab_item","left":130.0,"top":525.0,"width":60.0,"height":45.0,"gid":"l38bc7fdd9fe850024c8d2f","text":"","is":30,"icon":"camera","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w082dce8455fbeea13c2d8d","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602024,"v":true,"name":"tab_item","left":190.0,"top":523.0,"width":60.0,"height":45.0,"gid":"laae295cf9ef2ce021b3a9d","text":"","is":30,"icon":"comment","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"we00da8510d512d7512a524","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602025,"v":true,"name":"tab_item","left":250.0,"top":523.0,"width":60.0,"height":45.0,"gid":"l7e63b202de52e7b7f39621","text":"","is":30,"icon":"user","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wf8bf0508ae6411b3123adc","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602026,"v":true,"name":"navigation_bar","left":0.0,"top":20.0,"width":320.0,"height":45.0,"gid":null,"text":"CropChecker","fs":18,"z":4,"th":"grey","td":"normal","bo":0,"i":0,"bg":"","tc":"","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"w1f404c5ce364359b3c5321","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602027,"v":true,"name":"rectangle","left":0.0,"top":65.0,"width":320.0,"height":55.0,"gid":null,"z":2,"th":"","bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w02faea888df09c35e2a102","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602028,"v":true,"name":"image_view","left":10.0,"top":73.0,"width":40.0,"height":40.0,"gid":"la92baf7116c21c0b57e012","bs":0,"br":20,"image":"/uploads/images/34759/raw_1420898052.jpeg","z":3,"th":"grey","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w81ecef03fdd338182c9904","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602029,"v":true,"name":"label","left":59.0,"top":78.0,"width":105.0,"height":30.0,"gid":"la92baf7116c21c0b57e012","text":"Steve (Farmer)","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":1,"i":0,"bg":"","bc":"","tc":"#2170d9","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wdce2a2156bce05331ca5d2","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602030,"v":true,"name":"label","left":256.0,"top":78.0,"width":54.0,"height":30.0,"gid":null,"text":"21h","fs":14,"br":0,"bs":0,"ha":"right","va":"middle","z":5,"th":"","lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w578f679b6eddaffe00de84","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602031,"v":true,"name":"image_view","left":0.0,"top":120.0,"width":320.0,"height":160.0,"gid":null,"bs":0,"br":0,"image":"/uploads/images/121425/raw_1459522238.jpeg","z":3,"th":"grey","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w5c0ad5c307265293314559","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602032,"v":true,"name":"icon_button","left":280.0,"top":28.0,"width":30.0,"height":30.0,"gid":"le2d0e952f21f7bd63d9970","is":24,"icon":"inbox","br":0,"bs":0,"z":5,"th":"light","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wca3f23a1458018bce26dda","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602034,"v":true,"name":"label","left":2500.0,"top":2500.0,"width":114.0,"height":20.0,"gid":null,"text":"This is a problem ","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":true,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wd7a455786ce0853dba0d42","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602035,"v":true,"name":"button","left":10.0,"top":473.0,"width":85.0,"height":30.0,"gid":null,"text":"","fs":14,"br":8,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"ls":0,"icon":"","is":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"we2df50cff3eb0b60a1ca11","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602036,"v":true,"name":"icon_button","left":16.0,"top":474.0,"width":30.0,"height":30.0,"gid":null,"is":16,"icon":"heart","br":0,"bs":0,"z":5,"th":"","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wd1dd08e8d1df394de40fdc","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602037,"v":true,"name":"label","left":46.0,"top":473.0,"width":55.0,"height":30.0,"gid":null,"text":"Like","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w553394b1e9d95038742e37","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602038,"v":true,"name":"button","left":101.0,"top":473.0,"width":108.0,"height":30.0,"gid":"l6f54e82388dff4692d4753","text":"","fs":14,"br":8,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"icon":"","is":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w0a24180e86d0a212010753","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602039,"v":true,"name":"icon_button","left":107.0,"top":473.0,"width":30.0,"height":30.0,"gid":"l6f54e82388dff4692d4753","is":16,"icon":"comment","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wbc156a7d4ae5be32692260","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602040,"v":true,"name":"label","left":137.0,"top":473.0,"width":67.0,"height":30.0,"gid":"l6f54e82388dff4692d4753","text":"Comment","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wf3cd60bb93e337a38a16f4","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602041,"v":true,"name":"button","left":280.0,"top":473.0,"width":30.0,"height":30.0,"gid":null,"text":"...","fs":14,"br":8,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"ls":0,"icon":"","is":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w8b6128c3dab9e43ea98725","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602042,"v":true,"name":"sticky","left":-283.0,"top":0.0,"width":199.0,"height":140.0,"gid":null,"text":"Click anywhere of screen to highlight clickable area.","bg":"","tc":"","th":"","slw":50,"slt":20},{"cid":"w78E2B8BA361459522524025","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20965285,"v":true,"name":"text_view","left":0.0,"top":280.0,"width":320.0,"height":36.0,"gid":null,"text":"I have this problem with my crop. Can someone help ?","fs":13,"br":0,"bs":0,"ha":"left","va":"top","z":5,"th":"orange","lh":18,"td":"normal","bo":0,"i":0,"bg":"#fa8919","bc":"","tc":"#0f0f0f","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null},{"cid":"wFA207295441459522644980","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20965296,"v":true,"name":"image_view","left":0.0,"top":340.0,"width":40.0,"height":40.0,"gid":"lB5B001A12C1459522644976","bs":0,"br":20,"image":"/uploads/images/121427/raw_1459522681.png","z":3,"th":"grey","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w8D52D1A7621459522644985","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20965300,"v":true,"name":"label","left":49.0,"top":345.0,"width":193.0,"height":30.0,"gid":"lB5B001A12C1459522644976","text":"CropChecker (Friendly Bot)","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":1,"i":0,"bg":"","bc":"","tc":"#2170d9","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w051aedbd03b1c73ee8bef8","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602058,"v":true,"name":"icon_button","left":10.0,"top":14.0,"width":40.0,"height":40.0,"gid":"lb20606f6b28e3e4feb2a59","is":30,"icon":"times","br":0,"bs":0,"z":5,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wb96695cc853027ebdb19f5","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602059,"v":true,"name":"icon_button","left":40.0,"top":422.0,"width":30.0,"height":30.0,"gid":null,"is":24,"icon":"th","br":0,"bs":0,"z":5,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w5b7dc66f46482013b57e00","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602060,"v":true,"name":"icon_button","left":120.0,"top":472.0,"width":80.0,"height":80.0,"gid":null,"is":40,"icon":"camera","br":40,"bs":1,"z":5,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wfc8dd850c7a2a148914ff8","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602061,"v":true,"name":"icon_button","left":247.0,"top":422.0,"width":30.0,"height":30.0,"gid":null,"is":24,"icon":"bolt","br":0,"bs":0,"z":5,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w5d5e40f9255279badad41f","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602062,"v":true,"name":"icon_button","left":247.0,"top":490.0,"width":40.0,"height":40.0,"gid":null,"is":36,"icon":"video-camera","br":0,"bs":0,"z":5,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w3ace4f2fb2c81cc7a35af2","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602063,"v":true,"name":"image_view","left":31.0,"top":485.0,"width":50.0,"height":50.0,"gid":null,"bs":0,"br":0,"image":"/uploads/images/1/img.jpeg","z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"we5abcac97957f96b24b497","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602064,"v":true,"name":"icon_button","left":145.0,"top":422.0,"width":30.0,"height":30.0,"gid":null,"is":24,"icon":"refresh","br":0,"bs":0,"z":5,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w1b5454aa758fa480389342","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602065,"v":true,"name":"image_view","left":0.0,"top":69.0,"width":320.0,"height":320.0,"gid":null,"bs":0,"br":0,"image":"/uploads/images/3/img.png","z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null},{"cid":"wfa20deb893d8d89c4ffd0c","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602066,"v":true,"name":"hr","left":0.0,"top":166.0,"width":320.0,"height":11.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wf123b94035d5c01fad16bc","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602067,"v":true,"name":"hr","left":0.0,"top":278.0,"width":320.0,"height":11.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w6c058dbfc48d1f8d76ef89","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602068,"v":true,"name":"ve","left":96.0,"top":68.0,"width":11.0,"height":323.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w99f90cacd45e884933819f","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602069,"v":true,"name":"ve","left":204.0,"top":68.0,"width":11.0,"height":323.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w3af1a05d04e5017e7cc495","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602070,"v":true,"name":"rectangle","left":0.0,"top":-1.0,"width":320.0,"height":70.0,"gid":null,"z":2,"th":"dark","bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w3170969c5358889ef65d11","screen_cid":"sa7de9edeaf9907532600b8","timestamp":6602071,"v":true,"name":"rectangle","left":0.0,"top":389.0,"width":320.0,"height":179.0,"gid":null,"z":2,"th":"dark","bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w08fce436104f82fcf8e69d","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602072,"v":true,"name":"status_bar","left":0.0,"top":0.0,"width":320.0,"height":20.0,"gid":null,"text":"AT&amp;T","th":"light","bg":null,"tc":null,"bc":null,"o":null,"z":4},{"cid":"wfbec5849996c4997966cb6","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602073,"v":true,"name":"navigation_bar","left":0.0,"top":20.0,"width":320.0,"height":45.0,"gid":null,"text":"EXPLORE","fs":18,"z":4,"th":"light","td":null,"bo":null,"i":null,"bg":null,"tc":null,"bc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null},{"cid":"wbd29a1ae0477f01c1f1f61","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602074,"v":true,"name":"icon_button","left":280.0,"top":28.0,"width":30.0,"height":30.0,"gid":null,"is":24,"icon":"repeat","br":0,"bs":0,"z":5,"th":"grey","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w7bf6930500b69014bd5809","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602075,"v":true,"name":"search_bar","left":0.0,"top":65.0,"width":320.0,"height":45.0,"gid":null,"text":"Search users and hashtags","fs":14,"ha":"left","z":4,"th":"light","bg":null,"tc":null,"bc":null,"o":null,"ds":null,"sc":null,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wff63fbe7d3321e0454bae5","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602076,"v":true,"name":"image_view","left":0.0,"top":110.0,"width":105.0,"height":92.0,"gid":"l0d0282c28504b70249dbae","bs":0,"br":0,"image":null,"z":3,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w14ba0e7147786e3a05f333","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602077,"v":true,"name":"image_view","left":107.0,"top":110.0,"width":105.0,"height":92.0,"gid":"l0d0282c28504b70249dbae","bs":0,"br":0,"image":null,"z":3,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"wb21cce417da44b01d544f4","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602078,"v":true,"name":"image_view","left":215.0,"top":110.0,"width":105.0,"height":92.0,"gid":"l0d0282c28504b70249dbae","bs":0,"br":0,"image":null,"z":3,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w7e18f5cb296dba0866d30d","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602079,"v":true,"name":"image_view","left":0.0,"top":205.0,"width":105.0,"height":92.0,"gid":"l0d0282c28504b70249dbae","bs":0,"br":0,"image":null,"z":3,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w9838c6afcac46cbf2d5c2d","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602080,"v":true,"name":"image_view","left":107.0,"top":205.0,"width":105.0,"height":92.0,"gid":"l0d0282c28504b70249dbae","bs":0,"br":0,"image":null,"z":3,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w1bfdaebbd6428dab911353","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602081,"v":true,"name":"image_view","left":215.0,"top":205.0,"width":105.0,"height":92.0,"gid":"l0d0282c28504b70249dbae","bs":0,"br":0,"image":null,"z":3,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w912518979982615b2abcf7","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602082,"v":true,"name":"image_view","left":0.0,"top":300.0,"width":105.0,"height":92.0,"gid":"l0d0282c28504b70249dbae","bs":0,"br":0,"image":null,"z":3,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"wdf3f51879165e76860b095","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602083,"v":true,"name":"image_view","left":107.0,"top":300.0,"width":105.0,"height":92.0,"gid":"l0d0282c28504b70249dbae","bs":0,"br":0,"image":null,"z":3,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w42148d9305aa6402639b67","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602084,"v":true,"name":"image_view","left":215.0,"top":300.0,"width":105.0,"height":92.0,"gid":"l0d0282c28504b70249dbae","bs":0,"br":0,"image":null,"z":3,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w41f6f4ab25d9306b48807e","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602085,"v":true,"name":"image_view","left":0.0,"top":395.0,"width":105.0,"height":92.0,"gid":"l0d0282c28504b70249dbae","bs":0,"br":0,"image":null,"z":3,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w39f8ad74efbe7ac56fadf9","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602086,"v":true,"name":"image_view","left":107.0,"top":395.0,"width":105.0,"height":92.0,"gid":"l0d0282c28504b70249dbae","bs":0,"br":0,"image":null,"z":3,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"we333b0725003ee47974b52","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602087,"v":true,"name":"image_view","left":215.0,"top":395.0,"width":105.0,"height":92.0,"gid":"l0d0282c28504b70249dbae","bs":0,"br":0,"image":null,"z":3,"th":"light","bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"wae440e6765f99fd06b267c","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602088,"v":true,"name":"tab_bar","left":0.0,"top":523.0,"width":320.0,"height":45.0,"gid":null,"z":4,"th":"dark","bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w5064f2e02108c884d1e3a9","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602089,"v":true,"name":"tab_item","left":10.0,"top":523.0,"width":60.0,"height":45.0,"gid":"lb84e79b9dbaa895270dd44","text":"","is":30,"icon":"home","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wd39c66d436011d10ef5bb9","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602090,"v":true,"name":"tab_item","left":70.0,"top":523.0,"width":60.0,"height":45.0,"gid":null,"text":"","is":30,"icon":"asterisk","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w270b6e09cc56e17db5b1f5","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602091,"v":true,"name":"tab_item","left":130.0,"top":525.0,"width":60.0,"height":45.0,"gid":"ld5c2f2d9dbd76d30933f68","text":"","is":30,"icon":"camera","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w77703bce193c6a52620b9a","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602092,"v":true,"name":"tab_item","left":190.0,"top":523.0,"width":60.0,"height":45.0,"gid":"la3970e4ded127508888fd1","text":"","is":30,"icon":"comment","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w28e68ad1780f5520e030a2","screen_cid":"s26ea4cf6196a80309d5715","timestamp":6602093,"v":true,"name":"tab_item","left":250.0,"top":523.0,"width":60.0,"height":45.0,"gid":"la86d4fddf4a178364643e0","text":"","is":30,"icon":"user","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9994bc86e3ef8ff0ca8ad4","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602094,"v":true,"name":"status_bar","left":0.0,"top":0.0,"width":320.0,"height":20.0,"gid":null,"text":"AT&amp;T","th":null,"bg":null,"tc":null,"bc":null,"o":null,"z":null},{"cid":"w3011c17f1393045428db6e","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602095,"v":true,"name":"navigation_bar","left":0.0,"top":19.5,"width":320.0,"height":45.0,"gid":null,"text":"","fs":null,"z":null,"th":null,"td":null,"bo":null,"i":null,"bg":null,"tc":null,"bc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null},{"cid":"w4ad60e000681de0f644487","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602096,"v":true,"name":"rounded_rect","left":77.0,"top":25.0,"width":166.0,"height":34.0,"gid":null,"text":"","fs":null,"br":null,"bs":null,"ha":null,"va":null,"z":null,"lh":null,"th":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w8863b74ecf9cb0649e2f16","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602097,"v":true,"name":"label","left":89.0,"top":26.0,"width":69.0,"height":32.0,"gid":null,"text":"Following","fs":null,"br":null,"bs":null,"ha":null,"va":null,"z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wc696bb89052f8df2999f6c","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602098,"v":true,"name":"label","left":182.0,"top":26.0,"width":69.0,"height":32.0,"gid":null,"text":"News","fs":null,"br":null,"bs":null,"ha":null,"va":null,"z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wfb27bfad6c1cbd561afaec","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602099,"v":true,"name":"ve","left":155.0,"top":25.0,"width":10.0,"height":34.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w43e496b0550284cb6122e6","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602100,"v":true,"name":"rectangle","left":0.0,"top":64.0,"width":320.0,"height":459.0,"gid":null,"z":null,"th":null,"bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w0536d97173b19e46c932a8","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602101,"v":true,"name":"image_view","left":10.0,"top":80.0,"width":50.0,"height":50.0,"gid":null,"bs":0,"br":25,"image":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w6f523dcc6cc88ed61fec36","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602102,"v":true,"name":"hr","left":68.0,"top":134.0,"width":252.0,"height":11.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wcae5f1dc319886f947613e","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602103,"v":true,"name":"label","left":68.0,"top":73.0,"width":192.0,"height":30.0,"gid":null,"text":"Andy started following you.","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wae3227e4d3a1e789bc9e58","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602104,"v":true,"name":"text_view","left":68.0,"top":104.0,"width":200.0,"height":29.0,"gid":null,"text":"1 week ago","fs":null,"br":null,"bs":null,"ha":null,"va":null,"z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"wdda16c5693b3af597bf715","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602105,"v":true,"name":"image_view","left":10.0,"top":152.0,"width":50.0,"height":50.0,"gid":null,"bs":0,"br":25,"image":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w98aee55bd3ab8099d71d27","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602106,"v":true,"name":"hr","left":68.0,"top":206.0,"width":252.0,"height":11.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w4ef8d2dd71a5224d16389b","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602107,"v":true,"name":"label","left":68.0,"top":145.0,"width":192.0,"height":30.0,"gid":null,"text":"Robin liked your photo","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w95071b42ee4cbb9914ce79","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602108,"v":true,"name":"text_view","left":68.0,"top":176.0,"width":200.0,"height":29.0,"gid":null,"text":"3 weeks ago","fs":null,"br":null,"bs":null,"ha":null,"va":null,"z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w13b6b5f35db6555254dc18","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602109,"v":true,"name":"tab_bar","left":0.0,"top":523.0,"width":320.0,"height":45.0,"gid":null,"z":4,"th":"dark","bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w0597af7b4df2eefac14e34","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602110,"v":true,"name":"tab_item","left":10.0,"top":523.0,"width":60.0,"height":45.0,"gid":"l0abf8bb055353515aacca7","text":"","is":30,"icon":"home","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wbea0f5472cdde732c2cc91","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602111,"v":true,"name":"tab_item","left":70.0,"top":523.0,"width":60.0,"height":45.0,"gid":"lc1263739afc226c830f7d7","text":"","is":30,"icon":"asterisk","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wc52d74da9e827f2dfb643c","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602112,"v":true,"name":"tab_item","left":130.0,"top":525.0,"width":60.0,"height":45.0,"gid":"l9f095420f5239127bbd85f","text":"","is":30,"icon":"camera","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w13f164d57b593a206e5060","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602113,"v":true,"name":"tab_item","left":190.0,"top":523.0,"width":60.0,"height":45.0,"gid":null,"text":"","is":30,"icon":"comment","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wf48fba4ffc4c5dc44aa98b","screen_cid":"sfd94d4bd0d604702ccda88","timestamp":6602114,"v":true,"name":"tab_item","left":250.0,"top":523.0,"width":60.0,"height":45.0,"gid":"l447051b2d8720357d4fd63","text":"","is":30,"icon":"user","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w74e417fb9efe0cc54dc521","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602115,"v":true,"name":"status_bar","left":0.0,"top":0.0,"width":320.0,"height":20.0,"gid":null,"text":"AT&amp;T","th":null,"bg":null,"tc":null,"bc":null,"o":null,"z":null},{"cid":"wd2f9c699562bb8b65149bb","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602116,"v":true,"name":"navigation_bar","left":0.0,"top":20.0,"width":320.0,"height":45.0,"gid":null,"text":"YUANYI","fs":18,"z":null,"th":null,"td":null,"bo":null,"i":null,"bg":null,"tc":null,"bc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null},{"cid":"w3cb03a79f6b01fd6564760","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602117,"v":true,"name":"icon_button","left":280.0,"top":28.0,"width":30.0,"height":30.0,"gid":null,"is":24,"icon":"cog","br":0,"bs":0,"z":5,"th":"grey","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w09076ffbc6c62694366639","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602118,"v":true,"name":"image_view","left":10.0,"top":79.0,"width":70.0,"height":70.0,"gid":null,"bs":0,"br":35,"image":"/uploads/images/2/img.jpeg","z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w39756ef83f46902a791455","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602119,"v":true,"name":"label","left":120.0,"top":93.0,"width":55.0,"height":30.0,"gid":null,"text":"posts","fs":null,"br":null,"bs":null,"ha":null,"va":null,"z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wc556c6a1069d1015fb9721","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602120,"v":true,"name":"label","left":187.0,"top":93.0,"width":57.0,"height":30.0,"gid":null,"text":"followers","fs":14,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w59c115b8583d3bd2bc45fb","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602121,"v":true,"name":"label","left":255.0,"top":93.0,"width":55.0,"height":30.0,"gid":null,"text":"following","fs":14,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w8b657987a463c31019250f","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602122,"v":true,"name":"button","left":120.0,"top":123.0,"width":190.0,"height":30.0,"gid":null,"text":"Edit Your Profile","fs":null,"br":null,"bs":null,"ha":null,"va":null,"z":null,"th":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"ls":0,"icon":"","is":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w7a3ee40bf8652fb374009c","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602123,"v":true,"name":"rectangle","left":0.0,"top":165.0,"width":320.0,"height":46.0,"gid":null,"z":null,"th":null,"bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w94a65f2b39bec7f671c552","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602124,"v":true,"name":"icon_button","left":28.0,"top":174.0,"width":30.0,"height":30.0,"gid":null,"is":null,"icon":"th","br":null,"bs":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w4da13353eaa02b13a87728","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602125,"v":true,"name":"ve","left":76.0,"top":165.0,"width":11.0,"height":46.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w5ecaf23c1e3b5c229f6787","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602126,"v":true,"name":"icon_button","left":116.0,"top":174.0,"width":30.0,"height":30.0,"gid":null,"is":null,"icon":"th-list","br":null,"bs":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w87e0d54cf0f2efe829005d","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602127,"v":true,"name":"ve","left":164.0,"top":165.0,"width":11.0,"height":46.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wcae9d6379666d5d30e45cd","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602128,"v":true,"name":"icon_button","left":196.0,"top":174.0,"width":30.0,"height":30.0,"gid":null,"is":null,"icon":"map-marker","br":null,"bs":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w562a507510f249339cc3f5","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602129,"v":true,"name":"ve","left":244.0,"top":165.0,"width":11.0,"height":46.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wf740650710b8d6299b35c9","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602130,"v":true,"name":"icon_button","left":271.0,"top":174.0,"width":30.0,"height":30.0,"gid":null,"is":null,"icon":"user","br":null,"bs":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w530f5408c31bf4cbc1b87c","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602131,"v":true,"name":"label","left":120.0,"top":79.0,"width":55.0,"height":30.0,"gid":null,"text":"6","fs":14,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wbdd2bd4068161358d50401","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602132,"v":true,"name":"label","left":187.0,"top":79.0,"width":57.0,"height":30.0,"gid":null,"text":"43","fs":14,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w4c02fc147f93907d497c71","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602133,"v":true,"name":"label","left":255.0,"top":79.0,"width":55.0,"height":30.0,"gid":null,"text":"42","fs":14,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wb0c7a53c1838daf5fe4d7c","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602134,"v":true,"name":"image_view","left":0.0,"top":211.0,"width":99.0,"height":87.0,"gid":"l06762a9ff546ab9d030cc7","bs":null,"br":null,"image":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w7d5e7331e484b4f9d2b247","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602135,"v":true,"name":"image_view","left":110.6669921875,"top":211.0,"width":99.0,"height":87.0,"gid":"l06762a9ff546ab9d030cc7","bs":null,"br":null,"image":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"wb558d9e7be0b2ee9be9ab4","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602136,"v":true,"name":"image_view","left":221.0,"top":211.0,"width":99.0,"height":87.0,"gid":"l06762a9ff546ab9d030cc7","bs":null,"br":null,"image":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w75047b96c2badad03c3332","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602137,"v":true,"name":"image_view","left":0.0,"top":309.0,"width":99.0,"height":87.0,"gid":"l06762a9ff546ab9d030cc7","bs":null,"br":null,"image":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w16731c45bb9f85c2776191","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602138,"v":true,"name":"image_view","left":110.625,"top":309.0,"width":99.0,"height":87.0,"gid":"l06762a9ff546ab9d030cc7","bs":null,"br":null,"image":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w0e57bc1f0bc855ee03cb5f","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602139,"v":true,"name":"tab_bar","left":0.0,"top":523.0,"width":320.0,"height":45.0,"gid":null,"z":4,"th":"dark","bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w3ad7a50abbffa5bd1eaac0","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602140,"v":true,"name":"tab_item","left":10.0,"top":523.0,"width":60.0,"height":45.0,"gid":"lf4b40f435d1ee49dad07ad","text":"","is":30,"icon":"home","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wb6b9cd92708ffb122e8234","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602141,"v":true,"name":"tab_item","left":70.0,"top":523.0,"width":60.0,"height":45.0,"gid":"lf9e4939a86a2f99c213bce","text":"","is":30,"icon":"asterisk","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w049936575881373313d1f9","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602142,"v":true,"name":"tab_item","left":130.0,"top":525.0,"width":60.0,"height":45.0,"gid":"l6e271f504ced65f753e05b","text":"","is":30,"icon":"camera","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w258e69a239de9828afc132","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602143,"v":true,"name":"tab_item","left":190.0,"top":523.0,"width":60.0,"height":45.0,"gid":"l4643e631e226486ba0df86","text":"","is":30,"icon":"comment","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w5448119ffb42ffb7bfe9ab","screen_cid":"sa9392f3c18cbf92097cf44","timestamp":6602144,"v":true,"name":"tab_item","left":250.0,"top":523.0,"width":60.0,"height":45.0,"gid":null,"text":"","is":30,"icon":"user","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wc215881fc4a00234da1d85","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602043,"v":true,"name":"status_bar","left":0.0,"top":0.0,"width":320.0,"height":20.0,"gid":null,"text":"AT&amp;T","th":null,"bg":null,"tc":null,"bc":null,"o":null,"z":null},{"cid":"w17548951de14b3d3c03f99","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602044,"v":true,"name":"navigation_bar","left":0.0,"top":20.0,"width":320.0,"height":45.0,"gid":null,"text":"DIRECT","fs":null,"z":null,"th":null,"td":null,"bo":null,"i":null,"bg":null,"tc":null,"bc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null},{"cid":"wf8dbf1bf67901db03f0016","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602045,"v":true,"name":"icon_button","left":10.0,"top":28.0,"width":30.0,"height":30.0,"gid":"l68427d62caf63541a16869","is":24,"icon":"arrow-left","br":0,"bs":0,"z":5,"th":"grey","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"we9bbefc94836a1f18c53e1","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602046,"v":true,"name":"icon_button","left":280.0,"top":28.0,"width":30.0,"height":30.0,"gid":null,"is":24,"icon":"plus","br":0,"bs":0,"z":5,"th":"grey","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w955f82d8641bcdc6be0c93","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602047,"v":true,"name":"label","left":88.0,"top":65.0,"width":144.0,"height":30.0,"gid":null,"text":"Send a photo or video","fs":null,"br":null,"bs":null,"ha":null,"va":null,"z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w290c8caf4c2b469b6dab1c","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602048,"v":true,"name":"rectangle","left":0.0,"top":95.0,"width":320.0,"height":428.0,"gid":null,"z":5,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wa3127a71a5a31f01138b32","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602049,"v":true,"name":"label","left":107.6640625,"top":263.0,"width":105.0,"height":30.0,"gid":null,"text":"MB Direct","fs":14,"br":0,"bs":0,"ha":"center","va":"middle","z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w65dcbffaf62e000eff6d73","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602050,"v":true,"name":"text_view","left":60.0,"top":311.0,"width":200.0,"height":68.0,"gid":null,"text":"Send photos and videos directly to your friends. Only the people you send to can see these posts.","fs":12,"br":0,"bs":0,"ha":"center","va":"top","z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w48287004ddf910985d4d0a","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602051,"v":true,"name":"icon_button","left":100.0,"top":143.0,"width":120.0,"height":120.0,"gid":null,"is":72,"icon":"inbox","br":0,"bs":0,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9d82e49ce185967599dcb3","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602052,"v":true,"name":"tab_bar","left":0.0,"top":523.0,"width":320.0,"height":45.0,"gid":null,"z":4,"th":"dark","bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w2f10eac69ac0a8d8f47818","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602053,"v":true,"name":"tab_item","left":10.0,"top":523.0,"width":60.0,"height":45.0,"gid":"l2ad85c8cea83089cfab5f1","text":"","is":30,"icon":"home","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wef9f407ba086f7c48430fd","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602054,"v":true,"name":"tab_item","left":70.0,"top":523.0,"width":60.0,"height":45.0,"gid":"lcf9ec4e63993c7fc66e9ce","text":"","is":30,"icon":"asterisk","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w6c42b8fa58abcb494fd027","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602055,"v":true,"name":"tab_item","left":130.0,"top":525.0,"width":60.0,"height":45.0,"gid":"l3adc8e3fccce4afb46081c","text":"","is":30,"icon":"camera","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wa048e41f0784d5938f1ccc","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602056,"v":true,"name":"tab_item","left":190.0,"top":523.0,"width":60.0,"height":45.0,"gid":"l7b3397547808f9b412a55b","text":"","is":30,"icon":"comment","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wc100a6a90d308f1283daa6","screen_cid":"sac8331bd91fc9a13907463","timestamp":6602057,"v":true,"name":"tab_item","left":250.0,"top":523.0,"width":60.0,"height":45.0,"gid":"l02f2a372f91270b1e7eb67","text":"","is":30,"icon":"user","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w2e5a891c38d7441243185f","screen_cid":"sc5e674c5b57d8b8566e184","timestamp":6602145,"v":true,"name":"status_bar","left":0.0,"top":0.0,"width":320.0,"height":20.0,"gid":null,"text":"AT&amp;T","th":null,"bg":null,"tc":null,"bc":null,"o":null,"z":null},{"cid":"wa3c0b46bbb4ebd569ff0b8","screen_cid":"sc5e674c5b57d8b8566e184","timestamp":6602146,"v":true,"name":"navigation_bar","left":0.0,"top":20.0,"width":320.0,"height":45.0,"gid":null,"text":"COMMENTS","fs":null,"z":null,"th":null,"td":null,"bo":null,"i":null,"bg":null,"tc":null,"bc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null},{"cid":"w4a1f81d4ffa4ba431c5323","screen_cid":"sc5e674c5b57d8b8566e184","timestamp":6602147,"v":true,"name":"icon_button","left":10.0,"top":28.0,"width":30.0,"height":30.0,"gid":"ldaf9f30cf2d8158988237d","is":24,"icon":"arrow-left","br":0,"bs":0,"z":5,"th":"grey","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w1ca1f342f1d55d125fab41","screen_cid":"sc5e674c5b57d8b8566e184","timestamp":6602148,"v":true,"name":"keyboard","left":0.0,"top":352.0,"width":320.0,"height":216.0,"gid":null,"z":null,"numeric":false},{"cid":"w5cb68f7b0aa311f3fb1470","screen_cid":"sc5e674c5b57d8b8566e184","timestamp":6602149,"v":true,"name":"rectangle","left":0.0,"top":313.0,"width":320.0,"height":39.0,"gid":null,"z":null,"th":null,"bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"we0e92d1e56ebd8879c0b05","screen_cid":"sc5e674c5b57d8b8566e184","timestamp":6602150,"v":true,"name":"text_field","left":10.0,"top":318.0,"width":229.0,"height":30.0,"gid":null,"text":"Add a comment...","fs":null,"br":null,"bs":null,"ha":null,"va":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"td":null,"bo":null,"i":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wac16c0868cc9811f9cb8ce","screen_cid":"sc5e674c5b57d8b8566e184","timestamp":6602151,"v":true,"name":"button","left":250.0,"top":318.0,"width":60.0,"height":30.0,"gid":null,"text":"Send","fs":null,"br":null,"bs":null,"ha":null,"va":null,"z":null,"th":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"ls":0,"icon":"","is":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w283d1628d6a7875506c1ac","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602152,"v":true,"name":"status_bar","left":0.0,"top":0.0,"width":320.0,"height":20.0,"gid":null,"text":"AT&amp;T","th":null,"bg":null,"tc":null,"bc":null,"o":null,"z":null},{"cid":"w1378e96e82c9c2c0dda584","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602153,"v":true,"name":"navigation_bar","left":0.0,"top":20.0,"width":320.0,"height":45.0,"gid":null,"text":"Yuanyi","fs":18,"z":null,"th":null,"td":null,"bo":null,"i":null,"bg":null,"tc":null,"bc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null},{"cid":"wd2a5f3bd63ae14afef938b","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602154,"v":true,"name":"image_view","left":10.0,"top":79.0,"width":70.0,"height":70.0,"gid":null,"bs":0,"br":35,"image":"/uploads/images/2/img.jpeg","z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w313843944f293685e5d512","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602155,"v":true,"name":"button","left":120.0,"top":123.0,"width":190.0,"height":30.0,"gid":null,"text":"Edit Your Profile","fs":null,"br":null,"bs":null,"ha":null,"va":null,"z":null,"th":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"ls":0,"icon":"","is":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wc55cd4630ff8577edd8c53","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602156,"v":true,"name":"rectangle","left":0.0,"top":165.0,"width":320.0,"height":46.0,"gid":null,"z":null,"th":null,"bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w851e04b492c1ec7e7e4087","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602157,"v":true,"name":"icon_button","left":28.0,"top":174.0,"width":30.0,"height":30.0,"gid":null,"is":null,"icon":"th","br":null,"bs":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w18bd7c6fd43dca1dbfdf76","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602158,"v":true,"name":"ve","left":76.0,"top":165.0,"width":11.0,"height":46.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"we4a1cc68ee4a90438cf996","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602159,"v":true,"name":"icon_button","left":116.0,"top":174.0,"width":30.0,"height":30.0,"gid":null,"is":null,"icon":"th-list","br":null,"bs":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w80dee992e1d9c17e56b274","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602160,"v":true,"name":"ve","left":164.0,"top":165.0,"width":11.0,"height":46.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w0fc9bd0250cdc5a35a88ca","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602161,"v":true,"name":"icon_button","left":196.0,"top":174.0,"width":30.0,"height":30.0,"gid":null,"is":null,"icon":"map-marker","br":null,"bs":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w30bbd4b22d04e5206cbe5d","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602162,"v":true,"name":"ve","left":244.0,"top":165.0,"width":11.0,"height":46.0,"gid":null,"z":null,"th":null,"bc":null,"ls":0,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9fe88ace5eb368c24f4316","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602163,"v":true,"name":"icon_button","left":271.0,"top":174.0,"width":30.0,"height":30.0,"gid":null,"is":null,"icon":"user","br":null,"bs":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w65b2aa7f1f012464f75d5f","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602164,"v":true,"name":"image_view","left":0.0,"top":211.0,"width":100.0,"height":100.0,"gid":"l1c418140b4829e52550ba6","bs":0,"br":0,"image":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"wf3c7d3df8effe23118bd14","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602165,"v":true,"name":"image_view","left":110.0,"top":211.0,"width":100.0,"height":100.0,"gid":"l1c418140b4829e52550ba6","bs":0,"br":0,"image":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w441d0c57b608e2b715de8b","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602166,"v":true,"name":"image_view","left":221.0,"top":211.0,"width":100.0,"height":100.0,"gid":"l1c418140b4829e52550ba6","bs":0,"br":0,"image":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w04d1c936ccede9fef9a202","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602167,"v":true,"name":"image_view","left":0.0,"top":325.0,"width":100.0,"height":100.0,"gid":"l1c418140b4829e52550ba6","bs":0,"br":0,"image":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"wc5b77525818da3dba82a9b","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602168,"v":true,"name":"image_view","left":110.0,"top":325.0,"width":100.0,"height":100.0,"gid":"l1c418140b4829e52550ba6","bs":0,"br":0,"image":null,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w593c61f61af9f20306ec07","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602169,"v":true,"name":"icon_button","left":10.0,"top":28.0,"width":30.0,"height":30.0,"gid":"l29b30ed9898c1e14fd385a","is":24,"icon":"arrow-left","br":0,"bs":0,"z":5,"th":"grey","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w5df8a027b6b3f01fd362ca","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602170,"v":true,"name":"tab_bar","left":0.0,"top":523.0,"width":320.0,"height":45.0,"gid":null,"z":4,"th":"dark","bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w0fe32fa2eb17f8b4fb648d","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602171,"v":true,"name":"tab_item","left":10.0,"top":523.0,"width":60.0,"height":45.0,"gid":"l0a5ac691445cfbe95baa48","text":"","is":30,"icon":"home","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w049181745bdcfcf9f70d81","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602172,"v":true,"name":"tab_item","left":70.0,"top":523.0,"width":60.0,"height":45.0,"gid":"ldfbece15276f64d4478897","text":"","is":30,"icon":"asterisk","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w36e1574fccb148e9d149a7","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602173,"v":true,"name":"tab_item","left":130.0,"top":525.0,"width":60.0,"height":45.0,"gid":"la7e63dfabe914f1c5bbae3","text":"","is":30,"icon":"camera","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wb05b9c46177f72fca70d13","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602174,"v":true,"name":"tab_item","left":190.0,"top":523.0,"width":60.0,"height":45.0,"gid":null,"text":"","is":30,"icon":"comment","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wecc54b89af6a45de4a7069","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602175,"v":true,"name":"tab_item","left":250.0,"top":523.0,"width":60.0,"height":45.0,"gid":"ld81ca95b1565d65a2142a8","text":"","is":30,"icon":"user","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"we4bdb729a70470f73a3875","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602176,"v":true,"name":"label","left":120.0,"top":93.0,"width":55.0,"height":30.0,"gid":null,"text":"posts","fs":14,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w29156c99349602badb9806","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602177,"v":true,"name":"label","left":187.0,"top":93.0,"width":57.0,"height":30.0,"gid":null,"text":"followers","fs":14,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w859419b45d39ec8960a1ff","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602178,"v":true,"name":"label","left":255.0,"top":93.0,"width":55.0,"height":30.0,"gid":null,"text":"following","fs":14,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wefdfeb3d4bb4ac29b33dc9","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602179,"v":true,"name":"label","left":120.0,"top":79.0,"width":55.0,"height":30.0,"gid":null,"text":"6","fs":14,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w6ed815eb8edf590655b9cc","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602180,"v":true,"name":"label","left":187.0,"top":79.0,"width":57.0,"height":30.0,"gid":null,"text":"43","fs":14,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w28164a2d1ace9dd540239a","screen_cid":"s04f97f1a1f426bb47e6aa4","timestamp":6602181,"v":true,"name":"label","left":255.0,"top":79.0,"width":55.0,"height":30.0,"gid":null,"text":"42","fs":14,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":20,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wb706f97016ea8817480ccb","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602182,"v":true,"name":"status_bar","left":0.0,"top":0.0,"width":320.0,"height":20.0,"gid":null,"text":"AT&amp;T","th":null,"bg":null,"tc":null,"bc":null,"o":null,"z":null},{"cid":"wab2d5e50fb5ea0fecbdf13","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602183,"v":true,"name":"rectangle","left":0.0,"top":65.0,"width":320.0,"height":54.0,"gid":null,"z":null,"th":null,"bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ro":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w05887f156bbb883acc70e6","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602184,"v":true,"name":"label","left":281.0,"top":72.0,"width":29.0,"height":30.0,"gid":null,"text":"21h","fs":null,"br":null,"bs":null,"ha":null,"va":null,"z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w8845b07a8a9ae0a66f6ba7","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602185,"v":true,"name":"image_view","left":0.0,"top":119.0,"width":320.0,"height":297.0,"gid":null,"bs":0,"br":0,"image":"/uploads/images/1/img.jpeg","z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"we685c8cc102870e0dd5438","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602186,"v":true,"name":"navigation_bar","left":0.0,"top":20.0,"width":320.0,"height":45.0,"gid":null,"text":"PHOTO","fs":null,"z":null,"th":null,"td":null,"bo":null,"i":null,"bg":null,"tc":null,"bc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null},{"cid":"we3c556b983a92eddbee2d3","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602187,"v":true,"name":"icon_button","left":10.0,"top":28.0,"width":30.0,"height":30.0,"gid":"la1ede8f4cd52deb02fda06","is":24,"icon":"arrow-left","br":0,"bs":0,"z":5,"th":"grey","bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w646c5b499d1e748593d862","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602188,"v":true,"name":"icon_button","left":10.0,"top":418.0,"width":30.0,"height":30.0,"gid":null,"is":16,"icon":"asterisk","br":0,"bs":0,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9bfc2d6535a8380d4c4590","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602189,"v":true,"name":"label","left":46.0,"top":417.0,"width":228.0,"height":30.0,"gid":null,"text":"Popular in your country","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w3810f1a59e3964ab1d9cd0","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602190,"v":true,"name":"icon_button","left":10.0,"top":448.0,"width":30.0,"height":30.0,"gid":null,"is":16,"icon":"heart","br":0,"bs":0,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w84af6f1d3c2f11b8c8f50a","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602191,"v":true,"name":"label","left":46.0,"top":447.0,"width":228.0,"height":30.0,"gid":null,"text":"6443 likes","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w29c2b6489c6255a7ab4404","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602192,"v":true,"name":"icon_button","left":10.0,"top":478.0,"width":30.0,"height":30.0,"gid":null,"is":16,"icon":"comment","br":0,"bs":0,"z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wd023821f039842bc74b499","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602193,"v":true,"name":"label","left":46.0,"top":477.0,"width":228.0,"height":30.0,"gid":null,"text":"view all 146 comments","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wdee2536c1ede4143feeb6d","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602194,"v":true,"name":"image_view","left":10.0,"top":73.0,"width":40.0,"height":40.0,"gid":"l11696a49932e95c4194531","bs":0,"br":20,"image":"/uploads/images/2/img.jpeg","z":null,"th":null,"bg":null,"bc":null,"tc":null,"o":null,"p":true,"ds":null,"sc":null,"ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null},{"cid":"w07d9f8a3d80ee5f6c7780c","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602195,"v":true,"name":"label","left":59.0,"top":78.0,"width":55.0,"height":30.0,"gid":"l11696a49932e95c4194531","text":"Yuanyi","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":null,"th":null,"lh":null,"td":null,"bo":null,"i":null,"bg":null,"bc":null,"tc":null,"o":null,"ts":null,"tsc":null,"ds":null,"sc":null,"ro":null,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w87af246ccaa25c4777df89","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602196,"v":true,"name":"tab_bar","left":0.0,"top":523.0,"width":320.0,"height":45.0,"gid":null,"z":4,"th":"dark","bg":null,"bc":null,"o":null,"ds":null,"sc":null,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w03841374381dcbed64771c","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602197,"v":true,"name":"tab_item","left":10.0,"top":523.0,"width":60.0,"height":45.0,"gid":"l1795873a4b0b49d31eb273","text":"","is":30,"icon":"home","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wc69f3c88feff8a2faca940","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602198,"v":true,"name":"tab_item","left":70.0,"top":523.0,"width":60.0,"height":45.0,"gid":"l51a5290835ea81881ac37c","text":"","is":30,"icon":"asterisk","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w823b5568c5041f69ae6380","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602199,"v":true,"name":"tab_item","left":130.0,"top":525.0,"width":60.0,"height":45.0,"gid":"l6fe85b23854547006054bd","text":"","is":30,"icon":"camera","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w471c7bf78608256cbf7249","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602200,"v":true,"name":"tab_item","left":190.0,"top":523.0,"width":60.0,"height":45.0,"gid":"lb846480851d9c16f702a4c","text":"","is":30,"icon":"comment","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w764009b5f07c231df9bb62","screen_cid":"sb969a1dda329cdfc5b9f7d","timestamp":6602201,"v":true,"name":"tab_item","left":250.0,"top":523.0,"width":60.0,"height":45.0,"gid":"l9dcafb96ca698352e8b131","text":"","is":30,"icon":"user","fs":12,"z":5,"th":"light","bg":null,"tc":null,"o":null,"ds":null,"sc":null,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"}],"links":[{"cid":"le2d0e952f21f7bd63d9970","screen_cid":"s03cbb61fabc2bea96fc69f","target_cid":"sac8331bd91fc9a13907463","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l38bc7fdd9fe850024c8d2f","screen_cid":"s03cbb61fabc2bea96fc69f","target_cid":"sa7de9edeaf9907532600b8","transition":"popout","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l7e63b202de52e7b7f39621","screen_cid":"s03cbb61fabc2bea96fc69f","target_cid":"sa9392f3c18cbf92097cf44","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"laae295cf9ef2ce021b3a9d","screen_cid":"s03cbb61fabc2bea96fc69f","target_cid":"sfd94d4bd0d604702ccda88","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l92b29e15fdffc8d6c966a6","screen_cid":"s03cbb61fabc2bea96fc69f","target_cid":"s26ea4cf6196a80309d5715","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"la92baf7116c21c0b57e012","screen_cid":"s03cbb61fabc2bea96fc69f","target_cid":"s04f97f1a1f426bb47e6aa4","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l6f54e82388dff4692d4753","screen_cid":"s03cbb61fabc2bea96fc69f","target_cid":"sc5e674c5b57d8b8566e184","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"lB5B001A12C1459522644976","screen_cid":"s03cbb61fabc2bea96fc69f","target_cid":"s04f97f1a1f426bb47e6aa4","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lb20606f6b28e3e4feb2a59","screen_cid":"sa7de9edeaf9907532600b8","target_cid":"prev","transition":"popin","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l0d0282c28504b70249dbae","screen_cid":"s26ea4cf6196a80309d5715","target_cid":"sb969a1dda329cdfc5b9f7d","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"lb84e79b9dbaa895270dd44","screen_cid":"s26ea4cf6196a80309d5715","target_cid":"s03cbb61fabc2bea96fc69f","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"ld5c2f2d9dbd76d30933f68","screen_cid":"s26ea4cf6196a80309d5715","target_cid":"sa7de9edeaf9907532600b8","transition":"popout","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"la3970e4ded127508888fd1","screen_cid":"s26ea4cf6196a80309d5715","target_cid":"sfd94d4bd0d604702ccda88","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"la86d4fddf4a178364643e0","screen_cid":"s26ea4cf6196a80309d5715","target_cid":"sa9392f3c18cbf92097cf44","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l0abf8bb055353515aacca7","screen_cid":"sfd94d4bd0d604702ccda88","target_cid":"s03cbb61fabc2bea96fc69f","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"lc1263739afc226c830f7d7","screen_cid":"sfd94d4bd0d604702ccda88","target_cid":"s26ea4cf6196a80309d5715","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l9f095420f5239127bbd85f","screen_cid":"sfd94d4bd0d604702ccda88","target_cid":"sa7de9edeaf9907532600b8","transition":"popout","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l447051b2d8720357d4fd63","screen_cid":"sfd94d4bd0d604702ccda88","target_cid":"sa9392f3c18cbf92097cf44","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"lf4b40f435d1ee49dad07ad","screen_cid":"sa9392f3c18cbf92097cf44","target_cid":"s03cbb61fabc2bea96fc69f","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"lf9e4939a86a2f99c213bce","screen_cid":"sa9392f3c18cbf92097cf44","target_cid":"s26ea4cf6196a80309d5715","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l6e271f504ced65f753e05b","screen_cid":"sa9392f3c18cbf92097cf44","target_cid":"sa7de9edeaf9907532600b8","transition":"popout","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l4643e631e226486ba0df86","screen_cid":"sa9392f3c18cbf92097cf44","target_cid":"sfd94d4bd0d604702ccda88","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l06762a9ff546ab9d030cc7","screen_cid":"sa9392f3c18cbf92097cf44","target_cid":"sb969a1dda329cdfc5b9f7d","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l68427d62caf63541a16869","screen_cid":"sac8331bd91fc9a13907463","target_cid":"s03cbb61fabc2bea96fc69f","transition":"slideright","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l2ad85c8cea83089cfab5f1","screen_cid":"sac8331bd91fc9a13907463","target_cid":"s03cbb61fabc2bea96fc69f","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"lcf9ec4e63993c7fc66e9ce","screen_cid":"sac8331bd91fc9a13907463","target_cid":"s26ea4cf6196a80309d5715","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l3adc8e3fccce4afb46081c","screen_cid":"sac8331bd91fc9a13907463","target_cid":"sa7de9edeaf9907532600b8","transition":"popout","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l7b3397547808f9b412a55b","screen_cid":"sac8331bd91fc9a13907463","target_cid":"sfd94d4bd0d604702ccda88","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l02f2a372f91270b1e7eb67","screen_cid":"sac8331bd91fc9a13907463","target_cid":"sa9392f3c18cbf92097cf44","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"ldaf9f30cf2d8158988237d","screen_cid":"sc5e674c5b57d8b8566e184","target_cid":"s03cbb61fabc2bea96fc69f","transition":"slideright","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"ldfbece15276f64d4478897","screen_cid":"s04f97f1a1f426bb47e6aa4","target_cid":"s26ea4cf6196a80309d5715","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"la7e63dfabe914f1c5bbae3","screen_cid":"s04f97f1a1f426bb47e6aa4","target_cid":"sa7de9edeaf9907532600b8","transition":"popout","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"ld81ca95b1565d65a2142a8","screen_cid":"s04f97f1a1f426bb47e6aa4","target_cid":"sa9392f3c18cbf92097cf44","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l0a5ac691445cfbe95baa48","screen_cid":"s04f97f1a1f426bb47e6aa4","target_cid":"s03cbb61fabc2bea96fc69f","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l29b30ed9898c1e14fd385a","screen_cid":"s04f97f1a1f426bb47e6aa4","target_cid":"prev","transition":"slideright","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l1c418140b4829e52550ba6","screen_cid":"s04f97f1a1f426bb47e6aa4","target_cid":"sb969a1dda329cdfc5b9f7d","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l1795873a4b0b49d31eb273","screen_cid":"sb969a1dda329cdfc5b9f7d","target_cid":"s03cbb61fabc2bea96fc69f","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l6fe85b23854547006054bd","screen_cid":"sb969a1dda329cdfc5b9f7d","target_cid":"sa7de9edeaf9907532600b8","transition":"popout","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"lb846480851d9c16f702a4c","screen_cid":"sb969a1dda329cdfc5b9f7d","target_cid":"sfd94d4bd0d604702ccda88","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l9dcafb96ca698352e8b131","screen_cid":"sb969a1dda329cdfc5b9f7d","target_cid":"sa9392f3c18cbf92097cf44","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l51a5290835ea81881ac37c","screen_cid":"sb969a1dda329cdfc5b9f7d","target_cid":"s26ea4cf6196a80309d5715","transition":"none","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"la1ede8f4cd52deb02fda06","screen_cid":"sb969a1dda329cdfc5b9f7d","target_cid":"prev","transition":"slideright","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null},{"cid":"l11696a49932e95c4194531","screen_cid":"sb969a1dda329cdfc5b9f7d","target_cid":"s04f97f1a1f426bb47e6aa4","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"keepmenu":false,"reset":false,"ani_duration":null,"ani_delay":null,"state_cid":null,"widget_cids":null,"targetstate_cid":null,"sourcestate_cid":null}],"panels":[],"screenstates":[],"widgetstates":[],"panelstates":[],"devices":{"android":{"google_nexus":{"width":360,"height":640,"name":"Google - Nexus 5/6"},"samsung":{"width":360,"height":640,"name":"Samsung - S4/S5/S6/Note 5"},"lg":{"width":360,"height":640,"name":"LG - V10/G4/G3/G Flex"},"moto":{"width":360,"height":640,"name":"Motorola - Moto X/G/E"},"htc_one":{"width":360,"height":640,"name":"HTC - One M8/M9/E9"},"sony_xperia":{"width":360,"height":640,"name":"Sony - Xperia Z3/Z5"},"Xiaomi":{"width":360,"height":640,"name":"XiaoMi 4/4c/Note/HongMi"},"Huawei":{"width":360,"height":640,"name":"Huawei - Mate/Honor/G7/P8"},"Vivo/Oppo":{"width":360,"height":640,"name":"Oppo R7/Vivo X5"},"CoolPad":{"width":360,"height":640,"name":"CoolPad - Dazen X7/Note"},"Meizu":{"width":360,"height":600,"name":"Meizu - PRO 5/MX 4/MeiLan"},"Smartisan":{"width":360,"height":640,"name":"Smartisan - T1/T2/JianGuo"},"google_nexus_4":{"width":384,"height":640,"name":"Google Nexus 4","hide":true},"google_nexus_5":{"width":360,"height":640,"name":"Google Nexus 5","hide":true},"motorola_moto_g_1":{"width":360,"height":640,"name":"Motorola Moto G1","hide":true},"motorola_moto_x_1":{"width":360,"height":640,"name":"Motorola Moto X1","hide":true},"htc_one_x":{"width":360,"height":640,"name":"HTC One X","hide":true},"htc_one_m8":{"width":360,"height":640,"name":"HTC One M8","hide":true},"samsung_galaxy_note_2":{"width":360,"height":640,"name":"Samsung Galaxy Note 2","hide":true},"samsung_galaxy_note_3":{"width":360,"height":640,"name":"Samsung Galaxy Note 3","hide":true},"samsung_galaxy_s3":{"width":360,"height":640,"name":"Samsung Galaxy S3","hide":true},"samsung_galaxy_s4":{"width":360,"height":640,"name":"Samsung Galaxy S4","hide":true},"sony_xperia_s1":{"width":360,"height":640,"name":"Sony Xperia S1","hide":true},"sony_xperia_z1_z2":{"width":360,"height":640,"name":"Sony Xperia Z1/Z2","hide":true},"smartisan_t1":{"width":360,"height":640,"name":"Smartisan T1","hide":true},"meizu_mx3":{"width":360,"height":600,"name":"Meizu MX3","hide":true},"xiaomi_mi2_hongmi":{"width":360,"height":640,"name":"Xiaomi MI2 HongMi Hongmi Note","hide":true},"xiaomi_mi3_mi4":{"width":360,"height":640,"name":"Xiaomi MI3 MI4","hide":true},"customize":{"width":360,"height":640,"name":"Customize"}},"web":{"desktop":{"width":960,"height":800,"name":"translation missing: en.android.customized"}},"ipad":{"iphone_4":{"width":320,"height":480,"scale":100,"icon_size":"120x120","name":"iPhone 4/4s"},"iphone_5":{"width":320,"height":568,"scale":100,"icon_size":"120x120","name":"iPhone 5/5c/5s"},"iphone_6":{"width":375,"height":667,"scale":100,"icon_size":"180x180","name":"iPhone 6"},"iphone_6_plus":{"width":414,"height":736,"scale":100,"icon_size":"180x180","name":"iPhone 6 Plus"},"ipad_3_4":{"width":768,"height":1024,"scale":75,"icon_size":"152x152","name":"iPad"}},"iphone":{"iphone_4":{"width":320,"height":480,"scale":100,"icon_size":"120x120","name":"iPhone 4/4s"},"iphone_5":{"width":320,"height":568,"scale":100,"icon_size":"120x120","name":"iPhone 5/5c/5s"},"iphone_6":{"width":375,"height":667,"scale":100,"icon_size":"180x180","name":"iPhone 6"},"iphone_6_plus":{"width":414,"height":736,"scale":100,"icon_size":"180x180","name":"iPhone 6 Plus"},"ipad_3_4":{"width":768,"height":1024,"scale":75,"icon_size":"152x152","name":"iPad"}},"default":{"iphone":"iphone_5","ipad":"ipad_3_4","android":"google_nexus"}},"country":"--"}</script>
