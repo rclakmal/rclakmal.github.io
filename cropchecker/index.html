@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+<head><script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
+<meta content='text/html;charset=utf-8' http-equiv='Content-Type'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<meta content='yes' name='mobile-web-app-capable'>
+<meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
+<meta content='webkit' name='renderer'>
+<title>
+CropChecker
+</title>
+<link href='images/icon_android.png' rel='icon' sizes='192x192'>
+<link href='images/icon_retina.png' rel='apple-touch-icon' sizes='120x120'>
+<link href='images/icon_retina3x.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='images/icon_ipad.png' rel='apple-touch-icon' sizes='144x144'>
+<link href='images/icon_ipad.png' rel='apple-touch-icon' sizes='152x152'>
+<link href='images/splashes/retina.png' media='(device-width: 320px) and (device-height: 568px)' rel='apple-touch-startup-image'>
+<link href='images/splashes/iphone4_portrait_retina.png' media='(device-width: 320px) and (device-height: 480px)' rel='apple-touch-startup-image'>
+<link href='images/splashes/iphone6_portrait_retina.png' media='(device-width: 375px) and (device-height: 667px)' rel='apple-touch-startup-image'>
+<link href='images/splashes/iphone6plus_portrait_retina.png' media='(device-width: 414px) and (device-height: 736px)' rel='apple-touch-startup-image'>
+<link href='images/splashes/ipad_portrait_retina.png' media='(device-width: 768px) and (device-height: 1024px) and (orientation:portrait)' rel='apple-touch-startup-image'>
+<link href='images/splashes/ipad_landscape_retina.png' media='(device-width: 768px) and (device-height: 1024px) and (orientation:landscape)' rel='apple-touch-startup-image'>
+<style>
+  html, body {
+    color: #333333;
+    font-family: -apple-system, ".SFNSText-Regular", "SF UI Text", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Zen Hei", sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 18px;
+    overflow: hidden; }
+  
+  body {
+    background-color: #efefef;
+    color: #333333; }
+    body.mobile {
+      background-color: white; }
+  
+  .modal.fade {
+    display: none; }
+  
+  #header {
+    position: absolute;
+    top: 0;
+    left: -167px; }
+    #header .ltoggle {
+      display: none; }
+  
+  #notification {
+    position: fixed;
+    top: -70px;
+    left: 0; }
+  
+  .notice {
+    padding: 10px;
+    font-size: 14px; }
+    .notice p {
+      margin-bottom: 10px; }
+  
+  .spinner {
+    width: 30px;
+    height: 30px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgba(51, 54, 58, 0.6) transparent;
+    border-radius: 100%;
+    transform-origin: 50% 50% 0px;
+    -webkit-animation: mb-spin 0.8s infinite linear;
+    animation: mb-spin 0.8s infinite linear;
+    display: inline-block; }
+  
+  @-webkit-keyframes mb-spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg); }
+  
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg); } }
+  
+  @keyframes mb-spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg); }
+  
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg); } }
+  
+  #sharing, .actions {
+    visibility: hidden; }
+  
+  #download, #safemode, #nonsupport, #logo, #install, .cover, #device {
+    display: none; }
+  
+  #fontawesome {
+    position: absolute;
+    top: -65535px;
+    left: -65535px; }
+    #fontawesome .aw {
+      position: absolute;
+      width: auto;
+      white-space: nowrap; }
+    #fontawesome .ah {
+      position: absolute;
+      height: auto;
+      word-break: break-word; }
+      #fontawesome .ah p {
+        margin-bottom: 5px;
+        white-space: pre-wrap; }
+        #fontawesome .ah p:last-child {
+          margin-bottom: 0px; }
+  
+  #loading {
+    width: 86px;
+    height: 86px;
+    z-index: 2;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -43px;
+    text-align: center;
+    font-size: 12px; }
+    #loading .logo, #loading .indicator {
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 86px;
+      height: 86px;
+      overflow: hidden;
+      background: url("images/loading.gif"); }
+    #loading .logo {
+      opacity: 0.3; }
+    #loading .indicator {
+      opacity: 1;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      height: 0%; }
+    #loading span {
+      position: absolute;
+      width: 300px;
+      left: 50%;
+      top: 110px;
+      margin-left: -150px;
+      font-size: 14px;
+      line-height: 28px;
+      color: #888888; }
+</style>
+
+<style>
+  #splash {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f0f0f2; }
+    #splash img {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    #splash img.landscape {
+      display: none; }
+    #splash .spinner {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      margin-left: -15px; }
+  
+  @media all and (orientation: landscape) {
+    #splash img {
+      position: absolute;
+      left: 0;
+      -webkit-transform: rotate(90deg);
+      -webkit-transform-origin: bottom left; }
+  
+    #splash .spinner {
+      position: absolute;
+      top: 50%;
+      margin-top: -16px; } }
+</style>
+
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="JO20ABb6m/G9m3qKAx3IVW39cCEvFJ4/sXVd2zrtMZhnrIBNGUhkLgXnzaQQv21nc7db4zL5QsESpAJIyKywWw==" />
+</head>
+<body>
+<div id='fontawesome'>
+<i class='fa fa-user'></i>
+<div class='aw'></div>
+<div class='ah'></div>
+</div>
+<div id='loading'>
+<div class='logo'></div>
+<div class='indicator'></div>
+<span>
+loading CropChecker...
+</span>
+</div>
+<div id='workspace'>
+<div id='install'>
+<div class='app-inner'>
+<img class='app-icon' src='images/icon_android.png'>
+<h1 class='app-name'>
+CropChecker
+</h1>
+<div class='app-update-time'>
+<span>
+Last updated
+:
+</span>
+<abbr class='timeago' title='2016-04-02T11:27:15Z'></abbr>
+</div>
+<a class='install-btn' href='/app/b7ad80b4ebdabfcef16b5ef5ca56c92ab6bc16bf?inapp=1'>
+View in Browser
+</a>
+<a class='install install-btn'>
+Install
+</a>
+</div>
+</div>
+<div class='cover wechat'>
+<p class='tip'>
+Open in broswer.
+</p>
+<img class='arrow' src='images/short-arrow.png'>
+</div>
+<div class='cover ipad'>
+<p class='tip'>
+Tap
+<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAA1BAMAAADfUYSoAAAAFVBMVEUAAAAGfv8Eff8Xh/8Ae/cAgfcDev8kxpS2AAAABnRSTlMAgGPrExbGXyRsAAAAYUlEQVQ4y+3MsQ2AMBADQMMEofk6VSZgEyZ4Cu8/Ai+QXgpOmTJuYp2cR+aAZGMRM7rOKENzmss1/i/aDaJ5P6thO0s/C0OLJ3PV1/YTfZhtuvFLlOxjk7/LphmWTTPJ0B64+0mEocrEDQAAAABJRU5ErkJggg==' width='19'>
+,
+then Choose &quot;Add to Home Screen&quot;
+</p>
+<img class='arrow' src='images/short-arrow.png'>
+</div>
+<div class='cover ios'>
+<div class='tip-wrapper'>
+<p class='tip'>
+Tap
+<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAA1BAMAAADfUYSoAAAAFVBMVEUAAAAGfv8Eff8Xh/8Ae/cAgfcDev8kxpS2AAAABnRSTlMAgGPrExbGXyRsAAAAYUlEQVQ4y+3MsQ2AMBADQMMEofk6VSZgEyZ4Cu8/Ai+QXgpOmTJuYp2cR+aAZGMRM7rOKENzmss1/i/aDaJ5P6thO0s/C0OLJ3PV1/YTfZhtuvFLlOxjk7/LphmWTTPJ0B64+0mEocrEDQAAAABJRU5ErkJggg==' width='19'>
+,
+then Choose &quot;Add to Home Screen&quot;
+</p>
+<img class='arrow' src='images/down-arrow.png'>
+</div>
+</div>
+</div>
+<div class='safe-mask' id='safemode'>
+<div class='indicator restore'>
+<div class='spinner'></div>
+<div class='text'>
+This may take several minutes, have a cup of tea...
+<span class='progress'>0%</span>
+</div>
+</div>
+<div class='indicator success'>
+<span class='icon'>
+<i class='fa fa-smile-o'></i>
+</span>
+<div class='text'>
+All data saved successfully, please refresh this page to continue. <a onclick="window.location.reload()"> Refresh Now</a>
+</div>
+</div>
+</div>
+
+<div class='notice' id='nonsupport'>
+<p>
+We're sorry but we havn't support your browser yet.
+</p>
+<p>
+Please download our Desktop version: <a href='https://s3.cn-north-1.amazonaws.com.cn/modao/downloads/MockingBot.dmg'>Mac</a> <a href='https://s3.cn-north-1.amazonaws.com.cn/modao/downloads/MockingBot.zip'>Windows</a>
+</p>
+</div>
+
+<div id='modals'>
+<div class='modal fade' id='choose-device'></div>
+<div class='modal fade' id='app-modal'></div>
+<div class='modal fade' id='template-modal'></div>
+<div class='modal fade' id='import-modal'></div>
+<div class='modal fade' id='transfer-modal'></div>
+<div class='modal fade' id='dup-modal'></div>
+<div class='modal fade' id='team-modal'></div>
+<div class='modal fade' id='collaborators-modal'></div>
+<div class='modal fade' id='tag-modal'></div>
+<div class='modal fade' id='chrome-warning'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<button aria-label='Close' class='close' data-dismiss='modal' type='button'>
+<span aria-hidden='true'>
+&times
+</span>
+</button>
+<h4 class='modal-title'>
+<i class='fa fa-warning'></i>
+<span class="translation_missing" title="translation missing: en.warning">Warning</span>
+</h4>
+</div>
+<div class='modal-body'>
+<p>
+We've detected that your browser has restricted the minimum font size that can be displayed, so you may need change this setting to make text copies display correctly.
+</p>
+<p>
+<a href='https://modao.cc/posts/63' target='blank'>
+Click here to read instructions.
+</a>
+</p>
+</div>
+<div class='modal-footer'>
+<button class='btn btn-default' data-dismiss='modal' type='button'>
+Got it
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class='modal fade' id='global-state-warning'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<button aria-label='Close' class='close' data-dismiss='modal' type='button'>
+<span aria-hidden='true'>
+&times
+</span>
+</button>
+<h4 class='modal-title'>
+<i class='fa fa-warning'></i>
+<span class="translation_missing" title="translation missing: en.warning">Warning</span>
+</h4>
+</div>
+<div class='modal-body'>
+<p>
+<p>You have more than 1 screen state, please switch to global state (state 0) to add new widget.</p><p><b>Notice: changes in global state will be synced to all states.</b></p>
+</p>
+<p style='margin-top: 20px;margin-bottom:0;text-align:center'>
+<img src='images/workspace/global_state_en.png'>
+</p>
+</div>
+<div class='modal-footer'>
+<button class='btn btn-default' data-dismiss='modal' type='button'>
+Got it
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class='modal fade' id='sharing-modal'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<a aria-hidden='true' class='close' data-dismiss='modal' href='#'>×</a>
+<h4>Share this app</h4>
+</div>
+<form>
+<div class='modal-body'></div>
+</form>
+</div>
+</div>
+</div>
+<div class='modal fade' id='system-updates'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<a aria-hidden='true' class='close' data-dismiss='modal' href='#'>×</a>
+<h4>New Features Available!</h4>
+</div>
+<div class='modal-body'>
+</div>
+<div class='modal-footer'>
+<button class='btn btn-default' data-dismiss='modal' type='button'>
+Got it
+</button>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script>
+  (function() {
+    var splash;
+  
+    window.MBLocale = 'en';
+  
+    window.I18N = {
+      "new_app": "Create App",
+      "preview_demo": "View Demo",
+      "create": "Create",
+      "setting": "Settings",
+      "update": "Update",
+      "are_you_sure": "Are you sure?",
+      "screen_remove_confirmation": " will be removed are you sure?",
+      "cant_remove_screen": "You need at least 1 screen.",
+      "last_updated": "Last updated",
+      "support": "Support",
+      "carrier": "AT\u0026T",
+      "w.text_view_placeholder": "If you can't explain it simply you don't understand it well enough.\n -- Albert Einstein",
+      "w.navbar_title": "Title",
+      "w.search": "Search",
+      "drag_to_link_screen": "drag circle to link screens",
+      "password": "Password",
+      "screen": "Screen",
+      "home": "Home",
+      "goto_classic": "This app was built with MockingBot classic are you willing to go to MB classic?",
+      "pay_with_alipay": "Alipay",
+      "share": "Share",
+      "rotate": "Rotate",
+      "launch": "Launch",
+      "new_screen": "New Screen",
+      "back": "Back",
+      "return": "return",
+      "login_from_desktop": "To create new app you need log into MockingBot with a desktop browser.",
+      "install": "Install",
+      "tap": "Tap",
+      "public": "Public",
+      "private": "Encrypted",
+      "add_to_home_screen": "then Choose \"Add to Home Screen\"",
+      "open_in_broswer": "translation missing: en.open_in_broswer",
+      "view_on_device": "View on Device",
+      "dup_app_confirmation": "This app will be duplicated are you sure?",
+      "data_lost_warning": "Data is still being sent to the server; Your changes will be lost if you close this page, are you sure to quit?",
+      "inspector.width": "Width",
+      "inspector.height": "Height",
+      "inspector.font_size": "Font Size",
+      "inspector.tc": "Foreground",
+      "inspector.bc": "Border Color",
+      "inspector.f": "Font",
+      "inspector.bs": "Border Width",
+      "inspector.radius": "Border Radius",
+      "inspector.sc": "Shadow Color",
+      "inspector.bg": "Background",
+      "drag_to_create_screen": "Drag image files here to create new screen(s).",
+      "inspector.is": "Icon Size",
+      "inspector.search": "search icon, e.g. user",
+      "inspector.drop_image": "Drop image here or",
+      "inspector.o": "Opacity",
+      "inspector.ds": "Drop Shadow",
+      "inspector.click_to_upload": "click to upload.",
+      "network_error": "Failed to contact server please check network setting.",
+      "save": "Save",
+      "unsupported": "Unsupported file type.",
+      "link_back": "Prev Screen",
+      "save_tip": "Save(Ctrl-s)",
+      "inspector.asset_search": "Search Image",
+      "remove_children_first": "Please remove sub-screens at first.",
+      "inspector.z": "Layer",
+      "inspector.fixed": "Fixed Position",
+      "drag_to_start": "Drag component or image file here to start",
+      "home_screen": "Home Screen",
+      "signup_required": "You need sign up at first before using this feature.",
+      "copy_tip": "Copy",
+      "credential_required": "This app is protected please input your credential:",
+      "state": "State",
+      "new": "New",
+      "widgets": "Widgets(1)",
+      "templates": "Templates(2)",
+      "combos": "Combos(3)",
+      "new_combo": "New Combo",
+      "invalid_credential": "Invalid credential refresh to try again.",
+      "icons.all": "All",
+      "icons.basics": "Basic",
+      "icons.brand": "Brand",
+      "icons.text": "Text",
+      "icons.directional": "Directional",
+      "icons.form": "Form",
+      "icons.video": "Video",
+      "app_device": "Device Type",
+      "tr.none": "None",
+      "tr.slideleft": "R Slide",
+      "tr.slideright": "L Slide",
+      "tr.popin": "B Push",
+      "tr.popout": "B Pop",
+      "tr.leftmenu": "L Menu",
+      "tr.rightmenu": "R Menu",
+      "tr.slideleft2": "L Push",
+      "tr.slideright2": "R Push",
+      "tr.leftout": "L Pop",
+      "tr.rightout": "R Pop",
+      "tr.topin": "T Push",
+      "tr.topout": "T Pop",
+      "target": "Target",
+      "my_templates": "My Templates",
+      "png_only": "Please upload PNG file for Icon/Splash.",
+      "view_in_browser": "View in Browser",
+      "view_in_wechat": "View in Wechat",
+      "has_difference": "(May be different with original design)",
+      "all_apps": "My Active Apps",
+      "inbox": "Move into Inbox",
+      "inspector.line_height": "Line Height",
+      "sharing_url": "Sharing URL",
+      "toolbox.text": "Text(T)",
+      "toolbox.ruler": "Size(R)",
+      "toolbox.icons": "Icons(I)",
+      "toolbox.uploader": "Image Uploader(U)",
+      "toolbox.palette": "Color(O)",
+      "inspector.ts": "Text Shadow",
+      "inspector.tsc": "Shadow Color",
+      "last_saved": "Last saved",
+      "link_line": "Show/Hide Links",
+      "archive": "Archive",
+      "download": "Download",
+      "unknown_error": "We're sorry but something went wrong, please refresh this page to continue. \u003cbr/\u003e\u003cbr/\u003e\u003ca onclick='window.location.reload()'\u003e Refresh Now\u003c/a\u003e",
+      "inspector.p": "Zoom Proportional",
+      "inspector.circularize": "Circle",
+      "archived": "My Archives",
+      "del_app_confirmation": "This app will be deleted are you sure?",
+      "wait_for_saving": "This screen hasn't been saved yet, please wait a moment and try again.",
+      "fix_data": "We've detected you have unsaved changes do you want to save them now?",
+      "undo": "Undo(Ctrl-z)",
+      "redo": "Redo(Ctrl-y)",
+      "cut": "Cut(Ctrl-x)",
+      "copy": "Copy(Ctrl-c)",
+      "paste": "Paste(Ctrl-v)",
+      "upload_image": "Upload Image",
+      "site_title": "MockingBot",
+      "send_front": "Send front",
+      "send_back": "Send back",
+      "forward": "Forward",
+      "backward": "Backward",
+      "wechat": "translation missing: en.wechat",
+      "wechat_help": "Check this option if you'd like your app displayed in Wechat/Browser directly without installation instructions.",
+      "choose_screen": "Choose screen to Nav",
+      "hdistribute": "Distribute horizontally",
+      "vdistribute": "Distribute vertically",
+      "group": "Group(Ctrl-g)",
+      "ungroup": "Ungroup(Ctrl-u)",
+      "inspector.squareize": "Square",
+      "inspector.ro": "Rotate Degree",
+      "tr.slidebottom": "B Slide",
+      "tr.slidetop": "T Slide",
+      "unsaved": "unsaved",
+      "all_saved": "done",
+      "timer": "Timer",
+      "no_timer": "Not set",
+      "cant_delete_template": "Can't delete this template you need delete all instances of this template at first.",
+      "archive_confirmation": "This app will be archived are you sure?",
+      "unarchive_confirmation": "This app will be moved to home are you sure?",
+      "dc_confirm": "This screen has sub-screens, do you like to duplicate all sub-screens?",
+      "grid": "Show/Hide Grid",
+      "hleft": "Left Alignment",
+      "hcenter": "Horizon Center",
+      "hright": "Right Alignment",
+      "vtop": "Top Alignment",
+      "vbottom": "Bottom Alignment",
+      "vcenter": "Vertical Center",
+      "zoomin": "Zoom In",
+      "zoomout": "Zoom Out",
+      "delete": "Delete",
+      "expand_screen": "Expand Screen",
+      "shrink_screen": "Shrink Screen",
+      "watch_tutorial": "Watch Tutorial",
+      "edit": "Edit",
+      "new_version_detected": "New version detected please refresh to continue. \u003ca onclick=\"window.location.reload()\"\u003e Refresh Now\u003c/a\u003e",
+      "builtin_theme": "Built-in Style",
+      "custom_theme": "Custom Style",
+      "screen_bgcolor": "Set Background Color",
+      "screen_bgimage": "Set Background Image",
+      "inspector.padding": "Padding",
+      "pg_tooltip": "Global Gesture",
+      "icon_tooltip": "Icon",
+      "menu_offset": "Menu(%)",
+      "edit_demo": "Edit Demo App",
+      "create_new": "Create A New App",
+      "blank_app": "Blank App",
+      "basic": "Basic",
+      "shapes": "Shapes",
+      "bars": "Bars",
+      "others": "Others",
+      "webpage": "Webpage",
+      "drag_to_resize": "Drag to Resize",
+      "https_only": "Double click to edit URL (https only).",
+      "template_search": "Search Template",
+      "no_archived_app": "You don't have any archived app.",
+      "archive_app": "Visit the site on a computer to archive apps",
+      "no_app": "You don't have any app.",
+      "visit_via_computer": "Visit the site on a computer",
+      "view_demo": "Check this demo",
+      "sharing_password": "Sharing password",
+      "click_to_edit": "Click to Edit",
+      "state_link_tutorial": "Template Link Tutorial",
+      "highlight_clickable": "Hightlight link areas on screen clicking.",
+      "keepmenu": "Keep side screen",
+      "type2search": "Type to search",
+      "current_templates": "Project Templates",
+      "inspector.ls": "Border Style",
+      "all_assets": "All Images",
+      "current_assets": "Current Project",
+      "text_color": "Text Color",
+      "toolbox.states": "Choose a state to create link",
+      "combo_search": "Search Combos",
+      "all_combos": "All Combos",
+      "my_combos": "My Combos",
+      "builtin": "Built-in",
+      "width": "Width",
+      "height": "Height",
+      "sticky": "Sticky",
+      "new_template": "New Template",
+      "auto_scale": "Auto Scale",
+      "auto_scale_tip": "Auto scale to fill different screens e.g combo for iPhone 5s will scale 1.17x to fit iPhone 6 and 1.29x for iPhone 6 plus.",
+      "drag_widgets_2create": "Drag widgets to create a combo",
+      "upgrade_prompt": "New version has fixed file downloading bug visit mockingbot.com with browser to download.",
+      "inspector.checked": "Checked",
+      "embed": "Embed in Webpage",
+      "submit_app_proposal": "Need more templates? \u003ca href=\"#feedback_modal\" data-toggle=\"modal\"\u003eLell us know.\u003c/a\u003e",
+      "inspector.numeric": "Numeric Keyboard",
+      "shell_type": "Shell Type",
+      "device_shell": "Real Device",
+      "default_shell": "Default Gray Shell",
+      "none_shell": "None Shell",
+      "portrait": "Portrait",
+      "landscape": "Landscape",
+      "upload_own": "Upload your own",
+      "app_name": "Name",
+      "free_trial": "Free trial check pricing.",
+      "restricted": "White list",
+      "public_intro": "Visible to everyone free forever.",
+      "private_intro": "Set an access password. ",
+      "restricted_intro": "Only users in whitelist can view this app. ",
+      "renew": "Renew",
+      "expired": "Expired",
+      "manage_collaborators": "Manage Collaborators",
+      "roles.admin": "Administrator",
+      "roles.editor": "Designer",
+      "roles.viewer": "Reviewer",
+      "invite": "Invite",
+      "pending": "Pending",
+      "others_apps": "'s Apps",
+      "remove_me": "Leave",
+      "invalid_email": "Invalid Email",
+      "cant_invite_self": "Can't invite yourself",
+      "already_invited": "Already invited",
+      "inspector.placement": "Placement",
+      "left": "left",
+      "right": "right",
+      "top": "top",
+      "down": "down",
+      "inspector.offset": "Triangle Offset",
+      "inspector.arrow_size": "Triangle Size",
+      "dip_help": "What's device independent width and height?",
+      "dblclick_to_edit": "Double Click to Edit",
+      "name_copy": " Copy",
+      "load_project": "Loading project please wait a moment...",
+      "connect_to_push_server": "Connecting to push server...",
+      "reconnect_push_server": "Failed to contact push server reconnecting...",
+      "cant_invite_yourself": "Can't invite yourself",
+      "exceed_limit": "Exceed collaborator limitation of your plan upgrading needed.",
+      "turn_on_whitelist": "You can turn whitelist on in app settings. ",
+      "in_progress": "This may take several minutes, have a cup of tea...",
+      "screen_list": "Screen List",
+      "text_mode": "Select Text",
+      "link_mode": "Link Mode",
+      "order_period": "Choose Period",
+      "current_plan": "Current plan",
+      "next_billing_on": "Next billing on",
+      "balance_left": "Balance Left",
+      "switch_plan": "Switch",
+      "actually_pay": "Pay Due",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "save_17": "Save 17%",
+      "pro": "Pro",
+      "free": "Free",
+      "standard": "Standard",
+      "startup": "Startup",
+      "new_billing_date": "New Billing Date",
+      "new_plan": "New Plan",
+      "invalid_comment": "Comment can't be blank",
+      "electron_download_alert": "Have trouble downloading it? Please try downloading it from browser.",
+      "no_permission": "Sorry you don't have permission to edit this template.",
+      "w.label": "Label",
+      "w.text_view": "Text",
+      "w.pg": "Gesture",
+      "w.lr": "Link Region",
+      "w.icon_button": "Icon",
+      "w.image_view": "Image",
+      "w.button": "Button",
+      "w.text_input": "translation missing: en.w.text_input",
+      "w.webpage": "Webpage",
+      "w.mtooltip": "Tooltip",
+      "w.rounded_rect": "Rectangle",
+      "w.circle_rect": "Circle",
+      "w.hr": "Horizon Line",
+      "w.ve": "Vertical Line",
+      "w.triangleb": "Triangle 1",
+      "w.triangletl": "Triangle 2",
+      "w.navigation_bar": "Nav Bar",
+      "w.search_bar": "Search Bar",
+      "w.tab_bar": "Tab Bar",
+      "w.tab_item": "Tab Item",
+      "w.rectangle": "List Item",
+      "w.switch": "Switch",
+      "w.map_view": "Map",
+      "w.keyboard": "Keyboard",
+      "w.sticky": "Sticky",
+      "w.status_bar": "Status Bar",
+      "w.panel": "Panel",
+      "w.group": "Group",
+      "widget_list": "Widget List",
+      "roles.owner": "Owner",
+      "roles.viewer_desc": "View",
+      "roles.editor_desc": "Edit",
+      "roles.admin_desc": "Admin",
+      "no_team": "You don't have any team, click here to create one.",
+      "team": "team",
+      "role": "Role",
+      "projects_count": "Projects",
+      "choose_team": "Choose Team",
+      "no_joined_team": "You didn't join any team.",
+      "my_assets": "My Images",
+      "created_teams": "My teams",
+      "joined_teams": "Joined teams",
+      "team_app_tips": "This team don't have any app click here to create one.",
+      "create_app_tips": "You don't have any app, click here to create one.",
+      "new_team": "Create Team",
+      "team_intro": "Learn more about teams.",
+      "import_app": "Import App",
+      "choose_app": "Choose an app",
+      "dup_and_import": "Duplicate this app and import copy",
+      "no_privilege": "You don't have enough privilege for this operation.",
+      "delete_projects_first": "Please delete all project in this team at first.",
+      "refresh_token_confirmation": "This will re-generate sharing url of your app are you sure?",
+      "main_state": "Main State",
+      "ani_name": "Animation",
+      "ani_delay": "Delay",
+      "ani_duration": "Duration",
+      "ani_count": "Iteration",
+      "animate": "Animate",
+      "none": "None",
+      "default": "Default",
+      "infinite": "Infinite",
+      "ani.attention_seekers": "Attention Seekers",
+      "ani.bouncing_entrances": "Bouncing Entrances",
+      "ani.flippers": "Flippers",
+      "ani.rotating_entrances": "Rotating Entrances",
+      "ani.sliding_entrances": "Sliding Entrances",
+      "ani.zoom_entrances": "Zoom Entrances",
+      "ani.specials": "Specials",
+      "ani.bounce": "bounce",
+      "ani.fadeIn": "fadeIn",
+      "ani.flash": "flash",
+      "ani.pulse": "pulse",
+      "ani.rubberBand": "rubberBand",
+      "ani.shake": "shake",
+      "ani.swing": "swing",
+      "ani.tada": "tada",
+      "ani.wobble": "wobble",
+      "ani.jello": "jello",
+      "ani.bounceIn": "bounceIn",
+      "ani.bounceInDown": "bounceInDown",
+      "ani.bounceInLeft": "bounceInLeft",
+      "ani.bounceInRight": "bounceInRight",
+      "ani.bounceInUp": "bounceInUp",
+      "ani.flipInX": "flipInX",
+      "ani.flipInY": "flipInY",
+      "ani.rotateIn": "rotateIn",
+      "ani.rotateInDownLeft": "rotateInDownLeft",
+      "ani.rotateInDownRight": "rotateInDownRight",
+      "ani.rotateInUpLeft": "rotateInUpLeft",
+      "ani.rotateInUpRight": "rotateInUpRight",
+      "ani.slideInDown": "slideInDown",
+      "ani.slideInLeft": "slideInLeft",
+      "ani.slideInRight": "slideInRight",
+      "ani.slideInUp": "slideInUp",
+      "ani.zoomIn": "zoomIn",
+      "ani.zoomInDown": "zoomInDown",
+      "ani.zoomInLeft": "zoomInLeft",
+      "ani.zoomInRight": "zoomInRight",
+      "ani.zoomInUp": "zoomInUp",
+      "ani.rollIn": "rollIn",
+      "ani.lightSpeedIn": "lightSpeedIn",
+      "powered_by_animate_css": "Powered by Animate.css",
+      "link_to_screen2": "This is a link to Screen 2",
+      "move_the_circle": "This will move the circle",
+      "move_circle_back": "This will move circle back",
+      "link_back_to_home": "This'll link you back to home",
+      "whats_this": "What's this?",
+      "new_state": "New State",
+      "tutorial": "Tutorial",
+      "inspector.visible": "(V)isible in this state.",
+      "reset_target_screen": "Reset target screen to initial state",
+      "android.customize": "Customize",
+      "unsaved_changes": "You have unsaved changes, please make sure all your changes are saved and then try again.",
+      "transfer_screen": "Transfer screen to other project",
+      "transfer": "Transfer",
+      "minputs": "Inputs",
+      "w.mtextarea": "Text Area",
+      "w.mfile_input": "File Input",
+      "w.mselect": "Droplist",
+      "w.mtext_input": "Text Input",
+      "w.mradiobutton": "Radio Button",
+      "w.mcheckbox2": "Checkbox",
+      "export_to_personal": "Export to personal projects",
+      "global_state": "Global State",
+      "global_state_link_error": "You can't create state link in global state.",
+      "input_types.text": "Text",
+      "input_types.number": "Number",
+      "input_types.search": "Search",
+      "input_types.password": "Password",
+      "inspector.input_type": "Keyboard",
+      "discount": "Discount",
+      "g.tap": "Tap",
+      "g.left": "Swipe Left",
+      "g.right": "Swipe Right",
+      "g.up": "Swipe Up",
+      "g.down": "Swipe Down",
+      "g.hold": "Tap and Hold",
+      "g.dtap": "Double Tap",
+      "g.shake": "Shake",
+      "input_types.date": "Date",
+      "input_types.time": "Time",
+      "input_types.datetime": "Datetime",
+      "assets_manager": "Open Assets Manager(A)",
+      "tags": "Tags",
+      "tags_placeholder": "Select an image to add tag.",
+      "name": "Name",
+      "choose_tag": "Choose a Tag",
+      "create_tag": "New Tag",
+      "insert_to_current": "Insert to Screen",
+      "create_new_screen": "Create a new Screen",
+      "my_apps": "My Apps",
+      "team_apps": "Team Apps",
+      "free_upgrade": "This is a paid feature, and your account will be upgraded to Pro plan with 14 days free trial, are you sure?",
+      "g.timer": "Timer",
+      "remove_clip": "Remove Clip Path",
+      "update_colorset": "Update Style",
+      "colorset_tips": "Tips: use Shift-NUM to apply style, click to add/update.",
+      "new_colorset": "Add Style",
+      "replace_image": "Replace Image",
+      "cancel": "Cancel",
+      "duplicate_all": "Duplicate with Sub-screens",
+      "duplicate_parent_only": "Duplicate Parent Only",
+      "coupon": "Coupon"
+    };
+  
+    splash = document.getElementById('splashimg');
+  
+    if (splash && window.innerWidth > window.innerHeight) {
+      splash.style.width = window.innerHeight + 'px';
+      splash.style.height = window.innerWidth + 'px';
+      splash.style.top = (0 - window.innerWidth) + 'px';
+    }
+  
+  }).call(this);
+</script>
+<link href='css/font-awesome.min.css' media='screen' rel='stylesheet'>
+<link rel="stylesheet" media="screen" href="assets/sharing-3393fe9bf24ef2858d1361cb8cd095b8.css" />
+<script>
+  document.getElementsByClassName("indicator")[0].style.height = '30%';
+</script>
+<script src="assets/sharing-f6f6deff535eccedc79979360e63494a.js"></script>
+<script>
+  (function() {
+    MB.play = function() {
+      return MB.load('b7ad80b4ebdabfcef16b5ef5ca56c92ab6bc16bf', false, '');
+    };
+  
+    $(function() {
+      if (!window.navigator.standalone && !false && MB.isMobile() && !MB.isLocal()) {
+        return MB.initInstall();
+      } else if (MB.isPhantom()) {
+        return $("body").addClass('phantom');
+      } else {
+        return MB.play();
+      }
+    });
+  
+  }).call(this);
+</script>
+
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";
+e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
+  "js-agent.newrelic.com/nr-100.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","bam.nr-data.net","d84101a834","7070417","IQxbTEcNVFpdFElLWwMRXFZSTVlGSA==",0,87,new Date().getTime(),"","","","",""]);</script></body>
+</html>
+<script>window.MBData=
+{"templates":[],"project":{"owner_id":23207,"owner_name":"Lakmal","owner_avatar":"/images/avatar.png","limitation":1,"cid":"p2da6fdbbd91f95713fae94","team_cid":null,"name":"CropChecker","updated_at":"2016-04-02T11:27:15Z","access":"public","access_token":"b7ad80b4ebdabfcef16b5ef5ca56c92ab6bc16bf","version":"v2","icon":"/images/icon_retina.png","splash":null,"width":360,"height":640,"device":"android","model":"Xiaomi","scale":100,"archived":false,"template":false,"timestamp":"1459596435","combo":false,"behavior":"inherit","master":true,"builtin":false,"auto_scale":true,"parent_cid":"p4C33A0160BFB62","host_cid":null,"clones":651,"shell_type":"device","password":null,"wechat":false,"highlight":true,"expired":false},"screens":[{"cid":"s03cbb61fabc2bea96fc69f","project_cid":"p2da6fdbbd91f95713fae94","parent_cid":null,"expanded":false,"name":"Home","orientation":"portrait","position":1,"width":360,"height":640,"hh":null,"fh":78,"bgcolor":"#F0F0F2","bgimage":null},{"cid":"s20726B4F9B1459529093462","project_cid":"p2da6fdbbd91f95713fae94","parent_cid":null,"expanded":false,"name":"Answer Screen","orientation":"portrait","position":3,"width":360,"height":640,"hh":null,"fh":null,"bgcolor":"#F0F0F2","bgimage":null}],"widgets":[{"cid":"w9a8e262adcb394f21c8b76","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602019,"v":true,"name":"status_bar","left":null,"top":null,"width":360.0,"height":23.0,"gid":null,"text":"MTN Nigeria","th":"grey","bg":"","tc":"","bc":"","o":100,"z":4},{"cid":"wc931e9d62124330ca042fb","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602020,"v":true,"name":"tab_bar","left":null,"top":null,"width":360.0,"height":45.0,"gid":null,"z":4,"th":"dark","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wc9b48e8bbf8edb73c55c5d","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602021,"v":true,"name":"tab_item","left":1.0,"top":595.0,"width":60.0,"height":45.0,"gid":null,"text":"","is":30,"icon":"home","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wed67507ae780c3a9a2da47","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602022,"v":true,"name":"tab_item","left":61.0,"top":595.0,"width":60.0,"height":45.0,"gid":"l92b29e15fdffc8d6c966a6","text":"","is":30,"icon":"asterisk","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9937f1661d92a90be8b1ad","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602023,"v":true,"name":"tab_item","left":130.0,"top":595.0,"width":60.0,"height":45.0,"gid":"l38bc7fdd9fe850024c8d2f","text":"","is":30,"icon":"camera","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w082dce8455fbeea13c2d8d","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602024,"v":true,"name":"tab_item","left":200.0,"top":595.0,"width":60.0,"height":45.0,"gid":"laae295cf9ef2ce021b3a9d","text":"","is":30,"icon":"comment","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"we00da8510d512d7512a524","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602025,"v":true,"name":"tab_item","left":270.0,"top":595.0,"width":60.0,"height":45.0,"gid":"l7e63b202de52e7b7f39621","text":"","is":30,"icon":"user","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wf8bf0508ae6411b3123adc","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602026,"v":true,"name":"navigation_bar","left":null,"top":null,"width":360.0,"height":55.0,"gid":null,"text":"CropChecker","fs":18,"z":4,"th":"grey","td":"normal","bo":0,"i":0,"bg":"#0f0f0f","tc":"#ffffff","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"w02faea888df09c35e2a102","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602028,"v":true,"name":"image_view","left":10.0,"top":78.0,"width":40.0,"height":40.0,"gid":null,"bs":0,"br":20,"image":"/uploads/images/121438/raw_1459525598.jpeg","z":3,"th":"grey","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"wdce2a2156bce05331ca5d2","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602030,"v":true,"name":"label","left":286.0,"top":80.0,"width":54.0,"height":30.0,"gid":null,"text":"21h","fs":14,"br":0,"bs":0,"ha":"right","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w578f679b6eddaffe00de84","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602031,"v":true,"name":"image_view","left":1.0,"top":120.0,"width":359.0,"height":140.0,"gid":null,"bs":0,"br":0,"image":"/uploads/images/121425/raw_1459522238.jpeg","z":3,"th":"grey","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w5c0ad5c307265293314559","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602032,"v":true,"name":"icon_button","left":280.0,"top":28.0,"width":30.0,"height":30.0,"gid":"le2d0e952f21f7bd63d9970","is":24,"icon":"inbox","br":0,"bs":0,"z":5,"th":"light","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":null,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wca3f23a1458018bce26dda","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602034,"v":true,"name":"label","left":2500.0,"top":2500.0,"width":114.0,"height":20.0,"gid":null,"text":"This is a problem ","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":true,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wd7a455786ce0853dba0d42","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602035,"v":true,"name":"button","left":0.0,"top":560.0,"width":85.0,"height":30.0,"gid":null,"text":"","fs":14,"br":8,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"icon":"","is":14,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"we2df50cff3eb0b60a1ca11","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602036,"v":true,"name":"icon_button","left":1.0,"top":560.0,"width":30.0,"height":30.0,"gid":null,"is":16,"icon":"heart","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wd1dd08e8d1df394de40fdc","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602037,"v":true,"name":"label","left":40.0,"top":560.0,"width":55.0,"height":30.0,"gid":null,"text":"Like","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w553394b1e9d95038742e37","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602038,"v":true,"name":"button","left":95.0,"top":560.0,"width":108.0,"height":30.0,"gid":"l6f54e82388dff4692d4753","text":"","fs":14,"br":8,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"icon":"","is":14,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w0a24180e86d0a212010753","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602039,"v":true,"name":"icon_button","left":101.0,"top":560.0,"width":30.0,"height":30.0,"gid":"l6f54e82388dff4692d4753","is":16,"icon":"comment","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wbc156a7d4ae5be32692260","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602040,"v":true,"name":"label","left":131.0,"top":560.0,"width":67.0,"height":30.0,"gid":"l6f54e82388dff4692d4753","text":"Comment","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wf3cd60bb93e337a38a16f4","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602041,"v":true,"name":"button","left":280.0,"top":560.0,"width":70.0,"height":30.0,"gid":null,"text":"...","fs":14,"br":8,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"icon":"","is":14,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w8b6128c3dab9e43ea98725","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602042,"v":true,"name":"sticky","left":-283.0,"top":0.0,"width":199.0,"height":140.0,"gid":null,"text":"Click anywhere of screen to highlight clickable area.","bg":"","tc":"","th":"","slw":50,"slt":20},{"cid":"w3F6A30E72D1459525334088","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20965301,"v":true,"name":"mtooltip","left":71.0,"top":388.0,"width":289.0,"height":62.0,"gid":null,"text":"Steve, our intelligent bots are looking for an answer. Please wait...!","fs":14,"br":5,"ha":"left","va":"top","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"#8DFA69","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","bs":1,"bc":"","ro":0,"padding":10,"tt_placement":"left","tt_offset":10,"tt_arrow_size":10,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w5235BE86231459525344278","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20965305,"v":true,"name":"mtooltip","left":80.0,"top":263.0,"width":280.0,"height":62.0,"gid":null,"text":"I have this problem with my crops. Can someone help ?","fs":14,"br":5,"ha":"left","va":"top","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"#8DFA69","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","bs":1,"bc":"","ro":0,"padding":10,"tt_placement":"left","tt_offset":10,"tt_arrow_size":10,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w1858ECD5021459525639736","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20965319,"v":true,"name":"icon_button","left":170.0,"top":78.0,"width":30.0,"height":38.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w38186C63021459525645835","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20965323,"v":true,"name":"icon_button","left":190.0,"top":76.0,"width":30.0,"height":42.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wA9833BB3831459525678378","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20965330,"v":true,"name":"icon_button","left":209.0,"top":76.0,"width":30.0,"height":42.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wBF49E417B51459528425390","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20965635,"v":true,"name":"rectangle","left":0.0,"top":120.0,"width":320.0,"height":55.0,"gid":null,"z":2,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w31364504FB1459528570602","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20965676,"v":true,"name":"image_view","left":10.0,"top":340.0,"width":40.0,"height":40.0,"gid":null,"bs":0,"br":20,"image":"/uploads/images/121427/raw_1459522681.png","z":3,"th":"grey","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w3E82682AC71459528576728","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20965680,"v":true,"name":"label","left":57.0,"top":345.0,"width":193.0,"height":30.0,"gid":null,"text":"CropChecker (Friendly Bot)","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":1,"i":0,"bg":"","bc":"","tc":"#2170d9","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w81ecef03fdd338182c9904","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":6602029,"v":true,"name":"label","left":60.0,"top":80.0,"width":105.0,"height":30.0,"gid":null,"text":"Steve (Farmer)","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":1,"i":0,"bg":"","bc":"","tc":"#2170d9","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wE815DF53921459591941902","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20966002,"v":true,"name":"label","left":290.0,"top":345.0,"width":54.0,"height":30.0,"gid":null,"text":"21h","fs":14,"br":0,"bs":0,"ha":"right","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w1E2669C5D91459596071087","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20966158,"v":true,"name":"navigation_bar","left":null,"top":null,"width":360.0,"height":55.0,"gid":null,"text":"CropChecker","fs":18,"z":4,"th":"grey","td":"normal","bo":0,"i":0,"bg":"#0f0f0f","tc":"#ffffff","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"w2E615E31CF1459596073610","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20966163,"v":true,"name":"navigation_bar","left":null,"top":null,"width":360.0,"height":55.0,"gid":null,"text":"CropChecker","fs":18,"z":4,"th":"grey","td":"normal","bo":0,"i":0,"bg":"#0f0f0f","tc":"#ffffff","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"w8F09DA7B321459596115572","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20966184,"v":true,"name":"lr","left":0.0,"top":340.0,"width":359.0,"height":45.0,"gid":null,"z":7,"fixed":false},{"cid":"w53B881F65C1459596133066","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20966189,"v":true,"name":"lr","left":1.0,"top":120.0,"width":359.0,"height":45.0,"gid":null,"z":7,"fixed":false},{"cid":"w449B0B317B1459596147454","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":20966197,"v":true,"name":"lr","left":1.0,"top":78.0,"width":359.0,"height":45.0,"gid":null,"z":7,"fixed":false},{"cid":"w1EBEE8C4481459529093465","screen_cid":"s20726B4F9B1459529093462","timestamp":20965342,"v":true,"name":"status_bar","left":null,"top":null,"width":360.0,"height":23.0,"gid":null,"text":"MTN Nigeria","th":"light","bg":"","tc":"","bc":"","o":100,"z":3},{"cid":"wBD4BDC67651459529093468","screen_cid":"s20726B4F9B1459529093462","timestamp":20965346,"v":true,"name":"tab_bar","left":null,"top":null,"width":360.0,"height":45.0,"gid":null,"z":4,"th":"dark","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w3D909548971459529093470","screen_cid":"s20726B4F9B1459529093462","timestamp":20965350,"v":true,"name":"tab_item","left":13.0,"top":595.0,"width":60.0,"height":45.0,"gid":null,"text":"","is":30,"icon":"home","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wA95A2BDAC91459529093472","screen_cid":"s20726B4F9B1459529093462","timestamp":20965354,"v":true,"name":"tab_item","left":73.0,"top":595.0,"width":60.0,"height":45.0,"gid":"l834F0D64EB1459526449-31FE3101280BFECB0B2FE","text":"","is":30,"icon":"asterisk","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9DDA206DED1459529093475","screen_cid":"s20726B4F9B1459529093462","timestamp":20965358,"v":true,"name":"tab_item","left":140.0,"top":595.0,"width":60.0,"height":45.0,"gid":"l3228BE8C231459526449-6151B511EECDAE9B69115","text":"","is":30,"icon":"camera","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w6ED98A00CB1459529093478","screen_cid":"s20726B4F9B1459529093462","timestamp":20965362,"v":true,"name":"tab_item","left":210.0,"top":595.0,"width":60.0,"height":45.0,"gid":"l43ED7ADB0B1459526449-82730C181D4A1E758737E","text":"","is":30,"icon":"comment","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w43535165651459529093481","screen_cid":"s20726B4F9B1459529093462","timestamp":20965366,"v":true,"name":"tab_item","left":280.0,"top":595.0,"width":60.0,"height":45.0,"gid":"l7358EB959D1459526449-999B43F91D64ADF9C6415","text":"","is":30,"icon":"user","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wE6DE7AA6AD1459529093484","screen_cid":"s20726B4F9B1459529093462","timestamp":20965370,"v":true,"name":"navigation_bar","left":null,"top":null,"width":360.0,"height":55.0,"gid":null,"text":"CropChecker","fs":18,"z":4,"th":"grey","td":"normal","bo":0,"i":0,"bg":"#0f0f0f","tc":"#ffffff","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"wDD3A08A3EB1459529093490","screen_cid":"s20726B4F9B1459529093462","timestamp":20965378,"v":true,"name":"image_view","left":10.0,"top":78.0,"width":40.0,"height":40.0,"gid":null,"bs":0,"br":20,"image":"/uploads/images/121427/raw_1459522681.png","z":3,"th":"grey","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"wF1D62D1AC21459529093493","screen_cid":"s20726B4F9B1459529093462","timestamp":20965382,"v":true,"name":"label","left":59.0,"top":78.0,"width":193.0,"height":30.0,"gid":null,"text":"CropChecker (Friendly Bot)","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":1,"i":0,"bg":"","bc":"","tc":"#2170d9","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wAC446D5BC91459529093502","screen_cid":"s20726B4F9B1459529093462","timestamp":20965386,"v":true,"name":"label","left":296.0,"top":80.0,"width":54.0,"height":30.0,"gid":null,"text":"21h","fs":14,"br":0,"bs":0,"ha":"right","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9FF0BBBD421459529093509","screen_cid":"s20726B4F9B1459529093462","timestamp":20965394,"v":true,"name":"icon_button","left":280.0,"top":28.0,"width":30.0,"height":30.0,"gid":"lCBF240D5561459526450-D97FFBAE35E862DD77708","is":24,"icon":"inbox","br":0,"bs":0,"z":5,"th":"light","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wA9F3342C821459529093512","screen_cid":"s20726B4F9B1459529093462","timestamp":20965398,"v":true,"name":"label","left":2500.0,"top":2500.0,"width":114.0,"height":20.0,"gid":null,"text":"This is a problem ","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":true,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wDC01F3E9511459529093519","screen_cid":"s20726B4F9B1459529093462","timestamp":20965402,"v":true,"name":"button","left":5.0,"top":565.0,"width":85.0,"height":30.0,"gid":null,"text":"","fs":14,"br":8,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"icon":"","is":14,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wC8FD2BE5521459529093521","screen_cid":"s20726B4F9B1459529093462","timestamp":20965406,"v":true,"name":"icon_button","left":10.0,"top":565.0,"width":30.0,"height":30.0,"gid":null,"is":16,"icon":"heart","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9510FCB5681459529093522","screen_cid":"s20726B4F9B1459529093462","timestamp":20965410,"v":true,"name":"label","left":45.0,"top":565.0,"width":55.0,"height":30.0,"gid":null,"text":"Like","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w3D69340AF81459529093528","screen_cid":"s20726B4F9B1459529093462","timestamp":20965414,"v":true,"name":"button","left":102.0,"top":565.0,"width":108.0,"height":30.0,"gid":"lA2A940F30C1459526450-2C9C56F9C1F363E783CEE","text":"","fs":14,"br":8,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"icon":"","is":14,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w152DD5FF561459529093530","screen_cid":"s20726B4F9B1459529093462","timestamp":20965418,"v":true,"name":"icon_button","left":108.0,"top":565.0,"width":30.0,"height":30.0,"gid":"lA2A940F30C1459526450-2C9C56F9C1F363E783CEE","is":16,"icon":"comment","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w3488EA925A1459529093531","screen_cid":"s20726B4F9B1459529093462","timestamp":20965422,"v":true,"name":"label","left":138.0,"top":565.0,"width":67.0,"height":30.0,"gid":"lA2A940F30C1459526450-2C9C56F9C1F363E783CEE","text":"Comment","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wEE2073F02C1459529093537","screen_cid":"s20726B4F9B1459529093462","timestamp":20965426,"v":true,"name":"button","left":280.0,"top":560.0,"width":79.0,"height":30.0,"gid":null,"text":"...","fs":14,"br":8,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"icon":"","is":14,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w770BC281121459529093538","screen_cid":"s20726B4F9B1459529093462","timestamp":20965430,"v":true,"name":"sticky","left":-283.0,"top":0.0,"width":199.0,"height":140.0,"gid":null,"text":"Click anywhere of screen to highlight clickable area.","bg":"","tc":"","th":"","slw":50,"slt":20},{"cid":"w7FAB241F091459529093540","screen_cid":"s20726B4F9B1459529093462","timestamp":20965442,"v":true,"name":"mtooltip","left":46.0,"top":265.0,"width":314.0,"height":82.0,"gid":null,"text":"Yes, this is Bacteria leaf spot. Use a thick layer of mulch to cover the soil after you have raked and cleaned it well. ","fs":14,"br":5,"ha":"left","va":"top","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"#8DFA69","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","bs":1,"bc":"","ro":0,"padding":10,"tt_placement":"left","tt_offset":10,"tt_arrow_size":10,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w84255B4F301459529093541","screen_cid":"s20726B4F9B1459529093462","timestamp":20965446,"v":true,"name":"mtooltip","left":47.0,"top":128.0,"width":313.0,"height":82.0,"gid":null,"text":"Steve, it looks like the Bacterial leaf spot. @Lisa, Can you help Steve further with precautions ? ","fs":14,"br":5,"ha":"left","va":"top","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"#8DFA69","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","bs":1,"bc":"","ro":0,"padding":10,"tt_placement":"left","tt_offset":10,"tt_arrow_size":10,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wD831CAFBF61459529093546","screen_cid":"s20726B4F9B1459529093462","timestamp":20965550,"v":true,"name":"label","left":296.0,"top":223.0,"width":54.0,"height":30.0,"gid":null,"text":"16h","fs":14,"br":0,"bs":0,"ha":"right","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w4FEFCF9FEC1459529093553","screen_cid":"s20726B4F9B1459529093462","timestamp":20965557,"v":true,"name":"icon_button","left":140.0,"top":217.0,"width":30.0,"height":42.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wE864E4C8AA1459529093555","screen_cid":"s20726B4F9B1459529093462","timestamp":20965564,"v":true,"name":"icon_button","left":160.0,"top":217.0,"width":30.0,"height":42.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wE40E60D9D21459529093556","screen_cid":"s20726B4F9B1459529093462","timestamp":20965573,"v":true,"name":"icon_button","left":200.0,"top":217.0,"width":30.0,"height":42.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w43B5C7B7A71459529093558","screen_cid":"s20726B4F9B1459529093462","timestamp":20965577,"v":true,"name":"icon_button","left":180.0,"top":217.0,"width":30.0,"height":42.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w97177EAB801459529093559","screen_cid":"s20726B4F9B1459529093462","timestamp":20965581,"v":true,"name":"icon_button","left":220.0,"top":217.0,"width":30.0,"height":42.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wBF7E7D27201459529093562","screen_cid":"s20726B4F9B1459529093462","timestamp":20965627,"v":true,"name":"mtooltip","left":55.0,"top":408.0,"width":304.0,"height":42.0,"gid":null,"text":"Thank You!","fs":14,"br":5,"ha":"left","va":"top","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"#8DFA69","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","bs":1,"bc":"","ro":0,"padding":10,"tt_placement":"left","tt_offset":10,"tt_arrow_size":10,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wB25E1A29391459529093563","screen_cid":"s20726B4F9B1459529093462","timestamp":20965694,"v":true,"name":"label","left":50.0,"top":223.0,"width":91.0,"height":30.0,"gid":null,"text":"Lisa (Expert)","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":1,"i":0,"bg":"","bc":"","tc":"#2170d9","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w68038E51821459529093569","screen_cid":"s20726B4F9B1459529093462","timestamp":20965700,"v":true,"name":"image_view","left":6.0,"top":217.0,"width":40.0,"height":40.0,"gid":null,"bs":0,"br":20,"image":"/uploads/images/121440/raw_1459526720.jpeg","z":3,"th":"grey","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w9661C8485C1459529093573","screen_cid":"s20726B4F9B1459529093462","timestamp":20965710,"v":true,"name":"image_view","left":11.0,"top":362.0,"width":40.0,"height":40.0,"gid":null,"bs":0,"br":20,"image":"/uploads/images/121438/raw_1459525598.jpeg","z":3,"th":"grey","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":""},{"cid":"w52D0AA78211459529093575","screen_cid":"s20726B4F9B1459529093462","timestamp":20965715,"v":true,"name":"label","left":55.0,"top":364.0,"width":105.0,"height":30.0,"gid":null,"text":"Steve (Farmer)","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":1,"i":0,"bg":"","bc":"","tc":"#2170d9","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wE2AA0E174B1459529093583","screen_cid":"s20726B4F9B1459529093462","timestamp":20965726,"v":true,"name":"icon_button","left":160.0,"top":360.0,"width":30.0,"height":42.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w5C77F00D401459529093585","screen_cid":"s20726B4F9B1459529093462","timestamp":20965730,"v":true,"name":"icon_button","left":180.0,"top":360.0,"width":30.0,"height":42.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wB6F652F0171459529093586","screen_cid":"s20726B4F9B1459529093462","timestamp":20965734,"v":true,"name":"icon_button","left":200.0,"top":360.0,"width":30.0,"height":42.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w94061395101459529093587","screen_cid":"s20726B4F9B1459529093462","timestamp":20965794,"v":true,"name":"label","left":296.0,"top":364.0,"width":54.0,"height":30.0,"gid":null,"text":"12h","fs":14,"br":0,"bs":0,"ha":"right","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wCD3FB1385A1459596185945","screen_cid":"s20726B4F9B1459529093462","timestamp":20966208,"v":true,"name":"lr","left":0.0,"top":78.0,"width":359.0,"height":45.0,"gid":null,"z":7,"fixed":false},{"cid":"wBE4CD109781459596209687","screen_cid":"s20726B4F9B1459529093462","timestamp":20966216,"v":true,"name":"lr","left":0.0,"top":215.0,"width":359.0,"height":45.0,"gid":null,"z":7,"fixed":false},{"cid":"wFC959E216B1459596235735","screen_cid":"s20726B4F9B1459529093462","timestamp":20966232,"v":true,"name":"lr","left":6.0,"top":360.0,"width":354.0,"height":45.0,"gid":null,"z":7,"fixed":false}],"links":[],"panels":[],"screenstates":[{"cid":"ssD455D118721459589722349","screen_cid":"s03cbb61fabc2bea96fc69f","timestamp":1459612532}],"widgetstates":[{"cid":"ssD455D118721459589722349w9a8e262adcb394f21c8b76","screen_cid":null,"timestamp":6602019,"v":true,"name":"status_bar","left":null,"top":null,"width":360.0,"height":23.0,"gid":null,"text":"MTN Nigeria","th":"grey","bg":"","tc":"","bc":"","o":100,"z":4,"screenstate_cid":"ssD455D118721459589722349","widget_cid":"w9a8e262adcb394f21c8b76"},{"cid":"ssD455D118721459589722349wc931e9d62124330ca042fb","screen_cid":null,"timestamp":6602020,"v":true,"name":"tab_bar","left":null,"top":null,"width":360.0,"height":45.0,"gid":null,"z":4,"th":"dark","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wc931e9d62124330ca042fb"},{"cid":"ssD455D118721459589722349wf8bf0508ae6411b3123adc","screen_cid":null,"timestamp":6602026,"v":true,"name":"navigation_bar","left":null,"top":null,"width":360.0,"height":55.0,"gid":null,"text":"CropChecker","fs":18,"z":4,"th":"grey","td":"normal","bo":0,"i":0,"bg":"#0f0f0f","tc":"#ffffff","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wf8bf0508ae6411b3123adc"},{"cid":"ssD455D118721459589722349w1f404c5ce364359b3c5321","screen_cid":null,"timestamp":6602027,"v":true,"name":"rectangle","left":1.0,"top":65.0,"width":320.0,"height":55.0,"gid":null,"z":2,"th":"","bg":"#fa8919","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w1f404c5ce364359b3c5321"},{"cid":"ssD455D118721459589722349w578f679b6eddaffe00de84","screen_cid":null,"timestamp":6602031,"v":true,"name":"image_view","left":1.0,"top":120.0,"width":359.0,"height":140.0,"gid":null,"bs":0,"br":0,"image":"/uploads/images/121425/raw_1459522238.jpeg","z":3,"th":"grey","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":"","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w578f679b6eddaffe00de84"},{"cid":"ssD455D118721459589722349w02faea888df09c35e2a102","screen_cid":null,"timestamp":6602028,"v":true,"name":"image_view","left":10.0,"top":78.0,"width":40.0,"height":40.0,"gid":null,"bs":0,"br":20,"image":"/uploads/images/121438/raw_1459525598.jpeg","z":3,"th":"grey","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":"","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w02faea888df09c35e2a102"},{"cid":"ssD455D118721459589722349w5235BE86231459525344278","screen_cid":null,"timestamp":20965305,"v":true,"name":"mtooltip","left":80.0,"top":263.0,"width":280.0,"height":62.0,"gid":null,"text":"I have this problem with my crops. Can someone help ?","fs":14,"br":5,"ha":"left","va":"top","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"#8DFA69","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","bs":1,"bc":"","ro":0,"padding":10,"tt_placement":"left","tt_offset":10,"tt_arrow_size":10,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w5235BE86231459525344278"},{"cid":"ssD455D118721459589722349w0BC1444C731459528435299","screen_cid":null,"timestamp":20965641,"v":false,"name":"rectangle","left":0.0,"top":326.0,"width":320.0,"height":58.0,"gid":null,"z":2,"th":"","bg":"#fa8919","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w0BC1444C731459528435299"},{"cid":"ssD455D118721459589722349w67432F959C1459590821421","screen_cid":null,"timestamp":20965815,"v":true,"name":"rounded_rect","left":-10.0,"top":300.0,"width":200.0,"height":100.0,"gid":null,"text":"","fs":14,"br":0,"bs":1,"ha":"center","va":"middle","z":5,"lh":20,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w67432F959C1459590821421"},{"cid":"ssD455D118721459589722349w01BC35B6571459590901238","screen_cid":null,"timestamp":20965834,"v":true,"name":"rounded_rect","left":-2.0,"top":360.0,"width":366.0,"height":50.0,"gid":null,"text":"","fs":14,"br":0,"bs":1,"ha":"center","va":"middle","z":5,"lh":20,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":0,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w01BC35B6571459590901238"},{"cid":"ssD455D118721459589722349w31364504FB1459528570602","screen_cid":null,"timestamp":20965676,"v":true,"name":"image_view","left":10.0,"top":340.0,"width":40.0,"height":40.0,"gid":null,"bs":0,"br":20,"image":"/uploads/images/121427/raw_1459522681.png","z":3,"th":"grey","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":"","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w31364504FB1459528570602"},{"cid":"ssD455D118721459589722349w3E82682AC71459528576728","screen_cid":null,"timestamp":20965680,"v":true,"name":"label","left":57.0,"top":345.0,"width":193.0,"height":30.0,"gid":null,"text":"CropChecker (Friendly Bot)","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":1,"i":0,"bg":"","bc":"","tc":"#2170d9","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w3E82682AC71459528576728"},{"cid":"ssD455D118721459589722349w09F8EC584C1459528869014","screen_cid":null,"timestamp":20965785,"v":true,"name":"label","left":310.0,"top":410.0,"width":54.0,"height":30.0,"gid":null,"text":"21h","fs":14,"br":0,"bs":0,"ha":"right","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w09F8EC584C1459528869014"},{"cid":"ssD455D118721459589722349w3F6A30E72D1459525334088","screen_cid":null,"timestamp":20965301,"v":true,"name":"mtooltip","left":71.0,"top":388.0,"width":289.0,"height":62.0,"gid":null,"text":"Steve, our intelligent bots are looking for an answer. Please wait...!","fs":14,"br":5,"ha":"left","va":"top","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"#8DFA69","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","bs":1,"bc":"","ro":0,"padding":10,"tt_placement":"left","tt_offset":10,"tt_arrow_size":10,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w3F6A30E72D1459525334088"},{"cid":"ssD455D118721459589722349wc9b48e8bbf8edb73c55c5d","screen_cid":null,"timestamp":6602021,"v":true,"name":"tab_item","left":1.0,"top":595.0,"width":60.0,"height":45.0,"gid":null,"text":"","is":30,"icon":"home","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wc9b48e8bbf8edb73c55c5d"},{"cid":"ssD455D118721459589722349wed67507ae780c3a9a2da47","screen_cid":null,"timestamp":6602022,"v":true,"name":"tab_item","left":61.0,"top":595.0,"width":60.0,"height":45.0,"gid":"l92b29e15fdffc8d6c966a6","text":"","is":30,"icon":"asterisk","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wed67507ae780c3a9a2da47"},{"cid":"ssD455D118721459589722349w9937f1661d92a90be8b1ad","screen_cid":null,"timestamp":6602023,"v":true,"name":"tab_item","left":130.0,"top":595.0,"width":60.0,"height":45.0,"gid":"l38bc7fdd9fe850024c8d2f","text":"","is":30,"icon":"camera","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w9937f1661d92a90be8b1ad"},{"cid":"ssD455D118721459589722349w082dce8455fbeea13c2d8d","screen_cid":null,"timestamp":6602024,"v":true,"name":"tab_item","left":200.0,"top":595.0,"width":60.0,"height":45.0,"gid":"laae295cf9ef2ce021b3a9d","text":"","is":30,"icon":"comment","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w082dce8455fbeea13c2d8d"},{"cid":"ssD455D118721459589722349we00da8510d512d7512a524","screen_cid":null,"timestamp":6602025,"v":true,"name":"tab_item","left":270.0,"top":595.0,"width":60.0,"height":45.0,"gid":"l7e63b202de52e7b7f39621","text":"","is":30,"icon":"user","fs":12,"z":5,"th":"light","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"we00da8510d512d7512a524"},{"cid":"ssD455D118721459589722349wd1dd08e8d1df394de40fdc","screen_cid":null,"timestamp":6602037,"v":true,"name":"label","left":40.0,"top":560.0,"width":55.0,"height":30.0,"gid":null,"text":"Like","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wd1dd08e8d1df394de40fdc"},{"cid":"ssD455D118721459589722349we2df50cff3eb0b60a1ca11","screen_cid":null,"timestamp":6602036,"v":true,"name":"icon_button","left":1.0,"top":560.0,"width":30.0,"height":30.0,"gid":null,"is":16,"icon":"heart","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"we2df50cff3eb0b60a1ca11"},{"cid":"ssD455D118721459589722349wd7a455786ce0853dba0d42","screen_cid":null,"timestamp":6602035,"v":true,"name":"button","left":0.0,"top":560.0,"width":85.0,"height":30.0,"gid":null,"text":"","fs":14,"br":8,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"icon":"","is":14,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wd7a455786ce0853dba0d42"},{"cid":"ssD455D118721459589722349wbc156a7d4ae5be32692260","screen_cid":null,"timestamp":6602040,"v":true,"name":"label","left":131.0,"top":560.0,"width":67.0,"height":30.0,"gid":"l6f54e82388dff4692d4753","text":"Comment","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wbc156a7d4ae5be32692260"},{"cid":"ssD455D118721459589722349w553394b1e9d95038742e37","screen_cid":null,"timestamp":6602038,"v":true,"name":"button","left":95.0,"top":560.0,"width":108.0,"height":30.0,"gid":"l6f54e82388dff4692d4753","text":"","fs":14,"br":8,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"icon":"","is":14,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w553394b1e9d95038742e37"},{"cid":"ssD455D118721459589722349w0a24180e86d0a212010753","screen_cid":null,"timestamp":6602039,"v":true,"name":"icon_button","left":101.0,"top":560.0,"width":30.0,"height":30.0,"gid":"l6f54e82388dff4692d4753","is":16,"icon":"comment","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w0a24180e86d0a212010753"},{"cid":"ssD455D118721459589722349wf3cd60bb93e337a38a16f4","screen_cid":null,"timestamp":6602041,"v":true,"name":"button","left":280.0,"top":560.0,"width":70.0,"height":30.0,"gid":null,"text":"...","fs":14,"br":8,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"icon":"","is":14,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wf3cd60bb93e337a38a16f4"},{"cid":"ssD455D118721459589722349w086ECD74EA1459591079974","screen_cid":null,"timestamp":20965944,"v":true,"name":"rounded_rect","left":1.0,"top":410.0,"width":359.0,"height":50.0,"gid":null,"text":"","fs":14,"br":0,"bs":1,"ha":"center","va":"middle","z":5,"lh":20,"th":"","td":"normal","bo":0,"i":0,"bg":"#fa8919","bc":"","tc":"","o":30,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w086ECD74EA1459591079974"},{"cid":"ssD455D118721459589722349w38186C63021459525645835","screen_cid":null,"timestamp":20965323,"v":true,"name":"icon_button","left":190.0,"top":76.0,"width":30.0,"height":42.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w38186C63021459525645835"},{"cid":"ssD455D118721459589722349w1858ECD5021459525639736","screen_cid":null,"timestamp":20965319,"v":true,"name":"icon_button","left":170.0,"top":78.0,"width":30.0,"height":38.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w1858ECD5021459525639736"},{"cid":"ssD455D118721459589722349wA9833BB3831459525678378","screen_cid":null,"timestamp":20965330,"v":true,"name":"icon_button","left":209.0,"top":76.0,"width":30.0,"height":42.0,"gid":null,"is":24,"icon":"star","br":0,"bs":0,"z":5,"th":"red","bg":"","bc":"","tc":"#e51c23","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wA9833BB3831459525678378"},{"cid":"ssD455D118721459589722349w81ecef03fdd338182c9904","screen_cid":null,"timestamp":6602029,"v":true,"name":"label","left":60.0,"top":80.0,"width":105.0,"height":30.0,"gid":null,"text":"Steve (Farmer)","fs":14,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":1,"i":0,"bg":"","bc":"","tc":"#2170d9","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w81ecef03fdd338182c9904"},{"cid":"ssD455D118721459589722349wF77F357E511459591903136","screen_cid":null,"timestamp":20965981,"v":true,"name":"rectangle","left":1.0,"top":120.0,"width":320.0,"height":55.0,"gid":null,"z":2,"th":"","bg":"#fa8919","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wF77F357E511459591903136"},{"cid":"ssD455D118721459589722349wADCE374F8B1459591918071","screen_cid":null,"timestamp":20965986,"v":true,"name":"rectangle","left":0.0,"top":330.0,"width":320.0,"height":55.0,"gid":null,"z":2,"th":"","bg":"#fa8919","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wADCE374F8B1459591918071"},{"cid":"ssD455D118721459589722349wE815DF53921459591941902","screen_cid":null,"timestamp":20966002,"v":true,"name":"label","left":290.0,"top":345.0,"width":54.0,"height":30.0,"gid":null,"text":"21h","fs":14,"br":0,"bs":0,"ha":"right","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wE815DF53921459591941902"},{"cid":"ssD455D118721459589722349wdce2a2156bce05331ca5d2","screen_cid":null,"timestamp":6602030,"v":true,"name":"label","left":286.0,"top":80.0,"width":54.0,"height":30.0,"gid":null,"text":"21h","fs":14,"br":0,"bs":0,"ha":"right","va":"middle","z":5,"th":"","lh":20,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wdce2a2156bce05331ca5d2"},{"cid":"ssD455D118721459589722349wDCADDF27EC1459595977558","screen_cid":null,"timestamp":20966122,"v":true,"name":"rectangle","left":0.0,"top":340.0,"width":360.0,"height":40.0,"gid":null,"z":5,"th":"","bg":"#fa8919","bc":"","o":50,"ds":1,"sc":"#aaaaaa","ro":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","screenstate_cid":"ssD455D118721459589722349","widget_cid":"wDCADDF27EC1459595977558"},{"cid":"ssD455D118721459589722349w430A3160811459596061285","screen_cid":null,"timestamp":20966153,"v":true,"name":"navigation_bar","left":null,"top":null,"width":360.0,"height":55.0,"gid":null,"text":"CropChecker","fs":18,"z":4,"th":"grey","td":"normal","bo":0,"i":0,"bg":"#0f0f0f","tc":"#ffffff","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w430A3160811459596061285"},{"cid":"ssD455D118721459589722349w1E2669C5D91459596071087","screen_cid":null,"timestamp":20966158,"v":true,"name":"navigation_bar","left":null,"top":null,"width":360.0,"height":55.0,"gid":null,"text":"CropChecker","fs":18,"z":4,"th":"grey","td":"normal","bo":0,"i":0,"bg":"#0f0f0f","tc":"#ffffff","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w1E2669C5D91459596071087"},{"cid":"ssD455D118721459589722349w2E615E31CF1459596073610","screen_cid":null,"timestamp":20966163,"v":true,"name":"navigation_bar","left":null,"top":null,"width":360.0,"height":55.0,"gid":null,"text":"CropChecker","fs":18,"z":4,"th":"grey","td":"normal","bo":0,"i":0,"bg":"#0f0f0f","tc":"#ffffff","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","screenstate_cid":"ssD455D118721459589722349","widget_cid":"w2E615E31CF1459596073610"},{"cid":"ssD455D118721459589722349wEB2CEEFF551459596099470","screen_cid":null,"timestamp":20966177,"v":true,"name":"text_view","left":0.0,"top":70.0,"width":200.0,"height":59.0,"gid":null,"text":"If you can't explain it simply you don't understand it well enough.\n -- Albert Einstein","fs":13,"br":0,"bs":0,"ha":"left","va":"top","z":5,"th":"","lh":18,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"screenstate_cid":"ssD455D118721459589722349","widget_cid":"wEB2CEEFF551459596099470"},{"cid":"ssD455D118721459589722349w8F09DA7B321459596115572","screen_cid":null,"timestamp":20966184,"v":true,"name":"lr","left":0.0,"top":340.0,"width":359.0,"height":45.0,"gid":null,"z":7,"fixed":false,"screenstate_cid":"ssD455D118721459589722349","widget_cid":"w8F09DA7B321459596115572"},{"cid":"ssD455D118721459589722349w53B881F65C1459596133066","screen_cid":null,"timestamp":20966189,"v":true,"name":"lr","left":1.0,"top":120.0,"width":359.0,"height":45.0,"gid":null,"z":7,"fixed":false,"screenstate_cid":"ssD455D118721459589722349","widget_cid":"w53B881F65C1459596133066"},{"cid":"ssD455D118721459589722349w449B0B317B1459596147454","screen_cid":null,"timestamp":20966197,"v":true,"name":"lr","left":1.0,"top":78.0,"width":359.0,"height":45.0,"gid":null,"z":7,"fixed":false,"screenstate_cid":"ssD455D118721459589722349","widget_cid":"w449B0B317B1459596147454"}],"panelstates":[],"devices":{"android":{"google_nexus":{"width":360,"height":640,"name":"Google - Nexus 5/6"},"samsung":{"width":360,"height":640,"name":"Samsung - S4/S5/S6/Note 5"},"lg":{"width":360,"height":640,"name":"LG - V10/G4/G3/G Flex"},"moto":{"width":360,"height":640,"name":"Motorola - Moto X/G/E"},"htc_one":{"width":360,"height":640,"name":"HTC - One M8/M9/E9"},"sony_xperia":{"width":360,"height":640,"name":"Sony - Xperia Z3/Z5"},"Xiaomi":{"width":360,"height":640,"name":"XiaoMi 4/4c/Note/HongMi"},"Huawei":{"width":360,"height":640,"name":"Huawei - Mate/Honor/G7/P8"},"Vivo/Oppo":{"width":360,"height":640,"name":"Oppo R7/Vivo X5"},"CoolPad":{"width":360,"height":640,"name":"CoolPad - Dazen X7/Note"},"Meizu":{"width":360,"height":600,"name":"Meizu - PRO 5/MX 4/MeiLan"},"Smartisan":{"width":360,"height":640,"name":"Smartisan - T1/T2/JianGuo"},"google_nexus_4":{"width":384,"height":640,"name":"Google Nexus 4","hide":true},"google_nexus_5":{"width":360,"height":640,"name":"Google Nexus 5","hide":true},"motorola_moto_g_1":{"width":360,"height":640,"name":"Motorola Moto G1","hide":true},"motorola_moto_x_1":{"width":360,"height":640,"name":"Motorola Moto X1","hide":true},"htc_one_x":{"width":360,"height":640,"name":"HTC One X","hide":true},"htc_one_m8":{"width":360,"height":640,"name":"HTC One M8","hide":true},"samsung_galaxy_note_2":{"width":360,"height":640,"name":"Samsung Galaxy Note 2","hide":true},"samsung_galaxy_note_3":{"width":360,"height":640,"name":"Samsung Galaxy Note 3","hide":true},"samsung_galaxy_s3":{"width":360,"height":640,"name":"Samsung Galaxy S3","hide":true},"samsung_galaxy_s4":{"width":360,"height":640,"name":"Samsung Galaxy S4","hide":true},"sony_xperia_s1":{"width":360,"height":640,"name":"Sony Xperia S1","hide":true},"sony_xperia_z1_z2":{"width":360,"height":640,"name":"Sony Xperia Z1/Z2","hide":true},"smartisan_t1":{"width":360,"height":640,"name":"Smartisan T1","hide":true},"meizu_mx3":{"width":360,"height":600,"name":"Meizu MX3","hide":true},"xiaomi_mi2_hongmi":{"width":360,"height":640,"name":"Xiaomi MI2 HongMi Hongmi Note","hide":true},"xiaomi_mi3_mi4":{"width":360,"height":640,"name":"Xiaomi MI3 MI4","hide":true},"customize":{"width":360,"height":640,"name":"Customize"}},"web":{"desktop":{"width":960,"height":800,"name":"translation missing: en.android.customized"}},"ipad":{"iphone_4":{"width":320,"height":480,"scale":100,"icon_size":"120x120","name":"iPhone 4/4s"},"iphone_5":{"width":320,"height":568,"scale":100,"icon_size":"120x120","name":"iPhone 5/5c/5s"},"iphone_6":{"width":375,"height":667,"scale":100,"icon_size":"180x180","name":"iPhone 6"},"iphone_6_plus":{"width":414,"height":736,"scale":100,"icon_size":"180x180","name":"iPhone 6 Plus"},"ipad_3_4":{"width":768,"height":1024,"scale":75,"icon_size":"152x152","name":"iPad"}},"iphone":{"iphone_4":{"width":320,"height":480,"scale":100,"icon_size":"120x120","name":"iPhone 4/4s"},"iphone_5":{"width":320,"height":568,"scale":100,"icon_size":"120x120","name":"iPhone 5/5c/5s"},"iphone_6":{"width":375,"height":667,"scale":100,"icon_size":"180x180","name":"iPhone 6"},"iphone_6_plus":{"width":414,"height":736,"scale":100,"icon_size":"180x180","name":"iPhone 6 Plus"},"ipad_3_4":{"width":768,"height":1024,"scale":75,"icon_size":"152x152","name":"iPad"}},"default":{"iphone":"iphone_5","ipad":"ipad_3_4","android":"google_nexus"}},"country":"--"}</script>
