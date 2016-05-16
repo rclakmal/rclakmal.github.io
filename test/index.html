@@ -1,32 +1,29 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <meta charset="utf-8">
 <style>
-
 body {
-  font: 10px sans-serif;
+	font: 10px sans-serif;
 }
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
+.axis path, .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
 }
 
 .x.axis path {
-  display: none;
+	display: none;
 }
 
 .line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px;
+	fill: none;
+	stroke: steelblue;
+	stroke-width: 1.5px;
 }
-
 </style>
 <body>
-<script src="//d3js.org/d3.v3.min.js"></script>
-<script>
+	<script src="//d3js.org/d3.v3.min.js"></script>
+	<script>
 
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
