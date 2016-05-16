@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+body {
+	font: 10px sans-serif;
+}
+
+.axis path, .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.x.axis path {
+	display: none;
+}
+
+.line {
+	fill: none;
+	stroke: steelblue;
+	stroke-width: 1.5px;
+}
+</style>
+<body>
+	<script src="//d3js.org/d3.v3.min.js"></script>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<div id="callvolume" style="width:600px;height:250px;"></div>
+	<script>
+
+
+    var data = [{
+      y: [22.3, 23, 23.3, ..., 22.2],
+      x: ["2001-06-11 11:00","2001-06-11 11:10","2001-06-11 11:20","2001-06-12 23:40"],
+      line: { width: 1 },
+      error_y: {
+        width: 0,
+        array: [2.73, 1.98, 1.87, ..., 2.19],
+        thickness:0.5
+      },
+      uid: "40abaa"
+    }];
+    var layout = {
+      yaxis: { title: "Call Volume"},      // set the y axis title
+      xaxis: {
+        showgrid: false,                  // remove the x-axis grid lines
+        tickformat: "%B, %Y"              // customize the date format to "month, day"
+      },
+      margin: {                           // update the left, bottom, right, top margin
+        l: 40, b: 10, r: 10, t: 20
+      }
+    };
+
+    Plotly.plot(document.getElementById('callvolume'), data, layout);
+    
+</script>
