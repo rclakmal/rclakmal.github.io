@@ -48,18 +48,19 @@ queryBuilder.directive('queryBuilder', ['$compile', function ($compile) {
                 scope.fields = [
                     { name: 'Firstname' },
                     { name: 'Lastname' },
-                    { name: 'Birthdate' },
-                    { name: 'City' },
-                    { name: 'Country' }
+                    { name: 'Practical Experience' },
+                    { name: 'CV' },
+                    { name: 'Notes' },
+                    { name: 'Top Tools' },
+                    { name: 'Interests' },
+                    { name: 'Other' }
                 ];
 
                 scope.conditions = [
-                    { name: '=' },
-                    { name: '<>' },
-                    { name: '<' },
-                    { name: '<=' },
-                    { name: '>' },
-                    { name: '>=' }
+                    { name: 'Equals' },
+                    { name: 'Not Equals' },
+                    { name: 'Contains' },
+                    { name: 'Not Contains' }
                 ];
 
                 scope.addCondition = function () {
