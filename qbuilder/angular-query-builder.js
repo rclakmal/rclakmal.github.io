@@ -67,6 +67,7 @@ queryBuilder.directive('queryBuilder', ['$compile', function ($compile) {
                     scope.group.rules.push({
                         condition: '=',
                         field: 'Firstname',
+                        casesensitive: '',
                         data: ''
                     });
                 };
