@@ -40,8 +40,8 @@
                             <select ng-options="t.name as t.name for t in fields" ng-model="rule.field" class="form-control input-sm"></select>
                             <select style="margin-left: 5px" ng-options="c.name as c.name for c in conditions" ng-model="rule.condition" class="form-control input-sm"></select>
                             <input style="margin-left: 5px" type="text" ng-model="rule.data" class="form-control input-sm"/>
+                            <label for="case_id" class="form-control input-sm" style="margin-left: 5px">Case Sensitive</label>
                             <input id="case_id" style="margin-left: 5px" type="checkbox" ng-model="rule.casesensitive" class="form-control input-sm"/>
-                            <label for="case_id">Case Sensitive</label>
                             <button style="margin-left: 5px" ng-click="removeCondition($index)" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-minus-sign"></span></button>
                         </div>
                     </div>
