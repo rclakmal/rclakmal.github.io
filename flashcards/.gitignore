@@ -1,6 +1,0 @@
-.DS_Store
-config/deploy.rb
-Capfile
-sets
-sets/*
-add_submit_link.sh
