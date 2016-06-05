@@ -26,5 +26,5 @@ $('.navbar-collapse ul li a').click(function() {
 });
 
 $('#loginButton').click(function() {
-    window.location.href="/dashboard";
+    window.location.href="/yodacast/dashboard";
 });
