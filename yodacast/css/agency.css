@@ -726,5 +726,5 @@ body {
     webkit-tap-highlight-color: red
 }
 .secondrow {
-    padding-left: : 10px;
+    float: right;
 }
