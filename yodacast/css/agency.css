@@ -227,7 +227,7 @@ header {
     background-size: cover;
     -o-background-size: cover;
     text-align: center;
-    color: #fff
+    color: #fff;
 }
 header .intro-text {
     padding-top: 100px;
@@ -727,4 +727,9 @@ body {
 }
 .secondrow {
     float: right;
+}
+
+.loginrow {
+    width: 800px;
+    margin: 0 auto;
 }
