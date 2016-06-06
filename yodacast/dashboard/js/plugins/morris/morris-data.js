@@ -58,7 +58,7 @@ $(function() {
         }],
         xkey: 'period',
         ykeys: ['iphone', 'ipad', 'itouch'],
-        labels: ['iPhone', 'iPad', 'iPod Touch'],
+        labels: ['Prediction', 'Actual', 'Difference'],
         pointSize: 2,
         hideHover: 'auto',
         resize: true
@@ -68,14 +68,14 @@ $(function() {
     Morris.Donut({
         element: 'morris-donut-chart',
         data: [{
-            label: "Download Sales",
-            value: 12
+            label: "Hotline 1212",
+            value: 4567
         }, {
-            label: "In-Store Sales",
-            value: 30
+            label: "Hotline 1414",
+            value: 3200
         }, {
-            label: "Mail-Order Sales",
-            value: 20
+            label: "Hotline 2212",
+            value: 676
         }],
         resize: true
     });
