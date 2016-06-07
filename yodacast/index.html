@@ -41,6 +41,8 @@
     <script>
     function loginFunction() {
         if(document.getElementById("password").value == "demo" && document.getElementById("username").value == "demo"){
+          console.log(document.getElementById("password").value);
+          console.log(document.getElementById("username").value);
           window.location = "/dashboard";
         }else{
           alert("Invalid username or Password");
