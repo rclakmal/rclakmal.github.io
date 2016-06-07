@@ -26,6 +26,9 @@ $('.navbar-collapse ul li a').click(function() {
 });
 
 $('#loginButton').click(function() {
-    console.log("Loggedin");
+  if(document.getElementById("password").value == "demo" && document.getElementById("username").value == "demo"){
     window.location.href="/yodacast/dashboard";
+  }else{
+    alert("Invalid username or Password");
+  }
 });
