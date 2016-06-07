@@ -34,6 +34,12 @@ var logged = localStorage.getItem("logged");
 if(!logged){
   window.location.href = "/yodacast/";
 }
+
+$('#logoutbutton').click(function() {
+  localStorage.removeItem("logged");
+  window.location.href = "/yodacast/";
+}
+
 </script>
 </head>
 
@@ -150,7 +156,7 @@ if(!logged){
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a id="logoutbutton" href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
