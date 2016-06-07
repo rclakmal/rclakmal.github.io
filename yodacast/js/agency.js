@@ -26,7 +26,9 @@ $('.navbar-collapse ul li a').click(function() {
 });
 
 $('#loginButton').click(function() {
+
   if(document.getElementById("password").value == "demo" && document.getElementById("username").value == "demo"){
+    localStorage.setItem("logged", "yes");
     window.location.href="/yodacast/dashboard";
   }else{
     alert("Invalid username or Password");
