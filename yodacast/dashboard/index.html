@@ -388,7 +388,6 @@ $('#eventType').on('change', function() {
           <div class="modal-body" style="padding:40px 50px;">
             <form role="form">
               <div class="form-group">
-                <label for="psw"><span class="glyphicon glyphicon-calendar"></span>Event Type</label>
                 <select id="eventType" class="selectpicker" title="Choose Event Type">
                     <option>Billing Cycles</option>
                     <option>Technical Fault</option>
@@ -396,20 +395,24 @@ $('#eventType').on('change', function() {
                 </select>
               </div>
               <div class="form-group">
-                <label for="psw"><span class="glyphicon glyphicon-pencil"></span>Event Name</label>
                 <input type="text" class="form-control" id="eventName" placeholder="Enter Unique Event Name">
               </div>
               <div class="form-group">
-                <label for="eventDatePicker"><span class="glyphicon glyphicon-hourglass"></span>Select Event Duration</label>
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
+                <div class='input-group date' class="datetimepicker" id='toDate'>
+                    <input type='text' class="form-control" placeholder="Select Start Date/Time" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                <div class='input-group date' class="datetimepicker" id='fromDate'>
+                    <input type='text' class="form-control" placeholder="Select End Date/Time"/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
                 <script type="text/javascript">
                 $(function () {
-                  $('#datetimepicker1').datetimepicker();
+                  $('.datetimepicker').datetimepicker();
                 });
                 </script>
               </div>
