@@ -54,7 +54,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#addNewEventLink").click(function(){
-        $("#hotLineAddModel").modal();
+        $("#eventAddModal").modal();
     });
 });
 
@@ -66,7 +66,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#addNewHotLineLink").click(function(){
-        $("#eventAddModal").modal();
+        $("#hotLineAddModel").modal();
     });
 });
 
@@ -443,10 +443,12 @@ $('#eventType').on('change', function() {
             <form role="form">
               <div class="form-group">
                 <label for="eventType"><span class="glyphicon glyphicon-calendar"></span>Select HotLines</label>
-                <label class="checkbox-inline"><input type="checkbox" value="" checked="">HotLine 1212</label>
-                <label class="checkbox-inline"><input type="checkbox" value="" checked="">HotLine 1414</label>
-                <label class="checkbox-inline"><input type="checkbox" value="" checked="">HotLine 2212</label>
-                <label class="checkbox-inline"><input type="checkbox" value="">HotLine 9919</label>
+                <div class="form-control">
+                  <label class="checkbox-inline"><input type="checkbox" value="" checked="">HotLine 1212</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="" checked="">HotLine 1414</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="" checked="">HotLine 2212</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">HotLine 9919</label>
+                </div>
               </div>
                 <button type="submit" class="btn btn-success btn-block">
                   <span class="glyphicon glyphicon-off"></span> Save
