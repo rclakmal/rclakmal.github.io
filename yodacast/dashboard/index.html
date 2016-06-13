@@ -12,8 +12,7 @@
     <title>YodaCast Dashboard</title>
     <link rel="icon" type="image/png" href="img/yodasmall.png">
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.css" />
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
 
@@ -31,7 +30,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
@@ -59,17 +58,15 @@ $(document).ready(function(){
     });
 });
 
-$('#eventDatePicker').daterangepicker({
-    locale: {
-      format: 'YYYY-MM-DD'
-    },
-    startDate: '2016-06-15',
-    endDate: '2013-06-30'
-});
+$('#eventDatePicker').daterangepicker();
 
 $('.selectpicker').selectpicker({
   style: 'btn-info',
-  size: 4
+  size: 8
+});
+
+$('#eventType').on('change', function() {
+  $('#eventName').text(this.value);
 });
 
 </script>
@@ -390,7 +387,7 @@ $('.selectpicker').selectpicker({
             <form role="form">
               <div class="form-group">
                 <label for="eventType"><span class="glyphicon glyphicon-calendar"></span>Event Type</label>
-                <select id="eventType" class="selectpicker">
+                <select id="eventType" class="selectpicker" title="Choose Event Type">
                     <option>Billing Cycles</option>
                     <option>Technical Fault</option>
                     <option>Product Launch</option>
@@ -398,11 +395,11 @@ $('.selectpicker').selectpicker({
               </div>
               <div class="form-group">
                 <label for="psw"><span class="glyphicon glyphicon-pencil"></span>Event Name</label>
-                <input type="text" class="form-control" id="eventName" placeholder="Enter Event Name">
+                <input type="text" class="form-control" id="eventName" placeholder="Enter Unique Event Name">
               </div>
               <div class="form-group">
                 <label for="eventDatePicker"><span class="glyphicon glyphicon-hourglass"></span>Select Event Duration</label>
-                <input type="text" id="eventDatePicker"/>
+                <input type="text" placeholder="Select the time Duration" id="eventDatePicker"/>
               </div>
 
               <div class="form-group">
