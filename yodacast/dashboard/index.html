@@ -52,13 +52,13 @@ $(document).ready(function(){
     $("#addNewEvent").click(function(){
         $("#eventAddModal").modal();
     });
-});
-
-$(document).ready(function(){
     $("#addNewEventLink").click(function(){
         $("#eventAddModal").modal();
     });
+    $('.datetimepicker').datetimepicker();
+
 });
+
 
 $('.selectpicker').selectpicker({
   style: 'btn-info',
@@ -383,7 +383,7 @@ $('#eventType').on('change', function() {
         <div class="modal-content">
           <div class="modal-header" style="padding:35px 50px;">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4><span class="glyphicon glyphicon-lock"></span> Add New Event</h4>
+            <h4><span class="glyphicon glyphicon-calendar"></span> Add New Event</h4>
           </div>
           <div class="modal-body" style="padding:40px 50px;">
             <form role="form">
@@ -404,22 +404,19 @@ $('#eventType').on('change', function() {
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
+              </div>
+
+              <div class="form-group">
                 <div class='input-group date' class="datetimepicker" id='fromDate'>
                     <input type='text' class="form-control" placeholder="Select End Date/Time"/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
-                <script type="text/javascript">
-                $(function () {
-                  $('.datetimepicker').datetimepicker();
-                });
-                </script>
               </div>
 
               <div class="form-group">
-                <label for="psw"><span class="glyphicon glyphicon-user"></span>Number of Effected Users</label>
-                <input type="text" class="form-control" id="noOfUsers" placeholder="Enter Number Of Users">
+                <input type="text" class="form-control" id="noOfUsers" placeholder="Enter Number Of Effected Users">
               </div>
 
                 <button type="submit" class="btn btn-success btn-block">
