@@ -232,6 +232,15 @@ $('#eventType').on('change', function() {
                     </div>
                 </div>
                 <!-- /.row -->
+              <div class="row">
+                <div class="col-lg-3 col-md-6">
+                  <label for="eventDatePicker"><span class="glyphicon glyphicon-hourglass"></span>Select Duration for ForeCasting</label>
+                  <input type="text" class="form-control" name="daterange" value="06/01/2016 - 06/30/2016" />
+                  <script>
+                    $('input[name="daterange"]').daterangepicker();
+                  </script>
+                </div>
+              </div>
 
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
@@ -281,13 +290,7 @@ $('#eventType').on('change', function() {
                     </div>
                 </div>
 
-                <div class="row">
-                  <label for="eventDatePicker"><span class="glyphicon glyphicon-hourglass"></span>Or Simply Select ForeCast Duration</label>
-                  <input type="text" class="form-control" name="daterange" value="06/01/2016 - 06/31/2016" />
-                  <script>
-                    $('input[name="daterange"]').daterangepicker();
-                  </script>
-                </div>
+
                 <!-- /.row -->
 
                 <div class="row">
