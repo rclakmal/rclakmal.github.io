@@ -259,8 +259,8 @@ div.clickable a {
     background-color: #f9f9f9;
 }
 
-#reportrange {
+.reportrange {
   margin-top: -10px;
-  font-size: 20px;
+  font-size: 18px;
   width: 102% !important;
 }
