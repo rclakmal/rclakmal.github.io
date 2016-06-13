@@ -30,6 +30,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
 <script>
 var logged = localStorage.getItem("logged");
@@ -47,6 +50,25 @@ $(document).ready(function(){
         $("#eventAddModal").modal();
     });
 });
+
+$(document).ready(function(){
+    $("#addNewEventLink").click(function(){
+        $("#eventAddModal").modal();
+    });
+});
+
+$('#eventDatePicker').daterangepicker(
+{
+    locale: {
+      format: 'YYYY-MM-DD'
+    },
+    startDate: '2016-06-15',
+    endDate: '2013-06-30'
+},
+function(start, end, label) {
+    alert("A new date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+});
+
 </script>
 </head>
 
@@ -175,10 +197,10 @@ $(document).ready(function(){
                         <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-phone "></i>Select HotLine</a>
+                        <a href="index.html"><i class="fa fa-fw fa-phone "></i>Add HotLine</a>
                     </li>
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-calendar"></i>Select Events</a>
+                        <a id="addNewEventLink" href="index.html"><i class="fa fa-fw fa-calendar"></i>Add Event</a>
                     </li>
                     <li class="active">
                       <div id="container">
@@ -359,22 +381,35 @@ $(document).ready(function(){
         <div class="modal-content">
           <div class="modal-header" style="padding:35px 50px;">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+            <h4><span class="glyphicon glyphicon-lock"></span> Add New Event</h4>
           </div>
           <div class="modal-body" style="padding:40px 50px;">
             <form role="form">
               <div class="form-group">
-                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-                <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+                <label for="eventType"><span class="glyphicon glyphicon-calendar"></span>Event Type</label>
+                <select id="eventType" class="selectpicker">
+                    <option>Billing Cycles</option>
+                    <option>Technical Fault</option>
+                    <option>Product Launch</option>
+                </select>
               </div>
               <div class="form-group">
-                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                <label for="psw"><span class="glyphicon glyphicon-pencil"></span>Event Name</label>
+                <input type="text" class="form-control" id="eventName" placeholder="Enter Event Name">
               </div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="" checked>Remember me</label>
+              <div class="form-group">
+                <label for="eventDatePicker"><span class="glyphicon glyphicon-hourglass"></span>Select Event Duration</label>
+                <input type="text" id="eventDatePicker" value="06/15/2016 - 06/30/2016" />
               </div>
-                <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+
+              <div class="form-group">
+                <label for="psw"><span class="glyphicon glyphicon-user"></span>Number of Effected Users</label>
+                <input type="text" class="form-control" id="noOfUsers" placeholder="Enter Number Of Users">
+              </div>
+
+                <button type="submit" class="btn btn-success btn-block">
+                  <span class="glyphicon glyphicon-off"></span> Save
+                </button>
             </form>
           </div>
           <div class="modal-footer">
