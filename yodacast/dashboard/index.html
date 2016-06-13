@@ -58,15 +58,16 @@ $(document).ready(function(){
     });
 });
 
-$('#eventDatePicker').daterangepicker();
-
+$('input[name="daterange"]').daterangepicker();
 $('.selectpicker').selectpicker({
   style: 'btn-info',
   size: 8
 });
 
 $('#eventType').on('change', function() {
+  console.log(this.value);
   $('#eventName').text(this.value);
+
 });
 
 </script>
@@ -399,7 +400,7 @@ $('#eventType').on('change', function() {
               </div>
               <div class="form-group">
                 <label for="eventDatePicker"><span class="glyphicon glyphicon-hourglass"></span>Select Event Duration</label>
-                <input type="text" placeholder="Select the time Duration" id="eventDatePicker"/>
+                <input type="text" name="daterange" placeholder="Select the Event Duration"/>
               </div>
 
               <div class="form-group">
