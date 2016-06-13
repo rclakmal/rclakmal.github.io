@@ -58,7 +58,6 @@ $(document).ready(function(){
     });
 });
 
-$('input[name="daterange"]').daterangepicker();
 $('.selectpicker').selectpicker({
   style: 'btn-info',
   size: 8
@@ -400,7 +399,12 @@ $('#eventType').on('change', function() {
               </div>
               <div class="form-group">
                 <label for="eventDatePicker"><span class="glyphicon glyphicon-hourglass"></span>Select Event Duration</label>
-                <input type="text" name="daterange" placeholder="Select the Event Duration"/>
+                <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
+                    <script type="text/javascript">
+                    $(function() {
+                        $('input[name="daterange"]').daterangepicker();
+                    });
+                    </script>
               </div>
 
               <div class="form-group">
