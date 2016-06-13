@@ -371,6 +371,8 @@ $('#eventType').on('change', function() {
     <script src="js/plugins/morris/raphael.min.js"></script>
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
 
     <!-- Modal -->
@@ -381,7 +383,7 @@ $('#eventType').on('change', function() {
         <div class="modal-content">
           <div class="modal-header" style="padding:35px 50px;">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4><span class="glyphicon glyphicon-lock"></span> Add New Event</h4>
+            <h4><span class="glyphicon glyphicon-calendar"></span> Add New Event</h4>
           </div>
           <div class="modal-body" style="padding:40px 50px;">
             <form role="form">
@@ -397,14 +399,19 @@ $('#eventType').on('change', function() {
                 <label for="psw"><span class="glyphicon glyphicon-pencil"></span>Event Name</label>
                 <input type="text" class="form-control" id="eventName" placeholder="Enter Unique Event Name">
               </div>
+
               <div class="form-group">
                 <label for="eventDatePicker"><span class="glyphicon glyphicon-hourglass"></span>Select Event Duration</label>
                 <input type="text" class="form-control" name="daterange" value="01/01/2015 - 01/31/2015" />
+                <script>
+                  $('input[name="daterange"]').daterangepicker();
+                </script>
               </div>
 
               <div class="form-group">
                 <label for="psw"><span class="glyphicon glyphicon-user"></span>Number of Effected Users</label>
                 <input type="text" class="form-control" id="noOfUsers" placeholder="Enter Number Of Users">
+
               </div>
 
                 <button type="submit" class="btn btn-success btn-block">
