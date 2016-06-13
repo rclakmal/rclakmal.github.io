@@ -12,7 +12,7 @@
     <title>YodaCast Dashboard</title>
     <link rel="icon" type="image/png" href="img/yodasmall.png">
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.css" />
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
 
@@ -21,8 +21,8 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,12 +30,10 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
-
 
 <script>
 var logged = localStorage.getItem("logged");
@@ -52,16 +50,17 @@ $(document).ready(function(){
     $("#addNewEvent").click(function(){
         $("#eventAddModal").modal();
     });
+});
+
+$(document).ready(function(){
     $("#addNewEventLink").click(function(){
         $("#eventAddModal").modal();
     });
-    $('.datetimepicker').datepicker();
 });
-
 
 $('.selectpicker').selectpicker({
   style: 'btn-info',
-  size: 16
+  size: 8
 });
 
 $('#eventType').on('change', function() {
@@ -198,10 +197,10 @@ $('#eventType').on('change', function() {
                         <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li class="active">
-                        <input type="button" id="addNewHotLine"><i class="fa fa-fw fa-phone "></i>Add HotLine</a>
+                        <a href="index.html"><i class="fa fa-fw fa-phone "></i>Add HotLine</a>
                     </li>
                     <li class="active">
-                        <input id="addNewEventLink"><i class="fa fa-fw fa-calendar"></i>Add Event</a>
+                        <a id="addNewEventLink" href="index.html"><i class="fa fa-fw fa-calendar"></i>Add Event</a>
                     </li>
                     <li class="active">
                       <div id="container">
@@ -382,11 +381,12 @@ $('#eventType').on('change', function() {
         <div class="modal-content">
           <div class="modal-header" style="padding:35px 50px;">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4><span class="glyphicon glyphicon-calendar"></span> Add New Event</h4>
+            <h4><span class="glyphicon glyphicon-lock"></span> Add New Event</h4>
           </div>
           <div class="modal-body" style="padding:40px 50px;">
             <form role="form">
               <div class="form-group">
+                <label for="eventType"><span class="glyphicon glyphicon-calendar"></span>Event Type</label>
                 <select id="eventType" class="selectpicker" title="Choose Event Type">
                     <option>Billing Cycles</option>
                     <option>Technical Fault</option>
@@ -394,38 +394,31 @@ $('#eventType').on('change', function() {
                 </select>
               </div>
               <div class="form-group">
+                <label for="psw"><span class="glyphicon glyphicon-pencil"></span>Event Name</label>
                 <input type="text" class="form-control" id="eventName" placeholder="Enter Unique Event Name">
               </div>
               <div class="form-group">
-                <div class='input-group date' class="datetimepicker" id='toDate'>
-                    <input type='text' class="form-control" placeholder="Select Start Date/Time" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
+                <label for="eventDatePicker"><span class="glyphicon glyphicon-hourglass"></span>Select Event Duration</label>
+                <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
+                    <script type="text/javascript">
+                    $(function() {
+                        $('input[name="daterange"]').daterangepicker();
+                    });
+                    </script>
               </div>
 
               <div class="form-group">
-                <div class='input-group date' class="datetimepicker" id='fromDate'>
-                    <input type='text' class="form-control" placeholder="Select End Date/Time"/>
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <input type="text" class="form-control" id="noOfUsers" placeholder="Enter Number Of Effected Users">
+                <label for="psw"><span class="glyphicon glyphicon-user"></span>Number of Effected Users</label>
+                <input type="text" class="form-control" id="noOfUsers" placeholder="Enter Number Of Users">
               </div>
 
                 <button type="submit" class="btn btn-success btn-block">
                   <span class="glyphicon glyphicon-off"></span> Save
                 </button>
-                <button type="submit" class="btn btn-danger btn-block" data-dismiss="modal">
-                  <span class="glyphicon glyphicon-remove"></span> Cancel
-                </button>
-
             </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
           </div>
         </div>
 
