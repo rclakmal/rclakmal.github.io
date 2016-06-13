@@ -54,6 +54,18 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#addNewEventLink").click(function(){
+        $("#hotLineAddModel").modal();
+    });
+});
+
+$(document).ready(function(){
+    $("#addHotline").click(function(){
+        $("#hotLineAddModel").modal();
+    });
+});
+
+$(document).ready(function(){
+    $("#addNewHotLineLink").click(function(){
         $("#eventAddModal").modal();
     });
 });
@@ -149,21 +161,6 @@ $('#eventType').on('change', function() {
                     <ul class="dropdown-menu alert-dropdown">
                         <li>
                             <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -282,6 +279,14 @@ $('#eventType').on('change', function() {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="row">
+                  <label for="eventDatePicker"><span class="glyphicon glyphicon-hourglass"></span>Or Simply Select ForeCast Duration</label>
+                  <input type="text" class="form-control" name="daterange" value="06/01/2016 - 06/31/2016" />
+                  <script>
+                    $('input[name="daterange"]').daterangepicker();
+                  </script>
                 </div>
                 <!-- /.row -->
 
@@ -424,6 +429,34 @@ $('#eventType').on('change', function() {
       </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="hotLineAddModel" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="padding:35px 50px;">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4><span class="glyphicon glyphicon-phone-alt"></span> Add New HotLine</h4>
+          </div>
+          <div class="modal-body" style="padding:40px 50px;">
+            <form role="form">
+              <div class="form-group">
+                <label for="eventType"><span class="glyphicon glyphicon-calendar"></span>Select HotLines</label>
+                <label class="checkbox-inline"><input type="checkbox" value="" checked="">HotLine 1212</label>
+                <label class="checkbox-inline"><input type="checkbox" value="" checked="">HotLine 1414</label>
+                <label class="checkbox-inline"><input type="checkbox" value="" checked="">HotLine 2212</label>
+                <label class="checkbox-inline"><input type="checkbox" value="">HotLine 9919</label>
+              </div>
+                <button type="submit" class="btn btn-success btn-block">
+                  <span class="glyphicon glyphicon-off"></span> Save
+                </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
 </body>
 
 </html>
