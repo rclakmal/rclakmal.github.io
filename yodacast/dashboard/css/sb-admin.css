@@ -246,5 +246,15 @@ div.clickable a {
   z-index:10; /* raises anchor tag above everything else in div */
   background-color:white; /*workaround to make clickable in IE */
   opacity: 0; /*workaround to make clickable in IE */
-  filter: alpha(opacity=1); /*workaround to make clickable in IE */ 
+  filter: alpha(opacity=1); /*workaround to make clickable in IE */
+}
+
+.modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+}
+.modal-footer {
+    background-color: #f9f9f9;
 }
