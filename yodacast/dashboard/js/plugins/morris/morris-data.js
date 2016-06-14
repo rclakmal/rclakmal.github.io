@@ -156,6 +156,7 @@ var newData = yearlyData;
 
 // Area Chart
 function drawGraph() {
+
      callChart = Morris.Area({
         element : 'morris-area-chart',
         data : newData,
@@ -184,7 +185,7 @@ function drawGraph() {
         } ],
         resize : true
     });
-});
+}
 
 function updateTable(text){
   if(text=="Monthly"){
