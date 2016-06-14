@@ -3,14 +3,18 @@
 $(function() {
 
       data1 = [
-    { y: '2006', a: 100},
-    { y: '2007', a: 75},
-    { y: '2008', a: 50},
-    { y: '2009', a: 75},
-    { y: '2010', a: 50},
-    { y: '2011', a: 75},
-    { y: '2012', a: 100}
+    { period: '2010', prediction: 200000},
+    { period: '2011', prediction: 250000},
+    { period: '2012', prediction: 225000},
+    { period: '2013', prediction: 300000},
+    { period: '2014', prediction: 275000},
+    { period: '2015', prediction: 325000},
+    { period: '2016', prediction: 250000}
   ]
+
+
+
+
     // Area Chart
     Morris.Area({
         element: 'morris-area-chart',
