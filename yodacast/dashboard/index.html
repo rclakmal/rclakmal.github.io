@@ -124,10 +124,10 @@ function eventSave() {
 
 function hotLineSave() {
 	$("#hotLineAddModel").modal('hide');
-	$('input:checked').each(function() {
-   	console.log($(this).text());
-	});
-	updateHotLine()
+	var checkedValues = $('input:checkbox:checked').map(function() {
+    return this.value;
+	}).get();
+	updateHotLine(checkedValues)
 	updateTable("Event");
 }
 
