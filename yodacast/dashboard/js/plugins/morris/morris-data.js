@@ -188,6 +188,7 @@ function drawGraph() {
 }
 
 function updateTable(text){
+  $( "#morris-area-chart" ).empty();
   if(text=="Monthly"){
     colorChoice = 0;
     newData = monthlyData;
