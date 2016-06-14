@@ -245,7 +245,7 @@ function updateHotLine(valuesTs){
   if ($.inArray('HotLine 1414', valuesTs) > -1){
     hotLineDataNew.push(hot2);
   }
-  if ($.inArray('HotLine 2122', valuesTs) > -1){
+  if ($.inArray('HotLine 2212', valuesTs) > -1){
     hotLineDataNew.push(hot3);
   }
   if ($.inArray('HotLine 9919', valuesTs) > -1){
