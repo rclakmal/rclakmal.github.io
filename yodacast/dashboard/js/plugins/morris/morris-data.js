@@ -237,6 +237,7 @@ function updateTable(text){
 }
 
 function updateHotLine(valuesTs){
+  $( "#morris-donut-chart" ).empty();
   var hotLineDataNew = [];
   if ($.inArray('HotLine 1212', valuesTs) > -1){
     hotLineDataNew.push(hot1);
