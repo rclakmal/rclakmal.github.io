@@ -154,8 +154,8 @@ hourlyData = [ {
 
 // Area Chart
 $(function drawGraph(newData) {
-    if(!newData){
-      newData = yearlyData;
+    if(newData == 'undefined'){
+      var newData = yearlyData;
     }
      callChart = Morris.Area({
         element : 'morris-area-chart',
