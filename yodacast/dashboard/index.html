@@ -95,9 +95,15 @@ $('#eventType').on('change', function() {
 
 });
 
+function ucwords (str) {
+    return (str + '').replace(/^([a-z])|\s+([a-z])/g, function ($1) {
+        return $1.toUpperCase();
+    });
+}
+
 function eventSave() {
 	$("#eventAddModal").modal('hide');
-    var currentUser = localStorage.getItem("currentUser");
+    var currentUser = ucwords(localStorage.getItem("currentUser"));
     var eventName = $('#eventName').val();
     var duration = $('#eventDuration').val();
     var NoOfUsers = $('#eventEffectNo').val();
@@ -107,6 +113,9 @@ function eventSave() {
     $('.list-group').append(newChild);
 }
 
+function eventTypeOnChange(){
+    $('#eventName').text($('#eventType').val());
+}
 </script>
 </head>
 
@@ -432,7 +441,7 @@ function eventSave() {
 						<div class="form-group">
 							<label for="eventType"><span
 								class="glyphicon glyphicon-calendar"></span>Event Type</label> <select
-								id="eventType" class="form-control selectpicker"
+								id="eventType" onChange="eventTypeOnChange();" class="form-control selectpicker"
 								title="Choose Event Type">
 								<option>Billing Cycles</option>
 								<option>Technical Fault</option>
@@ -449,7 +458,7 @@ function eventSave() {
 							<label for="eventDatePicker"><span
 								class="glyphicon glyphicon-hourglass"></span>Select Event
 								Duration</label> <input type="text" class="form-control"
-								name="daterange" id="eventDuration" value="01/01/2015 - 01/31/2015" />
+								name="daterange" id="eventDuration" value="06/01/2016 - 06/30/2015" />
 							<script>
                   $('input[name="daterange"]').daterangepicker();
                 </script>
