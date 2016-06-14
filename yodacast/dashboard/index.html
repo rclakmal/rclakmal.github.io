@@ -84,6 +84,13 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $(".durationButtonClass").click(function(){
+				console.log("Clicked");
+        updateTable("Monthly");
+    });
+});
+
 $('.selectpicker').selectpicker({
   style: 'btn-info',
   size: 8

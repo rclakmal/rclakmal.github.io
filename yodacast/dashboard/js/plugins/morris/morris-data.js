@@ -1,5 +1,10 @@
 // Morris.js Charts sample data for SB Admin template
-
+var callChart;
+var yearlyData;
+var monthlyData;
+var weeklyData;
+var dailyData;
+var hourlyData;
 $(function drawGraph() {
 
     yearlyData = [ {
@@ -147,19 +152,19 @@ $(function drawGraph() {
         prediction : 10
     }];
 
-    var data1= monthlyData;
 
     // Area Chart
-    Morris.Area({
+     callChart = Morris.Area({
         element : 'morris-area-chart',
-        data : data1,
+        data : yearlyData,
         xkey : 'period',
         ykeys : [ 'prediction' ],
         labels : [ 'Prediction' ],
         pointSize : 2,
         parseTime: false,
         hideHover : 'auto',
-        resize : true
+        resize : true,
+        backgroundColor: '#ccc'
     });
 
     // Donut Chart
@@ -178,3 +183,21 @@ $(function drawGraph() {
         resize : true
     });
 });
+
+function updateTable(text){
+  if(text=="Monthly"){
+    callChart.setData(monthlyData);
+  }
+
+  if(text=="Weekly"){
+    callChart.setData(weeklyData);
+  }
+
+  if(text=="Daily"){
+    callChart.setData(dailyData);
+  }
+
+  if(text=="Hourly"){
+    callChart.setData(hourlyData);
+  }
+}
