@@ -94,7 +94,7 @@ $('#eventType').on('change', function() {
 });
 
 function eventSave() {
-    console.log("Testtttt");
+	$("#eventAddModal").modal('hide');
     var currentUser = localStorage.getItem("currentUser");
     var eventName = $('#eventName').val();
     var duration = $('#eventDuration').val();
