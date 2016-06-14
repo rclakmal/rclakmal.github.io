@@ -252,6 +252,7 @@ function updateHotLine(valuesTs){
     hotLineDataNew.push(hot4);
   }
   drawHotLine(hotLineDataNew);
+  updateTable("Hotline");
 }
 $( document ).ready(function() {
   drawGraph();
