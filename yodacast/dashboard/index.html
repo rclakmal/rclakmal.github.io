@@ -121,6 +121,16 @@ function eventSave() {
 		updateTable("Event");
 }
 
+
+function hotLineSave() {
+	$("#hotLineAddModal").modal('hide');
+	$('input:checked').each(function() {
+   	console.log(this.value);
+	});
+	updateHotLine()
+	updateTable("Event");
+}
+
 function eventTypeOnChange(){
     $('#eventName').text($('#eventType').val());
 }
@@ -511,13 +521,13 @@ function eventTypeOnChange(){
 								<label class="checkbox-inline"><input type="checkbox"
 									value="" checked="">HotLine 1212</label> <label
 									class="checkbox-inline"><input type="checkbox" value=""
-									checked="">HotLine 1414</label> <label class="checkbox-inline"><input
-									type="checkbox" value="" checked="">HotLine 2212</label> <label
+									>HotLine 1414</label> <label class="checkbox-inline"><input
+									type="checkbox" value="" >HotLine 2212</label> <label
 									class="checkbox-inline"><input type="checkbox" value="">HotLine
 									9919</label>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-success btn-block">
+						<button type="button"  id="hotLineSaveButton" onClick="hotLineSave();"class="btn btn-success btn-block">
 							<span class="glyphicon glyphicon-off"></span> Save
 						</button>
 					</form>

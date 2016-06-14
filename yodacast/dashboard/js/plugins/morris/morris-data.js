@@ -171,20 +171,33 @@ function drawGraph() {
     });
 }
 
+var hot1 = {
+    label : "Hotline 1212",
+    value : 4567
+}
+var hot2 = {
+    label : "Hotline 1414",
+    value : 3200
+}
+var hot3 = {
+    label : "Hotline 2122",
+    value : 3200
+}
+var hot4 = {
+    label : "Hotline 9919",
+    value : 3200
+}
+
+var hotLineData = [ {
+    label : "Hotline 1212",
+    value : 4567
+} ]
+
 function drawHotLine(){
   // Donut Chart
   hotLineChart =   Morris.Donut({
       element : 'morris-donut-chart',
-      data : [ {
-          label : "Hotline 1212",
-          value : 4567
-      }, {
-          label : "Hotline 1414",
-          value : 3200
-      }, {
-          label : "Hotline 2212",
-          value : 676
-      } ],
+      data : hotLineData,
       resize : false
   });
 }
