@@ -153,13 +153,13 @@ hourlyData = [ {
 }];
 
 // Area Chart
-$(function drawGraph(data) {
-    if(!data){
-      data = yearlyData;
+$(function drawGraph(newData) {
+    if(!newData){
+      newData = yearlyData;
     }
      callChart = Morris.Area({
         element : 'morris-area-chart',
-        data : data,
+        data : newData,
         xkey : 'period',
         ykeys : [ 'prediction' ],
         labels : [ 'Prediction' ],
