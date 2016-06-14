@@ -157,6 +157,7 @@ $(function drawGraph() {
         ykeys : [ 'prediction' ],
         labels : [ 'Prediction' ],
         pointSize : 2,
+        parseTime: false,
         hideHover : 'auto',
         resize : true
     });
@@ -176,10 +177,4 @@ $(function drawGraph() {
         } ],
         resize : true
     });
-});
-
-$(document).ready(function(){
-  (".durationButtonClass").click(function(){
-    console.log(this.text());
-  });
 });
