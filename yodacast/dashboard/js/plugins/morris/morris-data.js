@@ -177,6 +177,8 @@ $(function drawGraph() {
     });
 });
 
-(".durationButtonClass").click(function(){
-  console.log(this.text());
+$(document).ready(function(){
+  (".durationButtonClass").click(function(){
+    console.log(this.text());
+  });
 });
