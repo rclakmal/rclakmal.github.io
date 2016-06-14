@@ -213,10 +213,10 @@ function updateTable(text){
     drawGraph();
   }
 
-  if(text=="Event"){
-    $.each(newData, function( index, value ) {
-      console.log(value);
-    });
+  if(text=="Event" || text="Hotline"){
+    for (var i in newData) {
+      newData[i].prediction = newData[i].prediction * (Math.floor(Math.random() * 5));
+    }
     drawGraph();
   }
 }
