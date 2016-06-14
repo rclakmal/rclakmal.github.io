@@ -212,6 +212,13 @@ function updateTable(text){
     newData = hourlyData;
     drawGraph();
   }
+
+  if(text=="Event"){
+    $.each(newData, function( index, value ) {
+      console.log(value);
+    });
+    drawGraph();
+  }
 }
 
 $( document ).ready(function() {
