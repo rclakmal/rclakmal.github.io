@@ -147,7 +147,7 @@ $(function drawGraph() {
         prediction : 10
     }];
 
-    var data1= hourlyData;
+    var data1= monthlyData;
 
     // Area Chart
     Morris.Area({
