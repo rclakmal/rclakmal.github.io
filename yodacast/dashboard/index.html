@@ -125,6 +125,7 @@ function eventSave() {
 function hotLineSave() {
 	$("#hotLineAddModel").modal('hide');
 	var checkedValues = $('input:checkbox:checked').map(function() {
+		console.log("Yes");
     return this.value;
 	}).get();
 	updateHotLine(checkedValues)
