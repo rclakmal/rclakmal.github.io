@@ -96,7 +96,12 @@ $('#eventType').on('change', function() {
 function eventSave() {
     console.log("Testtttt");
     var currentUser = localStorage.getItem("currentUser");
-    var newChild = $('<a class="list-group-item" href="#"><span class="badge">25 minutes ago</span> <i class="fa fa-fw fa-info"></i><b>Lakmal Padmakumara</b>Included Holidays</a>');
+    var eventName = $('#eventName').val();
+    var duration = $('#eventDuration').val();
+    var NoOfUsers = $('#eventEffectNo').val();
+    var d = new Date();
+    var currentTimeDate = d.toUTCString() ;
+    var newChild = $('<a class="list-group-item" href="#"><span class="badge">'+currentTimeDate+'</span> <i class="fa fa-fw fa-info"></i><b>'+currentUser+'</b> Included event '+eventName+' for the duration of '+duration+' effecting '+NoOfUsers+' customers. </a>');
     $('.list-group').append(newChild);
 }
 
@@ -442,7 +447,7 @@ function eventSave() {
 							<label for="eventDatePicker"><span
 								class="glyphicon glyphicon-hourglass"></span>Select Event
 								Duration</label> <input type="text" class="form-control"
-								name="daterange" value="01/01/2015 - 01/31/2015" />
+								name="daterange" id="eventDuration" value="01/01/2015 - 01/31/2015" />
 							<script>
                   $('input[name="daterange"]').daterangepicker();
                 </script>
@@ -450,7 +455,7 @@ function eventSave() {
 
 						<div class="form-group">
 							<label for="psw"><span class="glyphicon glyphicon-user"></span>Number
-								of Effected Users</label> <input type="text" class="form-control"
+								of Effected Users</label> <input id="eventEffectNo" type="text" class="form-control"
 								id="noOfUsers" placeholder="Enter Number Of Users">
 
 						</div>
