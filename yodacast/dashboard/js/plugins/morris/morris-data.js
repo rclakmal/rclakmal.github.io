@@ -164,7 +164,7 @@ $(function drawGraph() {
         parseTime: false,
         hideHover : 'auto',
         resize : true,
-        backgroundColor: '#ccc'
+        backgroundColor: '#000'
     });
 
     // Donut Chart
