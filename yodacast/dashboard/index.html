@@ -51,7 +51,7 @@ if(!logged){
   window.location.href = "/yodacast/";
 }else{
 	var userName = localStorage.getItem("currentUser");
-	$('.userLabel').text(userName);
+	$('.fa-user').text(userName);
 }
 
 function logout() {
