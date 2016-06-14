@@ -217,7 +217,7 @@ function updateTable(text){
 
   if(text=="Event" || text=="Hotline"){
     for (var i in newData) {
-      newData[i].prediction = newData[i].prediction * (Math.floor(Math.random() * 5));
+      newData[i].prediction = newData[i].prediction * (Math.floor(Math.random() * 5)+1);
     }
     drawGraph();
   }
