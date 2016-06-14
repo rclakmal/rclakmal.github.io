@@ -34,7 +34,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-<script type="text/javascript"
+<script 
 	src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
 <script type="text/javascript"
 	src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -42,12 +42,15 @@
 	src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="js/test.js"></script>
 
 <script>
 var logged = localStorage.getItem("logged");
+var userName;
 if(!logged){
   window.location.href = "/yodacast/";
 }
+	
 
 function logout() {
   localStorage.removeItem("logged");
@@ -55,6 +58,9 @@ function logout() {
 }
 
 $(document).ready(function(){
+	var userName = localStorage.getItem("currentUser");
+    $('#userLabel').text(userName);
+    console.log(userName+" is Logged");
     $("#addNewEvent").click(function(){
         $("#eventAddModal").modal();
     });
@@ -89,6 +95,27 @@ $('#eventType').on('change', function() {
 
 });
 
+function ucwords (str) {
+    return (str + '').replace(/^([a-z])|\s+([a-z])/g, function ($1) {
+        return $1.toUpperCase();
+    });
+}
+
+function eventSave() {
+	$("#eventAddModal").modal('hide');
+    var currentUser = ucwords(localStorage.getItem("currentUser"));
+    var eventName = $('#eventName').val();
+    var duration = $('#eventDuration').val();
+    var NoOfUsers = $('#eventEffectNo').val();
+    var d = new Date();
+    var currentTimeDate = d.toUTCString() ;
+    var newChild = $('<a class="list-group-item" href="#"><span class="badge">'+currentTimeDate+'</span> <i class="fa fa-fw fa-info"></i><b>'+currentUser+'</b> Included event '+eventName+' for the duration of '+duration+' effecting '+NoOfUsers+' customers. </a>');
+    $('.list-group').append(newChild);
+}
+
+function eventTypeOnChange(){
+    $('#eventName').text($('#eventType').val());
+}
 </script>
 </head>
 
@@ -106,8 +133,8 @@ $('#eventType').on('change', function() {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<img class="navbar-brand" src="img/yodasmall.png" alt="" /> <a
-					class="navbar-brand" href="index.html">YodaCast Dashboard</a>
+				<img class="navbar-brand" src="img/yodasmall.png" alt="" /> 
+				<a class="navbar-brand" href="index.html">YodaCast Dashboard</a>
 			</div>
 			<!-- Top Menu Items -->
 			<ul class="nav navbar-right top-nav">
@@ -120,7 +147,7 @@ $('#eventType').on('change', function() {
 									<span class="pull-left"> <img class="media-object"
 										src="http://placehold.it/50x50" alt="">
 									</span>
-									<div class="media-body">
+									<div class="userLabel media-body">
 										<h5 class="media-heading">
 											<strong>Demo User</strong>
 										</h5>
@@ -136,7 +163,7 @@ $('#eventType').on('change', function() {
 									<span class="pull-left"> <img class="media-object"
 										src="http://placehold.it/50x50" alt="">
 									</span>
-									<div class="media-body">
+									<div class="userLabel media-body">
 										<h5 class="media-heading">
 											<strong>Demo User</strong>
 										</h5>
@@ -152,7 +179,7 @@ $('#eventType').on('change', function() {
 									<span class="pull-left"> <img class="media-object"
 										src="http://placehold.it/50x50" alt="">
 									</span>
-									<div class="media-body">
+									<div class="userLabel media-body">
 										<h5 class="media-heading">
 											<strong>Demo User</strong>
 										</h5>
@@ -175,7 +202,7 @@ $('#eventType').on('change', function() {
 						<li class="divider"></li>
 						<li><a href="#">View All</a></li>
 					</ul></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
+				<li class="dropdown"><a id="userLabel" class="userLabel" href="#" class="dropdown-toggle"
 					data-toggle="dropdown"><i class="fa fa-user"></i> Demo User <b
 						class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -357,24 +384,9 @@ $('#eventType').on('change', function() {
 							</div>
 							<div class="panel-body">
 								<div class="list-group">
-									<a href="#" class="list-group-item"> <span class="badge">just
-											now</span> <i class="fa fa-fw fa-info"></i>Included Technical Fault
-										123Z
-									</a> <a href="#" class="list-group-item"> <span class="badge">4
-											minutes ago</span> <i class="fa fa-fw fa-info"></i>Included Holidays
-									</a> <a href="#" class="list-group-item"> <span class="badge">23
-											minutes ago</span> <i class="fa fa-fw fa-info"></i>Included Sports
-										Events.
-									</a> <a href="#" class="list-group-item"> <span class="badge">45
-											minutes ago</span> <i class="fa fa-fw fa-info"></i>Included Weather
-										Data.
-									</a><a href="#" class="list-group-item"> <span class="badge">1
-											hour ago</span> <i class="fa fa-fw fa-info"></i>Included Technical
-										Fault 002X.
-									</a><a href="#" class="list-group-item"> <span class="badge">2
-											hours ago</span> <i class="fa fa-fw fa-info"></i>Included Billing
-										Data.
-									</a>
+									<a href="#" class="list-group-item"> <span class="badge">25
+											minutes ago</span> <i class="fa fa-fw fa-info"></i><b>Lakmal Padmakumara</b> Included Holidays
+									</a> 
 								</div>
 								<div class="text-right">
 									<button id="addNewEvent" class="btn" type="input">Add
@@ -397,6 +409,7 @@ $('#eventType').on('change', function() {
 
 	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
+    <script src="js/test.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
@@ -428,7 +441,7 @@ $('#eventType').on('change', function() {
 						<div class="form-group">
 							<label for="eventType"><span
 								class="glyphicon glyphicon-calendar"></span>Event Type</label> <select
-								id="eventType" class="form-control selectpicker"
+								id="eventType" onChange="eventTypeOnChange();" class="form-control selectpicker"
 								title="Choose Event Type">
 								<option>Billing Cycles</option>
 								<option>Technical Fault</option>
@@ -445,7 +458,7 @@ $('#eventType').on('change', function() {
 							<label for="eventDatePicker"><span
 								class="glyphicon glyphicon-hourglass"></span>Select Event
 								Duration</label> <input type="text" class="form-control"
-								name="daterange" value="01/01/2015 - 01/31/2015" />
+								name="daterange" id="eventDuration" value="06/01/2016 - 06/30/2015" />
 							<script>
                   $('input[name="daterange"]').daterangepicker();
                 </script>
@@ -453,12 +466,12 @@ $('#eventType').on('change', function() {
 
 						<div class="form-group">
 							<label for="psw"><span class="glyphicon glyphicon-user"></span>Number
-								of Effected Users</label> <input type="text" class="form-control"
+								of Effected Users</label> <input id="eventEffectNo" type="text" class="form-control"
 								id="noOfUsers" placeholder="Enter Number Of Users">
 
 						</div>
 
-						<button type="submit" class="btn btn-success btn-block">
+						<button id="eventSaveButton" onClick="eventSave();" type="button" class="btn btn-success btn-block">
 							<span class="glyphicon glyphicon-off"></span> Save
 						</button>
 					</form>
