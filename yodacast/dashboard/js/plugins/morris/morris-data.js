@@ -238,16 +238,16 @@ function updateTable(text){
 
 function updateHotLine(valuesTs){
   var hotLineDataNew = [];
-  if ($.inArray('HotLine 1212', categories) > -1){
+  if ($.inArray('HotLine 1212', valuesTs) > -1){
     hotLineDataNew.push(hot1);
   }
-  if ($.inArray('HotLine 1414', categories) > -1){
+  if ($.inArray('HotLine 1414', valuesTs) > -1){
     hotLineDataNew.push(hot2);
   }
-  if ($.inArray('HotLine 2122', categories) > -1){
+  if ($.inArray('HotLine 2122', valuesTs) > -1){
     hotLineDataNew.push(hot3);
   }
-  if ($.inArray('HotLine 9919', categories) > -1){
+  if ($.inArray('HotLine 9919', valuesTs) > -1){
     hotLineDataNew.push(hot4);
   }
   drawHotLine(hotLineDataNew);
