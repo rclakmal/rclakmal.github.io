@@ -27,7 +27,7 @@ $('.navbar-collapse ul li a').click(function() {
 
 $('#loginButton').click(function() {
 
-  if(document.getElementById("password").value == document.getElementById("username")){
+  if(document.getElementById("password").value == document.getElementById("username").value){
     localStorage.setItem("logged", "yes");
     window.location.href="/yodacast/dashboard";
     localStorage.setItem("currentUser",document.getElementById("username"));
