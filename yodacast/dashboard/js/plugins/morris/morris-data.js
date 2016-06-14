@@ -183,7 +183,7 @@ function drawGraph() {
             label : "Hotline 2212",
             value : 676
         } ],
-        resize : true
+        resize : false;
     });
 }
 
