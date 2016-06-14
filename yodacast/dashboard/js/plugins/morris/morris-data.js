@@ -235,7 +235,9 @@ function updateTable(text){
     drawGraph();
   }
 }
-
+function updateHotLine(){
+  
+}
 $( document ).ready(function() {
   drawGraph();
   drawHotLine();
