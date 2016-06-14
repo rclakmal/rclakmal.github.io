@@ -193,7 +193,7 @@ var hotLineData = [ {
     value : 4567
 } ]
 
-function drawHotLine(){
+function drawHotLine(hotLineData){
   // Donut Chart
   hotLineChart =   Morris.Donut({
       element : 'morris-donut-chart',
@@ -235,10 +235,24 @@ function updateTable(text){
     drawGraph();
   }
 }
+
 function updateHotLine(valuesTs){
-  console.log(valuesTs);
+  var hotLineDataNew = [];
+  if ($.inArray('HotLine 1212', categories) > -1){
+    hotLineDataNew.push(hot1);
+  }
+  if ($.inArray('HotLine 1414', categories) > -1){
+    hotLineDataNew.push(hot2);
+  }
+  if ($.inArray('HotLine 2122', categories) > -1){
+    hotLineDataNew.push(hot3);
+  }
+  if ($.inArray('HotLine 9919', categories) > -1){
+    hotLineDataNew.push(hot4);
+  }
+  drawHotLine(hotLineDataNew);
 }
 $( document ).ready(function() {
   drawGraph();
-  drawHotLine();
+  drawHotLine(hotLineData);
 });
