@@ -7,6 +7,7 @@ var dailyData;
 var hourlyData;
 var colorChoice=4;
 var lineColorsChoose = ['#337ab7','#5cb85c','#f0ad4e','#d9534f','#ff4400']
+var newData = yearlyData;
 yearlyData = [ {
     period : '2010',
     prediction : 200000
@@ -153,10 +154,7 @@ hourlyData = [ {
 }];
 
 // Area Chart
-$(function drawGraph(newData) {
-    if(newData == 'undefined'){
-      var newData = yearlyData;
-    }
+$(function drawGraph() {
      callChart = Morris.Area({
         element : 'morris-area-chart',
         data : newData,
@@ -190,21 +188,25 @@ $(function drawGraph(newData) {
 function updateTable(text){
   if(text=="Monthly"){
     colorChoice = 0;
-    callChart.setData(monthlyData);
+    newData = monthlyData;
+    drawGraph();
   }
 
   if(text=="Weekly"){
     colorChoice = 1;
-    callChart.setData(weeklyData);
+    newData = weeklyData;
+    drawGraph();
   }
 
   if(text=="Daily"){
     colorChoice = 2;
-    callChart.setData(dailyData);
+    newData = dailyData;
+    drawGraph();
   }
 
   if(text=="Hourly"){
     colorChoice = 3;
-    callChart.setData(hourlyData);
+    newData = hourlyData;
+    drawGraph();
   }
 }
