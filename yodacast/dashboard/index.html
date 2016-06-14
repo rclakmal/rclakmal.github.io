@@ -50,7 +50,8 @@ var userName;
 if(!logged){
   window.location.href = "/yodacast/";
 }else{
-	userName = "Demo User";
+	var userName = localStorage.getItem("currentUser");
+	$('#userLabel').text(userName);
 }
 
 function logout() {
@@ -191,7 +192,7 @@ function eventSave() {
 						<li class="divider"></li>
 						<li><a href="#">View All</a></li>
 					</ul></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
+				<li class="dropdown"><a id="userLabel" href="#" class="dropdown-toggle"
 					data-toggle="dropdown"><i class="fa fa-user"></i> Demo User <b
 						class="caret"></b></a>
 					<ul class="dropdown-menu">
