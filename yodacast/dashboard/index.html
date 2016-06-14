@@ -49,10 +49,8 @@ var logged = localStorage.getItem("logged");
 var userName;
 if(!logged){
   window.location.href = "/yodacast/";
-}else{
-	var userName = localStorage.getItem("currentUser");
-	$('#userLabel').text(userName);
 }
+	
 
 function logout() {
   localStorage.removeItem("logged");
@@ -60,6 +58,9 @@ function logout() {
 }
 
 $(document).ready(function(){
+	var userName = localStorage.getItem("currentUser");
+    $('#userLabel').text(userName);
+    console.log(username+" is Logged");
     $("#addNewEvent").click(function(){
         $("#eventAddModal").modal();
     });
