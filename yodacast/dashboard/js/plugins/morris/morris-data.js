@@ -169,22 +169,24 @@ function drawGraph() {
         resize : true,
         lineColors: [lineColorsChoose[colorChoice]]
     });
+}
 
-    // Donut Chart
-    Morris.Donut({
-        element : 'morris-donut-chart',
-        data : [ {
-            label : "Hotline 1212",
-            value : 4567
-        }, {
-            label : "Hotline 1414",
-            value : 3200
-        }, {
-            label : "Hotline 2212",
-            value : 676
-        } ],
-        resize : false
-    });
+function drawHotLine(){
+  // Donut Chart
+  hotLineChart =   Morris.Donut({
+      element : 'morris-donut-chart',
+      data : [ {
+          label : "Hotline 1212",
+          value : 4567
+      }, {
+          label : "Hotline 1414",
+          value : 3200
+      }, {
+          label : "Hotline 2212",
+          value : 676
+      } ],
+      resize : false
+  });
 }
 
 function updateTable(text){
@@ -223,4 +225,5 @@ function updateTable(text){
 
 $( document ).ready(function() {
   drawGraph();
+  drawHotLine();
 });
