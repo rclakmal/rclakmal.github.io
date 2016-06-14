@@ -93,7 +93,7 @@ $('#eventType').on('change', function() {
 
 });
 
-$('#eventSaveButton').click(function() {
+function eventSave() {
     console.log("Testtttt");
     var currentUser = localStorage.getItem("currentUser");
     var newChild = $('<a class="list-group-item" href="#"><span class="badge">25 minutes ago</span> <i class="fa fa-fw fa-info"></i><b>Lakmal Padmakumara</b>Included Holidays</a>');
@@ -455,7 +455,7 @@ $('#eventSaveButton').click(function() {
 
 						</div>
 
-						<button id="eventSaveButton" type="button" class="btn btn-success btn-block">
+						<button id="eventSaveButton" onClick="eventSave();" type="button" class="btn btn-success btn-block">
 							<span class="glyphicon glyphicon-off"></span> Save
 						</button>
 					</form>
