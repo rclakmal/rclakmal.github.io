@@ -60,7 +60,7 @@ function logout() {
 $(document).ready(function(){
 	var userName = localStorage.getItem("currentUser");
     $('#userLabel').text(userName);
-    console.log(username+" is Logged");
+    console.log(userName+" is Logged");
     $("#addNewEvent").click(function(){
         $("#eventAddModal").modal();
     });
