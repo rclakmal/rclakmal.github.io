@@ -7,7 +7,6 @@ var dailyData;
 var hourlyData;
 var colorChoice=4;
 var lineColorsChoose = ['#337ab7','#5cb85c','#f0ad4e','#d9534f','#ff4400']
-var newData = yearlyData;
 yearlyData = [ {
     period : '2010',
     prediction : 200000
@@ -153,8 +152,10 @@ hourlyData = [ {
     prediction : 10
 }];
 
+var newData = yearlyData;
+
 // Area Chart
-$(function drawGraph() {
+function drawGraph() {
      callChart = Morris.Area({
         element : 'morris-area-chart',
         data : newData,
@@ -210,3 +211,7 @@ function updateTable(text){
     drawGraph();
   }
 }
+
+$( document ).ready(function() {
+  drawGraph();
+});
