@@ -14,7 +14,7 @@ $(function() {
     // Area Chart
     Morris.Area({
         element: 'morris-area-chart',
-        data: data1;
+        data: data1,
         xkey: 'period',
         ykeys: ['prediction'],
         labels: ['Prediction'],
