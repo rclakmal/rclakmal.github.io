@@ -46,11 +46,14 @@
 
 <script>
 var logged = localStorage.getItem("logged");
+var userName = localStorage.getItem("currentUser");
 var userName;
 if(!logged){
   window.location.href = "/yodacast/";
 }
-
+if (!userName){
+	window.location.href = "/yodacast/";
+}
 
 function logout() {
   localStorage.removeItem("logged");
