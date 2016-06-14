@@ -5,6 +5,7 @@ var monthlyData;
 var weeklyData;
 var dailyData;
 var hourlyData;
+var colorChoice=4;
 $(function drawGraph() {
 
     yearlyData = [ {
@@ -152,6 +153,7 @@ $(function drawGraph() {
         prediction : 10
     }];
 
+    lineColorsChoose = ['#337ab7','#5cb85c','#f0ad4e','#d9534f','#ff4400']
 
     // Area Chart
      callChart = Morris.Area({
@@ -164,7 +166,7 @@ $(function drawGraph() {
         parseTime: false,
         hideHover : 'auto',
         resize : true,
-        lineColors: ['#ff4400']
+        lineColors: [lineColorsChoose[colorChoice]]
     });
 
     // Donut Chart
@@ -186,18 +188,22 @@ $(function drawGraph() {
 
 function updateTable(text){
   if(text=="Monthly"){
+    colorChoice = 0;
     callChart.setData(monthlyData);
   }
 
   if(text=="Weekly"){
+    colorChoice = 1;
     callChart.setData(weeklyData);
   }
 
   if(text=="Daily"){
+    colorChoice = 2;
     callChart.setData(dailyData);
   }
 
   if(text=="Hourly"){
+    colorChoice = 3;
     callChart.setData(hourlyData);
   }
 }
