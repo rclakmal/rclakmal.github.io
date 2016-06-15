@@ -122,13 +122,17 @@ function eventSave() {
     var currentTimeDate = d.toUTCString() ;
     var newChild = $('<a class="list-group-item" href="#"><span class="badge">'+currentTimeDate+'</span> <i class="fa fa-fw fa-info"></i><b>'+currentUser+'</b> Included event '+eventName+' for the duration of '+duration+' effecting '+NoOfUsers+' customers. </a>');
     $('.list-group').append(newChild);
+		console.log(eventType);
 		if(eventType=="Sport Event"){
 			updateTable("football");
-		} else if (eventType=="Weather") {
-			updateTable("weather");
-		} else {
-			updateTable("Event");
+			return;
 		}
+		if (eventType=="Weather") {
+			updateTable("weather");
+			return;
+		}
+		updateTable("Event");
+
 }
 
 
