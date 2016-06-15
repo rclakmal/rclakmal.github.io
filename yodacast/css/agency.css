@@ -221,7 +221,7 @@ header {
     background-image: url(../img/header-bgnew.jpg);
     background-repeat: none;
     background-attachment: scroll;
-    background-position: center center;
+    background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -737,4 +737,16 @@ body {
 .titleClass {
   font-family: Calibri;
   font-weight: bold;
+}
+
+.serviceSection {
+
+}
+
+header {
+  padding-bottom:55px;
+}
+
+.thirdRow {
+  margin-right:-355px;
 }
