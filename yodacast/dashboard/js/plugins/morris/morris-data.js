@@ -4711,7 +4711,7 @@ function drawFootBallYoda() {
         element : 'morris-area-chart',
         data : footBallData,
         xkey : 'period',
-        ykeys : [ 'Yodacast', 'FootBall' ],
+        ykeys : [ 'Yodacast', 'Football' ],
         labels : [ 'Yodacast', 'Football' ],
         pointSize : 2,
         parseTime : false,
