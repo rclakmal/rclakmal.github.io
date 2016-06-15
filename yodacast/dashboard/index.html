@@ -114,6 +114,7 @@ function ucwords (str) {
 function eventSave() {
 	$("#eventAddModal").modal('hide');
     var currentUser = ucwords(localStorage.getItem("currentUser"));
+		var eventType = $('#eventType').val();
     var eventName = $('#eventName').val();
     var duration = $('#eventDuration').val();
     var NoOfUsers = $('#eventEffectNo').val();
@@ -121,7 +122,13 @@ function eventSave() {
     var currentTimeDate = d.toUTCString() ;
     var newChild = $('<a class="list-group-item" href="#"><span class="badge">'+currentTimeDate+'</span> <i class="fa fa-fw fa-info"></i><b>'+currentUser+'</b> Included event '+eventName+' for the duration of '+duration+' effecting '+NoOfUsers+' customers. </a>');
     $('.list-group').append(newChild);
-		updateTable("Event");
+		if(eventType=="Sport Event"){
+			updateTable("football");
+		} else if (eventType=="Weather") {
+			updateTable("weather");
+		} else {
+			updateTable("Event");
+		}
 }
 
 
@@ -466,6 +473,8 @@ function eventTypeOnChange(){
 								<option>Billing Cycles</option>
 								<option>Technical Fault</option>
 								<option>Product Launch</option>
+								<option>Sport Event</option>
+								<option>Weather</option>
 							</select>
 						</div>
 						<div class="form-group">

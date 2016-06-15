@@ -1537,6 +1537,2432 @@ basicYodadata = [ {
     "Target" : 14,
     "Yodacast" : 29
 } ];
+
+var weatherYodaData = [ {
+    "Yodacast" : 73,
+    "BadWeather" : 70,
+    "GoodWeather" : 38
+}, {
+    "Yodacast" : 31,
+    "BadWeather" : 42,
+    "GoodWeather" : -39
+}, {
+    "Yodacast" : -6,
+    "BadWeather" : 19,
+    "GoodWeather" : -104
+}, {
+    "Yodacast" : 29,
+    "BadWeather" : 22,
+    "GoodWeather" : 15
+}, {
+    "Yodacast" : 22,
+    "BadWeather" : 24,
+    "GoodWeather" : 4
+}, {
+    "Yodacast" : -13,
+    "BadWeather" : -14,
+    "GoodWeather" : -30
+}, {
+    "Yodacast" : 1,
+    "BadWeather" : -3,
+    "GoodWeather" : -29
+}, {
+    "Yodacast" : -121,
+    "BadWeather" : -102,
+    "GoodWeather" : -155
+}, {
+    "Yodacast" : -79,
+    "BadWeather" : -54,
+    "GoodWeather" : -106
+}, {
+    "Yodacast" : -41,
+    "BadWeather" : -16,
+    "GoodWeather" : -63
+}, {
+    "Yodacast" : -8,
+    "BadWeather" : 11,
+    "GoodWeather" : -25
+}, {
+    "Yodacast" : 23,
+    "BadWeather" : 32,
+    "GoodWeather" : 10
+}, {
+    "Yodacast" : 56,
+    "BadWeather" : 52,
+    "GoodWeather" : 50
+}, {
+    "Yodacast" : 98,
+    "BadWeather" : 81,
+    "GoodWeather" : 101
+}, {
+    "Yodacast" : 160,
+    "BadWeather" : 132,
+    "GoodWeather" : 172
+}, {
+    "Yodacast" : 250,
+    "BadWeather" : 215,
+    "GoodWeather" : 271
+}, {
+    "Yodacast" : 375,
+    "BadWeather" : 336,
+    "GoodWeather" : 399
+}, {
+    "Yodacast" : 535,
+    "BadWeather" : 492,
+    "GoodWeather" : 554
+}, {
+    "Yodacast" : 716,
+    "BadWeather" : 675,
+    "GoodWeather" : 723
+}, {
+    "Yodacast" : 900,
+    "BadWeather" : 868,
+    "GoodWeather" : 895
+}, {
+    "Yodacast" : 1073,
+    "BadWeather" : 1055,
+    "GoodWeather" : 1055
+}, {
+    "Yodacast" : 1222,
+    "BadWeather" : 1224,
+    "GoodWeather" : 1194
+}, {
+    "Yodacast" : 1343,
+    "BadWeather" : 1367,
+    "GoodWeather" : 1306
+}, {
+    "Yodacast" : 1432,
+    "BadWeather" : 1480,
+    "GoodWeather" : 1390
+}, {
+    "Yodacast" : 1495,
+    "BadWeather" : 1564,
+    "GoodWeather" : 1448
+}, {
+    "Yodacast" : 1538,
+    "BadWeather" : 1621,
+    "GoodWeather" : 1481
+}, {
+    "Yodacast" : 1556,
+    "BadWeather" : 1655,
+    "GoodWeather" : 1496
+}, {
+    "Yodacast" : 1522,
+    "BadWeather" : 1635,
+    "GoodWeather" : 1463
+}, {
+    "Yodacast" : 1453,
+    "BadWeather" : 1579,
+    "GoodWeather" : 1398
+}, {
+    "Yodacast" : 1406,
+    "BadWeather" : 1545,
+    "GoodWeather" : 1353
+}, {
+    "Yodacast" : 1353,
+    "BadWeather" : 1502,
+    "GoodWeather" : 1298
+}, {
+    "Yodacast" : 1476,
+    "BadWeather" : 1630,
+    "GoodWeather" : 1412
+}, {
+    "Yodacast" : 1452,
+    "BadWeather" : 1610,
+    "GoodWeather" : 1384
+}, {
+    "Yodacast" : 1427,
+    "BadWeather" : 1587,
+    "GoodWeather" : 1355
+}, {
+    "Yodacast" : 1402,
+    "BadWeather" : 1563,
+    "GoodWeather" : 1327
+}, {
+    "Yodacast" : 1375,
+    "BadWeather" : 1534,
+    "GoodWeather" : 1298
+}, {
+    "Yodacast" : 1344,
+    "BadWeather" : 1497,
+    "GoodWeather" : 1266
+}, {
+    "Yodacast" : 1306,
+    "BadWeather" : 1447,
+    "GoodWeather" : 1227
+}, {
+    "Yodacast" : 1259,
+    "BadWeather" : 1381,
+    "GoodWeather" : 1178
+}, {
+    "Yodacast" : 1197,
+    "BadWeather" : 1295,
+    "GoodWeather" : 1115
+}, {
+    "Yodacast" : 1112,
+    "BadWeather" : 1185,
+    "GoodWeather" : 1033
+}, {
+    "Yodacast" : 1007,
+    "BadWeather" : 1052,
+    "GoodWeather" : 933
+}, {
+    "Yodacast" : 877,
+    "BadWeather" : 898,
+    "GoodWeather" : 816
+}, {
+    "Yodacast" : 724,
+    "BadWeather" : 732,
+    "GoodWeather" : 686
+}, {
+    "Yodacast" : 570,
+    "BadWeather" : 565,
+    "GoodWeather" : 550
+}, {
+    "Yodacast" : 426,
+    "BadWeather" : 413,
+    "GoodWeather" : 418
+}, {
+    "Yodacast" : 302,
+    "BadWeather" : 289,
+    "GoodWeather" : 294
+}, {
+    "Yodacast" : 196,
+    "BadWeather" : 197,
+    "GoodWeather" : 182
+}, {
+    "Yodacast" : 110,
+    "BadWeather" : 132,
+    "GoodWeather" : 81
+}, {
+    "Yodacast" : 39,
+    "BadWeather" : 84,
+    "GoodWeather" : -7
+}, {
+    "Yodacast" : -18,
+    "BadWeather" : 47,
+    "GoodWeather" : -80
+}, {
+    "Yodacast" : 66,
+    "BadWeather" : 76,
+    "GoodWeather" : 52
+}, {
+    "Yodacast" : 30,
+    "BadWeather" : 40,
+    "GoodWeather" : 10
+}, {
+    "Yodacast" : 8,
+    "BadWeather" : 9,
+    "GoodWeather" : 3
+}, {
+    "Yodacast" : 3,
+    "BadWeather" : 15,
+    "GoodWeather" : 4
+}, {
+    "Yodacast" : -162,
+    "BadWeather" : -115,
+    "GoodWeather" : -224
+}, {
+    "Yodacast" : -81,
+    "BadWeather" : -50,
+    "GoodWeather" : -141
+}, {
+    "Yodacast" : -25,
+    "BadWeather" : -5,
+    "GoodWeather" : -75
+}, {
+    "Yodacast" : 11,
+    "BadWeather" : 21,
+    "GoodWeather" : -22
+}, {
+    "Yodacast" : 35,
+    "BadWeather" : 32,
+    "GoodWeather" : 21
+}, {
+    "Yodacast" : 55,
+    "BadWeather" : 39,
+    "GoodWeather" : 63
+}, {
+    "Yodacast" : 82,
+    "BadWeather" : 54,
+    "GoodWeather" : 113
+}, {
+    "Yodacast" : 129,
+    "BadWeather" : 91,
+    "GoodWeather" : 183
+}, {
+    "Yodacast" : 206,
+    "BadWeather" : 164,
+    "GoodWeather" : 280
+}, {
+    "Yodacast" : 321,
+    "BadWeather" : 276,
+    "GoodWeather" : 407
+}, {
+    "Yodacast" : 476,
+    "BadWeather" : 425,
+    "GoodWeather" : 559
+}, {
+    "Yodacast" : 654,
+    "BadWeather" : 599,
+    "GoodWeather" : 724
+}, {
+    "Yodacast" : 835,
+    "BadWeather" : 782,
+    "GoodWeather" : 889
+}, {
+    "Yodacast" : 1004,
+    "BadWeather" : 958,
+    "GoodWeather" : 1041
+}, {
+    "Yodacast" : 1146,
+    "BadWeather" : 1115,
+    "GoodWeather" : 1170
+}, {
+    "Yodacast" : 1255,
+    "BadWeather" : 1246,
+    "GoodWeather" : 1273
+}, {
+    "Yodacast" : 1331,
+    "BadWeather" : 1348,
+    "GoodWeather" : 1348
+}, {
+    "Yodacast" : 1386,
+    "BadWeather" : 1421,
+    "GoodWeather" : 1396
+}, {
+    "Yodacast" : 1425,
+    "BadWeather" : 1470,
+    "GoodWeather" : 1422
+}, {
+    "Yodacast" : 1447,
+    "BadWeather" : 1497,
+    "GoodWeather" : 1429
+}, {
+    "Yodacast" : 1447,
+    "BadWeather" : 1497,
+    "GoodWeather" : 1412
+}, {
+    "Yodacast" : 1438,
+    "BadWeather" : 1488,
+    "GoodWeather" : 1387
+}, {
+    "Yodacast" : 1425,
+    "BadWeather" : 1474,
+    "GoodWeather" : 1360
+}, {
+    "Yodacast" : 1406,
+    "BadWeather" : 1455,
+    "GoodWeather" : 1330
+}, {
+    "Yodacast" : 1402,
+    "BadWeather" : 1454,
+    "GoodWeather" : 1319
+}, {
+    "Yodacast" : 1383,
+    "BadWeather" : 1433,
+    "GoodWeather" : 1288
+}, {
+    "Yodacast" : 1367,
+    "BadWeather" : 1412,
+    "GoodWeather" : 1260
+}, {
+    "Yodacast" : 1352,
+    "BadWeather" : 1391,
+    "GoodWeather" : 1234
+}, {
+    "Yodacast" : 1336,
+    "BadWeather" : 1368,
+    "GoodWeather" : 1210
+}, {
+    "Yodacast" : 1312,
+    "BadWeather" : 1340,
+    "GoodWeather" : 1186
+}, {
+    "Yodacast" : 1278,
+    "BadWeather" : 1305,
+    "GoodWeather" : 1159
+}, {
+    "Yodacast" : 1240,
+    "BadWeather" : 1257,
+    "GoodWeather" : 1125
+}, {
+    "Yodacast" : 1191,
+    "BadWeather" : 1194,
+    "GoodWeather" : 1080
+}, {
+    "Yodacast" : 1123,
+    "BadWeather" : 1111,
+    "GoodWeather" : 1020
+}, {
+    "Yodacast" : 1036,
+    "BadWeather" : 1008,
+    "GoodWeather" : 942
+}, {
+    "Yodacast" : 922,
+    "BadWeather" : 885,
+    "GoodWeather" : 847
+}, {
+    "Yodacast" : 783,
+    "BadWeather" : 746,
+    "GoodWeather" : 735
+}, {
+    "Yodacast" : 635,
+    "BadWeather" : 600,
+    "GoodWeather" : 611
+}, {
+    "Yodacast" : 490,
+    "BadWeather" : 458,
+    "GoodWeather" : 480
+}, {
+    "Yodacast" : 356,
+    "BadWeather" : 332,
+    "GoodWeather" : 347
+}, {
+    "Yodacast" : 227,
+    "BadWeather" : 227,
+    "GoodWeather" : 212
+}, {
+    "Yodacast" : 107,
+    "BadWeather" : 135,
+    "GoodWeather" : 72
+}, {
+    "Yodacast" : -11,
+    "BadWeather" : 43,
+    "GoodWeather" : -75
+}, {
+    "Yodacast" : -137,
+    "BadWeather" : -61,
+    "GoodWeather" : -228
+}, {
+    "Yodacast" : 48,
+    "BadWeather" : 63,
+    "GoodWeather" : 5
+}, {
+    "Yodacast" : 20,
+    "BadWeather" : 48,
+    "GoodWeather" : -12
+}, {
+    "Yodacast" : 27,
+    "BadWeather" : 32,
+    "GoodWeather" : 11
+}, {
+    "Yodacast" : 81,
+    "BadWeather" : 70,
+    "GoodWeather" : 46
+}, {
+    "Yodacast" : -7,
+    "BadWeather" : 74,
+    "GoodWeather" : -33
+}, {
+    "Yodacast" : 33,
+    "BadWeather" : 97,
+    "GoodWeather" : 7
+}, {
+    "Yodacast" : 55,
+    "BadWeather" : 103,
+    "GoodWeather" : 34
+}, {
+    "Yodacast" : 66,
+    "BadWeather" : 94,
+    "GoodWeather" : 51
+}, {
+    "Yodacast" : 72,
+    "BadWeather" : 77,
+    "GoodWeather" : 63
+}, {
+    "Yodacast" : 82,
+    "BadWeather" : 61,
+    "GoodWeather" : 80
+}, {
+    "Yodacast" : 107,
+    "BadWeather" : 63,
+    "GoodWeather" : 113
+}, {
+    "Yodacast" : 161,
+    "BadWeather" : 97,
+    "GoodWeather" : 173
+}, {
+    "Yodacast" : 251,
+    "BadWeather" : 175,
+    "GoodWeather" : 270
+}, {
+    "Yodacast" : 381,
+    "BadWeather" : 299,
+    "GoodWeather" : 402
+}, {
+    "Yodacast" : 544,
+    "BadWeather" : 463,
+    "GoodWeather" : 561
+}, {
+    "Yodacast" : 724,
+    "BadWeather" : 652,
+    "GoodWeather" : 735
+}, {
+    "Yodacast" : 902,
+    "BadWeather" : 847,
+    "GoodWeather" : 907
+}, {
+    "Yodacast" : 1066,
+    "BadWeather" : 1032,
+    "GoodWeather" : 1064
+}, {
+    "Yodacast" : 1205,
+    "BadWeather" : 1195,
+    "GoodWeather" : 1196
+}, {
+    "Yodacast" : 1313,
+    "BadWeather" : 1329,
+    "GoodWeather" : 1300
+}, {
+    "Yodacast" : 1391,
+    "BadWeather" : 1433,
+    "GoodWeather" : 1375
+}, {
+    "Yodacast" : 1442,
+    "BadWeather" : 1507,
+    "GoodWeather" : 1423
+}, {
+    "Yodacast" : 1471,
+    "BadWeather" : 1555,
+    "GoodWeather" : 1447
+}, {
+    "Yodacast" : 1483,
+    "BadWeather" : 1580,
+    "GoodWeather" : 1451
+}, {
+    "Yodacast" : 1412,
+    "BadWeather" : 1517,
+    "GoodWeather" : 1367
+}, {
+    "Yodacast" : 1372,
+    "BadWeather" : 1483,
+    "GoodWeather" : 1315
+}, {
+    "Yodacast" : 1346,
+    "BadWeather" : 1461,
+    "GoodWeather" : 1279
+}, {
+    "Yodacast" : 1305,
+    "BadWeather" : 1425,
+    "GoodWeather" : 1232
+}, {
+    "Yodacast" : 1393,
+    "BadWeather" : 1520,
+    "GoodWeather" : 1321
+}, {
+    "Yodacast" : 1349,
+    "BadWeather" : 1490,
+    "GoodWeather" : 1281
+}, {
+    "Yodacast" : 1304,
+    "BadWeather" : 1460,
+    "GoodWeather" : 1243
+}, {
+    "Yodacast" : 1261,
+    "BadWeather" : 1429,
+    "GoodWeather" : 1208
+}, {
+    "Yodacast" : 1222,
+    "BadWeather" : 1397,
+    "GoodWeather" : 1176
+}, {
+    "Yodacast" : 1185,
+    "BadWeather" : 1359,
+    "GoodWeather" : 1144
+}, {
+    "Yodacast" : 1149,
+    "BadWeather" : 1315,
+    "GoodWeather" : 1110
+}, {
+    "Yodacast" : 1105,
+    "BadWeather" : 1259,
+    "GoodWeather" : 1071
+}, {
+    "Yodacast" : 1050,
+    "BadWeather" : 1188,
+    "GoodWeather" : 1022
+}, {
+    "Yodacast" : 983,
+    "BadWeather" : 1100,
+    "GoodWeather" : 960
+}, {
+    "Yodacast" : 899,
+    "BadWeather" : 994,
+    "GoodWeather" : 884
+}, {
+    "Yodacast" : 802,
+    "BadWeather" : 869,
+    "GoodWeather" : 793
+}, {
+    "Yodacast" : 691,
+    "BadWeather" : 729,
+    "GoodWeather" : 688
+}, {
+    "Yodacast" : 573,
+    "BadWeather" : 583,
+    "GoodWeather" : 575
+}, {
+    "Yodacast" : 454,
+    "BadWeather" : 445,
+    "GoodWeather" : 460
+}, {
+    "Yodacast" : 342,
+    "BadWeather" : 329,
+    "GoodWeather" : 349
+}, {
+    "Yodacast" : 239,
+    "BadWeather" : 243,
+    "GoodWeather" : 245
+}, {
+    "Yodacast" : 144,
+    "BadWeather" : 185,
+    "GoodWeather" : 146
+}, {
+    "Yodacast" : 51,
+    "BadWeather" : 139,
+    "GoodWeather" : 47
+}, {
+    "Yodacast" : -41,
+    "BadWeather" : 93,
+    "GoodWeather" : -54
+}, {
+    "Yodacast" : 67,
+    "BadWeather" : 99,
+    "GoodWeather" : 65
+}, {
+    "Yodacast" : 67,
+    "BadWeather" : 93,
+    "GoodWeather" : 65
+}, {
+    "Yodacast" : 77,
+    "BadWeather" : 76,
+    "GoodWeather" : 79
+}, {
+    "Yodacast" : 83,
+    "BadWeather" : 84,
+    "GoodWeather" : 79
+}, {
+    "Yodacast" : 51,
+    "BadWeather" : 121,
+    "GoodWeather" : 26
+}, {
+    "Yodacast" : 43,
+    "BadWeather" : 103,
+    "GoodWeather" : 22
+}, {
+    "Yodacast" : 29,
+    "BadWeather" : 72,
+    "GoodWeather" : 10
+}, {
+    "Yodacast" : 7,
+    "BadWeather" : 30,
+    "GoodWeather" : -7
+}, {
+    "Yodacast" : -15,
+    "BadWeather" : -13,
+    "GoodWeather" : -23
+}, {
+    "Yodacast" : -24,
+    "BadWeather" : -46,
+    "GoodWeather" : -25
+}, {
+    "Yodacast" : -7,
+    "BadWeather" : -51,
+    "GoodWeather" : -2
+}, {
+    "Yodacast" : 46,
+    "BadWeather" : -13,
+    "GoodWeather" : 59
+}, {
+    "Yodacast" : 142,
+    "BadWeather" : 78,
+    "GoodWeather" : 163
+}, {
+    "Yodacast" : 287,
+    "BadWeather" : 221,
+    "GoodWeather" : 310
+}, {
+    "Yodacast" : 475,
+    "BadWeather" : 407,
+    "GoodWeather" : 486
+}, {
+    "Yodacast" : 680,
+    "BadWeather" : 616,
+    "GoodWeather" : 676
+}, {
+    "Yodacast" : 877,
+    "BadWeather" : 829,
+    "GoodWeather" : 864
+}, {
+    "Yodacast" : 1056,
+    "BadWeather" : 1029,
+    "GoodWeather" : 1034
+}, {
+    "Yodacast" : 1204,
+    "BadWeather" : 1204,
+    "GoodWeather" : 1180
+}, {
+    "Yodacast" : 1314,
+    "BadWeather" : 1350,
+    "GoodWeather" : 1296
+}, {
+    "Yodacast" : 1388,
+    "BadWeather" : 1465,
+    "GoodWeather" : 1383
+}, {
+    "Yodacast" : 1443,
+    "BadWeather" : 1550,
+    "GoodWeather" : 1443
+}, {
+    "Yodacast" : 1482,
+    "BadWeather" : 1607,
+    "GoodWeather" : 1478
+}, {
+    "Yodacast" : 1501,
+    "BadWeather" : 1642,
+    "GoodWeather" : 1493
+}, {
+    "Yodacast" : 1387,
+    "BadWeather" : 1540,
+    "GoodWeather" : 1370
+}, {
+    "Yodacast" : 1333,
+    "BadWeather" : 1493,
+    "GoodWeather" : 1308
+}, {
+    "Yodacast" : 1307,
+    "BadWeather" : 1473,
+    "GoodWeather" : 1274
+}, {
+    "Yodacast" : 1267,
+    "BadWeather" : 1440,
+    "GoodWeather" : 1229
+}, {
+    "Yodacast" : 1432,
+    "BadWeather" : 1611,
+    "GoodWeather" : 1391
+}, {
+    "Yodacast" : 1390,
+    "BadWeather" : 1578,
+    "GoodWeather" : 1348
+}, {
+    "Yodacast" : 1348,
+    "BadWeather" : 1541,
+    "GoodWeather" : 1303
+}, {
+    "Yodacast" : 1306,
+    "BadWeather" : 1501,
+    "GoodWeather" : 1260
+}, {
+    "Yodacast" : 1263,
+    "BadWeather" : 1457,
+    "GoodWeather" : 1216
+}, {
+    "Yodacast" : 1218,
+    "BadWeather" : 1406,
+    "GoodWeather" : 1172
+}, {
+    "Yodacast" : 1168,
+    "BadWeather" : 1346,
+    "GoodWeather" : 1125
+}, {
+    "Yodacast" : 1113,
+    "BadWeather" : 1275,
+    "GoodWeather" : 1072
+}, {
+    "Yodacast" : 1050,
+    "BadWeather" : 1190,
+    "GoodWeather" : 1011
+}, {
+    "Yodacast" : 975,
+    "BadWeather" : 1089,
+    "GoodWeather" : 939
+}, {
+    "Yodacast" : 887,
+    "BadWeather" : 971,
+    "GoodWeather" : 854
+}, {
+    "Yodacast" : 784,
+    "BadWeather" : 837,
+    "GoodWeather" : 758
+}, {
+    "Yodacast" : 668,
+    "BadWeather" : 691,
+    "GoodWeather" : 653
+}, {
+    "Yodacast" : 548,
+    "BadWeather" : 541,
+    "GoodWeather" : 543
+}, {
+    "Yodacast" : 434,
+    "BadWeather" : 401,
+    "GoodWeather" : 437
+}, {
+    "Yodacast" : 336,
+    "BadWeather" : 290,
+    "GoodWeather" : 343
+}, {
+    "Yodacast" : 255,
+    "BadWeather" : 220,
+    "GoodWeather" : 268
+}, {
+    "Yodacast" : 196,
+    "BadWeather" : 192,
+    "GoodWeather" : 211
+}, {
+    "Yodacast" : 156,
+    "BadWeather" : 192,
+    "GoodWeather" : 166
+}, {
+    "Yodacast" : 127,
+    "BadWeather" : 206,
+    "GoodWeather" : 132
+}, {
+    "Yodacast" : 64,
+    "BadWeather" : 78,
+    "GoodWeather" : 80
+}, {
+    "Yodacast" : 58,
+    "BadWeather" : 50,
+    "GoodWeather" : 62
+}, {
+    "Yodacast" : 57,
+    "BadWeather" : 62,
+    "GoodWeather" : 47
+}, {
+    "Yodacast" : -19,
+    "BadWeather" : 32,
+    "GoodWeather" : -34
+}, {
+    "Yodacast" : -34,
+    "BadWeather" : 25,
+    "GoodWeather" : -100
+}, {
+    "Yodacast" : -42,
+    "BadWeather" : 19,
+    "GoodWeather" : -99
+}, {
+    "Yodacast" : -43,
+    "BadWeather" : 9,
+    "GoodWeather" : -99
+}, {
+    "Yodacast" : -46,
+    "BadWeather" : -3,
+    "GoodWeather" : -95
+}, {
+    "Yodacast" : -44,
+    "BadWeather" : -13,
+    "GoodWeather" : -84
+}, {
+    "Yodacast" : -31,
+    "BadWeather" : -13,
+    "GoodWeather" : -60
+}, {
+    "Yodacast" : 2,
+    "BadWeather" : 5,
+    "GoodWeather" : -15
+}, {
+    "Yodacast" : 61,
+    "BadWeather" : 52,
+    "GoodWeather" : 57
+}, {
+    "Yodacast" : 152,
+    "BadWeather" : 135,
+    "GoodWeather" : 160
+}, {
+    "Yodacast" : 278,
+    "BadWeather" : 257,
+    "GoodWeather" : 294
+}, {
+    "Yodacast" : 436,
+    "BadWeather" : 414,
+    "GoodWeather" : 450
+}, {
+    "Yodacast" : 613,
+    "BadWeather" : 596,
+    "GoodWeather" : 620
+}, {
+    "Yodacast" : 794,
+    "BadWeather" : 788,
+    "GoodWeather" : 790
+}, {
+    "Yodacast" : 969,
+    "BadWeather" : 976,
+    "GoodWeather" : 951
+}, {
+    "Yodacast" : 1126,
+    "BadWeather" : 1150,
+    "GoodWeather" : 1094
+}, {
+    "Yodacast" : 1258,
+    "BadWeather" : 1300,
+    "GoodWeather" : 1215
+}, {
+    "Yodacast" : 1363,
+    "BadWeather" : 1423,
+    "GoodWeather" : 1312
+}, {
+    "Yodacast" : 1443,
+    "BadWeather" : 1517,
+    "GoodWeather" : 1384
+}, {
+    "Yodacast" : 1499,
+    "BadWeather" : 1584,
+    "GoodWeather" : 1433
+}, {
+    "Yodacast" : 1534,
+    "BadWeather" : 1624,
+    "GoodWeather" : 1459
+}, {
+    "Yodacast" : 1420,
+    "BadWeather" : 1513,
+    "GoodWeather" : 1339
+}, {
+    "Yodacast" : 1390,
+    "BadWeather" : 1482,
+    "GoodWeather" : 1304
+}, {
+    "Yodacast" : 1365,
+    "BadWeather" : 1455,
+    "GoodWeather" : 1271
+}, {
+    "Yodacast" : 1312,
+    "BadWeather" : 1403,
+    "GoodWeather" : 1213
+}, {
+    "Yodacast" : 1461,
+    "BadWeather" : 1555,
+    "GoodWeather" : 1358
+}, {
+    "Yodacast" : 1402,
+    "BadWeather" : 1499,
+    "GoodWeather" : 1303
+}, {
+    "Yodacast" : 1335,
+    "BadWeather" : 1436,
+    "GoodWeather" : 1242
+}, {
+    "Yodacast" : 1263,
+    "BadWeather" : 1365,
+    "GoodWeather" : 1176
+}, {
+    "Yodacast" : 1187,
+    "BadWeather" : 1289,
+    "GoodWeather" : 1108
+}, {
+    "Yodacast" : 1109,
+    "BadWeather" : 1207,
+    "GoodWeather" : 1037
+}, {
+    "Yodacast" : 1029,
+    "BadWeather" : 1119,
+    "GoodWeather" : 964
+}, {
+    "Yodacast" : 946,
+    "BadWeather" : 1026,
+    "GoodWeather" : 890
+}, {
+    "Yodacast" : 859,
+    "BadWeather" : 927,
+    "GoodWeather" : 814
+}, {
+    "Yodacast" : 770,
+    "BadWeather" : 823,
+    "GoodWeather" : 738
+}, {
+    "Yodacast" : 678,
+    "BadWeather" : 714,
+    "GoodWeather" : 661
+}, {
+    "Yodacast" : 586,
+    "BadWeather" : 602,
+    "GoodWeather" : 586
+}, {
+    "Yodacast" : 496,
+    "BadWeather" : 492,
+    "GoodWeather" : 512
+}, {
+    "Yodacast" : 409,
+    "BadWeather" : 389,
+    "GoodWeather" : 439
+}, {
+    "Yodacast" : 328,
+    "BadWeather" : 298,
+    "GoodWeather" : 365
+}, {
+    "Yodacast" : 250,
+    "BadWeather" : 222,
+    "GoodWeather" : 286
+}, {
+    "Yodacast" : 172,
+    "BadWeather" : 161,
+    "GoodWeather" : 201
+}, {
+    "Yodacast" : 99,
+    "BadWeather" : 112,
+    "GoodWeather" : 113
+}, {
+    "Yodacast" : 38,
+    "BadWeather" : 77,
+    "GoodWeather" : 33
+}, {
+    "Yodacast" : -2,
+    "BadWeather" : 58,
+    "GoodWeather" : -26
+}, {
+    "Yodacast" : 48,
+    "BadWeather" : 102,
+    "GoodWeather" : 64
+}, {
+    "Yodacast" : 54,
+    "BadWeather" : 90,
+    "GoodWeather" : 60
+}, {
+    "Yodacast" : 42,
+    "BadWeather" : 68,
+    "GoodWeather" : 18
+}, {
+    "Yodacast" : 26,
+    "BadWeather" : 61,
+    "GoodWeather" : -17
+}, {
+    "Yodacast" : -7,
+    "BadWeather" : 47,
+    "GoodWeather" : -103
+}, {
+    "Yodacast" : 6,
+    "BadWeather" : 50,
+    "GoodWeather" : -94
+}, {
+    "Yodacast" : 10,
+    "BadWeather" : 48,
+    "GoodWeather" : -86
+}, {
+    "Yodacast" : 9,
+    "BadWeather" : 42,
+    "GoodWeather" : -77
+}, {
+    "Yodacast" : 9,
+    "BadWeather" : 34,
+    "GoodWeather" : -65
+}, {
+    "Yodacast" : 13,
+    "BadWeather" : 28,
+    "GoodWeather" : -46
+}, {
+    "Yodacast" : 25,
+    "BadWeather" : 30,
+    "GoodWeather" : -14
+}, {
+    "Yodacast" : 51,
+    "BadWeather" : 48,
+    "GoodWeather" : 35
+}, {
+    "Yodacast" : 95,
+    "BadWeather" : 88,
+    "GoodWeather" : 105
+}, {
+    "Yodacast" : 164,
+    "BadWeather" : 156,
+    "GoodWeather" : 196
+}, {
+    "Yodacast" : 263,
+    "BadWeather" : 250,
+    "GoodWeather" : 306
+}, {
+    "Yodacast" : 383,
+    "BadWeather" : 366,
+    "GoodWeather" : 426
+}, {
+    "Yodacast" : 510,
+    "BadWeather" : 494,
+    "GoodWeather" : 547
+}, {
+    "Yodacast" : 635,
+    "BadWeather" : 621,
+    "GoodWeather" : 659
+}, {
+    "Yodacast" : 747,
+    "BadWeather" : 739,
+    "GoodWeather" : 755
+}, {
+    "Yodacast" : 838,
+    "BadWeather" : 839,
+    "GoodWeather" : 830
+}, {
+    "Yodacast" : 904,
+    "BadWeather" : 917,
+    "GoodWeather" : 884
+}, {
+    "Yodacast" : 949,
+    "BadWeather" : 973,
+    "GoodWeather" : 915
+}, {
+    "Yodacast" : 976,
+    "BadWeather" : 1006,
+    "GoodWeather" : 926
+}, {
+    "Yodacast" : 984,
+    "BadWeather" : 1019,
+    "GoodWeather" : 921
+}, {
+    "Yodacast" : 960,
+    "BadWeather" : 997,
+    "GoodWeather" : 884
+}, {
+    "Yodacast" : 935,
+    "BadWeather" : 972,
+    "GoodWeather" : 847
+}, {
+    "Yodacast" : 904,
+    "BadWeather" : 940,
+    "GoodWeather" : 806
+}, {
+    "Yodacast" : 862,
+    "BadWeather" : 898,
+    "GoodWeather" : 758
+}, {
+    "Yodacast" : 847,
+    "BadWeather" : 885,
+    "GoodWeather" : 739
+}, {
+    "Yodacast" : 800,
+    "BadWeather" : 838,
+    "GoodWeather" : 691
+}, {
+    "Yodacast" : 752,
+    "BadWeather" : 790,
+    "GoodWeather" : 645
+}, {
+    "Yodacast" : 705,
+    "BadWeather" : 742,
+    "GoodWeather" : 601
+}, {
+    "Yodacast" : 661,
+    "BadWeather" : 696,
+    "GoodWeather" : 561
+}, {
+    "Yodacast" : 619,
+    "BadWeather" : 653,
+    "GoodWeather" : 526
+}, {
+    "Yodacast" : 580,
+    "BadWeather" : 612,
+    "GoodWeather" : 497
+}, {
+    "Yodacast" : 544,
+    "BadWeather" : 573,
+    "GoodWeather" : 474
+}, {
+    "Yodacast" : 509,
+    "BadWeather" : 534,
+    "GoodWeather" : 456
+}, {
+    "Yodacast" : 475,
+    "BadWeather" : 493,
+    "GoodWeather" : 442
+}, {
+    "Yodacast" : 437,
+    "BadWeather" : 448,
+    "GoodWeather" : 429
+}, {
+    "Yodacast" : 396,
+    "BadWeather" : 398,
+    "GoodWeather" : 414
+}, {
+    "Yodacast" : 350,
+    "BadWeather" : 343,
+    "GoodWeather" : 393
+}, {
+    "Yodacast" : 299,
+    "BadWeather" : 286,
+    "GoodWeather" : 361
+}, {
+    "Yodacast" : 245,
+    "BadWeather" : 229,
+    "GoodWeather" : 314
+}, {
+    "Yodacast" : 191,
+    "BadWeather" : 175,
+    "GoodWeather" : 249
+}, {
+    "Yodacast" : 143,
+    "BadWeather" : 123,
+    "GoodWeather" : 167
+}, {
+    "Yodacast" : 94,
+    "BadWeather" : 74,
+    "GoodWeather" : 77
+}, {
+    "Yodacast" : 43,
+    "BadWeather" : 31,
+    "GoodWeather" : -6
+}, {
+    "Yodacast" : 2,
+    "BadWeather" : 2,
+    "GoodWeather" : -70
+}, {
+    "Yodacast" : 64,
+    "BadWeather" : 69,
+    "GoodWeather" : 45
+}, {
+    "Yodacast" : 46,
+    "BadWeather" : 54,
+    "GoodWeather" : 13
+}, {
+    "Yodacast" : 57,
+    "BadWeather" : 48,
+    "GoodWeather" : 64
+}, {
+    "Yodacast" : 12,
+    "BadWeather" : 23,
+    "GoodWeather" : -14
+}, {
+    "Yodacast" : -21,
+    "BadWeather" : -15,
+    "GoodWeather" : -66
+}, {
+    "Yodacast" : 2,
+    "BadWeather" : 13,
+    "GoodWeather" : -34
+}, {
+    "Yodacast" : 13,
+    "BadWeather" : 27,
+    "GoodWeather" : -11
+}, {
+    "Yodacast" : 17,
+    "BadWeather" : 25,
+    "GoodWeather" : 0
+}, {
+    "Yodacast" : 9,
+    "BadWeather" : 8,
+    "GoodWeather" : 1
+}, {
+    "Yodacast" : -9,
+    "BadWeather" : -20,
+    "GoodWeather" : -5
+}, {
+    "Yodacast" : -31,
+    "BadWeather" : -51,
+    "GoodWeather" : -11
+}, {
+    "Yodacast" : -49,
+    "BadWeather" : -75,
+    "GoodWeather" : -11
+}, {
+    "Yodacast" : -55,
+    "BadWeather" : -79,
+    "GoodWeather" : 6
+}, {
+    "Yodacast" : -35,
+    "BadWeather" : -56,
+    "GoodWeather" : 42
+}, {
+    "Yodacast" : 23,
+    "BadWeather" : -3,
+    "GoodWeather" : 98
+}, {
+    "Yodacast" : 108,
+    "BadWeather" : 74,
+    "GoodWeather" : 168
+}, {
+    "Yodacast" : 200,
+    "BadWeather" : 166,
+    "GoodWeather" : 242
+}, {
+    "Yodacast" : 288,
+    "BadWeather" : 259,
+    "GoodWeather" : 311
+}, {
+    "Yodacast" : 357,
+    "BadWeather" : 343,
+    "GoodWeather" : 368
+}, {
+    "Yodacast" : 401,
+    "BadWeather" : 411,
+    "GoodWeather" : 407
+}, {
+    "Yodacast" : 417,
+    "BadWeather" : 459,
+    "GoodWeather" : 428
+}, {
+    "Yodacast" : 425,
+    "BadWeather" : 488,
+    "GoodWeather" : 432
+}, {
+    "Yodacast" : 432,
+    "BadWeather" : 501,
+    "GoodWeather" : 423
+}, {
+    "Yodacast" : 433,
+    "BadWeather" : 501,
+    "GoodWeather" : 405
+}, {
+    "Yodacast" : 431,
+    "BadWeather" : 491,
+    "GoodWeather" : 379
+}, {
+    "Yodacast" : 426,
+    "BadWeather" : 476,
+    "GoodWeather" : 352
+}, {
+    "Yodacast" : 420,
+    "BadWeather" : 460,
+    "GoodWeather" : 326
+}, {
+    "Yodacast" : 408,
+    "BadWeather" : 443,
+    "GoodWeather" : 301
+}, {
+    "Yodacast" : 403,
+    "BadWeather" : 438,
+    "GoodWeather" : 290
+}, {
+    "Yodacast" : 398,
+    "BadWeather" : 433,
+    "GoodWeather" : 281
+}, {
+    "Yodacast" : 401,
+    "BadWeather" : 434,
+    "GoodWeather" : 279
+}, {
+    "Yodacast" : 409,
+    "BadWeather" : 440,
+    "GoodWeather" : 285
+}, {
+    "Yodacast" : 422,
+    "BadWeather" : 451,
+    "GoodWeather" : 298
+}, {
+    "Yodacast" : 436,
+    "BadWeather" : 462,
+    "GoodWeather" : 317
+}, {
+    "Yodacast" : 448,
+    "BadWeather" : 471,
+    "GoodWeather" : 340
+}, {
+    "Yodacast" : 454,
+    "BadWeather" : 473,
+    "GoodWeather" : 361
+}, {
+    "Yodacast" : 451,
+    "BadWeather" : 465,
+    "GoodWeather" : 378
+}, {
+    "Yodacast" : 435,
+    "BadWeather" : 443,
+    "GoodWeather" : 386
+}, {
+    "Yodacast" : 404,
+    "BadWeather" : 407,
+    "GoodWeather" : 382
+}, {
+    "Yodacast" : 360,
+    "BadWeather" : 356,
+    "GoodWeather" : 366
+}, {
+    "Yodacast" : 306,
+    "BadWeather" : 297,
+    "GoodWeather" : 337
+}, {
+    "Yodacast" : 248,
+    "BadWeather" : 235,
+    "GoodWeather" : 297
+}, {
+    "Yodacast" : 190,
+    "BadWeather" : 180,
+    "GoodWeather" : 248
+}, {
+    "Yodacast" : 143,
+    "BadWeather" : 136,
+    "GoodWeather" : 190
+}, {
+    "Yodacast" : 111,
+    "BadWeather" : 102,
+    "GoodWeather" : 121
+}, {
+    "Yodacast" : 80,
+    "BadWeather" : 71,
+    "GoodWeather" : 42
+}, {
+    "Yodacast" : 45,
+    "BadWeather" : 41,
+    "GoodWeather" : -37
+}, {
+    "Yodacast" : 10,
+    "BadWeather" : 16,
+    "GoodWeather" : -105
+}, {
+    "Yodacast" : 28,
+    "BadWeather" : 19,
+    "GoodWeather" : 17
+}, {
+    "Yodacast" : 30,
+    "BadWeather" : 22,
+    "GoodWeather" : 6
+}, {
+    "Yodacast" : -6,
+    "BadWeather" : -9,
+    "GoodWeather" : -21
+}, {
+    "Yodacast" : -11,
+    "BadWeather" : -2,
+    "GoodWeather" : -26
+}, {
+    "Yodacast" : -109,
+    "BadWeather" : -107,
+    "GoodWeather" : -158
+}, {
+    "Yodacast" : -68,
+    "BadWeather" : -58,
+    "GoodWeather" : -108
+}, {
+    "Yodacast" : -29,
+    "BadWeather" : -19,
+    "GoodWeather" : -65
+} ];
+
+var footBallData = [ {
+    "Yodacast" : 73,
+    "FootBall" : 73
+}, {
+    "Yodacast" : 31,
+    "FootBall" : 31
+}, {
+    "Yodacast" : -6,
+    "FootBall" : -6
+}, {
+    "Yodacast" : 29,
+    "FootBall" : 29
+}, {
+    "Yodacast" : 22,
+    "FootBall" : 22
+}, {
+    "Yodacast" : -13,
+    "FootBall" : -13
+}, {
+    "Yodacast" : 1,
+    "FootBall" : 1
+}, {
+    "Yodacast" : -121,
+    "FootBall" : -121
+}, {
+    "Yodacast" : -79,
+    "FootBall" : -79
+}, {
+    "Yodacast" : -41,
+    "FootBall" : -41
+}, {
+    "Yodacast" : -8,
+    "FootBall" : -8
+}, {
+    "Yodacast" : 23,
+    "FootBall" : 23
+}, {
+    "Yodacast" : 56,
+    "FootBall" : 56
+}, {
+    "Yodacast" : 98,
+    "FootBall" : 98
+}, {
+    "Yodacast" : 160,
+    "FootBall" : 160
+}, {
+    "Yodacast" : 250,
+    "FootBall" : 250
+}, {
+    "Yodacast" : 375,
+    "FootBall" : 375
+}, {
+    "Yodacast" : 535,
+    "FootBall" : 535
+}, {
+    "Yodacast" : 716,
+    "FootBall" : 716
+}, {
+    "Yodacast" : 900,
+    "FootBall" : 900
+}, {
+    "Yodacast" : 1073,
+    "FootBall" : 1073
+}, {
+    "Yodacast" : 1222,
+    "FootBall" : 1222
+}, {
+    "Yodacast" : 1343,
+    "FootBall" : 1343
+}, {
+    "Yodacast" : 1432,
+    "FootBall" : 1432
+}, {
+    "Yodacast" : 1495,
+    "FootBall" : 1495
+}, {
+    "Yodacast" : 1538,
+    "FootBall" : 1538
+}, {
+    "Yodacast" : 1556,
+    "FootBall" : 1556
+}, {
+    "Yodacast" : 1522,
+    "FootBall" : 1522
+}, {
+    "Yodacast" : 1453,
+    "FootBall" : 1453
+}, {
+    "Yodacast" : 1406,
+    "FootBall" : 1406
+}, {
+    "Yodacast" : 1353,
+    "FootBall" : 1353
+}, {
+    "Yodacast" : 1476,
+    "FootBall" : 1476
+}, {
+    "Yodacast" : 1452,
+    "FootBall" : 1452
+}, {
+    "Yodacast" : 1427,
+    "FootBall" : 1427
+}, {
+    "Yodacast" : 1402,
+    "FootBall" : 1402
+}, {
+    "Yodacast" : 1375,
+    "FootBall" : 1375
+}, {
+    "Yodacast" : 1344,
+    "FootBall" : 1344
+}, {
+    "Yodacast" : 1306,
+    "FootBall" : 1306
+}, {
+    "Yodacast" : 1259,
+    "FootBall" : 1259
+}, {
+    "Yodacast" : 1197,
+    "FootBall" : 1197
+}, {
+    "Yodacast" : 1112,
+    "FootBall" : 1112
+}, {
+    "Yodacast" : 1007,
+    "FootBall" : 1007
+}, {
+    "Yodacast" : 877,
+    "FootBall" : 877
+}, {
+    "Yodacast" : 724,
+    "FootBall" : 724
+}, {
+    "Yodacast" : 570,
+    "FootBall" : 570
+}, {
+    "Yodacast" : 426,
+    "FootBall" : 426
+}, {
+    "Yodacast" : 302,
+    "FootBall" : 302
+}, {
+    "Yodacast" : 196,
+    "FootBall" : 196
+}, {
+    "Yodacast" : 110,
+    "FootBall" : 110
+}, {
+    "Yodacast" : 39,
+    "FootBall" : 39
+}, {
+    "Yodacast" : -18,
+    "FootBall" : -18
+}, {
+    "Yodacast" : 66,
+    "FootBall" : 66
+}, {
+    "Yodacast" : 30,
+    "FootBall" : 30
+}, {
+    "Yodacast" : 8,
+    "FootBall" : 8
+}, {
+    "Yodacast" : 3,
+    "FootBall" : 3
+}, {
+    "Yodacast" : -162,
+    "FootBall" : -162
+}, {
+    "Yodacast" : -81,
+    "FootBall" : -81
+}, {
+    "Yodacast" : -25,
+    "FootBall" : -25
+}, {
+    "Yodacast" : 11,
+    "FootBall" : 11
+}, {
+    "Yodacast" : 35,
+    "FootBall" : 35
+}, {
+    "Yodacast" : 55,
+    "FootBall" : 55
+}, {
+    "Yodacast" : 82,
+    "FootBall" : 82
+}, {
+    "Yodacast" : 129,
+    "FootBall" : 129
+}, {
+    "Yodacast" : 206,
+    "FootBall" : 206
+}, {
+    "Yodacast" : 321,
+    "FootBall" : 321
+}, {
+    "Yodacast" : 476,
+    "FootBall" : 476
+}, {
+    "Yodacast" : 654,
+    "FootBall" : 654
+}, {
+    "Yodacast" : 835,
+    "FootBall" : 835
+}, {
+    "Yodacast" : 1004,
+    "FootBall" : 1004
+}, {
+    "Yodacast" : 1146,
+    "FootBall" : 1146
+}, {
+    "Yodacast" : 1255,
+    "FootBall" : 1255
+}, {
+    "Yodacast" : 1331,
+    "FootBall" : 1331
+}, {
+    "Yodacast" : 1386,
+    "FootBall" : 1386
+}, {
+    "Yodacast" : 1425,
+    "FootBall" : 1425
+}, {
+    "Yodacast" : 1447,
+    "FootBall" : 1447
+}, {
+    "Yodacast" : 1447,
+    "FootBall" : 1447
+}, {
+    "Yodacast" : 1438,
+    "FootBall" : 1438
+}, {
+    "Yodacast" : 1425,
+    "FootBall" : 1425
+}, {
+    "Yodacast" : 1406,
+    "FootBall" : 1406
+}, {
+    "Yodacast" : 1402,
+    "FootBall" : 1402
+}, {
+    "Yodacast" : 1383,
+    "FootBall" : 1383
+}, {
+    "Yodacast" : 1367,
+    "FootBall" : 1367
+}, {
+    "Yodacast" : 1352,
+    "FootBall" : 1352
+}, {
+    "Yodacast" : 1336,
+    "FootBall" : 1336
+}, {
+    "Yodacast" : 1312,
+    "FootBall" : 1312
+}, {
+    "Yodacast" : 1278,
+    "FootBall" : 1278
+}, {
+    "Yodacast" : 1240,
+    "FootBall" : 1240
+}, {
+    "Yodacast" : 1191,
+    "FootBall" : 1191
+}, {
+    "Yodacast" : 1123,
+    "FootBall" : 1123
+}, {
+    "Yodacast" : 1036,
+    "FootBall" : 1036
+}, {
+    "Yodacast" : 922,
+    "FootBall" : 922
+}, {
+    "Yodacast" : 783,
+    "FootBall" : 783
+}, {
+    "Yodacast" : 635,
+    "FootBall" : 635
+}, {
+    "Yodacast" : 490,
+    "FootBall" : 490
+}, {
+    "Yodacast" : 356,
+    "FootBall" : 356
+}, {
+    "Yodacast" : 227,
+    "FootBall" : 227
+}, {
+    "Yodacast" : 107,
+    "FootBall" : 107
+}, {
+    "Yodacast" : -11,
+    "FootBall" : -11
+}, {
+    "Yodacast" : -137,
+    "FootBall" : -137
+}, {
+    "Yodacast" : 48,
+    "FootBall" : 48
+}, {
+    "Yodacast" : 20,
+    "FootBall" : 20
+}, {
+    "Yodacast" : 27,
+    "FootBall" : 27
+}, {
+    "Yodacast" : 81,
+    "FootBall" : 81
+}, {
+    "Yodacast" : -7,
+    "FootBall" : -7
+}, {
+    "Yodacast" : 33,
+    "FootBall" : 33
+}, {
+    "Yodacast" : 55,
+    "FootBall" : 55
+}, {
+    "Yodacast" : 66,
+    "FootBall" : 66
+}, {
+    "Yodacast" : 72,
+    "FootBall" : 72
+}, {
+    "Yodacast" : 82,
+    "FootBall" : 82
+}, {
+    "Yodacast" : 107,
+    "FootBall" : 107
+}, {
+    "Yodacast" : 161,
+    "FootBall" : 161
+}, {
+    "Yodacast" : 251,
+    "FootBall" : 251
+}, {
+    "Yodacast" : 381,
+    "FootBall" : 381
+}, {
+    "Yodacast" : 544,
+    "FootBall" : 544
+}, {
+    "Yodacast" : 724,
+    "FootBall" : 724
+}, {
+    "Yodacast" : 902,
+    "FootBall" : 902
+}, {
+    "Yodacast" : 1066,
+    "FootBall" : 1066
+}, {
+    "Yodacast" : 1205,
+    "FootBall" : 1205
+}, {
+    "Yodacast" : 1313,
+    "FootBall" : 1313
+}, {
+    "Yodacast" : 1391,
+    "FootBall" : 1391
+}, {
+    "Yodacast" : 1442,
+    "FootBall" : 1442
+}, {
+    "Yodacast" : 1471,
+    "FootBall" : 1471
+}, {
+    "Yodacast" : 1483,
+    "FootBall" : 1483
+}, {
+    "Yodacast" : 1412,
+    "FootBall" : 1412
+}, {
+    "Yodacast" : 1372,
+    "FootBall" : 1372
+}, {
+    "Yodacast" : 1346,
+    "FootBall" : 1346
+}, {
+    "Yodacast" : 1305,
+    "FootBall" : 1305
+}, {
+    "Yodacast" : 1393,
+    "FootBall" : 1393
+}, {
+    "Yodacast" : 1349,
+    "FootBall" : 1349
+}, {
+    "Yodacast" : 1304,
+    "FootBall" : 1304
+}, {
+    "Yodacast" : 1261,
+    "FootBall" : 1261
+}, {
+    "Yodacast" : 1222,
+    "FootBall" : 1222
+}, {
+    "Yodacast" : 1185,
+    "FootBall" : 1185
+}, {
+    "Yodacast" : 1149,
+    "FootBall" : 1149
+}, {
+    "Yodacast" : 1105,
+    "FootBall" : 1105
+}, {
+    "Yodacast" : 1050,
+    "FootBall" : 1050
+}, {
+    "Yodacast" : 983,
+    "FootBall" : 983
+}, {
+    "Yodacast" : 899,
+    "FootBall" : 899
+}, {
+    "Yodacast" : 802,
+    "FootBall" : 802
+}, {
+    "Yodacast" : 691,
+    "FootBall" : 691
+}, {
+    "Yodacast" : 573,
+    "FootBall" : 573
+}, {
+    "Yodacast" : 454,
+    "FootBall" : 454
+}, {
+    "Yodacast" : 342,
+    "FootBall" : 342
+}, {
+    "Yodacast" : 239,
+    "FootBall" : 239
+}, {
+    "Yodacast" : 144,
+    "FootBall" : 144
+}, {
+    "Yodacast" : 51,
+    "FootBall" : 51
+}, {
+    "Yodacast" : -41,
+    "FootBall" : -41
+}, {
+    "Yodacast" : 67,
+    "FootBall" : 67
+}, {
+    "Yodacast" : 67,
+    "FootBall" : 67
+}, {
+    "Yodacast" : 77,
+    "FootBall" : 77
+}, {
+    "Yodacast" : 83,
+    "FootBall" : 83
+}, {
+    "Yodacast" : 51,
+    "FootBall" : 51
+}, {
+    "Yodacast" : 43,
+    "FootBall" : 43
+}, {
+    "Yodacast" : 29,
+    "FootBall" : 29
+}, {
+    "Yodacast" : 7,
+    "FootBall" : 7
+}, {
+    "Yodacast" : -15,
+    "FootBall" : -15
+}, {
+    "Yodacast" : -24,
+    "FootBall" : -24
+}, {
+    "Yodacast" : -7,
+    "FootBall" : -7
+}, {
+    "Yodacast" : 46,
+    "FootBall" : 46
+}, {
+    "Yodacast" : 142,
+    "FootBall" : 142
+}, {
+    "Yodacast" : 287,
+    "FootBall" : 287
+}, {
+    "Yodacast" : 475,
+    "FootBall" : 475
+}, {
+    "Yodacast" : 680,
+    "FootBall" : 680
+}, {
+    "Yodacast" : 877,
+    "FootBall" : 877
+}, {
+    "Yodacast" : 1056,
+    "FootBall" : 1056
+}, {
+    "Yodacast" : 1204,
+    "FootBall" : 1204
+}, {
+    "Yodacast" : 1314,
+    "FootBall" : 1314
+}, {
+    "Yodacast" : 1388,
+    "FootBall" : 1388
+}, {
+    "Yodacast" : 1443,
+    "FootBall" : 1443
+}, {
+    "Yodacast" : 1482,
+    "FootBall" : 1482
+}, {
+    "Yodacast" : 1501,
+    "FootBall" : 1501
+}, {
+    "Yodacast" : 1387,
+    "FootBall" : 1387
+}, {
+    "Yodacast" : 1333,
+    "FootBall" : 1333
+}, {
+    "Yodacast" : 1307,
+    "FootBall" : 1307
+}, {
+    "Yodacast" : 1267,
+    "FootBall" : 1267
+}, {
+    "Yodacast" : 1432,
+    "FootBall" : 1432
+}, {
+    "Yodacast" : 1390,
+    "FootBall" : 1390
+}, {
+    "Yodacast" : 1348,
+    "FootBall" : 1348
+}, {
+    "Yodacast" : 1306,
+    "FootBall" : 1306
+}, {
+    "Yodacast" : 1263,
+    "FootBall" : 1263
+}, {
+    "Yodacast" : 1218,
+    "FootBall" : 1218
+}, {
+    "Yodacast" : 1168,
+    "FootBall" : 1168
+}, {
+    "Yodacast" : 1113,
+    "FootBall" : 1113
+}, {
+    "Yodacast" : 1050,
+    "FootBall" : 1050
+}, {
+    "Yodacast" : 975,
+    "FootBall" : 975
+}, {
+    "Yodacast" : 887,
+    "FootBall" : 887
+}, {
+    "Yodacast" : 784,
+    "FootBall" : 784
+}, {
+    "Yodacast" : 668,
+    "FootBall" : 668
+}, {
+    "Yodacast" : 548,
+    "FootBall" : 548
+}, {
+    "Yodacast" : 434,
+    "FootBall" : 434
+}, {
+    "Yodacast" : 336,
+    "FootBall" : 336
+}, {
+    "Yodacast" : 255,
+    "FootBall" : 255
+}, {
+    "Yodacast" : 196,
+    "FootBall" : 196
+}, {
+    "Yodacast" : 156,
+    "FootBall" : 156
+}, {
+    "Yodacast" : 127,
+    "FootBall" : 127
+}, {
+    "Yodacast" : 64,
+    "FootBall" : 64
+}, {
+    "Yodacast" : 58,
+    "FootBall" : 58
+}, {
+    "Yodacast" : 57,
+    "FootBall" : 57
+}, {
+    "Yodacast" : -19,
+    "FootBall" : -19
+}, {
+    "Yodacast" : -34,
+    "FootBall" : -34
+}, {
+    "Yodacast" : -42,
+    "FootBall" : -42
+}, {
+    "Yodacast" : -43,
+    "FootBall" : -43
+}, {
+    "Yodacast" : -46,
+    "FootBall" : -46
+}, {
+    "Yodacast" : -44,
+    "FootBall" : -44
+}, {
+    "Yodacast" : -31,
+    "FootBall" : -31
+}, {
+    "Yodacast" : 2,
+    "FootBall" : 2
+}, {
+    "Yodacast" : 61,
+    "FootBall" : 61
+}, {
+    "Yodacast" : 152,
+    "FootBall" : 152
+}, {
+    "Yodacast" : 278,
+    "FootBall" : 278
+}, {
+    "Yodacast" : 436,
+    "FootBall" : 436
+}, {
+    "Yodacast" : 613,
+    "FootBall" : 613
+}, {
+    "Yodacast" : 794,
+    "FootBall" : 794
+}, {
+    "Yodacast" : 969,
+    "FootBall" : 969
+}, {
+    "Yodacast" : 1126,
+    "FootBall" : 1126
+}, {
+    "Yodacast" : 1258,
+    "FootBall" : 1258
+}, {
+    "Yodacast" : 1363,
+    "FootBall" : 1363
+}, {
+    "Yodacast" : 1443,
+    "FootBall" : 1443
+}, {
+    "Yodacast" : 1499,
+    "FootBall" : 1499
+}, {
+    "Yodacast" : 1534,
+    "FootBall" : 1534
+}, {
+    "Yodacast" : 1420,
+    "FootBall" : 1420
+}, {
+    "Yodacast" : 1390,
+    "FootBall" : 1390
+}, {
+    "Yodacast" : 1365,
+    "FootBall" : 1365
+}, {
+    "Yodacast" : 1312,
+    "FootBall" : 1312
+}, {
+    "Yodacast" : 1461,
+    "FootBall" : 1461
+}, {
+    "Yodacast" : 1402,
+    "FootBall" : 1402
+}, {
+    "Yodacast" : 1335,
+    "FootBall" : 1335
+}, {
+    "Yodacast" : 1263,
+    "FootBall" : 1263
+}, {
+    "Yodacast" : 1187,
+    "FootBall" : 1187
+}, {
+    "Yodacast" : 1109,
+    "FootBall" : 1109
+}, {
+    "Yodacast" : 1029,
+    "FootBall" : 1029
+}, {
+    "Yodacast" : 946,
+    "FootBall" : 946
+}, {
+    "Yodacast" : 859,
+    "FootBall" : 859
+}, {
+    "Yodacast" : 770,
+    "FootBall" : 770
+}, {
+    "Yodacast" : 678,
+    "FootBall" : 678
+}, {
+    "Yodacast" : 586,
+    "FootBall" : 586
+}, {
+    "Yodacast" : 496,
+    "FootBall" : 496
+}, {
+    "Yodacast" : 409,
+    "FootBall" : 409
+}, {
+    "Yodacast" : 328,
+    "FootBall" : 328
+}, {
+    "Yodacast" : 250,
+    "FootBall" : 250
+}, {
+    "Yodacast" : 172,
+    "FootBall" : 172
+}, {
+    "Yodacast" : 99,
+    "FootBall" : 99
+}, {
+    "Yodacast" : 38,
+    "FootBall" : 38
+}, {
+    "Yodacast" : -2,
+    "FootBall" : -2
+}, {
+    "Yodacast" : 48,
+    "FootBall" : 48
+}, {
+    "Yodacast" : 54,
+    "FootBall" : 54
+}, {
+    "Yodacast" : 42,
+    "FootBall" : 42
+}, {
+    "Yodacast" : 26,
+    "FootBall" : 26
+}, {
+    "Yodacast" : -7,
+    "FootBall" : -7
+}, {
+    "Yodacast" : 6,
+    "FootBall" : 6
+}, {
+    "Yodacast" : 10,
+    "FootBall" : 10
+}, {
+    "Yodacast" : 9,
+    "FootBall" : 9
+}, {
+    "Yodacast" : 9,
+    "FootBall" : 9
+}, {
+    "Yodacast" : 13,
+    "FootBall" : 13
+}, {
+    "Yodacast" : 25,
+    "FootBall" : 25
+}, {
+    "Yodacast" : 51,
+    "FootBall" : 51
+}, {
+    "Yodacast" : 95,
+    "FootBall" : 95
+}, {
+    "Yodacast" : 164,
+    "FootBall" : 164
+}, {
+    "Yodacast" : 263,
+    "FootBall" : 263
+}, {
+    "Yodacast" : 383,
+    "FootBall" : 383
+}, {
+    "Yodacast" : 510,
+    "FootBall" : 510
+}, {
+    "Yodacast" : 635,
+    "FootBall" : 635
+}, {
+    "Yodacast" : 747,
+    "FootBall" : 809
+}, {
+    "Yodacast" : 838,
+    "FootBall" : 891
+}, {
+    "Yodacast" : 904,
+    "FootBall" : 896
+}, {
+    "Yodacast" : 949,
+    "FootBall" : 832
+}, {
+    "Yodacast" : 976,
+    "FootBall" : 737
+}, {
+    "Yodacast" : 984,
+    "FootBall" : 712
+}, {
+    "Yodacast" : 960,
+    "FootBall" : 757
+}, {
+    "Yodacast" : 935,
+    "FootBall" : 797
+}, {
+    "Yodacast" : 904,
+    "FootBall" : 840
+}, {
+    "Yodacast" : 862,
+    "FootBall" : 862
+}, {
+    "Yodacast" : 847,
+    "FootBall" : 847
+}, {
+    "Yodacast" : 800,
+    "FootBall" : 800
+}, {
+    "Yodacast" : 752,
+    "FootBall" : 752
+}, {
+    "Yodacast" : 705,
+    "FootBall" : 705
+}, {
+    "Yodacast" : 661,
+    "FootBall" : 661
+}, {
+    "Yodacast" : 619,
+    "FootBall" : 619
+}, {
+    "Yodacast" : 580,
+    "FootBall" : 580
+}, {
+    "Yodacast" : 544,
+    "FootBall" : 544
+}, {
+    "Yodacast" : 509,
+    "FootBall" : 509
+}, {
+    "Yodacast" : 475,
+    "FootBall" : 475
+}, {
+    "Yodacast" : 437,
+    "FootBall" : 437
+}, {
+    "Yodacast" : 396,
+    "FootBall" : 396
+}, {
+    "Yodacast" : 350,
+    "FootBall" : 350
+}, {
+    "Yodacast" : 299,
+    "FootBall" : 299
+}, {
+    "Yodacast" : 245,
+    "FootBall" : 245
+}, {
+    "Yodacast" : 191,
+    "FootBall" : 191
+}, {
+    "Yodacast" : 143,
+    "FootBall" : 143
+}, {
+    "Yodacast" : 94,
+    "FootBall" : 94
+}, {
+    "Yodacast" : 43,
+    "FootBall" : 43
+}, {
+    "Yodacast" : 2,
+    "FootBall" : 2
+}, {
+    "Yodacast" : 64,
+    "FootBall" : 64
+}, {
+    "Yodacast" : 46,
+    "FootBall" : 46
+}, {
+    "Yodacast" : 57,
+    "FootBall" : 57
+}, {
+    "Yodacast" : 12,
+    "FootBall" : 12
+}, {
+    "Yodacast" : -21,
+    "FootBall" : -21
+}, {
+    "Yodacast" : 2,
+    "FootBall" : 2
+}, {
+    "Yodacast" : 13,
+    "FootBall" : 13
+}, {
+    "Yodacast" : 17,
+    "FootBall" : 17
+}, {
+    "Yodacast" : 9,
+    "FootBall" : 9
+}, {
+    "Yodacast" : -9,
+    "FootBall" : -9
+}, {
+    "Yodacast" : -31,
+    "FootBall" : -31
+}, {
+    "Yodacast" : -49,
+    "FootBall" : -49
+}, {
+    "Yodacast" : -55,
+    "FootBall" : -55
+}, {
+    "Yodacast" : -35,
+    "FootBall" : -35
+}, {
+    "Yodacast" : 23,
+    "FootBall" : 23
+}, {
+    "Yodacast" : 108,
+    "FootBall" : 108
+}, {
+    "Yodacast" : 200,
+    "FootBall" : 200
+}, {
+    "Yodacast" : 288,
+    "FootBall" : 288
+}, {
+    "Yodacast" : 357,
+    "FootBall" : 357
+}, {
+    "Yodacast" : 401,
+    "FootBall" : 401
+}, {
+    "Yodacast" : 417,
+    "FootBall" : 417
+}, {
+    "Yodacast" : 425,
+    "FootBall" : 425
+}, {
+    "Yodacast" : 432,
+    "FootBall" : 432
+}, {
+    "Yodacast" : 433,
+    "FootBall" : 433
+}, {
+    "Yodacast" : 431,
+    "FootBall" : 431
+}, {
+    "Yodacast" : 426,
+    "FootBall" : 426
+}, {
+    "Yodacast" : 420,
+    "FootBall" : 420
+}, {
+    "Yodacast" : 408,
+    "FootBall" : 408
+}, {
+    "Yodacast" : 403,
+    "FootBall" : 403
+}, {
+    "Yodacast" : 398,
+    "FootBall" : 398
+}, {
+    "Yodacast" : 401,
+    "FootBall" : 401
+}, {
+    "Yodacast" : 409,
+    "FootBall" : 409
+}, {
+    "Yodacast" : 422,
+    "FootBall" : 422
+}, {
+    "Yodacast" : 436,
+    "FootBall" : 436
+}, {
+    "Yodacast" : 448,
+    "FootBall" : 448
+}, {
+    "Yodacast" : 454,
+    "FootBall" : 454
+}, {
+    "Yodacast" : 451,
+    "FootBall" : 451
+}, {
+    "Yodacast" : 435,
+    "FootBall" : 435
+}, {
+    "Yodacast" : 404,
+    "FootBall" : 404
+}, {
+    "Yodacast" : 360,
+    "FootBall" : 360
+}, {
+    "Yodacast" : 306,
+    "FootBall" : 306
+}, {
+    "Yodacast" : 248,
+    "FootBall" : 248
+}, {
+    "Yodacast" : 190,
+    "FootBall" : 190
+}, {
+    "Yodacast" : 143,
+    "FootBall" : 143
+}, {
+    "Yodacast" : 111,
+    "FootBall" : 111
+}, {
+    "Yodacast" : 80,
+    "FootBall" : 80
+}, {
+    "Yodacast" : 45,
+    "FootBall" : 45
+}, {
+    "Yodacast" : 10,
+    "FootBall" : 10
+}, {
+    "Yodacast" : 28,
+    "FootBall" : 28
+}, {
+    "Yodacast" : 30,
+    "FootBall" : 30
+}, {
+    "Yodacast" : -6,
+    "FootBall" : -6
+}, {
+    "Yodacast" : -11,
+    "FootBall" : -11
+}, {
+    "Yodacast" : -109,
+    "FootBall" : -109
+}, {
+    "Yodacast" : -68,
+    "FootBall" : -68
+}, {
+    "Yodacast" : -29,
+    "FootBall" : -29
+} ];
 // Area Chart
 function drawGraph() {
 
@@ -1567,6 +3993,36 @@ function drawFirstYoda() {
         hideHover : 'auto',
         resize : true,
         lineColors : [ '#2B431F', '#C359C0' ]
+    });
+}
+
+function drawWeatherYoda() {
+    callChart = Morris.Line({
+        element : 'morris-area-chart',
+        data : weatherYodaData,
+        xkey : 'period',
+        ykeys : [ 'Yodacast', 'BadWeather', 'GoodWeather' ],
+        labels : [ 'Yodacast', 'BadWeather', 'GoodWeather' ],
+        pointSize : 2,
+        parseTime : false,
+        hideHover : 'auto',
+        resize : true,
+        lineColors : [ '#2B431F', '#C359C0', '#761E74' ]
+    });
+}
+
+function drawFootBallYoda() {
+    callChart = Morris.Line({
+        element : 'morris-area-chart',
+        data : footBallData,
+        xkey : 'period',
+        ykeys : [ 'Yodacast', 'FootBall' ],
+        labels : [ 'Yodacast', 'FootBall' ],
+        pointSize : 2,
+        parseTime : false,
+        hideHover : 'auto',
+        resize : true,
+        lineColors : [ '#2B431F', '#761E74' ]
     });
 }
 
@@ -1633,6 +4089,14 @@ function updateTable(text) {
                     * (Math.floor(Math.random() * 5) + 1);
         }
         drawGraph();
+    }
+
+    if (text = "weather") {
+        drawWeatherYoda();
+    }
+
+    if (text = "football") {
+        drawFootBallYoda();
     }
 }
 
