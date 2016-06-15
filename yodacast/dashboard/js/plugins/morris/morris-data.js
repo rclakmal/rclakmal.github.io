@@ -4712,7 +4712,7 @@ function drawFootBallYoda() {
         data : footBallData,
         xkey : 'period',
         ykeys : [ 'Yodacast', 'FootBall' ],
-        labels : [ 'Yodacast', 'FootBall' ],
+        labels : [ 'Yodacast', 'Football on Saturday' ],
         pointSize : 2,
         parseTime : false,
         hideHover : 'auto',
