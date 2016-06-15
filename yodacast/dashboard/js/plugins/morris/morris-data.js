@@ -155,1388 +155,1388 @@ var newData = yearlyData;
 basicYodadata = [ {
     "period" : 1,
     "Target" : 71,
-    "Yodacast" : 72.65763873
+    "Yodacast" : 73
 }, {
     "period" : 2,
     "Target" : 51,
-    "Yodacast" : 31.43306261
+    "Yodacast" : 31
 }, {
     "period" : 3,
     "Target" : 53,
-    "Yodacast" : -5.706477276
+    "Yodacast" : 6
 }, {
     "period" : 4,
     "Target" : 30,
-    "Yodacast" : 28.75377921
+    "Yodacast" : 29
 }, {
     "period" : 5,
     "Target" : 19,
-    "Yodacast" : 21.87533145
+    "Yodacast" : 22
 }, {
     "period" : 6,
     "Target" : 12,
-    "Yodacast" : -12.77139747
+    "Yodacast" : 13
 }, {
     "period" : 7,
     "Target" : 8,
-    "Yodacast" : 0.547022929
+    "Yodacast" : 1
 }, {
     "period" : 8,
     "Target" : 10,
-    "Yodacast" : -120.7808452
+    "Yodacast" : 121
 }, {
     "period" : 9,
     "Target" : 4,
-    "Yodacast" : -78.55718325
+    "Yodacast" : 79
 }, {
     "period" : 10,
     "Target" : 5,
-    "Yodacast" : -41.39891149
+    "Yodacast" : 41
 }, {
     "period" : 11,
     "Target" : 8,
-    "Yodacast" : -7.809904312
+    "Yodacast" : 8
 }, {
     "period" : 12,
     "Target" : 5,
-    "Yodacast" : 23.14212544
+    "Yodacast" : 23
 }, {
     "period" : 13,
     "Target" : 15,
-    "Yodacast" : 55.69672765
+    "Yodacast" : 56
 }, {
     "period" : 14,
     "Target" : 30,
-    "Yodacast" : 98.36064128
+    "Yodacast" : 98
 }, {
     "period" : 15,
     "Target" : 58,
-    "Yodacast" : 160.4869844
+    "Yodacast" : 160
 }, {
     "period" : 16,
     "Target" : 120,
-    "Yodacast" : 250.3341977
+    "Yodacast" : 250
 }, {
     "period" : 17,
     "Target" : 218,
-    "Yodacast" : 374.8101875
+    "Yodacast" : 375
 }, {
     "period" : 18,
     "Target" : 372,
-    "Yodacast" : 534.7241266
+    "Yodacast" : 535
 }, {
     "period" : 19,
     "Target" : 766,
-    "Yodacast" : 715.9654833
+    "Yodacast" : 716
 }, {
     "period" : 20,
     "Target" : 974,
-    "Yodacast" : 899.5937676
+    "Yodacast" : 900
 }, {
     "period" : 21,
     "Target" : 1223,
-    "Yodacast" : 1072.570749
+    "Yodacast" : 1073
 }, {
     "period" : 22,
     "Target" : 1411,
-    "Yodacast" : 1222.313669
+    "Yodacast" : 1222
 }, {
     "period" : 23,
     "Target" : 1586,
-    "Yodacast" : 1342.581557
+    "Yodacast" : 1343
 }, {
     "period" : 24,
     "Target" : 1576,
-    "Yodacast" : 1431.648497
+    "Yodacast" : 1432
 }, {
     "period" : 25,
     "Target" : 1563,
-    "Yodacast" : 1495.469239
+    "Yodacast" : 1495
 }, {
     "period" : 26,
     "Target" : 1543,
-    "Yodacast" : 1537.984045
+    "Yodacast" : 1538
 }, {
     "period" : 27,
     "Target" : 1543,
-    "Yodacast" : 1556.247365
+    "Yodacast" : 1556
 }, {
     "period" : 28,
     "Target" : 1489,
-    "Yodacast" : 1521.624159
+    "Yodacast" : 1522
 }, {
     "period" : 29,
     "Target" : 1506,
-    "Yodacast" : 1453.178061
+    "Yodacast" : 1453
 }, {
     "period" : 30,
     "Target" : 1525,
-    "Yodacast" : 1405.78131
+    "Yodacast" : 1406
 }, {
     "period" : 31,
     "Target" : 1534,
-    "Yodacast" : 1353.281455
+    "Yodacast" : 1353
 }, {
     "period" : 32,
     "Target" : 1468,
-    "Yodacast" : 1475.781354
+    "Yodacast" : 1476
 }, {
     "period" : 33,
     "Target" : 1422,
-    "Yodacast" : 1452.197622
+    "Yodacast" : 1452
 }, {
     "period" : 34,
     "Target" : 1518,
-    "Yodacast" : 1427.16073
+    "Yodacast" : 1427
 }, {
     "period" : 35,
     "Target" : 1572,
-    "Yodacast" : 1401.995548
+    "Yodacast" : 1402
 }, {
     "period" : 36,
     "Target" : 1582,
-    "Yodacast" : 1374.970534
+    "Yodacast" : 1375
 }, {
     "period" : 37,
     "Target" : 1724,
-    "Yodacast" : 1344.226617
+    "Yodacast" : 1344
 }, {
     "period" : 38,
     "Target" : 1662,
-    "Yodacast" : 1305.6944
+    "Yodacast" : 1306
 }, {
     "period" : 39,
     "Target" : 1401,
-    "Yodacast" : 1258.602188
+    "Yodacast" : 1259
 }, {
     "period" : 40,
     "Target" : 1307,
-    "Yodacast" : 1196.849576
+    "Yodacast" : 1197
 }, {
     "period" : 41,
     "Target" : 1223,
-    "Yodacast" : 1112.265348
+    "Yodacast" : 1112
 }, {
     "period" : 42,
     "Target" : 1151,
-    "Yodacast" : 1007.424266
+    "Yodacast" : 1007
 }, {
     "period" : 43,
     "Target" : 937,
-    "Yodacast" : 876.6453719
+    "Yodacast" : 877
 }, {
     "period" : 44,
     "Target" : 831,
-    "Yodacast" : 724.4430748
+    "Yodacast" : 724
 }, {
     "period" : 45,
     "Target" : 584,
-    "Yodacast" : 570.00881
+    "Yodacast" : 570
 }, {
     "period" : 46,
     "Target" : 472,
-    "Yodacast" : 426.4534041
+    "Yodacast" : 426
 }, {
     "period" : 47,
     "Target" : 298,
-    "Yodacast" : 301.6564646
+    "Yodacast" : 302
 }, {
     "period" : 48,
     "Target" : 266,
-    "Yodacast" : 196.1744713
+    "Yodacast" : 196
 }, {
     "period" : 49,
     "Target" : 164,
-    "Yodacast" : 109.6714968
+    "Yodacast" : 110
 }, {
     "period" : 50,
     "Target" : 93,
-    "Yodacast" : 39.23187988
+    "Yodacast" : 39
 }, {
     "period" : 51,
     "Target" : 54,
-    "Yodacast" : -18.20237789
+    "Yodacast" : 18
 }, {
     "period" : 52,
     "Target" : 42,
-    "Yodacast" : 66.42544855
+    "Yodacast" : 66
 }, {
     "period" : 53,
     "Target" : 41,
-    "Yodacast" : 29.91518215
+    "Yodacast" : 30
 }, {
     "period" : 54,
     "Target" : 19,
-    "Yodacast" : 8.109039732
+    "Yodacast" : 8
 }, {
     "period" : 55,
     "Target" : 19,
-    "Yodacast" : 2.930737191
+    "Yodacast" : 3
 }, {
     "period" : 56,
     "Target" : 20,
-    "Yodacast" : -162.3353754
+    "Yodacast" : 162
 }, {
     "period" : 57,
     "Target" : 17,
-    "Yodacast" : -81.00612411
+    "Yodacast" : 81
 }, {
     "period" : 58,
     "Target" : 14,
-    "Yodacast" : -25.33822833
+    "Yodacast" : 25
 }, {
     "period" : 59,
     "Target" : 9,
-    "Yodacast" : 11.1649789
+    "Yodacast" : 11
 }, {
     "period" : 60,
     "Target" : 11,
-    "Yodacast" : 35.17867141
+    "Yodacast" : 35
 }, {
     "period" : 61,
     "Target" : 42,
-    "Yodacast" : 54.93353899
+    "Yodacast" : 55
 }, {
     "period" : 62,
     "Target" : 31,
-    "Yodacast" : 82.14720186
+    "Yodacast" : 82
 }, {
     "period" : 63,
     "Target" : 91,
-    "Yodacast" : 128.760453
+    "Yodacast" : 129
 }, {
     "period" : 64,
     "Target" : 143,
-    "Yodacast" : 205.5151684
+    "Yodacast" : 206
 }, {
     "period" : 65,
     "Target" : 248,
-    "Yodacast" : 321.2944164
+    "Yodacast" : 321
 }, {
     "period" : 66,
     "Target" : 455,
-    "Yodacast" : 476.3713902
+    "Yodacast" : 476
 }, {
     "period" : 67,
     "Target" : 859,
-    "Yodacast" : 654.4907057
+    "Yodacast" : 654
 }, {
     "period" : 68,
     "Target" : 859,
-    "Yodacast" : 835.3074251
+    "Yodacast" : 835
 }, {
     "period" : 69,
     "Target" : 1196,
-    "Yodacast" : 1004.249132
+    "Yodacast" : 1004
 }, {
     "period" : 70,
     "Target" : 1298,
-    "Yodacast" : 1146.479465
+    "Yodacast" : 1146
 }, {
     "period" : 71,
     "Target" : 1400,
-    "Yodacast" : 1255.469474
+    "Yodacast" : 1255
 }, {
     "period" : 72,
     "Target" : 1388,
-    "Yodacast" : 1331.019689
+    "Yodacast" : 1331
 }, {
     "period" : 73,
     "Target" : 1418,
-    "Yodacast" : 1386.102513
+    "Yodacast" : 1386
 }, {
     "period" : 74,
     "Target" : 1427,
-    "Yodacast" : 1425.458055
+    "Yodacast" : 1425
 }, {
     "period" : 75,
     "Target" : 1399,
-    "Yodacast" : 1447.153838
+    "Yodacast" : 1447
 }, {
     "period" : 76,
     "Target" : 1345,
-    "Yodacast" : 1446.712057
+    "Yodacast" : 1447
 }, {
     "period" : 77,
     "Target" : 1373,
-    "Yodacast" : 1437.817022
+    "Yodacast" : 1438
 }, {
     "period" : 78,
     "Target" : 1401,
-    "Yodacast" : 1425.433641
+    "Yodacast" : 1425
 }, {
     "period" : 79,
     "Target" : 1189,
-    "Yodacast" : 1406.126882
+    "Yodacast" : 1406
 }, {
     "period" : 80,
     "Target" : 1375,
-    "Yodacast" : 1402.483455
+    "Yodacast" : 1402
 }, {
     "period" : 81,
     "Target" : 1282,
-    "Yodacast" : 1382.682641
+    "Yodacast" : 1383
 }, {
     "period" : 82,
     "Target" : 1416,
-    "Yodacast" : 1367.334267
+    "Yodacast" : 1367
 }, {
     "period" : 83,
     "Target" : 1417,
-    "Yodacast" : 1352.196648
+    "Yodacast" : 1352
 }, {
     "period" : 84,
     "Target" : 1462,
-    "Yodacast" : 1335.564285
+    "Yodacast" : 1336
 }, {
     "period" : 85,
     "Target" : 1417,
-    "Yodacast" : 1312.112474
+    "Yodacast" : 1312
 }, {
     "period" : 86,
     "Target" : 1433,
-    "Yodacast" : 1278.462974
+    "Yodacast" : 1278
 }, {
     "period" : 87,
     "Target" : 1278,
-    "Yodacast" : 1239.87256
+    "Yodacast" : 1240
 }, {
     "period" : 88,
     "Target" : 1170,
-    "Yodacast" : 1191.315531
+    "Yodacast" : 1191
 }, {
     "period" : 89,
     "Target" : 1025,
-    "Yodacast" : 1123.319024
+    "Yodacast" : 1123
 }, {
     "period" : 90,
     "Target" : 1007,
-    "Yodacast" : 1035.921094
+    "Yodacast" : 1036
 }, {
     "period" : 91,
     "Target" : 884,
-    "Yodacast" : 922.0027599
+    "Yodacast" : 922
 }, {
     "period" : 92,
     "Target" : 740,
-    "Yodacast" : 783.339356
+    "Yodacast" : 783
 }, {
     "period" : 93,
     "Target" : 520,
-    "Yodacast" : 634.6045767
+    "Yodacast" : 635
 }, {
     "period" : 94,
     "Target" : 378,
-    "Yodacast" : 489.7418866
+    "Yodacast" : 490
 }, {
     "period" : 95,
     "Target" : 244,
-    "Yodacast" : 355.6567916
+    "Yodacast" : 356
 }, {
     "period" : 96,
     "Target" : 199,
-    "Yodacast" : 227.4302011
+    "Yodacast" : 227
 }, {
     "period" : 97,
     "Target" : 147,
-    "Yodacast" : 106.8948949
+    "Yodacast" : 107
 }, {
     "period" : 98,
     "Target" : 93,
-    "Yodacast" : -11.12698444
+    "Yodacast" : 11
 }, {
     "period" : 99,
     "Target" : 53,
-    "Yodacast" : -137.4553284
+    "Yodacast" : 137
 }, {
     "period" : 100,
     "Target" : 37,
-    "Yodacast" : 48.31857058
+    "Yodacast" : 48
 }, {
     "period" : 101,
     "Target" : 25,
-    "Yodacast" : 20.1862843
+    "Yodacast" : 20
 }, {
     "period" : 102,
     "Target" : 21,
-    "Yodacast" : 26.7891107
+    "Yodacast" : 27
 }, {
     "period" : 103,
     "Target" : 23,
-    "Yodacast" : 81.37894
+    "Yodacast" : 81
 }, {
     "period" : 104,
     "Target" : 6,
-    "Yodacast" : -6.648509653
+    "Yodacast" : 7
 }, {
     "period" : 105,
     "Target" : 16,
-    "Yodacast" : 32.80426009
+    "Yodacast" : 33
 }, {
     "period" : 106,
     "Target" : 12,
-    "Yodacast" : 55.11799468
+    "Yodacast" : 55
 }, {
     "period" : 107,
     "Target" : 7,
-    "Yodacast" : 66.13940508
+    "Yodacast" : 66
 }, {
     "period" : 108,
     "Target" : 15,
-    "Yodacast" : 72.02630494
+    "Yodacast" : 72
 }, {
     "period" : 109,
     "Target" : 20,
-    "Yodacast" : 81.73347959
+    "Yodacast" : 82
 }, {
     "period" : 110,
     "Target" : 26,
-    "Yodacast" : 107.4443861
+    "Yodacast" : 107
 }, {
     "period" : 111,
     "Target" : 68,
-    "Yodacast" : 161.1105412
+    "Yodacast" : 161
 }, {
     "period" : 112,
     "Target" : 120,
-    "Yodacast" : 251.3055475
+    "Yodacast" : 251
 }, {
     "period" : 113,
     "Target" : 249,
-    "Yodacast" : 380.9891959
+    "Yodacast" : 381
 }, {
     "period" : 114,
     "Target" : 394,
-    "Yodacast" : 543.892832
+    "Yodacast" : 544
 }, {
     "period" : 115,
     "Target" : 646,
-    "Yodacast" : 723.6278788
+    "Yodacast" : 724
 }, {
     "period" : 116,
     "Target" : 749,
-    "Yodacast" : 902.1249389
+    "Yodacast" : 902
 }, {
     "period" : 117,
     "Target" : 968,
-    "Yodacast" : 1065.94714
+    "Yodacast" : 1066
 }, {
     "period" : 118,
     "Target" : 1238,
-    "Yodacast" : 1204.607737
+    "Yodacast" : 1205
 }, {
     "period" : 119,
     "Target" : 1361,
-    "Yodacast" : 1312.997426
+    "Yodacast" : 1313
 }, {
     "period" : 120,
     "Target" : 1373,
-    "Yodacast" : 1390.767383
+    "Yodacast" : 1391
 }, {
     "period" : 121,
     "Target" : 1353,
-    "Yodacast" : 1442.419357
+    "Yodacast" : 1442
 }, {
     "period" : 122,
     "Target" : 1311,
-    "Yodacast" : 1471.443719
+    "Yodacast" : 1471
 }, {
     "period" : 123,
     "Target" : 1473,
-    "Yodacast" : 1483.457493
+    "Yodacast" : 1483
 }, {
     "period" : 124,
     "Target" : 1341,
-    "Yodacast" : 1411.735271
+    "Yodacast" : 1412
 }, {
     "period" : 125,
     "Target" : 1297,
-    "Yodacast" : 1371.968071
+    "Yodacast" : 1372
 }, {
     "period" : 126,
     "Target" : 1219,
-    "Yodacast" : 1346.210864
+    "Yodacast" : 1346
 }, {
     "period" : 127,
     "Target" : 1284,
-    "Yodacast" : 1305.084729
+    "Yodacast" : 1305
 }, {
     "period" : 128,
     "Target" : 1314,
-    "Yodacast" : 1392.880617
+    "Yodacast" : 1393
 }, {
     "period" : 129,
     "Target" : 1295,
-    "Yodacast" : 1349.439786
+    "Yodacast" : 1349
 }, {
     "period" : 130,
     "Target" : 1205,
-    "Yodacast" : 1304.024987
+    "Yodacast" : 1304
 }, {
     "period" : 131,
     "Target" : 1339,
-    "Yodacast" : 1261.438606
+    "Yodacast" : 1261
 }, {
     "period" : 132,
     "Target" : 1346,
-    "Yodacast" : 1221.602128
+    "Yodacast" : 1222
 }, {
     "period" : 133,
     "Target" : 1247,
-    "Yodacast" : 1185.155246
+    "Yodacast" : 1185
 }, {
     "period" : 134,
     "Target" : 1267,
-    "Yodacast" : 1149.003603
+    "Yodacast" : 1149
 }, {
     "period" : 135,
     "Target" : 1108,
-    "Yodacast" : 1105.275715
+    "Yodacast" : 1105
 }, {
     "period" : 136,
     "Target" : 1091,
-    "Yodacast" : 1050.49491
+    "Yodacast" : 1050
 }, {
     "period" : 137,
     "Target" : 960,
-    "Yodacast" : 982.6850675
+    "Yodacast" : 983
 }, {
     "period" : 138,
     "Target" : 918,
-    "Yodacast" : 899.4450379
+    "Yodacast" : 899
 }, {
     "period" : 139,
     "Target" : 761,
-    "Yodacast" : 801.5589609
+    "Yodacast" : 802
 }, {
     "period" : 140,
     "Target" : 610,
-    "Yodacast" : 691.441188
+    "Yodacast" : 691
 }, {
     "period" : 141,
     "Target" : 487,
-    "Yodacast" : 572.8014345
+    "Yodacast" : 573
 }, {
     "period" : 142,
     "Target" : 332,
-    "Yodacast" : 454.0757715
+    "Yodacast" : 454
 }, {
     "period" : 143,
     "Target" : 269,
-    "Yodacast" : 342.2965247
+    "Yodacast" : 342
 }, {
     "period" : 144,
     "Target" : 240,
-    "Yodacast" : 239.0848993
+    "Yodacast" : 239
 }, {
     "period" : 145,
     "Target" : 140,
-    "Yodacast" : 143.5298839
+    "Yodacast" : 144
 }, {
     "period" : 146,
     "Target" : 93,
-    "Yodacast" : 51.34298477
+    "Yodacast" : 51
 }, {
     "period" : 147,
     "Target" : 64,
-    "Yodacast" : -40.61794824
+    "Yodacast" : 41
 }, {
     "period" : 148,
     "Target" : 57,
-    "Yodacast" : 66.72285005
+    "Yodacast" : 67
 }, {
     "period" : 149,
     "Target" : 32,
-    "Yodacast" : 67.31165749
+    "Yodacast" : 67
 }, {
     "period" : 150,
     "Target" : 11,
-    "Yodacast" : 77.09105661
+    "Yodacast" : 77
 }, {
     "period" : 151,
     "Target" : 16,
-    "Yodacast" : 83.12429343
+    "Yodacast" : 83
 }, {
     "period" : 152,
     "Target" : 15,
-    "Yodacast" : 51.47558067
+    "Yodacast" : 51
 }, {
     "period" : 153,
     "Target" : 9,
-    "Yodacast" : 43.01431243
+    "Yodacast" : 43
 }, {
     "period" : 154,
     "Target" : 7,
-    "Yodacast" : 28.87156048
+    "Yodacast" : 29
 }, {
     "period" : 155,
     "Target" : 12,
-    "Yodacast" : 6.725505769
+    "Yodacast" : 7
 }, {
     "period" : 156,
     "Target" : 14,
-    "Yodacast" : -14.81853109
+    "Yodacast" : 15
 }, {
     "period" : 157,
     "Target" : 31,
-    "Yodacast" : -23.973166
+    "Yodacast" : 24
 }, {
     "period" : 158,
     "Target" : 38,
-    "Yodacast" : -7.057531572
+    "Yodacast" : 7
 }, {
     "period" : 159,
     "Target" : 64,
-    "Yodacast" : 45.69293574
+    "Yodacast" : 46
 }, {
     "period" : 160,
     "Target" : 125,
-    "Yodacast" : 141.7443341
+    "Yodacast" : 142
 }, {
     "period" : 161,
     "Target" : 246,
-    "Yodacast" : 287.1263554
+    "Yodacast" : 287
 }, {
     "period" : 162,
     "Target" : 383,
-    "Yodacast" : 475.2790136
+    "Yodacast" : 475
 }, {
     "period" : 163,
     "Target" : 636,
-    "Yodacast" : 680.0996183
+    "Yodacast" : 680
 }, {
     "period" : 164,
     "Target" : 764,
-    "Yodacast" : 877.4873637
+    "Yodacast" : 877
 }, {
     "period" : 165,
     "Target" : 1027,
-    "Yodacast" : 1056.298292
+    "Yodacast" : 1056
 }, {
     "period" : 166,
     "Target" : 1146,
-    "Yodacast" : 1203.716051
+    "Yodacast" : 1204
 }, {
     "period" : 167,
     "Target" : 1238,
-    "Yodacast" : 1313.526104
+    "Yodacast" : 1314
 }, {
     "period" : 168,
     "Target" : 1286,
-    "Yodacast" : 1388.253369
+    "Yodacast" : 1388
 }, {
     "period" : 169,
     "Target" : 1448,
-    "Yodacast" : 1442.984073
+    "Yodacast" : 1443
 }, {
     "period" : 170,
     "Target" : 1328,
-    "Yodacast" : 1481.738759
+    "Yodacast" : 1482
 }, {
     "period" : 171,
     "Target" : 1308,
-    "Yodacast" : 1501.469912
+    "Yodacast" : 1501
 }, {
     "period" : 172,
     "Target" : 1232,
-    "Yodacast" : 1386.867662
+    "Yodacast" : 1387
 }, {
     "period" : 173,
     "Target" : 1239,
-    "Yodacast" : 1332.747908
+    "Yodacast" : 1333
 }, {
     "period" : 174,
     "Target" : 1256,
-    "Yodacast" : 1306.976544
+    "Yodacast" : 1307
 }, {
     "period" : 175,
     "Target" : 1256,
-    "Yodacast" : 1266.762435
+    "Yodacast" : 1267
 }, {
     "period" : 176,
     "Target" : 1240,
-    "Yodacast" : 1431.771982
+    "Yodacast" : 1432
 }, {
     "period" : 177,
     "Target" : 1192,
-    "Yodacast" : 1390.396097
+    "Yodacast" : 1390
 }, {
     "period" : 178,
     "Target" : 1195,
-    "Yodacast" : 1348.401245
+    "Yodacast" : 1348
 }, {
     "period" : 179,
     "Target" : 1276,
-    "Yodacast" : 1306.125414
+    "Yodacast" : 1306
 }, {
     "period" : 180,
     "Target" : 1349,
-    "Yodacast" : 1263.266619
+    "Yodacast" : 1263
 }, {
     "period" : 181,
     "Target" : 1272,
-    "Yodacast" : 1218.083111
+    "Yodacast" : 1218
 }, {
     "period" : 182,
     "Target" : 1298,
-    "Yodacast" : 1168.284524
+    "Yodacast" : 1168
 }, {
     "period" : 183,
     "Target" : 1189,
-    "Yodacast" : 1113.313275
+    "Yodacast" : 1113
 }, {
     "period" : 184,
     "Target" : 1000,
-    "Yodacast" : 1050.273533
+    "Yodacast" : 1050
 }, {
     "period" : 185,
     "Target" : 922,
-    "Yodacast" : 974.9268142
+    "Yodacast" : 975
 }, {
     "period" : 186,
     "Target" : 823,
-    "Yodacast" : 886.5444924
+    "Yodacast" : 887
 }, {
     "period" : 187,
     "Target" : 757,
-    "Yodacast" : 783.5498516
+    "Yodacast" : 784
 }, {
     "period" : 188,
     "Target" : 719,
-    "Yodacast" : 668.2245654
+    "Yodacast" : 668
 }, {
     "period" : 189,
     "Target" : 543,
-    "Yodacast" : 547.9281167
+    "Yodacast" : 548
 }, {
     "period" : 190,
     "Target" : 427,
-    "Yodacast" : 433.9796736
+    "Yodacast" : 434
 }, {
     "period" : 191,
     "Target" : 282,
-    "Yodacast" : 335.9916735
+    "Yodacast" : 336
 }, {
     "period" : 192,
     "Target" : 263,
-    "Yodacast" : 255.2842243
+    "Yodacast" : 255
 }, {
     "period" : 193,
     "Target" : 176,
-    "Yodacast" : 195.9788832
+    "Yodacast" : 196
 }, {
     "period" : 194,
     "Target" : 122,
-    "Yodacast" : 155.7353373
+    "Yodacast" : 156
 }, {
     "period" : 195,
     "Target" : 80,
-    "Yodacast" : 127.402737
+    "Yodacast" : 127
 }, {
     "period" : 196,
     "Target" : 73,
-    "Yodacast" : 63.54501261
+    "Yodacast" : 64
 }, {
     "period" : 197,
     "Target" : 46,
-    "Yodacast" : 58.22501492
+    "Yodacast" : 58
 }, {
     "period" : 198,
     "Target" : 24,
-    "Yodacast" : 56.83393251
+    "Yodacast" : 57
 }, {
     "period" : 199,
     "Target" : 17,
-    "Yodacast" : -19.10852639
+    "Yodacast" : 19
 }, {
     "period" : 200,
     "Target" : 11,
-    "Yodacast" : -34.0535885
+    "Yodacast" : 34
 }, {
     "period" : 201,
     "Target" : 12,
-    "Yodacast" : -42.42967389
+    "Yodacast" : 42
 }, {
     "period" : 202,
     "Target" : 8,
-    "Yodacast" : -43.46423583
+    "Yodacast" : 43
 }, {
     "period" : 203,
     "Target" : 22,
-    "Yodacast" : -45.88026634
+    "Yodacast" : 46
 }, {
     "period" : 204,
     "Target" : 19,
-    "Yodacast" : -44.08175725
+    "Yodacast" : 44
 }, {
     "period" : 205,
     "Target" : 28,
-    "Yodacast" : -30.83433648
+    "Yodacast" : 31
 }, {
     "period" : 206,
     "Target" : 49,
-    "Yodacast" : 1.89844688
+    "Yodacast" : 2
 }, {
     "period" : 207,
     "Target" : 80,
-    "Yodacast" : 61.06631099
+    "Yodacast" : 61
 }, {
     "period" : 208,
     "Target" : 169,
-    "Yodacast" : 152.0077455
+    "Yodacast" : 152
 }, {
     "period" : 209,
     "Target" : 348,
-    "Yodacast" : 277.9431191
+    "Yodacast" : 278
 }, {
     "period" : 210,
     "Target" : 455,
-    "Yodacast" : 435.7483275
+    "Yodacast" : 436
 }, {
     "period" : 211,
     "Target" : 879,
-    "Yodacast" : 612.9228852
+    "Yodacast" : 613
 }, {
     "period" : 212,
     "Target" : 996,
-    "Yodacast" : 794.4069572
+    "Yodacast" : 794
 }, {
     "period" : 213,
     "Target" : 1171,
-    "Yodacast" : 969.0755463
+    "Yodacast" : 969
 }, {
     "period" : 214,
     "Target" : 1359,
-    "Yodacast" : 1126.158133
+    "Yodacast" : 1126
 }, {
     "period" : 215,
     "Target" : 1461,
-    "Yodacast" : 1258.245924
+    "Yodacast" : 1258
 }, {
     "period" : 216,
     "Target" : 1469,
-    "Yodacast" : 1362.747302
+    "Yodacast" : 1363
 }, {
     "period" : 217,
     "Target" : 1484,
-    "Yodacast" : 1442.580374
+    "Yodacast" : 1443
 }, {
     "period" : 218,
     "Target" : 1443,
-    "Yodacast" : 1499.133696
+    "Yodacast" : 1499
 }, {
     "period" : 219,
     "Target" : 1490,
-    "Yodacast" : 1533.594641
+    "Yodacast" : 1534
 }, {
     "period" : 220,
     "Target" : 1561,
-    "Yodacast" : 1419.964262
+    "Yodacast" : 1420
 }, {
     "period" : 221,
     "Target" : 1450,
-    "Yodacast" : 1390.151546
+    "Yodacast" : 1390
 }, {
     "period" : 222,
     "Target" : 1370,
-    "Yodacast" : 1364.676097
+    "Yodacast" : 1365
 }, {
     "period" : 223,
     "Target" : 1314,
-    "Yodacast" : 1312.122342
+    "Yodacast" : 1312
 }, {
     "period" : 224,
     "Target" : 1444,
-    "Yodacast" : 1461.160744
+    "Yodacast" : 1461
 }, {
     "period" : 225,
     "Target" : 1365,
-    "Yodacast" : 1402.359533
+    "Yodacast" : 1402
 }, {
     "period" : 226,
     "Target" : 1419,
-    "Yodacast" : 1335.113818
+    "Yodacast" : 1335
 }, {
     "period" : 227,
     "Target" : 1312,
-    "Yodacast" : 1262.92726
+    "Yodacast" : 1263
 }, {
     "period" : 228,
     "Target" : 1312,
-    "Yodacast" : 1186.892129
+    "Yodacast" : 1187
 }, {
     "period" : 229,
     "Target" : 1221,
-    "Yodacast" : 1108.80861
+    "Yodacast" : 1109
 }, {
     "period" : 230,
     "Target" : 1076,
-    "Yodacast" : 1028.966957
+    "Yodacast" : 1029
 }, {
     "period" : 231,
     "Target" : 950,
-    "Yodacast" : 945.7227687
+    "Yodacast" : 946
 }, {
     "period" : 232,
     "Target" : 849,
-    "Yodacast" : 859.2100094
+    "Yodacast" : 859
 }, {
     "period" : 233,
     "Target" : 752,
-    "Yodacast" : 769.8202631
+    "Yodacast" : 770
 }, {
     "period" : 234,
     "Target" : 717,
-    "Yodacast" : 678.3842596
+    "Yodacast" : 678
 }, {
     "period" : 235,
     "Target" : 581,
-    "Yodacast" : 586.4244482
+    "Yodacast" : 586
 }, {
     "period" : 236,
     "Target" : 485,
-    "Yodacast" : 496.0571444
+    "Yodacast" : 496
 }, {
     "period" : 237,
     "Target" : 361,
-    "Yodacast" : 409.4874932
+    "Yodacast" : 409
 }, {
     "period" : 238,
     "Target" : 318,
-    "Yodacast" : 328.1202204
+    "Yodacast" : 328
 }, {
     "period" : 239,
     "Target" : 258,
-    "Yodacast" : 250.0787376
+    "Yodacast" : 250
 }, {
     "period" : 240,
     "Target" : 242,
-    "Yodacast" : 172.3323784
+    "Yodacast" : 172
 }, {
     "period" : 241,
     "Target" : 157,
-    "Yodacast" : 98.79934508
+    "Yodacast" : 99
 }, {
     "period" : 242,
     "Target" : 86,
-    "Yodacast" : 37.56562091
+    "Yodacast" : 38
 }, {
     "period" : 243,
     "Target" : 91,
-    "Yodacast" : -2.230654557
+    "Yodacast" : 2
 }, {
     "period" : 244,
     "Target" : 54,
-    "Yodacast" : 48.46918014
+    "Yodacast" : 48
 }, {
     "period" : 245,
     "Target" : 41,
-    "Yodacast" : 54.03634416
+    "Yodacast" : 54
 }, {
     "period" : 246,
     "Target" : 31,
-    "Yodacast" : 42.17684304
+    "Yodacast" : 42
 }, {
     "period" : 247,
     "Target" : 31,
-    "Yodacast" : 25.8787565
+    "Yodacast" : 26
 }, {
     "period" : 248,
     "Target" : 21,
-    "Yodacast" : -7.195841221
+    "Yodacast" : 7
 }, {
     "period" : 249,
     "Target" : 13,
-    "Yodacast" : 6.352454735
+    "Yodacast" : 6
 }, {
     "period" : 250,
     "Target" : 12,
-    "Yodacast" : 10.02326055
+    "Yodacast" : 10
 }, {
     "period" : 251,
     "Target" : 11,
-    "Yodacast" : 9.404420957
+    "Yodacast" : 9
 }, {
     "period" : 252,
     "Target" : 16,
-    "Yodacast" : 9.362944572
+    "Yodacast" : 9
 }, {
     "period" : 253,
     "Target" : 17,
-    "Yodacast" : 12.98365583
+    "Yodacast" : 13
 }, {
     "period" : 254,
     "Target" : 19,
-    "Yodacast" : 25.18939865
+    "Yodacast" : 25
 }, {
     "period" : 255,
     "Target" : 30,
-    "Yodacast" : 50.94670335
+    "Yodacast" : 51
 }, {
     "period" : 256,
     "Target" : 59,
-    "Yodacast" : 94.94069623
+    "Yodacast" : 95
 }, {
     "period" : 257,
     "Target" : 119,
-    "Yodacast" : 164.4576585
+    "Yodacast" : 164
 }, {
     "period" : 258,
     "Target" : 197,
-    "Yodacast" : 263.4505051
+    "Yodacast" : 263
 }, {
     "period" : 259,
     "Target" : 406,
-    "Yodacast" : 383.1779774
+    "Yodacast" : 383
 }, {
     "period" : 260,
     "Target" : 507,
-    "Yodacast" : 509.7983112
+    "Yodacast" : 510
 }, {
     "period" : 261,
     "Target" : 623,
-    "Yodacast" : 634.6374828
+    "Yodacast" : 635
 }, {
     "period" : 262,
     "Target" : 724,
-    "Yodacast" : 746.7714186
+    "Yodacast" : 747
 }, {
     "period" : 263,
     "Target" : 855,
-    "Yodacast" : 837.5655973
+    "Yodacast" : 838
 }, {
     "period" : 264,
     "Target" : 917,
-    "Yodacast" : 903.6346608
+    "Yodacast" : 904
 }, {
     "period" : 265,
     "Target" : 919,
-    "Yodacast" : 948.8623381
+    "Yodacast" : 949
 }, {
     "period" : 266,
     "Target" : 979,
-    "Yodacast" : 975.5061209
+    "Yodacast" : 976
 }, {
     "period" : 267,
     "Target" : 935,
-    "Yodacast" : 984.1568634
+    "Yodacast" : 984
 }, {
     "period" : 268,
     "Target" : 947,
-    "Yodacast" : 960.0929039
+    "Yodacast" : 960
 }, {
     "period" : 269,
     "Target" : 911,
-    "Yodacast" : 934.935688
+    "Yodacast" : 935
 }, {
     "period" : 270,
     "Target" : 844,
-    "Yodacast" : 903.9462151
+    "Yodacast" : 904
 }, {
     "period" : 271,
     "Target" : 828,
-    "Yodacast" : 861.7978141
+    "Yodacast" : 862
 }, {
     "period" : 272,
     "Target" : 815,
-    "Yodacast" : 847.2511871
+    "Yodacast" : 847
 }, {
     "period" : 273,
     "Target" : 736,
-    "Yodacast" : 799.8230629
+    "Yodacast" : 800
 }, {
     "period" : 274,
     "Target" : 735,
-    "Yodacast" : 752.0163901
+    "Yodacast" : 752
 }, {
     "period" : 275,
     "Target" : 751,
-    "Yodacast" : 705.1569993
+    "Yodacast" : 705
 }, {
     "period" : 276,
     "Target" : 765,
-    "Yodacast" : 660.5519367
+    "Yodacast" : 661
 }, {
     "period" : 277,
     "Target" : 683,
-    "Yodacast" : 618.8037615
+    "Yodacast" : 619
 }, {
     "period" : 278,
     "Target" : 700,
-    "Yodacast" : 580.2030364
+    "Yodacast" : 580
 }, {
     "period" : 279,
     "Target" : 578,
-    "Yodacast" : 544.1162149
+    "Yodacast" : 544
 }, {
     "period" : 280,
     "Target" : 505,
-    "Yodacast" : 509.4465439
+    "Yodacast" : 509
 }, {
     "period" : 281,
     "Target" : 485,
-    "Yodacast" : 474.728468
+    "Yodacast" : 475
 }, {
     "period" : 282,
     "Target" : 424,
-    "Yodacast" : 437.1812553
+    "Yodacast" : 437
 }, {
     "period" : 283,
     "Target" : 371,
-    "Yodacast" : 395.7220455
+    "Yodacast" : 396
 }, {
     "period" : 284,
     "Target" : 300,
-    "Yodacast" : 350.0466435
+    "Yodacast" : 350
 }, {
     "period" : 285,
     "Target" : 273,
-    "Yodacast" : 299.4109608
+    "Yodacast" : 299
 }, {
     "period" : 286,
     "Target" : 218,
-    "Yodacast" : 244.9118901
+    "Yodacast" : 245
 }, {
     "period" : 287,
     "Target" : 161,
-    "Yodacast" : 191.4223499
+    "Yodacast" : 191
 }, {
     "period" : 288,
     "Target" : 136,
-    "Yodacast" : 143.2776656
+    "Yodacast" : 143
 }, {
     "period" : 289,
     "Target" : 105,
-    "Yodacast" : 93.58607064
+    "Yodacast" : 94
 }, {
     "period" : 290,
     "Target" : 70,
-    "Yodacast" : 43.48932721
+    "Yodacast" : 43
 }, {
     "period" : 291,
     "Target" : 39,
-    "Yodacast" : 2.228437459
+    "Yodacast" : 2
 }, {
     "period" : 292,
     "Target" : 39,
-    "Yodacast" : 64.28753175
+    "Yodacast" : 64
 }, {
     "period" : 293,
     "Target" : 35,
-    "Yodacast" : 46.33615625
+    "Yodacast" : 46
 }, {
     "period" : 294,
     "Target" : 31,
-    "Yodacast" : 57.2659267
+    "Yodacast" : 57
 }, {
     "period" : 295,
     "Target" : 26,
-    "Yodacast" : 12.32935651
+    "Yodacast" : 12
 }, {
     "period" : 296,
     "Target" : 19,
-    "Yodacast" : -21.31565068
+    "Yodacast" : 21
 }, {
     "period" : 297,
     "Target" : 22,
-    "Yodacast" : 1.635828754
+    "Yodacast" : 2
 }, {
     "period" : 298,
     "Target" : 20,
-    "Yodacast" : 13.35592084
+    "Yodacast" : 13
 }, {
     "period" : 299,
     "Target" : 14,
-    "Yodacast" : 16.91713634
+    "Yodacast" : 17
 }, {
     "period" : 300,
     "Target" : 5,
-    "Yodacast" : 8.831676287
+    "Yodacast" : 9
 }, {
     "period" : 301,
     "Target" : 13,
-    "Yodacast" : -9.339483552
+    "Yodacast" : 9
 }, {
     "period" : 302,
     "Target" : 9,
-    "Yodacast" : -31.31835317
+    "Yodacast" : 31
 }, {
     "period" : 303,
     "Target" : 10,
-    "Yodacast" : -49.18627406
+    "Yodacast" : 49
 }, {
     "period" : 304,
     "Target" : 36,
-    "Yodacast" : -54.63622867
+    "Yodacast" : 55
 }, {
     "period" : 305,
     "Target" : 57,
-    "Yodacast" : -34.65271499
+    "Yodacast" : 35
 }, {
     "period" : 306,
     "Target" : 73,
-    "Yodacast" : 23.06997986
+    "Yodacast" : 23
 }, {
     "period" : 307,
     "Target" : 150,
-    "Yodacast" : 108.1055939
+    "Yodacast" : 108
 }, {
     "period" : 308,
     "Target" : 201,
-    "Yodacast" : 199.8454997
+    "Yodacast" : 200
 }, {
     "period" : 309,
     "Target" : 267,
-    "Yodacast" : 287.6697936
+    "Yodacast" : 288
 }, {
     "period" : 310,
     "Target" : 335,
-    "Yodacast" : 356.6980234
+    "Yodacast" : 357
 }, {
     "period" : 311,
     "Target" : 424,
-    "Yodacast" : 400.7733544
+    "Yodacast" : 401
 }, {
     "period" : 312,
     "Target" : 522,
-    "Yodacast" : 417.2260393
+    "Yodacast" : 417
 }, {
     "period" : 313,
     "Target" : 534,
-    "Yodacast" : 425.1351922
+    "Yodacast" : 425
 }, {
     "period" : 314,
     "Target" : 538,
-    "Yodacast" : 431.9985127
+    "Yodacast" : 432
 }, {
     "period" : 315,
     "Target" : 500,
-    "Yodacast" : 433.171116
+    "Yodacast" : 433
 }, {
     "period" : 316,
     "Target" : 537,
-    "Yodacast" : 430.9121598
+    "Yodacast" : 431
 }, {
     "period" : 317,
     "Target" : 514,
-    "Yodacast" : 425.7375466
+    "Yodacast" : 426
 }, {
     "period" : 318,
     "Target" : 486,
-    "Yodacast" : 419.858834
+    "Yodacast" : 420
 }, {
     "period" : 319,
     "Target" : 404,
-    "Yodacast" : 408.4422217
+    "Yodacast" : 408
 }, {
     "period" : 320,
     "Target" : 406,
-    "Yodacast" : 402.9677888
+    "Yodacast" : 403
 }, {
     "period" : 321,
     "Target" : 397,
-    "Yodacast" : 398.3839074
+    "Yodacast" : 398
 }, {
     "period" : 322,
     "Target" : 393,
-    "Yodacast" : 400.7264885
+    "Yodacast" : 401
 }, {
     "period" : 323,
     "Target" : 429,
-    "Yodacast" : 408.9578832
+    "Yodacast" : 409
 }, {
     "period" : 324,
     "Target" : 417,
-    "Yodacast" : 421.8749164
+    "Yodacast" : 422
 }, {
     "period" : 325,
     "Target" : 476,
-    "Yodacast" : 436.1604133
+    "Yodacast" : 436
 }, {
     "period" : 326,
     "Target" : 444,
-    "Yodacast" : 448.1214876
+    "Yodacast" : 448
 }, {
     "period" : 327,
     "Target" : 480,
-    "Yodacast" : 454.2847798
+    "Yodacast" : 454
 }, {
     "period" : 328,
     "Target" : 477,
-    "Yodacast" : 450.7589027
+    "Yodacast" : 451
 }, {
     "period" : 329,
     "Target" : 453,
-    "Yodacast" : 434.5363542
+    "Yodacast" : 435
 }, {
     "period" : 330,
     "Target" : 491,
-    "Yodacast" : 403.8955905
+    "Yodacast" : 404
 }, {
     "period" : 331,
     "Target" : 422,
-    "Yodacast" : 359.9270114
+    "Yodacast" : 360
 }, {
     "period" : 332,
     "Target" : 373,
-    "Yodacast" : 306.3625756
+    "Yodacast" : 306
 }, {
     "period" : 333,
     "Target" : 293,
-    "Yodacast" : 247.598137
+    "Yodacast" : 248
 }, {
     "period" : 334,
     "Target" : 247,
-    "Yodacast" : 189.5729203
+    "Yodacast" : 190
 }, {
     "period" : 335,
     "Target" : 166,
-    "Yodacast" : 142.8249302
+    "Yodacast" : 143
 }, {
     "period" : 336,
     "Target" : 122,
-    "Yodacast" : 110.691126
+    "Yodacast" : 111
 }, {
     "period" : 337,
     "Target" : 67,
-    "Yodacast" : 80.3435249
+    "Yodacast" : 80
 }, {
     "period" : 338,
     "Target" : 52,
-    "Yodacast" : 44.93973525
+    "Yodacast" : 45
 }, {
     "period" : 339,
     "Target" : 47,
-    "Yodacast" : 9.917936801
+    "Yodacast" : 10
 }, {
     "period" : 340,
     "Target" : 28,
-    "Yodacast" : 27.87932175
+    "Yodacast" : 28
 }, {
     "period" : 341,
     "Target" : 16,
-    "Yodacast" : 30.10060576
+    "Yodacast" : 30
 }, {
     "period" : 342,
     "Target" : 16,
-    "Yodacast" : -6.375270524
+    "Yodacast" : 6
 }, {
     "period" : 343,
     "Target" : 12,
-    "Yodacast" : -10.97576761
+    "Yodacast" : 11
 }, {
     "period" : 344,
     "Target" : 9,
-    "Yodacast" : -109.0908804
+    "Yodacast" : 109
 }, {
     "period" : 345,
     "Target" : 17,
-    "Yodacast" : -67.74500467
+    "Yodacast" : 68
 }, {
     "period" : 346,
     "Target" : 14,
-    "Yodacast" : -29.23982433
-} ]
+    "Yodacast" : 29
+} ];
 // Area Chart
 function drawGraph() {
 
@@ -1566,7 +1566,7 @@ function drawFirstYoda() {
         parseTime : false,
         hideHover : 'auto',
         resize : true,
-        lineColors : [ lineColorsChoose[colorChoice] ]
+        lineColors : [ '#2B431F', '#C359C0' ]
     });
 }
 
