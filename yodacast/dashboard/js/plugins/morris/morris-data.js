@@ -3965,7 +3965,7 @@ var footBallData = [ {
 } ];
 // Area Chart
 function drawGraph() {
-
+    $("#morris-area-chart").empty();
     callChart = Morris.Area({
         element : 'morris-area-chart',
         data : newData,
@@ -3981,7 +3981,7 @@ function drawGraph() {
 }
 
 function drawFirstYoda() {
-
+    $("#morris-area-chart").empty();
     callChart = Morris.Line({
         element : 'morris-area-chart',
         data : basicYodadata,
@@ -3997,6 +3997,7 @@ function drawFirstYoda() {
 }
 
 function drawWeatherYoda() {
+    $("#morris-area-chart").empty();
     callChart = Morris.Line({
         element : 'morris-area-chart',
         data : weatherYodaData,
@@ -4012,6 +4013,7 @@ function drawWeatherYoda() {
 }
 
 function drawFootBallYoda() {
+    $("#morris-area-chart").empty();
     callChart = Morris.Line({
         element : 'morris-area-chart',
         data : footBallData,
