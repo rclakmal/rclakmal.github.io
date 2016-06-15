@@ -1540,7 +1540,7 @@ basicYodadata = [ {
 // Area Chart
 function drawGraph() {
 
-    callChart = Morris.Area({
+    callChart = Morris.Line({
         element : 'morris-area-chart',
         data : newData,
         xkey : 'period',
