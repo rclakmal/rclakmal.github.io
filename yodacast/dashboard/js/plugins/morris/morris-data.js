@@ -1558,7 +1558,7 @@ function drawFirstYoda() {
 
     callChart = Morris.Area({
         element : 'morris-area-chart',
-        data : newData,
+        data : basicYodadata,
         xkey : 'period',
         ykeys : [ 'Target', 'Yodacast' ],
         labels : [ 'Target', 'Yodacast' ],
