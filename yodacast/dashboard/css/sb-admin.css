@@ -208,6 +208,24 @@ ul.alert-dropdown {
     color: #b52b27;
 }
 
+.panel-dgreen {
+    border-color: #2B431F;
+}
+
+.panel-dgreen > .panel-heading {
+    border-color: #2B431F;
+    color: #fff;
+    background-color: #2B431F;
+}
+
+.panel-dgreen > a {
+    color: #2B431F;
+}
+
+.panel-dgreen > a:hover {
+    color: #2B431F;
+}
+
 .panel-yellow {
     border-color: #761E74;
 }
