@@ -6,7 +6,7 @@ var weeklyData;
 var dailyData;
 var hourlyData;
 var colorChoice=4;
-var lineColorsChoose = ['#43762A','#B3FF8E','#761E74','#C359C0','#7CC359']
+var lineColorsChoose = ['#2B431F','#43762A','#761E74','#C359C0','#7CC359']
 yearlyData = [ {
     period : '2010',
     prediction : 200000
