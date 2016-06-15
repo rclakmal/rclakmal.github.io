@@ -1539,2430 +1539,3123 @@ basicYodadata = [ {
 } ];
 
 var weatherYodaData = [ {
+    "period" : 1,
     "Yodacast" : 73,
     "BadWeather" : 70,
     "GoodWeather" : 38
 }, {
+    "period" : 2,
     "Yodacast" : 31,
     "BadWeather" : 42,
     "GoodWeather" : -39
 }, {
+    "period" : 3,
     "Yodacast" : -6,
     "BadWeather" : 19,
     "GoodWeather" : -104
 }, {
+    "period" : 4,
     "Yodacast" : 29,
     "BadWeather" : 22,
     "GoodWeather" : 15
 }, {
+    "period" : 5,
     "Yodacast" : 22,
     "BadWeather" : 24,
     "GoodWeather" : 4
 }, {
+    "period" : 6,
     "Yodacast" : -13,
     "BadWeather" : -14,
     "GoodWeather" : -30
 }, {
+    "period" : 7,
     "Yodacast" : 1,
     "BadWeather" : -3,
     "GoodWeather" : -29
 }, {
+    "period" : 8,
     "Yodacast" : -121,
     "BadWeather" : -102,
     "GoodWeather" : -155
 }, {
+    "period" : 9,
     "Yodacast" : -79,
     "BadWeather" : -54,
     "GoodWeather" : -106
 }, {
+    "period" : 10,
     "Yodacast" : -41,
     "BadWeather" : -16,
     "GoodWeather" : -63
 }, {
+    "period" : 11,
     "Yodacast" : -8,
     "BadWeather" : 11,
     "GoodWeather" : -25
 }, {
+    "period" : 12,
     "Yodacast" : 23,
     "BadWeather" : 32,
     "GoodWeather" : 10
 }, {
+    "period" : 13,
     "Yodacast" : 56,
     "BadWeather" : 52,
     "GoodWeather" : 50
 }, {
+    "period" : 14,
     "Yodacast" : 98,
     "BadWeather" : 81,
     "GoodWeather" : 101
 }, {
+    "period" : 15,
     "Yodacast" : 160,
     "BadWeather" : 132,
     "GoodWeather" : 172
 }, {
+    "period" : 16,
     "Yodacast" : 250,
     "BadWeather" : 215,
     "GoodWeather" : 271
 }, {
+    "period" : 17,
     "Yodacast" : 375,
     "BadWeather" : 336,
     "GoodWeather" : 399
 }, {
+    "period" : 18,
     "Yodacast" : 535,
     "BadWeather" : 492,
     "GoodWeather" : 554
 }, {
+    "period" : 19,
     "Yodacast" : 716,
     "BadWeather" : 675,
     "GoodWeather" : 723
 }, {
+    "period" : 20,
     "Yodacast" : 900,
     "BadWeather" : 868,
     "GoodWeather" : 895
 }, {
+    "period" : 21,
     "Yodacast" : 1073,
     "BadWeather" : 1055,
     "GoodWeather" : 1055
 }, {
+    "period" : 22,
     "Yodacast" : 1222,
     "BadWeather" : 1224,
     "GoodWeather" : 1194
 }, {
+    "period" : 23,
     "Yodacast" : 1343,
     "BadWeather" : 1367,
     "GoodWeather" : 1306
 }, {
+    "period" : 24,
     "Yodacast" : 1432,
     "BadWeather" : 1480,
     "GoodWeather" : 1390
 }, {
+    "period" : 25,
     "Yodacast" : 1495,
     "BadWeather" : 1564,
     "GoodWeather" : 1448
 }, {
+    "period" : 26,
     "Yodacast" : 1538,
     "BadWeather" : 1621,
     "GoodWeather" : 1481
 }, {
+    "period" : 27,
     "Yodacast" : 1556,
     "BadWeather" : 1655,
     "GoodWeather" : 1496
 }, {
+    "period" : 28,
     "Yodacast" : 1522,
     "BadWeather" : 1635,
     "GoodWeather" : 1463
 }, {
+    "period" : 29,
     "Yodacast" : 1453,
     "BadWeather" : 1579,
     "GoodWeather" : 1398
 }, {
+    "period" : 30,
     "Yodacast" : 1406,
     "BadWeather" : 1545,
     "GoodWeather" : 1353
 }, {
+    "period" : 31,
     "Yodacast" : 1353,
     "BadWeather" : 1502,
     "GoodWeather" : 1298
 }, {
+    "period" : 32,
     "Yodacast" : 1476,
     "BadWeather" : 1630,
     "GoodWeather" : 1412
 }, {
+    "period" : 33,
     "Yodacast" : 1452,
     "BadWeather" : 1610,
     "GoodWeather" : 1384
 }, {
+    "period" : 34,
     "Yodacast" : 1427,
     "BadWeather" : 1587,
     "GoodWeather" : 1355
 }, {
+    "period" : 35,
     "Yodacast" : 1402,
     "BadWeather" : 1563,
     "GoodWeather" : 1327
 }, {
+    "period" : 36,
     "Yodacast" : 1375,
     "BadWeather" : 1534,
     "GoodWeather" : 1298
 }, {
+    "period" : 37,
     "Yodacast" : 1344,
     "BadWeather" : 1497,
     "GoodWeather" : 1266
 }, {
+    "period" : 38,
     "Yodacast" : 1306,
     "BadWeather" : 1447,
     "GoodWeather" : 1227
 }, {
+    "period" : 39,
     "Yodacast" : 1259,
     "BadWeather" : 1381,
     "GoodWeather" : 1178
 }, {
+    "period" : 40,
     "Yodacast" : 1197,
     "BadWeather" : 1295,
     "GoodWeather" : 1115
 }, {
+    "period" : 41,
     "Yodacast" : 1112,
     "BadWeather" : 1185,
     "GoodWeather" : 1033
 }, {
+    "period" : 42,
     "Yodacast" : 1007,
     "BadWeather" : 1052,
     "GoodWeather" : 933
 }, {
+    "period" : 43,
     "Yodacast" : 877,
     "BadWeather" : 898,
     "GoodWeather" : 816
 }, {
+    "period" : 44,
     "Yodacast" : 724,
     "BadWeather" : 732,
     "GoodWeather" : 686
 }, {
+    "period" : 45,
     "Yodacast" : 570,
     "BadWeather" : 565,
     "GoodWeather" : 550
 }, {
+    "period" : 46,
     "Yodacast" : 426,
     "BadWeather" : 413,
     "GoodWeather" : 418
 }, {
+    "period" : 47,
     "Yodacast" : 302,
     "BadWeather" : 289,
     "GoodWeather" : 294
 }, {
+    "period" : 48,
     "Yodacast" : 196,
     "BadWeather" : 197,
     "GoodWeather" : 182
 }, {
+    "period" : 49,
     "Yodacast" : 110,
     "BadWeather" : 132,
     "GoodWeather" : 81
 }, {
+    "period" : 50,
     "Yodacast" : 39,
     "BadWeather" : 84,
     "GoodWeather" : -7
 }, {
+    "period" : 51,
     "Yodacast" : -18,
     "BadWeather" : 47,
     "GoodWeather" : -80
 }, {
+    "period" : 52,
     "Yodacast" : 66,
     "BadWeather" : 76,
     "GoodWeather" : 52
 }, {
+    "period" : 53,
     "Yodacast" : 30,
     "BadWeather" : 40,
     "GoodWeather" : 10
 }, {
+    "period" : 54,
     "Yodacast" : 8,
     "BadWeather" : 9,
     "GoodWeather" : 3
 }, {
+    "period" : 55,
     "Yodacast" : 3,
     "BadWeather" : 15,
     "GoodWeather" : 4
 }, {
+    "period" : 56,
     "Yodacast" : -162,
     "BadWeather" : -115,
     "GoodWeather" : -224
 }, {
+    "period" : 57,
     "Yodacast" : -81,
     "BadWeather" : -50,
     "GoodWeather" : -141
 }, {
+    "period" : 58,
     "Yodacast" : -25,
     "BadWeather" : -5,
     "GoodWeather" : -75
 }, {
+    "period" : 59,
     "Yodacast" : 11,
     "BadWeather" : 21,
     "GoodWeather" : -22
 }, {
+    "period" : 60,
     "Yodacast" : 35,
     "BadWeather" : 32,
     "GoodWeather" : 21
 }, {
+    "period" : 61,
     "Yodacast" : 55,
     "BadWeather" : 39,
     "GoodWeather" : 63
 }, {
+    "period" : 62,
     "Yodacast" : 82,
     "BadWeather" : 54,
     "GoodWeather" : 113
 }, {
+    "period" : 63,
     "Yodacast" : 129,
     "BadWeather" : 91,
     "GoodWeather" : 183
 }, {
+    "period" : 64,
     "Yodacast" : 206,
     "BadWeather" : 164,
     "GoodWeather" : 280
 }, {
+    "period" : 65,
     "Yodacast" : 321,
     "BadWeather" : 276,
     "GoodWeather" : 407
 }, {
+    "period" : 66,
     "Yodacast" : 476,
     "BadWeather" : 425,
     "GoodWeather" : 559
 }, {
+    "period" : 67,
     "Yodacast" : 654,
     "BadWeather" : 599,
     "GoodWeather" : 724
 }, {
+    "period" : 68,
     "Yodacast" : 835,
     "BadWeather" : 782,
     "GoodWeather" : 889
 }, {
+    "period" : 69,
     "Yodacast" : 1004,
     "BadWeather" : 958,
     "GoodWeather" : 1041
 }, {
+    "period" : 70,
     "Yodacast" : 1146,
     "BadWeather" : 1115,
     "GoodWeather" : 1170
 }, {
+    "period" : 71,
     "Yodacast" : 1255,
     "BadWeather" : 1246,
     "GoodWeather" : 1273
 }, {
+    "period" : 72,
     "Yodacast" : 1331,
     "BadWeather" : 1348,
     "GoodWeather" : 1348
 }, {
+    "period" : 73,
     "Yodacast" : 1386,
     "BadWeather" : 1421,
     "GoodWeather" : 1396
 }, {
+    "period" : 74,
     "Yodacast" : 1425,
     "BadWeather" : 1470,
     "GoodWeather" : 1422
 }, {
+    "period" : 75,
     "Yodacast" : 1447,
     "BadWeather" : 1497,
     "GoodWeather" : 1429
 }, {
+    "period" : 76,
     "Yodacast" : 1447,
     "BadWeather" : 1497,
     "GoodWeather" : 1412
 }, {
+    "period" : 77,
     "Yodacast" : 1438,
     "BadWeather" : 1488,
     "GoodWeather" : 1387
 }, {
+    "period" : 78,
     "Yodacast" : 1425,
     "BadWeather" : 1474,
     "GoodWeather" : 1360
 }, {
+    "period" : 79,
     "Yodacast" : 1406,
     "BadWeather" : 1455,
     "GoodWeather" : 1330
 }, {
+    "period" : 80,
     "Yodacast" : 1402,
     "BadWeather" : 1454,
     "GoodWeather" : 1319
 }, {
+    "period" : 81,
     "Yodacast" : 1383,
     "BadWeather" : 1433,
     "GoodWeather" : 1288
 }, {
+    "period" : 82,
     "Yodacast" : 1367,
     "BadWeather" : 1412,
     "GoodWeather" : 1260
 }, {
+    "period" : 83,
     "Yodacast" : 1352,
     "BadWeather" : 1391,
     "GoodWeather" : 1234
 }, {
+    "period" : 84,
     "Yodacast" : 1336,
     "BadWeather" : 1368,
     "GoodWeather" : 1210
 }, {
+    "period" : 85,
     "Yodacast" : 1312,
     "BadWeather" : 1340,
     "GoodWeather" : 1186
 }, {
+    "period" : 86,
     "Yodacast" : 1278,
     "BadWeather" : 1305,
     "GoodWeather" : 1159
 }, {
+    "period" : 87,
     "Yodacast" : 1240,
     "BadWeather" : 1257,
     "GoodWeather" : 1125
 }, {
+    "period" : 88,
     "Yodacast" : 1191,
     "BadWeather" : 1194,
     "GoodWeather" : 1080
 }, {
+    "period" : 89,
     "Yodacast" : 1123,
     "BadWeather" : 1111,
     "GoodWeather" : 1020
 }, {
+    "period" : 90,
     "Yodacast" : 1036,
     "BadWeather" : 1008,
     "GoodWeather" : 942
 }, {
+    "period" : 91,
     "Yodacast" : 922,
     "BadWeather" : 885,
     "GoodWeather" : 847
 }, {
+    "period" : 92,
     "Yodacast" : 783,
     "BadWeather" : 746,
     "GoodWeather" : 735
 }, {
+    "period" : 93,
     "Yodacast" : 635,
     "BadWeather" : 600,
     "GoodWeather" : 611
 }, {
+    "period" : 94,
     "Yodacast" : 490,
     "BadWeather" : 458,
     "GoodWeather" : 480
 }, {
+    "period" : 95,
     "Yodacast" : 356,
     "BadWeather" : 332,
     "GoodWeather" : 347
 }, {
+    "period" : 96,
     "Yodacast" : 227,
     "BadWeather" : 227,
     "GoodWeather" : 212
 }, {
+    "period" : 97,
     "Yodacast" : 107,
     "BadWeather" : 135,
     "GoodWeather" : 72
 }, {
+    "period" : 98,
     "Yodacast" : -11,
     "BadWeather" : 43,
     "GoodWeather" : -75
 }, {
+    "period" : 99,
     "Yodacast" : -137,
     "BadWeather" : -61,
     "GoodWeather" : -228
 }, {
+    "period" : 100,
     "Yodacast" : 48,
     "BadWeather" : 63,
     "GoodWeather" : 5
 }, {
+    "period" : 101,
     "Yodacast" : 20,
     "BadWeather" : 48,
     "GoodWeather" : -12
 }, {
+    "period" : 102,
     "Yodacast" : 27,
     "BadWeather" : 32,
     "GoodWeather" : 11
 }, {
+    "period" : 103,
     "Yodacast" : 81,
     "BadWeather" : 70,
     "GoodWeather" : 46
 }, {
+    "period" : 104,
     "Yodacast" : -7,
     "BadWeather" : 74,
     "GoodWeather" : -33
 }, {
+    "period" : 105,
     "Yodacast" : 33,
     "BadWeather" : 97,
     "GoodWeather" : 7
 }, {
+    "period" : 106,
     "Yodacast" : 55,
     "BadWeather" : 103,
     "GoodWeather" : 34
 }, {
+    "period" : 107,
     "Yodacast" : 66,
     "BadWeather" : 94,
     "GoodWeather" : 51
 }, {
+    "period" : 108,
     "Yodacast" : 72,
     "BadWeather" : 77,
     "GoodWeather" : 63
 }, {
+    "period" : 109,
     "Yodacast" : 82,
     "BadWeather" : 61,
     "GoodWeather" : 80
 }, {
+    "period" : 110,
     "Yodacast" : 107,
     "BadWeather" : 63,
     "GoodWeather" : 113
 }, {
+    "period" : 111,
     "Yodacast" : 161,
     "BadWeather" : 97,
     "GoodWeather" : 173
 }, {
+    "period" : 112,
     "Yodacast" : 251,
     "BadWeather" : 175,
     "GoodWeather" : 270
 }, {
+    "period" : 113,
     "Yodacast" : 381,
     "BadWeather" : 299,
     "GoodWeather" : 402
 }, {
+    "period" : 114,
     "Yodacast" : 544,
     "BadWeather" : 463,
     "GoodWeather" : 561
 }, {
+    "period" : 115,
     "Yodacast" : 724,
     "BadWeather" : 652,
     "GoodWeather" : 735
 }, {
+    "period" : 116,
     "Yodacast" : 902,
     "BadWeather" : 847,
     "GoodWeather" : 907
 }, {
+    "period" : 117,
     "Yodacast" : 1066,
     "BadWeather" : 1032,
     "GoodWeather" : 1064
 }, {
+    "period" : 118,
     "Yodacast" : 1205,
     "BadWeather" : 1195,
     "GoodWeather" : 1196
 }, {
+    "period" : 119,
     "Yodacast" : 1313,
     "BadWeather" : 1329,
     "GoodWeather" : 1300
 }, {
+    "period" : 120,
     "Yodacast" : 1391,
     "BadWeather" : 1433,
     "GoodWeather" : 1375
 }, {
+    "period" : 121,
     "Yodacast" : 1442,
     "BadWeather" : 1507,
     "GoodWeather" : 1423
 }, {
+    "period" : 122,
     "Yodacast" : 1471,
     "BadWeather" : 1555,
     "GoodWeather" : 1447
 }, {
+    "period" : 123,
     "Yodacast" : 1483,
     "BadWeather" : 1580,
     "GoodWeather" : 1451
 }, {
+    "period" : 124,
     "Yodacast" : 1412,
     "BadWeather" : 1517,
     "GoodWeather" : 1367
 }, {
+    "period" : 125,
     "Yodacast" : 1372,
     "BadWeather" : 1483,
     "GoodWeather" : 1315
 }, {
+    "period" : 126,
     "Yodacast" : 1346,
     "BadWeather" : 1461,
     "GoodWeather" : 1279
 }, {
+    "period" : 127,
     "Yodacast" : 1305,
     "BadWeather" : 1425,
     "GoodWeather" : 1232
 }, {
+    "period" : 128,
     "Yodacast" : 1393,
     "BadWeather" : 1520,
     "GoodWeather" : 1321
 }, {
+    "period" : 129,
     "Yodacast" : 1349,
     "BadWeather" : 1490,
     "GoodWeather" : 1281
 }, {
+    "period" : 130,
     "Yodacast" : 1304,
     "BadWeather" : 1460,
     "GoodWeather" : 1243
 }, {
+    "period" : 131,
     "Yodacast" : 1261,
     "BadWeather" : 1429,
     "GoodWeather" : 1208
 }, {
+    "period" : 132,
     "Yodacast" : 1222,
     "BadWeather" : 1397,
     "GoodWeather" : 1176
 }, {
+    "period" : 133,
     "Yodacast" : 1185,
     "BadWeather" : 1359,
     "GoodWeather" : 1144
 }, {
+    "period" : 134,
     "Yodacast" : 1149,
     "BadWeather" : 1315,
     "GoodWeather" : 1110
 }, {
+    "period" : 135,
     "Yodacast" : 1105,
     "BadWeather" : 1259,
     "GoodWeather" : 1071
 }, {
+    "period" : 136,
     "Yodacast" : 1050,
     "BadWeather" : 1188,
     "GoodWeather" : 1022
 }, {
+    "period" : 137,
     "Yodacast" : 983,
     "BadWeather" : 1100,
     "GoodWeather" : 960
 }, {
+    "period" : 138,
     "Yodacast" : 899,
     "BadWeather" : 994,
     "GoodWeather" : 884
 }, {
+    "period" : 139,
     "Yodacast" : 802,
     "BadWeather" : 869,
     "GoodWeather" : 793
 }, {
+    "period" : 140,
     "Yodacast" : 691,
     "BadWeather" : 729,
     "GoodWeather" : 688
 }, {
+    "period" : 141,
     "Yodacast" : 573,
     "BadWeather" : 583,
     "GoodWeather" : 575
 }, {
+    "period" : 142,
     "Yodacast" : 454,
     "BadWeather" : 445,
     "GoodWeather" : 460
 }, {
+    "period" : 143,
     "Yodacast" : 342,
     "BadWeather" : 329,
     "GoodWeather" : 349
 }, {
+    "period" : 144,
     "Yodacast" : 239,
     "BadWeather" : 243,
     "GoodWeather" : 245
 }, {
+    "period" : 145,
     "Yodacast" : 144,
     "BadWeather" : 185,
     "GoodWeather" : 146
 }, {
+    "period" : 146,
     "Yodacast" : 51,
     "BadWeather" : 139,
     "GoodWeather" : 47
 }, {
+    "period" : 147,
     "Yodacast" : -41,
     "BadWeather" : 93,
     "GoodWeather" : -54
 }, {
+    "period" : 148,
     "Yodacast" : 67,
     "BadWeather" : 99,
     "GoodWeather" : 65
 }, {
+    "period" : 149,
     "Yodacast" : 67,
     "BadWeather" : 93,
     "GoodWeather" : 65
 }, {
+    "period" : 150,
     "Yodacast" : 77,
     "BadWeather" : 76,
     "GoodWeather" : 79
 }, {
+    "period" : 151,
     "Yodacast" : 83,
     "BadWeather" : 84,
     "GoodWeather" : 79
 }, {
+    "period" : 152,
     "Yodacast" : 51,
     "BadWeather" : 121,
     "GoodWeather" : 26
 }, {
+    "period" : 153,
     "Yodacast" : 43,
     "BadWeather" : 103,
     "GoodWeather" : 22
 }, {
+    "period" : 154,
     "Yodacast" : 29,
     "BadWeather" : 72,
     "GoodWeather" : 10
 }, {
+    "period" : 155,
     "Yodacast" : 7,
     "BadWeather" : 30,
     "GoodWeather" : -7
 }, {
+    "period" : 156,
     "Yodacast" : -15,
     "BadWeather" : -13,
     "GoodWeather" : -23
 }, {
+    "period" : 157,
     "Yodacast" : -24,
     "BadWeather" : -46,
     "GoodWeather" : -25
 }, {
+    "period" : 158,
     "Yodacast" : -7,
     "BadWeather" : -51,
     "GoodWeather" : -2
 }, {
+    "period" : 159,
     "Yodacast" : 46,
     "BadWeather" : -13,
     "GoodWeather" : 59
 }, {
+    "period" : 160,
     "Yodacast" : 142,
     "BadWeather" : 78,
     "GoodWeather" : 163
 }, {
+    "period" : 161,
     "Yodacast" : 287,
     "BadWeather" : 221,
     "GoodWeather" : 310
 }, {
+    "period" : 162,
     "Yodacast" : 475,
     "BadWeather" : 407,
     "GoodWeather" : 486
 }, {
+    "period" : 163,
     "Yodacast" : 680,
     "BadWeather" : 616,
     "GoodWeather" : 676
 }, {
+    "period" : 164,
     "Yodacast" : 877,
     "BadWeather" : 829,
     "GoodWeather" : 864
 }, {
+    "period" : 165,
     "Yodacast" : 1056,
     "BadWeather" : 1029,
     "GoodWeather" : 1034
 }, {
+    "period" : 166,
     "Yodacast" : 1204,
     "BadWeather" : 1204,
     "GoodWeather" : 1180
 }, {
+    "period" : 167,
     "Yodacast" : 1314,
     "BadWeather" : 1350,
     "GoodWeather" : 1296
 }, {
+    "period" : 168,
     "Yodacast" : 1388,
     "BadWeather" : 1465,
     "GoodWeather" : 1383
 }, {
+    "period" : 169,
     "Yodacast" : 1443,
     "BadWeather" : 1550,
     "GoodWeather" : 1443
 }, {
+    "period" : 170,
     "Yodacast" : 1482,
     "BadWeather" : 1607,
     "GoodWeather" : 1478
 }, {
+    "period" : 171,
     "Yodacast" : 1501,
     "BadWeather" : 1642,
     "GoodWeather" : 1493
 }, {
+    "period" : 172,
     "Yodacast" : 1387,
     "BadWeather" : 1540,
     "GoodWeather" : 1370
 }, {
+    "period" : 173,
     "Yodacast" : 1333,
     "BadWeather" : 1493,
     "GoodWeather" : 1308
 }, {
+    "period" : 174,
     "Yodacast" : 1307,
     "BadWeather" : 1473,
     "GoodWeather" : 1274
 }, {
+    "period" : 175,
     "Yodacast" : 1267,
     "BadWeather" : 1440,
     "GoodWeather" : 1229
 }, {
+    "period" : 176,
     "Yodacast" : 1432,
     "BadWeather" : 1611,
     "GoodWeather" : 1391
 }, {
+    "period" : 177,
     "Yodacast" : 1390,
     "BadWeather" : 1578,
     "GoodWeather" : 1348
 }, {
+    "period" : 178,
     "Yodacast" : 1348,
     "BadWeather" : 1541,
     "GoodWeather" : 1303
 }, {
+    "period" : 179,
     "Yodacast" : 1306,
     "BadWeather" : 1501,
     "GoodWeather" : 1260
 }, {
+    "period" : 180,
     "Yodacast" : 1263,
     "BadWeather" : 1457,
     "GoodWeather" : 1216
 }, {
+    "period" : 181,
     "Yodacast" : 1218,
     "BadWeather" : 1406,
     "GoodWeather" : 1172
 }, {
+    "period" : 182,
     "Yodacast" : 1168,
     "BadWeather" : 1346,
     "GoodWeather" : 1125
 }, {
+    "period" : 183,
     "Yodacast" : 1113,
     "BadWeather" : 1275,
     "GoodWeather" : 1072
 }, {
+    "period" : 184,
     "Yodacast" : 1050,
     "BadWeather" : 1190,
     "GoodWeather" : 1011
 }, {
+    "period" : 185,
     "Yodacast" : 975,
     "BadWeather" : 1089,
     "GoodWeather" : 939
 }, {
+    "period" : 186,
     "Yodacast" : 887,
     "BadWeather" : 971,
     "GoodWeather" : 854
 }, {
+    "period" : 187,
     "Yodacast" : 784,
     "BadWeather" : 837,
     "GoodWeather" : 758
 }, {
+    "period" : 188,
     "Yodacast" : 668,
     "BadWeather" : 691,
     "GoodWeather" : 653
 }, {
+    "period" : 189,
     "Yodacast" : 548,
     "BadWeather" : 541,
     "GoodWeather" : 543
 }, {
+    "period" : 190,
     "Yodacast" : 434,
     "BadWeather" : 401,
     "GoodWeather" : 437
 }, {
+    "period" : 191,
     "Yodacast" : 336,
     "BadWeather" : 290,
     "GoodWeather" : 343
 }, {
+    "period" : 192,
     "Yodacast" : 255,
     "BadWeather" : 220,
     "GoodWeather" : 268
 }, {
+    "period" : 193,
     "Yodacast" : 196,
     "BadWeather" : 192,
     "GoodWeather" : 211
 }, {
+    "period" : 194,
     "Yodacast" : 156,
     "BadWeather" : 192,
     "GoodWeather" : 166
 }, {
+    "period" : 195,
     "Yodacast" : 127,
     "BadWeather" : 206,
     "GoodWeather" : 132
 }, {
+    "period" : 196,
     "Yodacast" : 64,
     "BadWeather" : 78,
     "GoodWeather" : 80
 }, {
+    "period" : 197,
     "Yodacast" : 58,
     "BadWeather" : 50,
     "GoodWeather" : 62
 }, {
+    "period" : 198,
     "Yodacast" : 57,
     "BadWeather" : 62,
     "GoodWeather" : 47
 }, {
+    "period" : 199,
     "Yodacast" : -19,
     "BadWeather" : 32,
     "GoodWeather" : -34
 }, {
+    "period" : 200,
     "Yodacast" : -34,
     "BadWeather" : 25,
     "GoodWeather" : -100
 }, {
+    "period" : 201,
     "Yodacast" : -42,
     "BadWeather" : 19,
     "GoodWeather" : -99
 }, {
+    "period" : 202,
     "Yodacast" : -43,
     "BadWeather" : 9,
     "GoodWeather" : -99
 }, {
+    "period" : 203,
     "Yodacast" : -46,
     "BadWeather" : -3,
     "GoodWeather" : -95
 }, {
+    "period" : 204,
     "Yodacast" : -44,
     "BadWeather" : -13,
     "GoodWeather" : -84
 }, {
+    "period" : 205,
     "Yodacast" : -31,
     "BadWeather" : -13,
     "GoodWeather" : -60
 }, {
+    "period" : 206,
     "Yodacast" : 2,
     "BadWeather" : 5,
     "GoodWeather" : -15
 }, {
+    "period" : 207,
     "Yodacast" : 61,
     "BadWeather" : 52,
     "GoodWeather" : 57
 }, {
+    "period" : 208,
     "Yodacast" : 152,
     "BadWeather" : 135,
     "GoodWeather" : 160
 }, {
+    "period" : 209,
     "Yodacast" : 278,
     "BadWeather" : 257,
     "GoodWeather" : 294
 }, {
+    "period" : 210,
     "Yodacast" : 436,
     "BadWeather" : 414,
     "GoodWeather" : 450
 }, {
+    "period" : 211,
     "Yodacast" : 613,
     "BadWeather" : 596,
     "GoodWeather" : 620
 }, {
+    "period" : 212,
     "Yodacast" : 794,
     "BadWeather" : 788,
     "GoodWeather" : 790
 }, {
+    "period" : 213,
     "Yodacast" : 969,
     "BadWeather" : 976,
     "GoodWeather" : 951
 }, {
+    "period" : 214,
     "Yodacast" : 1126,
     "BadWeather" : 1150,
     "GoodWeather" : 1094
 }, {
+    "period" : 215,
     "Yodacast" : 1258,
     "BadWeather" : 1300,
     "GoodWeather" : 1215
 }, {
+    "period" : 216,
     "Yodacast" : 1363,
     "BadWeather" : 1423,
     "GoodWeather" : 1312
 }, {
+    "period" : 217,
     "Yodacast" : 1443,
     "BadWeather" : 1517,
     "GoodWeather" : 1384
 }, {
+    "period" : 218,
     "Yodacast" : 1499,
     "BadWeather" : 1584,
     "GoodWeather" : 1433
 }, {
+    "period" : 219,
     "Yodacast" : 1534,
     "BadWeather" : 1624,
     "GoodWeather" : 1459
 }, {
+    "period" : 220,
     "Yodacast" : 1420,
     "BadWeather" : 1513,
     "GoodWeather" : 1339
 }, {
+    "period" : 221,
     "Yodacast" : 1390,
     "BadWeather" : 1482,
     "GoodWeather" : 1304
 }, {
+    "period" : 222,
     "Yodacast" : 1365,
     "BadWeather" : 1455,
     "GoodWeather" : 1271
 }, {
+    "period" : 223,
     "Yodacast" : 1312,
     "BadWeather" : 1403,
     "GoodWeather" : 1213
 }, {
+    "period" : 224,
     "Yodacast" : 1461,
     "BadWeather" : 1555,
     "GoodWeather" : 1358
 }, {
+    "period" : 225,
     "Yodacast" : 1402,
     "BadWeather" : 1499,
     "GoodWeather" : 1303
 }, {
+    "period" : 226,
     "Yodacast" : 1335,
     "BadWeather" : 1436,
     "GoodWeather" : 1242
 }, {
+    "period" : 227,
     "Yodacast" : 1263,
     "BadWeather" : 1365,
     "GoodWeather" : 1176
 }, {
+    "period" : 228,
     "Yodacast" : 1187,
     "BadWeather" : 1289,
     "GoodWeather" : 1108
 }, {
+    "period" : 229,
     "Yodacast" : 1109,
     "BadWeather" : 1207,
     "GoodWeather" : 1037
 }, {
+    "period" : 230,
     "Yodacast" : 1029,
     "BadWeather" : 1119,
     "GoodWeather" : 964
 }, {
+    "period" : 231,
     "Yodacast" : 946,
     "BadWeather" : 1026,
     "GoodWeather" : 890
 }, {
+    "period" : 232,
     "Yodacast" : 859,
     "BadWeather" : 927,
     "GoodWeather" : 814
 }, {
+    "period" : 233,
     "Yodacast" : 770,
     "BadWeather" : 823,
     "GoodWeather" : 738
 }, {
+    "period" : 234,
     "Yodacast" : 678,
     "BadWeather" : 714,
     "GoodWeather" : 661
 }, {
+    "period" : 235,
     "Yodacast" : 586,
     "BadWeather" : 602,
     "GoodWeather" : 586
 }, {
+    "period" : 236,
     "Yodacast" : 496,
     "BadWeather" : 492,
     "GoodWeather" : 512
 }, {
+    "period" : 237,
     "Yodacast" : 409,
     "BadWeather" : 389,
     "GoodWeather" : 439
 }, {
+    "period" : 238,
     "Yodacast" : 328,
     "BadWeather" : 298,
     "GoodWeather" : 365
 }, {
+    "period" : 239,
     "Yodacast" : 250,
     "BadWeather" : 222,
     "GoodWeather" : 286
 }, {
+    "period" : 240,
     "Yodacast" : 172,
     "BadWeather" : 161,
     "GoodWeather" : 201
 }, {
+    "period" : 241,
     "Yodacast" : 99,
     "BadWeather" : 112,
     "GoodWeather" : 113
 }, {
+    "period" : 242,
     "Yodacast" : 38,
     "BadWeather" : 77,
     "GoodWeather" : 33
 }, {
+    "period" : 243,
     "Yodacast" : -2,
     "BadWeather" : 58,
     "GoodWeather" : -26
 }, {
+    "period" : 244,
     "Yodacast" : 48,
     "BadWeather" : 102,
     "GoodWeather" : 64
 }, {
+    "period" : 245,
     "Yodacast" : 54,
     "BadWeather" : 90,
     "GoodWeather" : 60
 }, {
+    "period" : 246,
     "Yodacast" : 42,
     "BadWeather" : 68,
     "GoodWeather" : 18
 }, {
+    "period" : 247,
     "Yodacast" : 26,
     "BadWeather" : 61,
     "GoodWeather" : -17
 }, {
+    "period" : 248,
     "Yodacast" : -7,
     "BadWeather" : 47,
     "GoodWeather" : -103
 }, {
+    "period" : 249,
     "Yodacast" : 6,
     "BadWeather" : 50,
     "GoodWeather" : -94
 }, {
+    "period" : 250,
     "Yodacast" : 10,
     "BadWeather" : 48,
     "GoodWeather" : -86
 }, {
+    "period" : 251,
     "Yodacast" : 9,
     "BadWeather" : 42,
     "GoodWeather" : -77
 }, {
+    "period" : 252,
     "Yodacast" : 9,
     "BadWeather" : 34,
     "GoodWeather" : -65
 }, {
+    "period" : 253,
     "Yodacast" : 13,
     "BadWeather" : 28,
     "GoodWeather" : -46
 }, {
+    "period" : 254,
     "Yodacast" : 25,
     "BadWeather" : 30,
     "GoodWeather" : -14
 }, {
+    "period" : 255,
     "Yodacast" : 51,
     "BadWeather" : 48,
     "GoodWeather" : 35
 }, {
+    "period" : 256,
     "Yodacast" : 95,
     "BadWeather" : 88,
     "GoodWeather" : 105
 }, {
+    "period" : 257,
     "Yodacast" : 164,
     "BadWeather" : 156,
     "GoodWeather" : 196
 }, {
+    "period" : 258,
     "Yodacast" : 263,
     "BadWeather" : 250,
     "GoodWeather" : 306
 }, {
+    "period" : 259,
     "Yodacast" : 383,
     "BadWeather" : 366,
     "GoodWeather" : 426
 }, {
+    "period" : 260,
     "Yodacast" : 510,
     "BadWeather" : 494,
     "GoodWeather" : 547
 }, {
+    "period" : 261,
     "Yodacast" : 635,
     "BadWeather" : 621,
     "GoodWeather" : 659
 }, {
+    "period" : 262,
     "Yodacast" : 747,
     "BadWeather" : 739,
     "GoodWeather" : 755
 }, {
+    "period" : 263,
     "Yodacast" : 838,
     "BadWeather" : 839,
     "GoodWeather" : 830
 }, {
+    "period" : 264,
     "Yodacast" : 904,
     "BadWeather" : 917,
     "GoodWeather" : 884
 }, {
+    "period" : 265,
     "Yodacast" : 949,
     "BadWeather" : 973,
     "GoodWeather" : 915
 }, {
+    "period" : 266,
     "Yodacast" : 976,
     "BadWeather" : 1006,
     "GoodWeather" : 926
 }, {
+    "period" : 267,
     "Yodacast" : 984,
     "BadWeather" : 1019,
     "GoodWeather" : 921
 }, {
+    "period" : 268,
     "Yodacast" : 960,
     "BadWeather" : 997,
     "GoodWeather" : 884
 }, {
+    "period" : 269,
     "Yodacast" : 935,
     "BadWeather" : 972,
     "GoodWeather" : 847
 }, {
+    "period" : 270,
     "Yodacast" : 904,
     "BadWeather" : 940,
     "GoodWeather" : 806
 }, {
+    "period" : 271,
     "Yodacast" : 862,
     "BadWeather" : 898,
     "GoodWeather" : 758
 }, {
+    "period" : 272,
     "Yodacast" : 847,
     "BadWeather" : 885,
     "GoodWeather" : 739
 }, {
+    "period" : 273,
     "Yodacast" : 800,
     "BadWeather" : 838,
     "GoodWeather" : 691
 }, {
+    "period" : 274,
     "Yodacast" : 752,
     "BadWeather" : 790,
     "GoodWeather" : 645
 }, {
+    "period" : 275,
     "Yodacast" : 705,
     "BadWeather" : 742,
     "GoodWeather" : 601
 }, {
+    "period" : 276,
     "Yodacast" : 661,
     "BadWeather" : 696,
     "GoodWeather" : 561
 }, {
+    "period" : 277,
     "Yodacast" : 619,
     "BadWeather" : 653,
     "GoodWeather" : 526
 }, {
+    "period" : 278,
     "Yodacast" : 580,
     "BadWeather" : 612,
     "GoodWeather" : 497
 }, {
+    "period" : 279,
     "Yodacast" : 544,
     "BadWeather" : 573,
     "GoodWeather" : 474
 }, {
+    "period" : 280,
     "Yodacast" : 509,
     "BadWeather" : 534,
     "GoodWeather" : 456
 }, {
+    "period" : 281,
     "Yodacast" : 475,
     "BadWeather" : 493,
     "GoodWeather" : 442
 }, {
+    "period" : 282,
     "Yodacast" : 437,
     "BadWeather" : 448,
     "GoodWeather" : 429
 }, {
+    "period" : 283,
     "Yodacast" : 396,
     "BadWeather" : 398,
     "GoodWeather" : 414
 }, {
+    "period" : 284,
     "Yodacast" : 350,
     "BadWeather" : 343,
     "GoodWeather" : 393
 }, {
+    "period" : 285,
     "Yodacast" : 299,
     "BadWeather" : 286,
     "GoodWeather" : 361
 }, {
+    "period" : 286,
     "Yodacast" : 245,
     "BadWeather" : 229,
     "GoodWeather" : 314
 }, {
+    "period" : 287,
     "Yodacast" : 191,
     "BadWeather" : 175,
     "GoodWeather" : 249
 }, {
+    "period" : 288,
     "Yodacast" : 143,
     "BadWeather" : 123,
     "GoodWeather" : 167
 }, {
+    "period" : 289,
     "Yodacast" : 94,
     "BadWeather" : 74,
     "GoodWeather" : 77
 }, {
+    "period" : 290,
     "Yodacast" : 43,
     "BadWeather" : 31,
     "GoodWeather" : -6
 }, {
+    "period" : 291,
     "Yodacast" : 2,
     "BadWeather" : 2,
     "GoodWeather" : -70
 }, {
+    "period" : 292,
     "Yodacast" : 64,
     "BadWeather" : 69,
     "GoodWeather" : 45
 }, {
+    "period" : 293,
     "Yodacast" : 46,
     "BadWeather" : 54,
     "GoodWeather" : 13
 }, {
+    "period" : 294,
     "Yodacast" : 57,
     "BadWeather" : 48,
     "GoodWeather" : 64
 }, {
+    "period" : 295,
     "Yodacast" : 12,
     "BadWeather" : 23,
     "GoodWeather" : -14
 }, {
+    "period" : 296,
     "Yodacast" : -21,
     "BadWeather" : -15,
     "GoodWeather" : -66
 }, {
+    "period" : 297,
     "Yodacast" : 2,
     "BadWeather" : 13,
     "GoodWeather" : -34
 }, {
+    "period" : 298,
     "Yodacast" : 13,
     "BadWeather" : 27,
     "GoodWeather" : -11
 }, {
+    "period" : 299,
     "Yodacast" : 17,
     "BadWeather" : 25,
     "GoodWeather" : 0
 }, {
+    "period" : 300,
     "Yodacast" : 9,
     "BadWeather" : 8,
     "GoodWeather" : 1
 }, {
+    "period" : 301,
     "Yodacast" : -9,
     "BadWeather" : -20,
     "GoodWeather" : -5
 }, {
+    "period" : 302,
     "Yodacast" : -31,
     "BadWeather" : -51,
     "GoodWeather" : -11
 }, {
+    "period" : 303,
     "Yodacast" : -49,
     "BadWeather" : -75,
     "GoodWeather" : -11
 }, {
+    "period" : 304,
     "Yodacast" : -55,
     "BadWeather" : -79,
     "GoodWeather" : 6
 }, {
+    "period" : 305,
     "Yodacast" : -35,
     "BadWeather" : -56,
     "GoodWeather" : 42
 }, {
+    "period" : 306,
     "Yodacast" : 23,
     "BadWeather" : -3,
     "GoodWeather" : 98
 }, {
+    "period" : 307,
     "Yodacast" : 108,
     "BadWeather" : 74,
     "GoodWeather" : 168
 }, {
+    "period" : 308,
     "Yodacast" : 200,
     "BadWeather" : 166,
     "GoodWeather" : 242
 }, {
+    "period" : 309,
     "Yodacast" : 288,
     "BadWeather" : 259,
     "GoodWeather" : 311
 }, {
+    "period" : 310,
     "Yodacast" : 357,
     "BadWeather" : 343,
     "GoodWeather" : 368
 }, {
+    "period" : 311,
     "Yodacast" : 401,
     "BadWeather" : 411,
     "GoodWeather" : 407
 }, {
+    "period" : 312,
     "Yodacast" : 417,
     "BadWeather" : 459,
     "GoodWeather" : 428
 }, {
+    "period" : 313,
     "Yodacast" : 425,
     "BadWeather" : 488,
     "GoodWeather" : 432
 }, {
+    "period" : 314,
     "Yodacast" : 432,
     "BadWeather" : 501,
     "GoodWeather" : 423
 }, {
+    "period" : 315,
     "Yodacast" : 433,
     "BadWeather" : 501,
     "GoodWeather" : 405
 }, {
+    "period" : 316,
     "Yodacast" : 431,
     "BadWeather" : 491,
     "GoodWeather" : 379
 }, {
+    "period" : 317,
     "Yodacast" : 426,
     "BadWeather" : 476,
     "GoodWeather" : 352
 }, {
+    "period" : 318,
     "Yodacast" : 420,
     "BadWeather" : 460,
     "GoodWeather" : 326
 }, {
+    "period" : 319,
     "Yodacast" : 408,
     "BadWeather" : 443,
     "GoodWeather" : 301
 }, {
+    "period" : 320,
     "Yodacast" : 403,
     "BadWeather" : 438,
     "GoodWeather" : 290
 }, {
+    "period" : 321,
     "Yodacast" : 398,
     "BadWeather" : 433,
     "GoodWeather" : 281
 }, {
+    "period" : 322,
     "Yodacast" : 401,
     "BadWeather" : 434,
     "GoodWeather" : 279
 }, {
+    "period" : 323,
     "Yodacast" : 409,
     "BadWeather" : 440,
     "GoodWeather" : 285
 }, {
+    "period" : 324,
     "Yodacast" : 422,
     "BadWeather" : 451,
     "GoodWeather" : 298
 }, {
+    "period" : 325,
     "Yodacast" : 436,
     "BadWeather" : 462,
     "GoodWeather" : 317
 }, {
+    "period" : 326,
     "Yodacast" : 448,
     "BadWeather" : 471,
     "GoodWeather" : 340
 }, {
+    "period" : 327,
     "Yodacast" : 454,
     "BadWeather" : 473,
     "GoodWeather" : 361
 }, {
+    "period" : 328,
     "Yodacast" : 451,
     "BadWeather" : 465,
     "GoodWeather" : 378
 }, {
+    "period" : 329,
     "Yodacast" : 435,
     "BadWeather" : 443,
     "GoodWeather" : 386
 }, {
+    "period" : 330,
     "Yodacast" : 404,
     "BadWeather" : 407,
     "GoodWeather" : 382
 }, {
+    "period" : 331,
     "Yodacast" : 360,
     "BadWeather" : 356,
     "GoodWeather" : 366
 }, {
+    "period" : 332,
     "Yodacast" : 306,
     "BadWeather" : 297,
     "GoodWeather" : 337
 }, {
+    "period" : 333,
     "Yodacast" : 248,
     "BadWeather" : 235,
     "GoodWeather" : 297
 }, {
+    "period" : 334,
     "Yodacast" : 190,
     "BadWeather" : 180,
     "GoodWeather" : 248
 }, {
+    "period" : 335,
     "Yodacast" : 143,
     "BadWeather" : 136,
     "GoodWeather" : 190
 }, {
+    "period" : 336,
     "Yodacast" : 111,
     "BadWeather" : 102,
     "GoodWeather" : 121
 }, {
+    "period" : 337,
     "Yodacast" : 80,
     "BadWeather" : 71,
     "GoodWeather" : 42
 }, {
+    "period" : 338,
     "Yodacast" : 45,
     "BadWeather" : 41,
     "GoodWeather" : -37
 }, {
+    "period" : 339,
     "Yodacast" : 10,
     "BadWeather" : 16,
     "GoodWeather" : -105
 }, {
+    "period" : 340,
     "Yodacast" : 28,
     "BadWeather" : 19,
     "GoodWeather" : 17
 }, {
+    "period" : 341,
     "Yodacast" : 30,
     "BadWeather" : 22,
     "GoodWeather" : 6
 }, {
+    "period" : 342,
     "Yodacast" : -6,
     "BadWeather" : -9,
     "GoodWeather" : -21
 }, {
+    "period" : 343,
     "Yodacast" : -11,
     "BadWeather" : -2,
     "GoodWeather" : -26
 }, {
+    "period" : 344,
     "Yodacast" : -109,
     "BadWeather" : -107,
     "GoodWeather" : -158
 }, {
+    "period" : 345,
     "Yodacast" : -68,
     "BadWeather" : -58,
     "GoodWeather" : -108
 }, {
+    "period" : 346,
     "Yodacast" : -29,
     "BadWeather" : -19,
     "GoodWeather" : -65
 } ];
 
 var footBallData = [ {
+    "period" : 1,
     "Yodacast" : 73,
-    "FootBall" : 73
+    "Football on Saturday" : 73
 }, {
+    "period" : 2,
     "Yodacast" : 31,
-    "FootBall" : 31
+    "Football on Saturday" : 31
 }, {
+    "period" : 3,
     "Yodacast" : -6,
-    "FootBall" : -6
+    "Football on Saturday" : -6
 }, {
+    "period" : 4,
     "Yodacast" : 29,
-    "FootBall" : 29
+    "Football on Saturday" : 29
 }, {
+    "period" : 5,
     "Yodacast" : 22,
-    "FootBall" : 22
+    "Football on Saturday" : 22
 }, {
+    "period" : 6,
     "Yodacast" : -13,
-    "FootBall" : -13
+    "Football on Saturday" : -13
 }, {
+    "period" : 7,
     "Yodacast" : 1,
-    "FootBall" : 1
+    "Football on Saturday" : 1
 }, {
+    "period" : 8,
     "Yodacast" : -121,
-    "FootBall" : -121
+    "Football on Saturday" : -121
 }, {
+    "period" : 9,
     "Yodacast" : -79,
-    "FootBall" : -79
+    "Football on Saturday" : -79
 }, {
+    "period" : 10,
     "Yodacast" : -41,
-    "FootBall" : -41
+    "Football on Saturday" : -41
 }, {
+    "period" : 11,
     "Yodacast" : -8,
-    "FootBall" : -8
+    "Football on Saturday" : -8
 }, {
+    "period" : 12,
     "Yodacast" : 23,
-    "FootBall" : 23
+    "Football on Saturday" : 23
 }, {
+    "period" : 13,
     "Yodacast" : 56,
-    "FootBall" : 56
+    "Football on Saturday" : 56
 }, {
+    "period" : 14,
     "Yodacast" : 98,
-    "FootBall" : 98
+    "Football on Saturday" : 98
 }, {
+    "period" : 15,
     "Yodacast" : 160,
-    "FootBall" : 160
+    "Football on Saturday" : 160
 }, {
+    "period" : 16,
     "Yodacast" : 250,
-    "FootBall" : 250
+    "Football on Saturday" : 250
 }, {
+    "period" : 17,
     "Yodacast" : 375,
-    "FootBall" : 375
+    "Football on Saturday" : 375
 }, {
+    "period" : 18,
     "Yodacast" : 535,
-    "FootBall" : 535
+    "Football on Saturday" : 535
 }, {
+    "period" : 19,
     "Yodacast" : 716,
-    "FootBall" : 716
+    "Football on Saturday" : 716
 }, {
+    "period" : 20,
     "Yodacast" : 900,
-    "FootBall" : 900
+    "Football on Saturday" : 900
 }, {
+    "period" : 21,
     "Yodacast" : 1073,
-    "FootBall" : 1073
+    "Football on Saturday" : 1073
 }, {
+    "period" : 22,
     "Yodacast" : 1222,
-    "FootBall" : 1222
+    "Football on Saturday" : 1222
 }, {
+    "period" : 23,
     "Yodacast" : 1343,
-    "FootBall" : 1343
+    "Football on Saturday" : 1343
 }, {
+    "period" : 24,
     "Yodacast" : 1432,
-    "FootBall" : 1432
+    "Football on Saturday" : 1432
 }, {
+    "period" : 25,
     "Yodacast" : 1495,
-    "FootBall" : 1495
+    "Football on Saturday" : 1495
 }, {
+    "period" : 26,
     "Yodacast" : 1538,
-    "FootBall" : 1538
+    "Football on Saturday" : 1538
 }, {
+    "period" : 27,
     "Yodacast" : 1556,
-    "FootBall" : 1556
+    "Football on Saturday" : 1556
 }, {
+    "period" : 28,
     "Yodacast" : 1522,
-    "FootBall" : 1522
+    "Football on Saturday" : 1522
 }, {
+    "period" : 29,
     "Yodacast" : 1453,
-    "FootBall" : 1453
+    "Football on Saturday" : 1453
 }, {
+    "period" : 30,
     "Yodacast" : 1406,
-    "FootBall" : 1406
+    "Football on Saturday" : 1406
 }, {
+    "period" : 31,
     "Yodacast" : 1353,
-    "FootBall" : 1353
+    "Football on Saturday" : 1353
 }, {
+    "period" : 32,
     "Yodacast" : 1476,
-    "FootBall" : 1476
+    "Football on Saturday" : 1476
 }, {
+    "period" : 33,
     "Yodacast" : 1452,
-    "FootBall" : 1452
+    "Football on Saturday" : 1452
 }, {
+    "period" : 34,
     "Yodacast" : 1427,
-    "FootBall" : 1427
+    "Football on Saturday" : 1427
 }, {
+    "period" : 35,
     "Yodacast" : 1402,
-    "FootBall" : 1402
+    "Football on Saturday" : 1402
 }, {
+    "period" : 36,
     "Yodacast" : 1375,
-    "FootBall" : 1375
+    "Football on Saturday" : 1375
 }, {
+    "period" : 37,
     "Yodacast" : 1344,
-    "FootBall" : 1344
+    "Football on Saturday" : 1344
 }, {
+    "period" : 38,
     "Yodacast" : 1306,
-    "FootBall" : 1306
+    "Football on Saturday" : 1306
 }, {
+    "period" : 39,
     "Yodacast" : 1259,
-    "FootBall" : 1259
+    "Football on Saturday" : 1259
 }, {
+    "period" : 40,
     "Yodacast" : 1197,
-    "FootBall" : 1197
+    "Football on Saturday" : 1197
 }, {
+    "period" : 41,
     "Yodacast" : 1112,
-    "FootBall" : 1112
+    "Football on Saturday" : 1112
 }, {
+    "period" : 42,
     "Yodacast" : 1007,
-    "FootBall" : 1007
+    "Football on Saturday" : 1007
 }, {
+    "period" : 43,
     "Yodacast" : 877,
-    "FootBall" : 877
+    "Football on Saturday" : 877
 }, {
+    "period" : 44,
     "Yodacast" : 724,
-    "FootBall" : 724
+    "Football on Saturday" : 724
 }, {
+    "period" : 45,
     "Yodacast" : 570,
-    "FootBall" : 570
+    "Football on Saturday" : 570
 }, {
+    "period" : 46,
     "Yodacast" : 426,
-    "FootBall" : 426
+    "Football on Saturday" : 426
 }, {
+    "period" : 47,
     "Yodacast" : 302,
-    "FootBall" : 302
+    "Football on Saturday" : 302
 }, {
+    "period" : 48,
     "Yodacast" : 196,
-    "FootBall" : 196
+    "Football on Saturday" : 196
 }, {
+    "period" : 49,
     "Yodacast" : 110,
-    "FootBall" : 110
+    "Football on Saturday" : 110
 }, {
+    "period" : 50,
     "Yodacast" : 39,
-    "FootBall" : 39
+    "Football on Saturday" : 39
 }, {
+    "period" : 51,
     "Yodacast" : -18,
-    "FootBall" : -18
+    "Football on Saturday" : -18
 }, {
+    "period" : 52,
     "Yodacast" : 66,
-    "FootBall" : 66
+    "Football on Saturday" : 66
 }, {
+    "period" : 53,
     "Yodacast" : 30,
-    "FootBall" : 30
+    "Football on Saturday" : 30
 }, {
+    "period" : 54,
     "Yodacast" : 8,
-    "FootBall" : 8
+    "Football on Saturday" : 8
 }, {
+    "period" : 55,
     "Yodacast" : 3,
-    "FootBall" : 3
+    "Football on Saturday" : 3
 }, {
+    "period" : 56,
     "Yodacast" : -162,
-    "FootBall" : -162
+    "Football on Saturday" : -162
 }, {
+    "period" : 57,
     "Yodacast" : -81,
-    "FootBall" : -81
+    "Football on Saturday" : -81
 }, {
+    "period" : 58,
     "Yodacast" : -25,
-    "FootBall" : -25
+    "Football on Saturday" : -25
 }, {
+    "period" : 59,
     "Yodacast" : 11,
-    "FootBall" : 11
+    "Football on Saturday" : 11
 }, {
+    "period" : 60,
     "Yodacast" : 35,
-    "FootBall" : 35
+    "Football on Saturday" : 35
 }, {
+    "period" : 61,
     "Yodacast" : 55,
-    "FootBall" : 55
+    "Football on Saturday" : 55
 }, {
+    "period" : 62,
     "Yodacast" : 82,
-    "FootBall" : 82
+    "Football on Saturday" : 82
 }, {
+    "period" : 63,
     "Yodacast" : 129,
-    "FootBall" : 129
+    "Football on Saturday" : 129
 }, {
+    "period" : 64,
     "Yodacast" : 206,
-    "FootBall" : 206
+    "Football on Saturday" : 206
 }, {
+    "period" : 65,
     "Yodacast" : 321,
-    "FootBall" : 321
+    "Football on Saturday" : 321
 }, {
+    "period" : 66,
     "Yodacast" : 476,
-    "FootBall" : 476
+    "Football on Saturday" : 476
 }, {
+    "period" : 67,
     "Yodacast" : 654,
-    "FootBall" : 654
+    "Football on Saturday" : 654
 }, {
+    "period" : 68,
     "Yodacast" : 835,
-    "FootBall" : 835
+    "Football on Saturday" : 835
 }, {
+    "period" : 69,
     "Yodacast" : 1004,
-    "FootBall" : 1004
+    "Football on Saturday" : 1004
 }, {
+    "period" : 70,
     "Yodacast" : 1146,
-    "FootBall" : 1146
+    "Football on Saturday" : 1146
 }, {
+    "period" : 71,
     "Yodacast" : 1255,
-    "FootBall" : 1255
+    "Football on Saturday" : 1255
 }, {
+    "period" : 72,
     "Yodacast" : 1331,
-    "FootBall" : 1331
+    "Football on Saturday" : 1331
 }, {
+    "period" : 73,
     "Yodacast" : 1386,
-    "FootBall" : 1386
+    "Football on Saturday" : 1386
 }, {
+    "period" : 74,
     "Yodacast" : 1425,
-    "FootBall" : 1425
+    "Football on Saturday" : 1425
 }, {
+    "period" : 75,
     "Yodacast" : 1447,
-    "FootBall" : 1447
+    "Football on Saturday" : 1447
 }, {
+    "period" : 76,
     "Yodacast" : 1447,
-    "FootBall" : 1447
+    "Football on Saturday" : 1447
 }, {
+    "period" : 77,
     "Yodacast" : 1438,
-    "FootBall" : 1438
+    "Football on Saturday" : 1438
 }, {
+    "period" : 78,
     "Yodacast" : 1425,
-    "FootBall" : 1425
+    "Football on Saturday" : 1425
 }, {
+    "period" : 79,
     "Yodacast" : 1406,
-    "FootBall" : 1406
+    "Football on Saturday" : 1406
 }, {
+    "period" : 80,
     "Yodacast" : 1402,
-    "FootBall" : 1402
+    "Football on Saturday" : 1402
 }, {
+    "period" : 81,
     "Yodacast" : 1383,
-    "FootBall" : 1383
+    "Football on Saturday" : 1383
 }, {
+    "period" : 82,
     "Yodacast" : 1367,
-    "FootBall" : 1367
+    "Football on Saturday" : 1367
 }, {
+    "period" : 83,
     "Yodacast" : 1352,
-    "FootBall" : 1352
+    "Football on Saturday" : 1352
 }, {
+    "period" : 84,
     "Yodacast" : 1336,
-    "FootBall" : 1336
+    "Football on Saturday" : 1336
 }, {
+    "period" : 85,
     "Yodacast" : 1312,
-    "FootBall" : 1312
+    "Football on Saturday" : 1312
 }, {
+    "period" : 86,
     "Yodacast" : 1278,
-    "FootBall" : 1278
+    "Football on Saturday" : 1278
 }, {
+    "period" : 87,
     "Yodacast" : 1240,
-    "FootBall" : 1240
+    "Football on Saturday" : 1240
 }, {
+    "period" : 88,
     "Yodacast" : 1191,
-    "FootBall" : 1191
+    "Football on Saturday" : 1191
 }, {
+    "period" : 89,
     "Yodacast" : 1123,
-    "FootBall" : 1123
+    "Football on Saturday" : 1123
 }, {
+    "period" : 90,
     "Yodacast" : 1036,
-    "FootBall" : 1036
+    "Football on Saturday" : 1036
 }, {
+    "period" : 91,
     "Yodacast" : 922,
-    "FootBall" : 922
+    "Football on Saturday" : 922
 }, {
+    "period" : 92,
     "Yodacast" : 783,
-    "FootBall" : 783
+    "Football on Saturday" : 783
 }, {
+    "period" : 93,
     "Yodacast" : 635,
-    "FootBall" : 635
+    "Football on Saturday" : 635
 }, {
+    "period" : 94,
     "Yodacast" : 490,
-    "FootBall" : 490
+    "Football on Saturday" : 490
 }, {
+    "period" : 95,
     "Yodacast" : 356,
-    "FootBall" : 356
+    "Football on Saturday" : 356
 }, {
+    "period" : 96,
     "Yodacast" : 227,
-    "FootBall" : 227
+    "Football on Saturday" : 227
 }, {
+    "period" : 97,
     "Yodacast" : 107,
-    "FootBall" : 107
+    "Football on Saturday" : 107
 }, {
+    "period" : 98,
     "Yodacast" : -11,
-    "FootBall" : -11
+    "Football on Saturday" : -11
 }, {
+    "period" : 99,
     "Yodacast" : -137,
-    "FootBall" : -137
+    "Football on Saturday" : -137
 }, {
+    "period" : 100,
     "Yodacast" : 48,
-    "FootBall" : 48
+    "Football on Saturday" : 48
 }, {
+    "period" : 101,
     "Yodacast" : 20,
-    "FootBall" : 20
+    "Football on Saturday" : 20
 }, {
+    "period" : 102,
     "Yodacast" : 27,
-    "FootBall" : 27
+    "Football on Saturday" : 27
 }, {
+    "period" : 103,
     "Yodacast" : 81,
-    "FootBall" : 81
+    "Football on Saturday" : 81
 }, {
+    "period" : 104,
     "Yodacast" : -7,
-    "FootBall" : -7
+    "Football on Saturday" : -7
 }, {
+    "period" : 105,
     "Yodacast" : 33,
-    "FootBall" : 33
+    "Football on Saturday" : 33
 }, {
+    "period" : 106,
     "Yodacast" : 55,
-    "FootBall" : 55
+    "Football on Saturday" : 55
 }, {
+    "period" : 107,
     "Yodacast" : 66,
-    "FootBall" : 66
+    "Football on Saturday" : 66
 }, {
+    "period" : 108,
     "Yodacast" : 72,
-    "FootBall" : 72
+    "Football on Saturday" : 72
 }, {
+    "period" : 109,
     "Yodacast" : 82,
-    "FootBall" : 82
+    "Football on Saturday" : 82
 }, {
+    "period" : 110,
     "Yodacast" : 107,
-    "FootBall" : 107
+    "Football on Saturday" : 107
 }, {
+    "period" : 111,
     "Yodacast" : 161,
-    "FootBall" : 161
+    "Football on Saturday" : 161
 }, {
+    "period" : 112,
     "Yodacast" : 251,
-    "FootBall" : 251
+    "Football on Saturday" : 251
 }, {
+    "period" : 113,
     "Yodacast" : 381,
-    "FootBall" : 381
+    "Football on Saturday" : 381
 }, {
+    "period" : 114,
     "Yodacast" : 544,
-    "FootBall" : 544
+    "Football on Saturday" : 544
 }, {
+    "period" : 115,
     "Yodacast" : 724,
-    "FootBall" : 724
+    "Football on Saturday" : 724
 }, {
+    "period" : 116,
     "Yodacast" : 902,
-    "FootBall" : 902
+    "Football on Saturday" : 902
 }, {
+    "period" : 117,
     "Yodacast" : 1066,
-    "FootBall" : 1066
+    "Football on Saturday" : 1066
 }, {
+    "period" : 118,
     "Yodacast" : 1205,
-    "FootBall" : 1205
+    "Football on Saturday" : 1205
 }, {
+    "period" : 119,
     "Yodacast" : 1313,
-    "FootBall" : 1313
+    "Football on Saturday" : 1313
 }, {
+    "period" : 120,
     "Yodacast" : 1391,
-    "FootBall" : 1391
+    "Football on Saturday" : 1391
 }, {
+    "period" : 121,
     "Yodacast" : 1442,
-    "FootBall" : 1442
+    "Football on Saturday" : 1442
 }, {
+    "period" : 122,
     "Yodacast" : 1471,
-    "FootBall" : 1471
+    "Football on Saturday" : 1471
 }, {
+    "period" : 123,
     "Yodacast" : 1483,
-    "FootBall" : 1483
+    "Football on Saturday" : 1483
 }, {
+    "period" : 124,
     "Yodacast" : 1412,
-    "FootBall" : 1412
+    "Football on Saturday" : 1412
 }, {
+    "period" : 125,
     "Yodacast" : 1372,
-    "FootBall" : 1372
+    "Football on Saturday" : 1372
 }, {
+    "period" : 126,
     "Yodacast" : 1346,
-    "FootBall" : 1346
+    "Football on Saturday" : 1346
 }, {
+    "period" : 127,
     "Yodacast" : 1305,
-    "FootBall" : 1305
+    "Football on Saturday" : 1305
 }, {
+    "period" : 128,
     "Yodacast" : 1393,
-    "FootBall" : 1393
+    "Football on Saturday" : 1393
 }, {
+    "period" : 129,
     "Yodacast" : 1349,
-    "FootBall" : 1349
+    "Football on Saturday" : 1349
 }, {
+    "period" : 130,
     "Yodacast" : 1304,
-    "FootBall" : 1304
+    "Football on Saturday" : 1304
 }, {
+    "period" : 131,
     "Yodacast" : 1261,
-    "FootBall" : 1261
+    "Football on Saturday" : 1261
 }, {
+    "period" : 132,
     "Yodacast" : 1222,
-    "FootBall" : 1222
+    "Football on Saturday" : 1222
 }, {
+    "period" : 133,
     "Yodacast" : 1185,
-    "FootBall" : 1185
+    "Football on Saturday" : 1185
 }, {
+    "period" : 134,
     "Yodacast" : 1149,
-    "FootBall" : 1149
+    "Football on Saturday" : 1149
 }, {
+    "period" : 135,
     "Yodacast" : 1105,
-    "FootBall" : 1105
+    "Football on Saturday" : 1105
 }, {
+    "period" : 136,
     "Yodacast" : 1050,
-    "FootBall" : 1050
+    "Football on Saturday" : 1050
 }, {
+    "period" : 137,
     "Yodacast" : 983,
-    "FootBall" : 983
+    "Football on Saturday" : 983
 }, {
+    "period" : 138,
     "Yodacast" : 899,
-    "FootBall" : 899
+    "Football on Saturday" : 899
 }, {
+    "period" : 139,
     "Yodacast" : 802,
-    "FootBall" : 802
+    "Football on Saturday" : 802
 }, {
+    "period" : 140,
     "Yodacast" : 691,
-    "FootBall" : 691
+    "Football on Saturday" : 691
 }, {
+    "period" : 141,
     "Yodacast" : 573,
-    "FootBall" : 573
+    "Football on Saturday" : 573
 }, {
+    "period" : 142,
     "Yodacast" : 454,
-    "FootBall" : 454
+    "Football on Saturday" : 454
 }, {
+    "period" : 143,
     "Yodacast" : 342,
-    "FootBall" : 342
+    "Football on Saturday" : 342
 }, {
+    "period" : 144,
     "Yodacast" : 239,
-    "FootBall" : 239
+    "Football on Saturday" : 239
 }, {
+    "period" : 145,
     "Yodacast" : 144,
-    "FootBall" : 144
+    "Football on Saturday" : 144
 }, {
+    "period" : 146,
     "Yodacast" : 51,
-    "FootBall" : 51
+    "Football on Saturday" : 51
 }, {
+    "period" : 147,
     "Yodacast" : -41,
-    "FootBall" : -41
+    "Football on Saturday" : -41
 }, {
+    "period" : 148,
     "Yodacast" : 67,
-    "FootBall" : 67
+    "Football on Saturday" : 67
 }, {
+    "period" : 149,
     "Yodacast" : 67,
-    "FootBall" : 67
+    "Football on Saturday" : 67
 }, {
+    "period" : 150,
     "Yodacast" : 77,
-    "FootBall" : 77
+    "Football on Saturday" : 77
 }, {
+    "period" : 151,
     "Yodacast" : 83,
-    "FootBall" : 83
+    "Football on Saturday" : 83
 }, {
+    "period" : 152,
     "Yodacast" : 51,
-    "FootBall" : 51
+    "Football on Saturday" : 51
 }, {
+    "period" : 153,
     "Yodacast" : 43,
-    "FootBall" : 43
+    "Football on Saturday" : 43
 }, {
+    "period" : 154,
     "Yodacast" : 29,
-    "FootBall" : 29
+    "Football on Saturday" : 29
 }, {
+    "period" : 155,
     "Yodacast" : 7,
-    "FootBall" : 7
+    "Football on Saturday" : 7
 }, {
+    "period" : 156,
     "Yodacast" : -15,
-    "FootBall" : -15
+    "Football on Saturday" : -15
 }, {
+    "period" : 157,
     "Yodacast" : -24,
-    "FootBall" : -24
+    "Football on Saturday" : -24
 }, {
+    "period" : 158,
     "Yodacast" : -7,
-    "FootBall" : -7
+    "Football on Saturday" : -7
 }, {
+    "period" : 159,
     "Yodacast" : 46,
-    "FootBall" : 46
+    "Football on Saturday" : 46
 }, {
+    "period" : 160,
     "Yodacast" : 142,
-    "FootBall" : 142
+    "Football on Saturday" : 142
 }, {
+    "period" : 161,
     "Yodacast" : 287,
-    "FootBall" : 287
+    "Football on Saturday" : 287
 }, {
+    "period" : 162,
     "Yodacast" : 475,
-    "FootBall" : 475
+    "Football on Saturday" : 475
 }, {
+    "period" : 163,
     "Yodacast" : 680,
-    "FootBall" : 680
+    "Football on Saturday" : 680
 }, {
+    "period" : 164,
     "Yodacast" : 877,
-    "FootBall" : 877
+    "Football on Saturday" : 877
 }, {
+    "period" : 165,
     "Yodacast" : 1056,
-    "FootBall" : 1056
+    "Football on Saturday" : 1056
 }, {
+    "period" : 166,
     "Yodacast" : 1204,
-    "FootBall" : 1204
+    "Football on Saturday" : 1204
 }, {
+    "period" : 167,
     "Yodacast" : 1314,
-    "FootBall" : 1314
+    "Football on Saturday" : 1314
 }, {
+    "period" : 168,
     "Yodacast" : 1388,
-    "FootBall" : 1388
+    "Football on Saturday" : 1388
 }, {
+    "period" : 169,
     "Yodacast" : 1443,
-    "FootBall" : 1443
+    "Football on Saturday" : 1443
 }, {
+    "period" : 170,
     "Yodacast" : 1482,
-    "FootBall" : 1482
+    "Football on Saturday" : 1482
 }, {
+    "period" : 171,
     "Yodacast" : 1501,
-    "FootBall" : 1501
+    "Football on Saturday" : 1501
 }, {
+    "period" : 172,
     "Yodacast" : 1387,
-    "FootBall" : 1387
+    "Football on Saturday" : 1387
 }, {
+    "period" : 173,
     "Yodacast" : 1333,
-    "FootBall" : 1333
+    "Football on Saturday" : 1333
 }, {
+    "period" : 174,
     "Yodacast" : 1307,
-    "FootBall" : 1307
+    "Football on Saturday" : 1307
 }, {
+    "period" : 175,
     "Yodacast" : 1267,
-    "FootBall" : 1267
+    "Football on Saturday" : 1267
 }, {
+    "period" : 176,
     "Yodacast" : 1432,
-    "FootBall" : 1432
+    "Football on Saturday" : 1432
 }, {
+    "period" : 177,
     "Yodacast" : 1390,
-    "FootBall" : 1390
+    "Football on Saturday" : 1390
 }, {
+    "period" : 178,
     "Yodacast" : 1348,
-    "FootBall" : 1348
+    "Football on Saturday" : 1348
 }, {
+    "period" : 179,
     "Yodacast" : 1306,
-    "FootBall" : 1306
+    "Football on Saturday" : 1306
 }, {
+    "period" : 180,
     "Yodacast" : 1263,
-    "FootBall" : 1263
+    "Football on Saturday" : 1263
 }, {
+    "period" : 181,
     "Yodacast" : 1218,
-    "FootBall" : 1218
+    "Football on Saturday" : 1218
 }, {
+    "period" : 182,
     "Yodacast" : 1168,
-    "FootBall" : 1168
+    "Football on Saturday" : 1168
 }, {
+    "period" : 183,
     "Yodacast" : 1113,
-    "FootBall" : 1113
+    "Football on Saturday" : 1113
 }, {
+    "period" : 184,
     "Yodacast" : 1050,
-    "FootBall" : 1050
+    "Football on Saturday" : 1050
 }, {
+    "period" : 185,
     "Yodacast" : 975,
-    "FootBall" : 975
+    "Football on Saturday" : 975
 }, {
+    "period" : 186,
     "Yodacast" : 887,
-    "FootBall" : 887
+    "Football on Saturday" : 887
 }, {
+    "period" : 187,
     "Yodacast" : 784,
-    "FootBall" : 784
+    "Football on Saturday" : 784
 }, {
+    "period" : 188,
     "Yodacast" : 668,
-    "FootBall" : 668
+    "Football on Saturday" : 668
 }, {
+    "period" : 189,
     "Yodacast" : 548,
-    "FootBall" : 548
+    "Football on Saturday" : 548
 }, {
+    "period" : 190,
     "Yodacast" : 434,
-    "FootBall" : 434
+    "Football on Saturday" : 434
 }, {
+    "period" : 191,
     "Yodacast" : 336,
-    "FootBall" : 336
+    "Football on Saturday" : 336
 }, {
+    "period" : 192,
     "Yodacast" : 255,
-    "FootBall" : 255
+    "Football on Saturday" : 255
 }, {
+    "period" : 193,
     "Yodacast" : 196,
-    "FootBall" : 196
+    "Football on Saturday" : 196
 }, {
+    "period" : 194,
     "Yodacast" : 156,
-    "FootBall" : 156
+    "Football on Saturday" : 156
 }, {
+    "period" : 195,
     "Yodacast" : 127,
-    "FootBall" : 127
+    "Football on Saturday" : 127
 }, {
+    "period" : 196,
     "Yodacast" : 64,
-    "FootBall" : 64
+    "Football on Saturday" : 64
 }, {
+    "period" : 197,
     "Yodacast" : 58,
-    "FootBall" : 58
+    "Football on Saturday" : 58
 }, {
+    "period" : 198,
     "Yodacast" : 57,
-    "FootBall" : 57
+    "Football on Saturday" : 57
 }, {
+    "period" : 199,
     "Yodacast" : -19,
-    "FootBall" : -19
+    "Football on Saturday" : -19
 }, {
+    "period" : 200,
     "Yodacast" : -34,
-    "FootBall" : -34
+    "Football on Saturday" : -34
 }, {
+    "period" : 201,
     "Yodacast" : -42,
-    "FootBall" : -42
+    "Football on Saturday" : -42
 }, {
+    "period" : 202,
     "Yodacast" : -43,
-    "FootBall" : -43
+    "Football on Saturday" : -43
 }, {
+    "period" : 203,
     "Yodacast" : -46,
-    "FootBall" : -46
+    "Football on Saturday" : -46
 }, {
+    "period" : 204,
     "Yodacast" : -44,
-    "FootBall" : -44
+    "Football on Saturday" : -44
 }, {
+    "period" : 205,
     "Yodacast" : -31,
-    "FootBall" : -31
+    "Football on Saturday" : -31
 }, {
+    "period" : 206,
     "Yodacast" : 2,
-    "FootBall" : 2
+    "Football on Saturday" : 2
 }, {
+    "period" : 207,
     "Yodacast" : 61,
-    "FootBall" : 61
+    "Football on Saturday" : 61
 }, {
+    "period" : 208,
     "Yodacast" : 152,
-    "FootBall" : 152
+    "Football on Saturday" : 152
 }, {
+    "period" : 209,
     "Yodacast" : 278,
-    "FootBall" : 278
+    "Football on Saturday" : 278
 }, {
+    "period" : 210,
     "Yodacast" : 436,
-    "FootBall" : 436
+    "Football on Saturday" : 436
 }, {
+    "period" : 211,
     "Yodacast" : 613,
-    "FootBall" : 613
+    "Football on Saturday" : 613
 }, {
+    "period" : 212,
     "Yodacast" : 794,
-    "FootBall" : 794
+    "Football on Saturday" : 794
 }, {
+    "period" : 213,
     "Yodacast" : 969,
-    "FootBall" : 969
+    "Football on Saturday" : 969
 }, {
+    "period" : 214,
     "Yodacast" : 1126,
-    "FootBall" : 1126
+    "Football on Saturday" : 1126
 }, {
+    "period" : 215,
     "Yodacast" : 1258,
-    "FootBall" : 1258
+    "Football on Saturday" : 1258
 }, {
+    "period" : 216,
     "Yodacast" : 1363,
-    "FootBall" : 1363
+    "Football on Saturday" : 1363
 }, {
+    "period" : 217,
     "Yodacast" : 1443,
-    "FootBall" : 1443
+    "Football on Saturday" : 1443
 }, {
+    "period" : 218,
     "Yodacast" : 1499,
-    "FootBall" : 1499
+    "Football on Saturday" : 1499
 }, {
+    "period" : 219,
     "Yodacast" : 1534,
-    "FootBall" : 1534
+    "Football on Saturday" : 1534
 }, {
+    "period" : 220,
     "Yodacast" : 1420,
-    "FootBall" : 1420
+    "Football on Saturday" : 1420
 }, {
+    "period" : 221,
     "Yodacast" : 1390,
-    "FootBall" : 1390
+    "Football on Saturday" : 1390
 }, {
+    "period" : 222,
     "Yodacast" : 1365,
-    "FootBall" : 1365
+    "Football on Saturday" : 1365
 }, {
+    "period" : 223,
     "Yodacast" : 1312,
-    "FootBall" : 1312
+    "Football on Saturday" : 1312
 }, {
+    "period" : 224,
     "Yodacast" : 1461,
-    "FootBall" : 1461
+    "Football on Saturday" : 1461
 }, {
+    "period" : 225,
     "Yodacast" : 1402,
-    "FootBall" : 1402
+    "Football on Saturday" : 1402
 }, {
+    "period" : 226,
     "Yodacast" : 1335,
-    "FootBall" : 1335
+    "Football on Saturday" : 1335
 }, {
+    "period" : 227,
     "Yodacast" : 1263,
-    "FootBall" : 1263
+    "Football on Saturday" : 1263
 }, {
+    "period" : 228,
     "Yodacast" : 1187,
-    "FootBall" : 1187
+    "Football on Saturday" : 1187
 }, {
+    "period" : 229,
     "Yodacast" : 1109,
-    "FootBall" : 1109
+    "Football on Saturday" : 1109
 }, {
+    "period" : 230,
     "Yodacast" : 1029,
-    "FootBall" : 1029
+    "Football on Saturday" : 1029
 }, {
+    "period" : 231,
     "Yodacast" : 946,
-    "FootBall" : 946
+    "Football on Saturday" : 946
 }, {
+    "period" : 232,
     "Yodacast" : 859,
-    "FootBall" : 859
+    "Football on Saturday" : 859
 }, {
+    "period" : 233,
     "Yodacast" : 770,
-    "FootBall" : 770
+    "Football on Saturday" : 770
 }, {
+    "period" : 234,
     "Yodacast" : 678,
-    "FootBall" : 678
+    "Football on Saturday" : 678
 }, {
+    "period" : 235,
     "Yodacast" : 586,
-    "FootBall" : 586
+    "Football on Saturday" : 586
 }, {
+    "period" : 236,
     "Yodacast" : 496,
-    "FootBall" : 496
+    "Football on Saturday" : 496
 }, {
+    "period" : 237,
     "Yodacast" : 409,
-    "FootBall" : 409
+    "Football on Saturday" : 409
 }, {
+    "period" : 238,
     "Yodacast" : 328,
-    "FootBall" : 328
+    "Football on Saturday" : 328
 }, {
+    "period" : 239,
     "Yodacast" : 250,
-    "FootBall" : 250
+    "Football on Saturday" : 250
 }, {
+    "period" : 240,
     "Yodacast" : 172,
-    "FootBall" : 172
+    "Football on Saturday" : 172
 }, {
+    "period" : 241,
     "Yodacast" : 99,
-    "FootBall" : 99
+    "Football on Saturday" : 99
 }, {
+    "period" : 242,
     "Yodacast" : 38,
-    "FootBall" : 38
+    "Football on Saturday" : 38
 }, {
+    "period" : 243,
     "Yodacast" : -2,
-    "FootBall" : -2
+    "Football on Saturday" : -2
 }, {
+    "period" : 244,
     "Yodacast" : 48,
-    "FootBall" : 48
+    "Football on Saturday" : 48
 }, {
+    "period" : 245,
     "Yodacast" : 54,
-    "FootBall" : 54
+    "Football on Saturday" : 54
 }, {
+    "period" : 246,
     "Yodacast" : 42,
-    "FootBall" : 42
+    "Football on Saturday" : 42
 }, {
+    "period" : 247,
     "Yodacast" : 26,
-    "FootBall" : 26
+    "Football on Saturday" : 26
 }, {
+    "period" : 248,
     "Yodacast" : -7,
-    "FootBall" : -7
+    "Football on Saturday" : -7
 }, {
+    "period" : 249,
     "Yodacast" : 6,
-    "FootBall" : 6
+    "Football on Saturday" : 6
 }, {
+    "period" : 250,
     "Yodacast" : 10,
-    "FootBall" : 10
+    "Football on Saturday" : 10
 }, {
+    "period" : 251,
     "Yodacast" : 9,
-    "FootBall" : 9
+    "Football on Saturday" : 9
 }, {
+    "period" : 252,
     "Yodacast" : 9,
-    "FootBall" : 9
+    "Football on Saturday" : 9
 }, {
+    "period" : 253,
     "Yodacast" : 13,
-    "FootBall" : 13
+    "Football on Saturday" : 13
 }, {
+    "period" : 254,
     "Yodacast" : 25,
-    "FootBall" : 25
+    "Football on Saturday" : 25
 }, {
+    "period" : 255,
     "Yodacast" : 51,
-    "FootBall" : 51
+    "Football on Saturday" : 51
 }, {
+    "period" : 256,
     "Yodacast" : 95,
-    "FootBall" : 95
+    "Football on Saturday" : 95
 }, {
+    "period" : 257,
     "Yodacast" : 164,
-    "FootBall" : 164
+    "Football on Saturday" : 164
 }, {
+    "period" : 258,
     "Yodacast" : 263,
-    "FootBall" : 263
+    "Football on Saturday" : 263
 }, {
+    "period" : 259,
     "Yodacast" : 383,
-    "FootBall" : 383
+    "Football on Saturday" : 383
 }, {
+    "period" : 260,
     "Yodacast" : 510,
-    "FootBall" : 510
+    "Football on Saturday" : 510
 }, {
+    "period" : 261,
     "Yodacast" : 635,
-    "FootBall" : 635
+    "Football on Saturday" : 635
 }, {
+    "period" : 262,
     "Yodacast" : 747,
-    "FootBall" : 809
+    "Football on Saturday" : 809
 }, {
+    "period" : 263,
     "Yodacast" : 838,
-    "FootBall" : 891
+    "Football on Saturday" : 891
 }, {
+    "period" : 264,
     "Yodacast" : 904,
-    "FootBall" : 896
+    "Football on Saturday" : 896
 }, {
+    "period" : 265,
     "Yodacast" : 949,
-    "FootBall" : 832
+    "Football on Saturday" : 832
 }, {
+    "period" : 266,
     "Yodacast" : 976,
-    "FootBall" : 737
+    "Football on Saturday" : 737
 }, {
+    "period" : 267,
     "Yodacast" : 984,
-    "FootBall" : 712
+    "Football on Saturday" : 712
 }, {
+    "period" : 268,
     "Yodacast" : 960,
-    "FootBall" : 757
+    "Football on Saturday" : 757
 }, {
+    "period" : 269,
     "Yodacast" : 935,
-    "FootBall" : 797
+    "Football on Saturday" : 797
 }, {
+    "period" : 270,
     "Yodacast" : 904,
-    "FootBall" : 840
+    "Football on Saturday" : 840
 }, {
+    "period" : 271,
     "Yodacast" : 862,
-    "FootBall" : 862
+    "Football on Saturday" : 862
 }, {
+    "period" : 272,
     "Yodacast" : 847,
-    "FootBall" : 847
+    "Football on Saturday" : 847
 }, {
+    "period" : 273,
     "Yodacast" : 800,
-    "FootBall" : 800
+    "Football on Saturday" : 800
 }, {
+    "period" : 274,
     "Yodacast" : 752,
-    "FootBall" : 752
+    "Football on Saturday" : 752
 }, {
+    "period" : 275,
     "Yodacast" : 705,
-    "FootBall" : 705
+    "Football on Saturday" : 705
 }, {
+    "period" : 276,
     "Yodacast" : 661,
-    "FootBall" : 661
+    "Football on Saturday" : 661
 }, {
+    "period" : 277,
     "Yodacast" : 619,
-    "FootBall" : 619
+    "Football on Saturday" : 619
 }, {
+    "period" : 278,
     "Yodacast" : 580,
-    "FootBall" : 580
+    "Football on Saturday" : 580
 }, {
+    "period" : 279,
     "Yodacast" : 544,
-    "FootBall" : 544
+    "Football on Saturday" : 544
 }, {
+    "period" : 280,
     "Yodacast" : 509,
-    "FootBall" : 509
+    "Football on Saturday" : 509
 }, {
+    "period" : 281,
     "Yodacast" : 475,
-    "FootBall" : 475
+    "Football on Saturday" : 475
 }, {
+    "period" : 282,
     "Yodacast" : 437,
-    "FootBall" : 437
+    "Football on Saturday" : 437
 }, {
+    "period" : 283,
     "Yodacast" : 396,
-    "FootBall" : 396
+    "Football on Saturday" : 396
 }, {
+    "period" : 284,
     "Yodacast" : 350,
-    "FootBall" : 350
+    "Football on Saturday" : 350
 }, {
+    "period" : 285,
     "Yodacast" : 299,
-    "FootBall" : 299
+    "Football on Saturday" : 299
 }, {
+    "period" : 286,
     "Yodacast" : 245,
-    "FootBall" : 245
+    "Football on Saturday" : 245
 }, {
+    "period" : 287,
     "Yodacast" : 191,
-    "FootBall" : 191
+    "Football on Saturday" : 191
 }, {
+    "period" : 288,
     "Yodacast" : 143,
-    "FootBall" : 143
+    "Football on Saturday" : 143
 }, {
+    "period" : 289,
     "Yodacast" : 94,
-    "FootBall" : 94
+    "Football on Saturday" : 94
 }, {
+    "period" : 290,
     "Yodacast" : 43,
-    "FootBall" : 43
+    "Football on Saturday" : 43
 }, {
+    "period" : 291,
     "Yodacast" : 2,
-    "FootBall" : 2
+    "Football on Saturday" : 2
 }, {
+    "period" : 292,
     "Yodacast" : 64,
-    "FootBall" : 64
+    "Football on Saturday" : 64
 }, {
+    "period" : 293,
     "Yodacast" : 46,
-    "FootBall" : 46
+    "Football on Saturday" : 46
 }, {
+    "period" : 294,
     "Yodacast" : 57,
-    "FootBall" : 57
+    "Football on Saturday" : 57
 }, {
+    "period" : 295,
     "Yodacast" : 12,
-    "FootBall" : 12
+    "Football on Saturday" : 12
 }, {
+    "period" : 296,
     "Yodacast" : -21,
-    "FootBall" : -21
+    "Football on Saturday" : -21
 }, {
+    "period" : 297,
     "Yodacast" : 2,
-    "FootBall" : 2
+    "Football on Saturday" : 2
 }, {
+    "period" : 298,
     "Yodacast" : 13,
-    "FootBall" : 13
+    "Football on Saturday" : 13
 }, {
+    "period" : 299,
     "Yodacast" : 17,
-    "FootBall" : 17
+    "Football on Saturday" : 17
 }, {
+    "period" : 300,
     "Yodacast" : 9,
-    "FootBall" : 9
+    "Football on Saturday" : 9
 }, {
+    "period" : 301,
     "Yodacast" : -9,
-    "FootBall" : -9
+    "Football on Saturday" : -9
 }, {
+    "period" : 302,
     "Yodacast" : -31,
-    "FootBall" : -31
+    "Football on Saturday" : -31
 }, {
+    "period" : 303,
     "Yodacast" : -49,
-    "FootBall" : -49
+    "Football on Saturday" : -49
 }, {
+    "period" : 304,
     "Yodacast" : -55,
-    "FootBall" : -55
+    "Football on Saturday" : -55
 }, {
+    "period" : 305,
     "Yodacast" : -35,
-    "FootBall" : -35
+    "Football on Saturday" : -35
 }, {
+    "period" : 306,
     "Yodacast" : 23,
-    "FootBall" : 23
+    "Football on Saturday" : 23
 }, {
+    "period" : 307,
     "Yodacast" : 108,
-    "FootBall" : 108
+    "Football on Saturday" : 108
 }, {
+    "period" : 308,
     "Yodacast" : 200,
-    "FootBall" : 200
+    "Football on Saturday" : 200
 }, {
+    "period" : 309,
     "Yodacast" : 288,
-    "FootBall" : 288
+    "Football on Saturday" : 288
 }, {
+    "period" : 310,
     "Yodacast" : 357,
-    "FootBall" : 357
+    "Football on Saturday" : 357
 }, {
+    "period" : 311,
     "Yodacast" : 401,
-    "FootBall" : 401
+    "Football on Saturday" : 401
 }, {
+    "period" : 312,
     "Yodacast" : 417,
-    "FootBall" : 417
+    "Football on Saturday" : 417
 }, {
+    "period" : 313,
     "Yodacast" : 425,
-    "FootBall" : 425
+    "Football on Saturday" : 425
 }, {
+    "period" : 314,
     "Yodacast" : 432,
-    "FootBall" : 432
+    "Football on Saturday" : 432
 }, {
+    "period" : 315,
     "Yodacast" : 433,
-    "FootBall" : 433
+    "Football on Saturday" : 433
 }, {
+    "period" : 316,
     "Yodacast" : 431,
-    "FootBall" : 431
+    "Football on Saturday" : 431
 }, {
+    "period" : 317,
     "Yodacast" : 426,
-    "FootBall" : 426
+    "Football on Saturday" : 426
 }, {
+    "period" : 318,
     "Yodacast" : 420,
-    "FootBall" : 420
+    "Football on Saturday" : 420
 }, {
+    "period" : 319,
     "Yodacast" : 408,
-    "FootBall" : 408
+    "Football on Saturday" : 408
 }, {
+    "period" : 320,
     "Yodacast" : 403,
-    "FootBall" : 403
+    "Football on Saturday" : 403
 }, {
+    "period" : 321,
     "Yodacast" : 398,
-    "FootBall" : 398
+    "Football on Saturday" : 398
 }, {
+    "period" : 322,
     "Yodacast" : 401,
-    "FootBall" : 401
+    "Football on Saturday" : 401
 }, {
+    "period" : 323,
     "Yodacast" : 409,
-    "FootBall" : 409
+    "Football on Saturday" : 409
 }, {
+    "period" : 324,
     "Yodacast" : 422,
-    "FootBall" : 422
+    "Football on Saturday" : 422
 }, {
+    "period" : 325,
     "Yodacast" : 436,
-    "FootBall" : 436
+    "Football on Saturday" : 436
 }, {
+    "period" : 326,
     "Yodacast" : 448,
-    "FootBall" : 448
+    "Football on Saturday" : 448
 }, {
+    "period" : 327,
     "Yodacast" : 454,
-    "FootBall" : 454
+    "Football on Saturday" : 454
 }, {
+    "period" : 328,
     "Yodacast" : 451,
-    "FootBall" : 451
+    "Football on Saturday" : 451
 }, {
+    "period" : 329,
     "Yodacast" : 435,
-    "FootBall" : 435
+    "Football on Saturday" : 435
 }, {
+    "period" : 330,
     "Yodacast" : 404,
-    "FootBall" : 404
+    "Football on Saturday" : 404
 }, {
+    "period" : 331,
     "Yodacast" : 360,
-    "FootBall" : 360
+    "Football on Saturday" : 360
 }, {
+    "period" : 332,
     "Yodacast" : 306,
-    "FootBall" : 306
+    "Football on Saturday" : 306
 }, {
+    "period" : 333,
     "Yodacast" : 248,
-    "FootBall" : 248
+    "Football on Saturday" : 248
 }, {
+    "period" : 334,
     "Yodacast" : 190,
-    "FootBall" : 190
+    "Football on Saturday" : 190
 }, {
+    "period" : 335,
     "Yodacast" : 143,
-    "FootBall" : 143
+    "Football on Saturday" : 143
 }, {
+    "period" : 336,
     "Yodacast" : 111,
-    "FootBall" : 111
+    "Football on Saturday" : 111
 }, {
+    "period" : 337,
     "Yodacast" : 80,
-    "FootBall" : 80
+    "Football on Saturday" : 80
 }, {
+    "period" : 338,
     "Yodacast" : 45,
-    "FootBall" : 45
+    "Football on Saturday" : 45
 }, {
+    "period" : 339,
     "Yodacast" : 10,
-    "FootBall" : 10
+    "Football on Saturday" : 10
 }, {
+    "period" : 340,
     "Yodacast" : 28,
-    "FootBall" : 28
+    "Football on Saturday" : 28
 }, {
+    "period" : 341,
     "Yodacast" : 30,
-    "FootBall" : 30
+    "Football on Saturday" : 30
 }, {
+    "period" : 342,
     "Yodacast" : -6,
-    "FootBall" : -6
+    "Football on Saturday" : -6
 }, {
+    "period" : 343,
     "Yodacast" : -11,
-    "FootBall" : -11
+    "Football on Saturday" : -11
 }, {
+    "period" : 344,
     "Yodacast" : -109,
-    "FootBall" : -109
+    "Football on Saturday" : -109
 }, {
+    "period" : 345,
     "Yodacast" : -68,
-    "FootBall" : -68
+    "Football on Saturday" : -68
 }, {
+    "period" : 346,
     "Yodacast" : -29,
-    "FootBall" : -29
+    "Football on Saturday" : -29
 } ];
+;
 // Area Chart
 function drawGraph() {
     $("#morris-area-chart").empty();
