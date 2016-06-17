@@ -3423,6 +3423,7 @@ function drawFirstYoda() {
         resize : true,
         events: [18],
         eventStrokeWidth:5,
+        eventLineColors: [ '#000000' ],
         xLabels:"day",
         xLabelFormat: function(d) {
             return d.label+'/06'; 
