@@ -3421,6 +3421,7 @@ function drawFirstYoda() {
         parseTime : false,
         hideHover : 'auto',
         resize : true,
+        events: [18],
         lineColors : [ '#43762A', '#696969' ]
     });
 }
