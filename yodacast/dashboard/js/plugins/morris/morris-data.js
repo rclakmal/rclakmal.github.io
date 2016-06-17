@@ -3422,6 +3422,7 @@ function drawFirstYoda() {
         hideHover : 'auto',
         resize : true,
         events: [18],
+        xLabels:"day",
         lineColors : [ '#43762A', '#696969' ]
     });
     
