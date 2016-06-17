@@ -3424,6 +3424,11 @@ function drawFirstYoda() {
         events: [18],
         lineColors : [ '#43762A', '#696969' ]
     });
+    
+    chart.options.labels.forEach(function(label, i){
+        var legendItem = $('<span></span>').text(label).css('color', chart.options.lineColors[i])
+        $('#legend').append(legendItem)
+    })
 }
 
 function drawWeatherYoda() {
