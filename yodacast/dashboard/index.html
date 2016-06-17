@@ -34,8 +34,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-<script
-	src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
 <script type="text/javascript"
 	src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript"
@@ -164,8 +163,8 @@ function eventTypeOnChange(){
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<img class="navbar-brand" src="img/yodasmall.png" alt="" />
-				<a class="navbar-brand" href="index.html">YodaCast Dashboard</a>
+				<img class="navbar-brand" src="img/yodasmall.png" alt="" /> <a
+					class="navbar-brand" href="index.html">YodaCast Dashboard</a>
 			</div>
 			<!-- Top Menu Items -->
 			<ul class="nav navbar-right top-nav">
@@ -233,9 +232,9 @@ function eventTypeOnChange(){
 						<li class="divider"></li>
 						<li><a href="#">View All</a></li>
 					</ul></li>
-				<li class="dropdown"><a id="userLabel" class="userLabel" href="#" class="dropdown-toggle"
-					data-toggle="dropdown"><i class="fa fa-user"></i> Demo User <b
-						class="caret"></b></a>
+				<li class="dropdown"><a id="userLabel" class="userLabel"
+					href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+						class="fa fa-user"></i> Demo User <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
 						</li>
@@ -263,7 +262,7 @@ function eventTypeOnChange(){
 						</h1>
 					</div>
 				</div>
-
+				<div class="row"></div>
 				<!-- /.row -->
 				<div class="row">
 					<div class="col-lg-3 col-md-6">
@@ -300,7 +299,7 @@ function eventTypeOnChange(){
 					</div>
 
 				</div>
-				
+
 				<!-- /.row -->
 
 				<div class="row">
@@ -346,7 +345,8 @@ function eventTypeOnChange(){
 							<div class="panel-body">
 								<div class="list-group">
 									<a href="#" class="list-group-item"> <span class="badge">25
-											minutes ago</span> <i class="fa fa-fw fa-info"></i><b>Lakmal Padmakumara</b> Included Holidays
+											minutes ago</span> <i class="fa fa-fw fa-info"></i><b>Lakmal
+											Padmakumara</b> Included Holidays
 									</a>
 								</div>
 								<div class="text-right">
@@ -370,7 +370,7 @@ function eventTypeOnChange(){
 
 	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
-    <script src="js/test.js"></script>
+	<script src="js/test.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
@@ -402,8 +402,8 @@ function eventTypeOnChange(){
 						<div class="form-group">
 							<label for="eventType"><span
 								class="glyphicon glyphicon-calendar"></span>Event Type</label> <select
-								id="eventType" onChange="eventTypeOnChange();" class="form-control selectpicker"
-								title="Choose Event Type">
+								id="eventType" onChange="eventTypeOnChange();"
+								class="form-control selectpicker" title="Choose Event Type">
 								<option>Billing Cycles</option>
 								<option>Technical Fault</option>
 								<option>Product Launch</option>
@@ -421,7 +421,8 @@ function eventTypeOnChange(){
 							<label for="eventDatePicker"><span
 								class="glyphicon glyphicon-hourglass"></span>Select Event
 								Duration</label> <input type="text" class="form-control"
-								name="daterange" id="eventDuration" value="06/01/2016 - 06/30/2015" />
+								name="daterange" id="eventDuration"
+								value="06/01/2016 - 06/30/2015" />
 							<script>
                   $('input[name="daterange"]').daterangepicker();
                 </script>
@@ -429,12 +430,14 @@ function eventTypeOnChange(){
 
 						<div class="form-group">
 							<label for="psw"><span class="glyphicon glyphicon-user"></span>Number
-								of Effected Users</label> <input id="eventEffectNo" type="text" class="form-control"
-								id="noOfUsers" placeholder="Enter Number Of Users">
+								of Effected Users</label> <input id="eventEffectNo" type="text"
+								class="form-control" id="noOfUsers"
+								placeholder="Enter Number Of Users">
 
 						</div>
 
-						<button id="eventSaveButton" onClick="eventSave();" type="button" class="btn btn-success btn-block">
+						<button id="eventSaveButton" onClick="eventSave();" type="button"
+							class="btn btn-success btn-block">
 							<span class="glyphicon glyphicon-off"></span> Save
 						</button>
 					</form>
@@ -465,14 +468,15 @@ function eventTypeOnChange(){
 							<div class="form-control">
 								<label class="checkbox-inline"><input type="checkbox"
 									value="" checked="">HotLine 1212</label> <label
-									class="checkbox-inline"><input type="checkbox" value=""
-									>HotLine 1414</label> <label class="checkbox-inline"><input
-									type="checkbox" value="" >HotLine 2212</label> <label
+									class="checkbox-inline"><input type="checkbox" value="">HotLine
+									1414</label> <label class="checkbox-inline"><input
+									type="checkbox" value="">HotLine 2212</label> <label
 									class="checkbox-inline"><input type="checkbox" value="">HotLine
 									9919</label>
 							</div>
 						</div>
-						<button type="button"  id="hotLineSaveButton" onClick="hotLineSave();"class="btn btn-success btn-block">
+						<button type="button" id="hotLineSaveButton"
+							onClick="hotLineSave();" class="btn btn-success btn-block">
 							<span class="glyphicon glyphicon-off"></span> Save
 						</button>
 					</form>
