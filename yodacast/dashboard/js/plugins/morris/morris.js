@@ -547,7 +547,7 @@ Licensed under the BSD-2-Clause License.
     };
 
     Grid.prototype.drawEvent = function(event, color) {
-      return this.raphael.path("M" + (this.transX(event)) + "," + this.bottom + "V" + this.top).attr('stroke-dasharray', color).attr('stroke-width', this.options.eventStrokeWidth);
+      return this.raphael.path("M" + (this.transX(event)) + "," + this.bottom + "V" + this.top).attr('stroke', color).attr('stroke-dasharray', 5.5).attr('stroke-width', this.options.eventStrokeWidth);
     };
 
     Grid.prototype.drawYAxisLabel = function(xPos, yPos, text) {
