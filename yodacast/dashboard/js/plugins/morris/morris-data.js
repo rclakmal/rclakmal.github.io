@@ -3422,7 +3422,7 @@ function drawFirstYoda() {
         hideHover : 'auto',
         resize : true,
         events: [18],
-        eventStrokeWidth:5,
+        eventStrokeWidth:3,
         eventLineColors: [ '#000000' ],
         xLabels:"day",
         xLabelFormat: function(d) {
