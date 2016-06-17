@@ -3425,8 +3425,8 @@ function drawFirstYoda() {
         lineColors : [ '#43762A', '#696969' ]
     });
     
-    chart.options.labels.forEach(function(label, i){
-        var legendItem = $('<span></span>').text(label).css('color', chart.options.lineColors[i])
+    callChart.options.labels.forEach(function(label, i){
+        var legendItem = $('<span></span>').text(label).css('color', callChart.options.lineColors[i])
         $('#legend').append(legendItem)
     })
 }
