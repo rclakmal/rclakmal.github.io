@@ -3424,7 +3424,7 @@ function drawFirstYoda() {
         events: [18],
         xLabels:"day",
         xLabelFormat: function(d) {
-            return d+' June'; 
+            return str(d)+' June'; 
             },
         lineColors : [ '#43762A', '#696969' ]
     });
