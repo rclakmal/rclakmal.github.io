@@ -280,6 +280,7 @@ div.clickable a {
 #legend {
 	height: 50px;
 	margin-left:-30px;
+	float:right;
 }
 
 #legend span {
@@ -300,8 +301,14 @@ div.clickable a {
 
 .mainTitlePanel{
 	font-size: 40px;
+	font-weight: 200 !important;
 }
 
 .legendClass{
-	
+	float:right;
+	width:31% !important;
+}
+
+.dateSelector{
+	margin-left:300px;
 }
