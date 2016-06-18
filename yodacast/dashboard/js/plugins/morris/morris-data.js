@@ -3472,7 +3472,7 @@ function drawFootBallYoda() {
 
 var hot1 = {
     label : "Accuracy",
-    value : 80%
+    value : 80
 }
 var hot2 = {
     label : "Hotline 1414",
