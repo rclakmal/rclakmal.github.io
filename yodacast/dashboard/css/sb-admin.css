@@ -365,5 +365,10 @@ div.clickable a {
 }
 
 .emptyRow{
-	height:10px;
+	height:40px;
+}
+
+.navbar-inverse{
+	background-color:#424242;
+	border-color:#424242
 }
