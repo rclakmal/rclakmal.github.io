@@ -3420,9 +3420,10 @@ function drawFirstYoda() {
         pointSize : 2,
         parseTime : false,
         hideHover : 'auto',
+        lineWidth:4
         resize : true,
         events: [18],
-        eventStrokeWidth:3,
+        eventStrokeWidth:2,
         eventLineColors: [ '#000000' ],
         xLabels:"day",
         xLabelFormat: function(d) {
