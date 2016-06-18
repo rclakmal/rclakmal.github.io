@@ -3420,7 +3420,7 @@ function drawFirstYoda() {
         pointSize : 2,
         parseTime : false,
         hideHover : 'auto',
-        lineWidth:4
+        lineWidth:4,
         resize : true,
         events: [18],
         eventStrokeWidth:2,
