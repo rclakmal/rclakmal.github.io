@@ -302,6 +302,7 @@ div.clickable a {
 .mainTitlePanel{
 	font-size: 40px;
 	font-weight: 200 !important;
+	margin-left:33px;
 }
 
 .legendClass{
