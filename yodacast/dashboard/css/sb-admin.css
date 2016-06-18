@@ -356,3 +356,7 @@ div.clickable a {
 .addEventButton{
 	float:right;
 }
+
+.list-group{
+	width:49px;
+}
