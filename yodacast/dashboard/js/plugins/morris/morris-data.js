@@ -3429,7 +3429,7 @@ function drawFirstYoda() {
         xLabelFormat: function(d) {
             return d.label+'/06'; 
             },
-        lineColors : [ '#5cb85c', '#696969' ]
+        lineColors : [ '#7cc359', '#696969' ]
     });
     
     callChart.options.labels.forEach(function(label, i){
@@ -3497,7 +3497,7 @@ function drawHotLine(hotLineData) {
     hotLineChart = Morris.Donut({
         element : 'morris-donut-chart',
         data : hotLineData,
-        colors: [ '#5cb85c', '#696969' ],
+        colors: [ '#7cc359', '#696969' ],
         resize : false
     });
 }
