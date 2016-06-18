@@ -3488,8 +3488,8 @@ var hot4 = {
 }
 
 var hotLineData = [ {
-    label : "Hotline 1212",
-    value : 4567
+    label : "Accuracy",
+    value : 80
 } ]
 
 function drawHotLine(hotLineData) {
