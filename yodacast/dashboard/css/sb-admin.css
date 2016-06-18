@@ -308,8 +308,7 @@ div.clickable a {
 }
 
 .legendClass {
-	float: right;
-	width: 31% !important;
+
 }
 
 .legendRow{
@@ -363,4 +362,8 @@ div.clickable a {
 
 .list-group{
 	width:100%;
+}
+
+.emptyRow{
+	height:10px;
 }
