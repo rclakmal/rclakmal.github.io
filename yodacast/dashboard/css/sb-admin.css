@@ -293,3 +293,11 @@ div.clickable a {
 	content: '\00a0\00a0\00a0\00a0\00a0\00a0';
 	text-decoration: line-through;
 }
+
+.panelMain {
+	border : none !important;
+}
+
+.panel-title{
+	font-size: 10px;
+}
