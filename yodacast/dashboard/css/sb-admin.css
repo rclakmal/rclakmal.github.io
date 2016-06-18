@@ -315,6 +315,7 @@ div.clickable a {
 
 .dateSelector {
 	margin-left: 300px;
+	float:right;
 }
 
 .infoRowChart {
