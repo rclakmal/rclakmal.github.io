@@ -297,69 +297,78 @@ function eventTypeOnChange(){
 							</div>
 						</form>
 					</div>
-
+					<div class="col-lg-3">
+						<form role="form">
+							<div class="form-group">
+								<div class="text-right">
+									<button id="addNewEvent" class="btn" type="input">Add
+										New Event</button>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
 
 				<!-- /.row -->
 
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default ">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								<i class="fa fa-bar-chart-o fa-fw"></i> Call Volume
-							</h3>
-							<div id="legend"></div>
-						</div>
-						<div class="panel-body">
-							<div id="morris-area-chart"></div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default ">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<i class="fa fa-bar-chart-o fa-fw"></i> Call Volume
+								</h3>
+								<div id="legend"></div>
+							</div>
+							<div class="panel-body">
+								<div id="morris-area-chart"></div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- /.row -->
+				<!-- /.row -->
 
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								<i class="fa fa-phone fa-fw"></i>Hotline Distribution
-							</h3>
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<i class="fa fa-phone fa-fw"></i>Hotline Distribution
+								</h3>
+							</div>
+							<div class="panel-body">
+								<div id="morris-donut-chart"></div>
+								<div class="text-right">
+									<button class="btn" id="addHotline" type="input">Add
+										HotLine</button>
+								</div>
+							</div>
 						</div>
-						<div class="panel-body">
-							<div id="morris-donut-chart"></div>
-							<div class="text-right">
-								<button class="btn" id="addHotline" type="input">Add
-									HotLine</button>
+					</div>
+					<div class="col-lg-4">
+						<div class="eventpanel panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<i class="fa fa-clock-o fa-fw"></i>Selected Events
+								</h3>
+							</div>
+							<div class="panel-body">
+								<div class="list-group"></div>
+								<div class="text-right">
+									<button id="addNewEvent" class="btn" type="input">Add
+										New Event</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4">
-					<div class="eventpanel panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								<i class="fa fa-clock-o fa-fw"></i>Selected Events
-							</h3>
-						</div>
-						<div class="panel-body">
-							<div class="list-group"></div>
-							<div class="text-right">
-								<button id="addNewEvent" class="btn" type="input">Add
-									New Event</button>
-							</div>
-						</div>
-					</div>
-				</div>
+				<!-- /.row -->
+
 			</div>
-			<!-- /.row -->
+			<!-- /.container-fluid -->
 
 		</div>
-		<!-- /.container-fluid -->
-
-	</div>
-	<!-- /#page-wrapper -->
+		<!-- /#page-wrapper -->
 
 	</div>
 	<!-- /#wrapper -->
