@@ -279,8 +279,8 @@ div.clickable a {
 
 #legend {
 	height: 50px;
-	margin-left:-30px;
-	float:right;
+	margin-left: -30px;
+	float: right;
 }
 
 #legend span {
@@ -296,24 +296,27 @@ div.clickable a {
 }
 
 .panelMain {
-	border : none !important;
+	border: none !important;
 }
 
-.mainTitlePanel{
+.titlePanel {
 	font-size: 40px;
 	font-weight: 200 !important;
-	margin-left:33px;
 }
 
-.legendClass{
-	float:right;
-	width:31% !important;
+.mainTitlePanel {
+	margin-left: 33px;
 }
 
-.dateSelector{
-	float:right;
+.legendClass {
+	float: right;
+	width: 31% !important;
+}
+
+.dateSelector {
+	margin-left: 300px;
 }
 
 .infoRowChart {
-	margin-top:15px;
+	margin-top: 15px;
 }

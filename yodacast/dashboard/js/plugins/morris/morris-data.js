@@ -3429,7 +3429,7 @@ function drawFirstYoda() {
         xLabelFormat: function(d) {
             return d.label+'/06'; 
             },
-        lineColors : [ '#7cc359', '#696969' ]
+        lineColors : [ '#424242', '#7cc359', ]
     });
     
     callChart.options.labels.forEach(function(label, i){
