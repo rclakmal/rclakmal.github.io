@@ -3471,8 +3471,8 @@ function drawFootBallYoda() {
 }
 
 var hot1 = {
-    label : "Hotline 1212",
-    value : 4567
+    label : "Accuracy",
+    value : 80%
 }
 var hot2 = {
     label : "Hotline 1414",
@@ -3497,6 +3497,7 @@ function drawHotLine(hotLineData) {
     hotLineChart = Morris.Donut({
         element : 'morris-donut-chart',
         data : hotLineData,
+        colors: [ '#5cb85c', '#696969' ],
         resize : false
     });
 }
