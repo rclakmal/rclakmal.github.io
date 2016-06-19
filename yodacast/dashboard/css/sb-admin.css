@@ -300,7 +300,7 @@ div.clickable a {
 	position: relative;
 }
 
-#legend span:after {
+#legend spanx {
 	padding-left: 4px;
 	content: '\00a0\00a0\00a0\00a0\00a0\00a0';
 	border-bottom: 4px solid;
