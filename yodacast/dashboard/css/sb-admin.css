@@ -584,3 +584,7 @@ body {
 .kpipanel{
 	float:left;
 }
+
+.emptyRadicalDiv{
+	width:10px;
+}
