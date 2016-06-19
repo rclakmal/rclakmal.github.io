@@ -43,7 +43,7 @@ body {
 /* Top Navigation */
 .top-nav {
 	padding: 0 15px;
-	font-size: 30px;
+	font-size: 20px;
 }
 
 .top-nav>li {
@@ -568,4 +568,8 @@ body {
 
 .userLabel{
 	
+}
+
+.dropdown{
+	color:#7cc359;
 }
