@@ -3437,7 +3437,7 @@ function drawFirstYoda() {
                 callChart.options.lineColors[i])
         $('#legend').append(legendItem);
     })
-    var dashBoard = $('<spanx "></spanx>').text("Current Day -----").css('color',
+    var dashBoard = $('<spanx "></spanx>').text("Today -----").css('color',
             "black");
 
     $('#legend').append(dashBoard);
