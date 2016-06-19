@@ -43,11 +43,16 @@ body {
 /* Top Navigation */
 .top-nav {
 	padding: 0 15px;
+	font-size: 30px;
 }
 
 .top-nav>li {
 	display: inline-block;
 	float: left;
+}
+
+.navbar-header {
+	font-size: 30px;
 }
 
 .top-nav>li>a {
