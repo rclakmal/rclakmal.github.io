@@ -596,3 +596,6 @@ body {
 .dialTitle{
 	font-size:18px;
 }
+.panel-title{
+	text-align: center;
+}
