@@ -390,107 +390,174 @@ div.clickable a {
 	font-size: 18px !important;
 }
 
-@import
-	url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic)
-	;
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
 
-.radial-progress { @
-	circle-size: 120px; @
-	circle-background: #d6dadc; @
-	circle-color: #97a71d; @
-	inset-size: 90px; @
-	inset-color: #fbfbfb; @
-	transition-length: 1s; @
-	shadow: 6px 6px 10px rgba(0, 0, 0, 0.2); @
-	percentage-color: #97a71d; @
-	percentage-font-size: 22px; @
-	percentage-text-width: 57px;
-	margin: 50px;
-	width: @circle-size;
-	height: @circle-size;
-	background-color: @circle-background;
-	border-radius: 50%; . circle { .mask, .fill, .shadow { width : @
-	circle-size;
-	height: @circle-size;
-	position: absolute;
+body {
+	padding: 30px 0;
+	background-color: #2f3439;
+	font-family: "Noto Sans", sans-serif;
+}
+
+.wrap {
+	width: 600px;
+	margin: 0 auto;
+}
+
+/* -------------------------------------
+ * Bar container
+ * ------------------------------------- */
+.progress-radial {
+	float: left;
+	margin-right: 30px;
+	position: relative;
+	width: 100px;
+	height: 100px;
 	border-radius: 50%;
+	border: 2px solid #2f3439;
+	background-color: tomato;
 }
 
-.shadow {
-	box-shadow: @shadow inset;
-}
-
-.mask, .fill {
-	-webkit-backface-visibility: hidden;
-	transition: -webkit-transform@transition-length;
-	transition: -ms-transform@transition-length;
-	transition: transform@transition-length;
-	border-radius: 50%;
-}
-
-.mask {
-	clip: rect(0px, @ circle-size, @ circle-size, @ circle-size/ 2); . fill
-	{ clip : rect( 0px, @ circle-size/ 2, @ circle-size, 0px);
-	background-color: @circle-color;
-}
-
-}
-}
-.inset {
-	width: @inset-size;
-	height: @inset-size;
+/* -------------------------------------
+ * Optional centered circle w/text
+ * ------------------------------------- */
+.progress-radial .overlay {
 	position: absolute;
-	margin-left: (@circle-size- @inset-size)/2;
-	margin-top: (@circle-size- @inset-size)/2;
-	background-color: @inset-color;
+	width: 60px;
+	height: 60px;
+	background-color: #fffde8;
 	border-radius: 50%;
-	box-shadow: @shadow; . percentage { height : @ percentage-font-size;
-	width: @percentage-text-width;
-	overflow: hidden;
-	position: absolute;
-	top: (@inset-size- @percentage-font-size)/2;
-	left: (@inset-size- @percentage-text-width)/2;
-	line-height: 1; . numbers { margin-top : -@ percentage-font-size;
-	transition: width@transition-length; span { width : @
-	percentage-text-width;
-	display: inline-block;
-	vertical-align: top;
+	margin-left: 20px;
+	margin-top: 20px;
 	text-align: center;
-	font-weight: 800;
-	font-size: @percentage-font-size;
-	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: @percentage-color;
+	line-height: 60px;
+	font-size: 16px;
 }
 
-}
-}
-}
-@
-i: 0; @increment: 180deg / 100; .loop (@i ) when (@i <= 100) { &[data-progress="@{i}"]
-	{ .circle { .mask.full, .fill { -webkit-transform:rotate( @increment * 
-	@i);
-	-ms-transform: rotate(@ increment * @ i);
-	transform: rotate(@ increment * @ i);
+/* -------------------------------------
+ * Mixin for progress-% class
+ * ------------------------------------- */
+.progress-0 {
+	background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(90deg, #ff6347 50%, #2f3439 50%, #2f3439);
 }
 
-.fill.fix {
-	-webkit-transform: rotate(@ increment * @ i * 2);
-	-ms-transform: rotate(@ increment * @ i * 2);
-	transform: rotate(@ increment * @ i * 2);
+.progress-5 {
+	background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(108deg, #ff6347 50%, #2f3439 50%, #2f3439);
 }
 
+.progress-10 {
+	background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(126deg, #ff6347 50%, #2f3439 50%, #2f3439);
 }
-.inset .percentage .numbers {
-	width: @i* @percentage-text-width+ @percentage-text-width;
-}
-}
-.loop
-(@i
-+
-1);
-}
-.loop
-(@i);
 
+.progress-15 {
+	background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(144deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
 
+.progress-20 {
+	background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(162deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-25 {
+	background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(180deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-30 {
+	background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(198deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-35 {
+	background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(216deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-40 {
+	background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(234deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-45 {
+	background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(252deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-50 {
+	background-image: linear-gradient(-90deg, #ff6347 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-55 {
+	background-image: linear-gradient(-72deg, #ff6347 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-60 {
+	background-image: linear-gradient(-54deg, #ff6347 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-65 {
+	background-image: linear-gradient(-36deg, #ff6347 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-70 {
+	background-image: linear-gradient(-18deg, #ff6347 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-75 {
+	background-image: linear-gradient(0deg, #ff6347 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-80 {
+	background-image: linear-gradient(18deg, #ff6347 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-85 {
+	background-image: linear-gradient(36deg, #ff6347 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-90 {
+	background-image: linear-gradient(54deg, #ff6347 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-95 {
+	background-image: linear-gradient(72deg, #ff6347 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-100 {
+	background-image: linear-gradient(90deg, #ff6347 50%, rgba(0, 0, 0, 0)
+		50%, rgba(0, 0, 0, 0)),
+		linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
 }
