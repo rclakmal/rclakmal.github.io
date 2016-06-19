@@ -125,7 +125,7 @@ function eventSave() {
     var NoOfUsers = $('#eventEffectNo').val();
     var d = new Date();
     var currentTimeDate = d.toUTCString() ;
-    var newChild = $('<a class="list-group-item" href="#"><span class="badge">'+currentTimeDate+'</span> <i class="fa fa-fw fa-info"></i><b>'+currentUser+'</b> Included <b><i>'+eventType+'</i></b> named '+eventName+' for the duration of '+duration+' effecting '+NoOfUsers+' customers. </a>');
+    var newChild = $('<a class="list-group-item" href="#"><span class="badge">'+currentTimeDate+'</span> <i class="fa fa-fw fa-info"></i><b>'+currentUser+'</b> Included <b><i>'+eventType+'</i></b> named '+eventName+' for the duration of '+duration+' affecting '+NoOfUsers+' customers. </a>');
     $('.list-group').append(newChild);
 		console.log(eventType);
 		if(eventType=="Sport Event"){
@@ -273,7 +273,7 @@ function eventTypeOnChange(){
 				<div class="infoRowChart row">
 					<div class="col-lg-3">
 						<h3 class="panel-title titlePanel mainTitlePanel">
-							<i class="fa fa-bar-chart-o fa-fw"></i> Call Volume
+							<i class="fa fa-bar-chart-o fa-fw"></i> Call Volume Prediction
 						</h3>
 					</div>
 
@@ -356,7 +356,7 @@ function eventTypeOnChange(){
 									<a class="list-group-item" href="#"><span class="badge">Sun,
 											19 Jun 2016 11:29:38 GMT</span> <i class="fa fa-fw fa-info"></i><b>David</b>
 										Included <b><i>Technical Fault</i></b> named Technical Fault
-										123XX for the duration of 06/24/2016 - 06/29/2016 effecting
+										123XX for the duration of 06/24/2016 - 06/29/2016 affecting
 										12000 customers. </a> <a class="list-group-item" href="#"><span
 										class="badge">Tue, 22 Jun 2016 12:34:43 GMT</span> <i
 										class="fa fa-fw fa-info"></i><b>Demo</b> Included <b><i>Billing

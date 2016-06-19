@@ -371,6 +371,7 @@ div.clickable a {
 
 .addEventButton {
 	float: right;
+	background-color: #7cc359;
 }
 
 .list-group {
@@ -467,8 +468,7 @@ body {
 }
 
 .progress-25 {
-	background-image: linear-gradient(90deg, #FFFFFF 50%, #FFFFFF
-		50%, #FFFFFF),
+	background-image: linear-gradient(90deg, #FFFFFF 50%, #FFFFFF 50%, #FFFFFF),
 		linear-gradient(180deg, #ff6347 50%, #2f3439 50%, #2f3439);
 }
 
@@ -562,14 +562,14 @@ body {
 		linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
 }
 
-.dial{
+.dial {
 	
 }
 
-.userLabel{
+.userLabel {
 	
 }
 
-.dropdown{
-	color:#7cc359;
+.dropdown {
+	color: #7cc359;
 }
