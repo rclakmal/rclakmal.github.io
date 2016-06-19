@@ -384,3 +384,7 @@ div.clickable a {
 	background-color: #424242;
 	border-color: #424242
 }
+
+.modalChange{
+	font-size:18px !important;
+}
