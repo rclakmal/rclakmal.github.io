@@ -592,3 +592,7 @@ body {
 .btnSave {
 	background-color: #7cc359;
 }
+
+.dialTitle{
+	font-size:18px;
+}
