@@ -12,7 +12,7 @@ body {
 
 @media ( min-width :768px) {
 	body {
-		margin-top: 50px;
+		margin-top: 25px;
 	}
 }
 
@@ -563,5 +563,9 @@ body {
 }
 
 .dial{
+	
+}
+
+.userLabel{
 	
 }
