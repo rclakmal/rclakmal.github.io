@@ -469,7 +469,7 @@ body {
 .progress-25 {
 	background-image: linear-gradient(90deg, #FFFFFF 50%, #FFFFFF
 		50%, #FFFFFF),
-		linear-gradient(180deg, #FFFFFF 50%, #FFFFFF 50%, #FFFFFF);
+		linear-gradient(180deg, #ff6347 50%, #2f3439 50%, #2f3439);
 }
 
 .progress-30 {
