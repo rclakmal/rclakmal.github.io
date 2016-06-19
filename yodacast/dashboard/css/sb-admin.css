@@ -56,6 +56,8 @@ body {
 }
 .navbar-brand {
     font-size: 30px !important;
+    margin-bottom:-12px !important;
+    height: 67px !important;
 }
 
 .top-nav>li>a {
