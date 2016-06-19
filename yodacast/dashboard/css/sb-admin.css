@@ -613,5 +613,9 @@ body {
 }
 
 .kpiAbs{
-	margin:30%
+	margin:30%;
+}
+
+canvas {
+	margin-top:6%;
 }
