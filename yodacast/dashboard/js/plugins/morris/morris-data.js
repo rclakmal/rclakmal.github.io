@@ -3439,6 +3439,8 @@ function drawFirstYoda() {
     })
     var dashBoard = $('<span class="spanclass"></span>').text("Current Day ---").css('color',
             "black");
+    var hrTag = $('<hr width="5%">');
+    dashBoard.append(hrTag);
     $('#legend').append(dashBoard);
 }
 
