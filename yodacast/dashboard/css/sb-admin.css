@@ -598,4 +598,5 @@ body {
 }
 .panel-title{
 	text-align: center;
+	float:left;
 }
