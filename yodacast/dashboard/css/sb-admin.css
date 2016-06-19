@@ -303,8 +303,7 @@ div.clickable a {
 #legend spanx {
 	padding-left: 4px;
 	content: '\00a0\00a0\00a0\00a0\00a0\00a0';
-	border-bottom: 4px solid;
-	margin-top:19px;
+	text-decoration: line-through;
 }
 
 .panelMain {
