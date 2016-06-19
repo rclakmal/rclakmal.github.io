@@ -597,7 +597,7 @@ body {
 }
 
 .dialTitle {
-	font-size: 15px;
+	font-size: 18px;
 }
 
 .panel-title {
@@ -619,4 +619,8 @@ body {
 
 canvas {
 	margin-top:6%;
+}
+
+.kpiLong{
+	width:110%;
 }
