@@ -230,47 +230,47 @@ basicYodadata = [ {
     "YodacastPredictedVolume" : 57
 }, {
     "period" : 20,
-    //"HandledCallVolume" : 348,
+    // "HandledCallVolume" : 348,
     "YodacastPredictedVolume" : 278
 }, {
     "period" : 21,
-    //"HandledCallVolume" : 1561,
+    // "HandledCallVolume" : 1561,
     "YodacastPredictedVolume" : 1420
 }, {
     "period" : 22,
-    //"HandledCallVolume" : 849,
+    // "HandledCallVolume" : 849,
     "YodacastPredictedVolume" : 859
 }, {
     "period" : 23,
-    //"HandledCallVolume" : 54,
+    // "HandledCallVolume" : 54,
     "YodacastPredictedVolume" : 48
 }, {
     "period" : 24,
-    //"HandledCallVolume" : 59,
+    // "HandledCallVolume" : 59,
     "YodacastPredictedVolume" : 95
 }, {
     "period" : 25,
-    //"HandledCallVolume" : 919,
+    // "HandledCallVolume" : 919,
     "YodacastPredictedVolume" : 949
 }, {
     "period" : 26,
-   // "HandledCallVolume" : 765,
+    // "HandledCallVolume" : 765,
     "YodacastPredictedVolume" : 661
 }, {
     "period" : 27,
-    //"HandledCallVolume" : 136,
+    // "HandledCallVolume" : 136,
     "YodacastPredictedVolume" : 143
 }, {
     "period" : 28,
-    //"HandledCallVolume" : 14,
+    // "HandledCallVolume" : 14,
     "YodacastPredictedVolume" : 17
 }, {
     "period" : 29,
-    //"HandledCallVolume" : 424,
+    // "HandledCallVolume" : 424,
     "YodacastPredictedVolume" : 401
 }, {
     "period" : 30,
-    //"HandledCallVolume" : 429,
+    // "HandledCallVolume" : 429,
     "YodacastPredictedVolume" : 409
 } ];
 
@@ -3420,22 +3420,26 @@ function drawFirstYoda() {
         pointSize : 2,
         parseTime : false,
         hideHover : 'auto',
-        lineWidth:4,
+        lineWidth : 4,
         resize : true,
-        events: [18],
-        eventStrokeWidth:2,
-        eventLineColors: [ '#000000' ],
-        xLabels:"day",
-        xLabelFormat: function(d) {
-            return d.label+'/06'; 
-            },
+        events : [ 18 ],
+        eventStrokeWidth : 2,
+        eventLineColors : [ '#000000' ],
+        xLabels : "day",
+        xLabelFormat : function(d) {
+            return d.label + '/06';
+        },
         lineColors : [ '#424242', '#7cc359', ]
     });
-    
-    callChart.options.labels.forEach(function(label, i){
-        var legendItem = $('<span></span>').text(label).css('color', callChart.options.lineColors[i])
+
+    callChart.options.labels.forEach(function(label, i) {
+        var legendItem = $('<span></span>').text(label).css('color',
+                callChart.options.lineColors[i])
         $('#legend').append(legendItem)
     })
+    var dashBoard = $('<span></span>').text("Current Day ---").css(color,
+            "black");
+    $('#legend').append(dashBoard);
 }
 
 function drawWeatherYoda() {
@@ -3497,7 +3501,7 @@ function drawHotLine(hotLineData) {
     hotLineChart = Morris.Donut({
         element : 'morris-donut-chart',
         data : hotLineData,
-        colors: [ '#7cc359', '#696969' ],
+        colors : [ '#7cc359', '#696969' ],
         resize : false
     });
 }
