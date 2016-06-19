@@ -3435,12 +3435,13 @@ function drawFirstYoda() {
     callChart.options.labels.forEach(function(label, i) {
         var legendItem = $('<span></span>').text(label).css('color',
                 callChart.options.lineColors[i])
+        var hrTag = $('<hr width="2%">');
+        legendItem.append(hrTag);
         $('#legend').append(legendItem)
     })
     var dashBoard = $('<span class="spanclass"></span>').text("Current Day ---").css('color',
             "black");
-    var hrTag = $('<hr width="5%">');
-    dashBoard.append(hrTag);
+
     $('#legend').append(dashBoard);
 }
 
