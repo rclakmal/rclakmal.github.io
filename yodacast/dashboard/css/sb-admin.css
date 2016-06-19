@@ -289,7 +289,7 @@ div.clickable a {
 	position: relative;
 }
 
-#legend .spanclass :after {
+#legend span :after {
 	padding-left: 4px;
 	content: '\00a0\00a0\00a0\00a0\00a0\00a0';
 	text-decoration: line-through;
