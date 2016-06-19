@@ -372,6 +372,9 @@ div.clickable a {
 .addEventButton {
 	float: right;
 	background-color: #7cc359;
+	margin-top:-12px;
+	font-size:25px;
+	margin-right:15px;
 }
 
 .list-group {
