@@ -304,6 +304,7 @@ div.clickable a {
 	padding-left: 4px;
 	content: '\00a0\00a0\00a0\00a0\00a0\00a0';
 	border-bottom: 4px solid;
+	margin-top:19px;
 }
 
 .panelMain {
