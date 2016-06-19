@@ -268,7 +268,7 @@ div.clickable a {
 }
 
 .modal-header, h4, .close {
-	background-color: #5cb85c;
+	background-color: #7cc359;
 	color: white !important;
 	text-align: center;
 	font-size: 30px;
@@ -371,9 +371,9 @@ div.clickable a {
 
 .addEventButton {
 	float: right;
-	margin-top:-12px;
-	font-size:25px;
-	margin-right:15px;
+	margin-top: -12px;
+	font-size: 25px;
+	margin-right: 15px;
 }
 
 .list-group {
@@ -576,15 +576,19 @@ body {
 	color: #7cc359;
 }
 
-.radicalPro{
-	padding:70px;
+.radicalPro {
+	padding: 70px;
 }
 
-.kpipanel{
-	float:left;
-	display:inline-flex;
+.kpipanel {
+	float: left;
+	display: inline-flex;
 }
 
-.emptyRadicalDiv{
-	width:10px;
+.emptyRadicalDiv {
+	width: 10px;
+}
+
+.btnSave {
+	background-color: #7cc359;
 }
