@@ -304,6 +304,7 @@ div.clickable a {
 	padding-left: 4px;
 	content: '\00a0\00a0\00a0\00a0\00a0\00a0';
 	text-decoration: line-through;
+	border-bottom: 4px solid
 }
 
 .panelMain {
