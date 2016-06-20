@@ -114,6 +114,23 @@ function drawFirstYoda() {
             "black");
     $('#Act').attr('checked', false);
     $('#Yod').attr('checked', true);
+    
+    $('#Act').on('change', function() {
+        var isChecked1 = $('#Act').is(':checked');
+        var isChecked2 = $('#Yod').is(':checked');
+        if (isChecked1) {
+            $('#kpiPanel').show()
+        } else {
+            $('#kpiPanel').hide();
+        }
+        callChart.setData(getBasicData(isChecked1, isChecked2));
+
+    });
+    $('#Yod').on('change', function() {
+        var isChecked1 = $('#Act').is(':checked');
+        var isChecked2 = $('#Yod').is(':checked');
+        callChart.setData(getBasicData(isChecked1, isChecked2));
+    });
     $('#legend').append(dashBoard);
 }
 
@@ -194,21 +211,5 @@ function updateTable(text) {
 
 $(document).ready(function() {
     $('#kpiPanel').hide();
-    $('#Act').on('change', function() {
-        var isChecked1 = $('#Act').is(':checked');
-        var isChecked2 = $('#Yod').is(':checked');
-        if (isChecked1) {
-            $('#kpiPanel').show()
-        } else {
-            $('#kpiPanel').hide();
-        }
-        callChart.setData(getBasicData(isChecked1, isChecked2));
-
-    });
-    $('#Yod').on('change', function() {
-        var isChecked1 = $('#Act').is(':checked');
-        var isChecked2 = $('#Yod').is(':checked');
-        callChart.setData(getBasicData(isChecked1, isChecked2));
-    });
     drawFirstYoda();
 });
