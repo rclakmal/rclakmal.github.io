@@ -81,7 +81,7 @@ function drawFirstYoda() {
     $("#morris-area-chart").empty();
     callChart = Morris.Line({
         element : 'morris-area-chart',
-        data : basicYodadata,
+        data : getBasicData(false,true),
         xkey : 'period',
         ykeys : [ 'Actual Call Volume', 'Yodacast Predicted Volume' ],
         labels : [ 'Actual Call Volume', 'Yodacast Predicted Volume' ],
@@ -194,7 +194,7 @@ $(document).ready(function() {
     $('#Act').on('change', function() {
         var isChecked1 = $('#Act').is(':checked');
         var isChecked2 = $('#Yod').is(':checked');
-        callChart.setData(data(isChecked1,isChecked2));
+        callChart.setData(getBasicData(isChecked1,isChecked2));
         
       });
       $('#Yod').on('change', function() {
