@@ -193,7 +193,7 @@ function updateTable(text) {
 
 
 $(document).ready(function() {
-    $('#Act')..attr('checked', false);
+    $('#Act').attr('checked', false);
     $('#Act').on('change', function() {
         var isChecked1 = $('#Act').is(':checked');
         var isChecked2 = $('#Yod').is(':checked');
