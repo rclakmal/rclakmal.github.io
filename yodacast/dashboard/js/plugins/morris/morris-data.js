@@ -202,5 +202,4 @@ $(document).ready(function() {
         callChart.setData(getBasicData(isChecked1,isChecked2));
       });
     drawFirstYoda();
-    drawHotLine(hotLineData);
 });
