@@ -2117,6 +2117,10 @@ function getUpdateChart(a, b, c,d) {
         "Yodacast Predicted Weather" : 24
     } ];
 
+    console.log("hey"+a)
+    console.log("hey"+b)
+    console.log("hey"+c)
+    console.log("hey"+d)
     if (a == false) {
         for (var i = 0; i < updatedChart.length; i++)
             delete updatedChart[i]["Actual Call Volume"];
