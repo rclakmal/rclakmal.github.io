@@ -112,7 +112,8 @@ function drawFirstYoda() {
     })
     var dashBoard = $('<spanx "></spanx>').text("Today -----").css('color',
             "black");
-
+    $('#Act').attr('checked', false);
+    $('#Yod').attr('checked', true);
     $('#legend').append(dashBoard);
 }
 
@@ -192,7 +193,6 @@ function updateTable(text) {
 }
 
 $(document).ready(function() {
-    $('#Act').attr('checked', false);
     $('#kpiPanel').hide();
     $('#Act').on('change', function() {
         var isChecked1 = $('#Act').is(':checked');
