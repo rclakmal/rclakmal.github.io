@@ -53,12 +53,12 @@ function getBasicData(a, b) {
         for (var i = 0; i < basicYodadata.length; i++)
             delete basicYodadata[i]["Actual Call Volume"];
     }
-    
+
     if (b == false) {
         for (var i = 0; i < basicYodadata.length; i++)
             delete basicYodadata[i]["Yodacast Predicted Volume"];
     }
-    
+
     return basicYodadata;
 }
 
@@ -83,7 +83,7 @@ function drawFirstYoda() {
     $("#morris-area-chart").empty();
     callChart = Morris.Line({
         element : 'morris-area-chart',
-        data : getBasicData(false,true),
+        data : getBasicData(false, true),
         xkey : 'period',
         ykeys : [ 'Actual Call Volume', 'Yodacast Predicted Volume' ],
         labels : [ 'Actual Call Volume', 'Yodacast Predicted Volume' ],
@@ -191,19 +191,24 @@ function updateTable(text) {
     }
 }
 
-
 $(document).ready(function() {
     $('#Act').attr('checked', false);
+    $('#kpiPanel').hide();
     $('#Act').on('change', function() {
         var isChecked1 = $('#Act').is(':checked');
         var isChecked2 = $('#Yod').is(':checked');
-        callChart.setData(getBasicData(isChecked1,isChecked2));
-        
-      });
-      $('#Yod').on('change', function() {
+        if (isChecked1) {
+            $('#kpiPanel').show()
+        } else {
+            $('#kpiPanel').hide();
+        }
+        callChart.setData(getBasicData(isChecked1, isChecked2));
+
+    });
+    $('#Yod').on('change', function() {
         var isChecked1 = $('#Act').is(':checked');
         var isChecked2 = $('#Yod').is(':checked');
-        callChart.setData(getBasicData(isChecked1,isChecked2));
-      });
+        callChart.setData(getBasicData(isChecked1, isChecked2));
+    });
     drawFirstYoda();
 });
