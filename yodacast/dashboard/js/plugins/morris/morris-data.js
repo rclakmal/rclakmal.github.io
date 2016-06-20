@@ -2176,7 +2176,7 @@ function drawFirstYoda() {
         hideHover : 'auto',
         lineWidth : 4,
         resize : true,
-        events : [ 150 ],
+        events : [ 182 ],
         eventStrokeWidth : 2,
         eventLineColors : [ '#000000' ],
         xLabels : "day",
