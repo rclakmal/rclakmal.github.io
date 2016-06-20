@@ -2216,7 +2216,7 @@ function drawFirstYoda() {
         } else {
             $('#kpiPanel').hide();
         }
-        callChart.setData(getBasicData(isChecked1, isChecked2,
+        callChart.setData(getUpdateChart(isChecked1, isChecked2,
                 isChecked3, isChecked4));
 
     });
@@ -2225,7 +2225,7 @@ function drawFirstYoda() {
         var isChecked2 = $('#YodacastPredictedVolume').is(':checked');
         var isChecked3 = $('#YodacastPredictedFootball').is(':checked');
         var isChecked4 = $('#YodacastPredictedWeather').is(':checked');
-        callChart.setData(getBasicData(isChecked1, isChecked2,
+        callChart.setData(getUpdateChart(isChecked1, isChecked2,
                 isChecked3, isChecked4));
     });
     $('#YodacastPredictedVolume').on('change', function() {
@@ -2233,7 +2233,7 @@ function drawFirstYoda() {
         var isChecked2 = $('#YodacastPredictedVolume').is(':checked');
         var isChecked3 = $('#YodacastPredictedFootball').is(':checked');
         var isChecked4 = $('#YodacastPredictedWeather').is(':checked');
-        callChart.setData(getBasicData(isChecked1, isChecked2,
+        callChart.setData(getUpdateChart(isChecked1, isChecked2,
                 isChecked3, isChecked4));
     });
     $('#YodacastPredictedWeather').on('change', function() {
@@ -2241,7 +2241,7 @@ function drawFirstYoda() {
         var isChecked2 = $('#YodacastPredictedVolume').is(':checked');
         var isChecked3 = $('#YodacastPredictedFootball').is(':checked');
         var isChecked4 = $('#YodacastPredictedWeather').is(':checked');
-        callChart.setData(getBasicData(isChecked1, isChecked2,
+        callChart.setData(getUpdateChart(isChecked1, isChecked2,
                 isChecked3, isChecked4));
     });
     $('#legend').append(dashBoard);
