@@ -2185,26 +2185,26 @@ function drawFirstYoda() {
     callChart.options.labels.forEach(function(label, i) {
         var legendItem = $('<span></span>').text(label).css('color',
                 callChart.options.lineColors[i])
-        var checkbox = $('<input type="checkbox" id=' + label
+        var checkbox = $('<input type="checkbox" id=' + label.replace(/\s/g, '')
                 + ' class="lineCheckbox" checked="">');
         $('#legend').append(checkbox);
         $('#legend').append(legendItem);
     })
     var dashBoard = $('<spanx "></spanx>').text("Today -----").css('color',
             "black");
-    $('#Actual Call Volume').attr('checked', false);
-    $('#Yodacast Predicted Volume').attr('checked', true);
-    $('#Yodacast Predicted Football').attr('checked', false);
-    $('#Yodacast Predicted Weather').attr('checked', false);
+    $('#ActualCallVolume').attr('checked', false);
+    $('#YodacastPredictedVolume').attr('checked', true);
+    $('#YodacastPredictedFootball').attr('checked', false);
+    $('#YodacastPredictedWeather').attr('checked', false);
 
     $('#Actual Call Volume').on('change',function() {
-        var isChecked1 = $('#Actual Call Volume')
+        var isChecked1 = $('#ActualCallVolume')
                 .is(':checked');
-        var isChecked2 = $('#Yodacast Predicted Volume').is(
+        var isChecked2 = $('#YodacastPredictedVolume').is(
                 ':checked');
-        var isChecked3 = $('#Yodacast Predicted Football').is(
+        var isChecked3 = $('#YodacastPredictedFootball').is(
                 ':checked');
-        var isChecked4 = $('#Yodacast Predicted Weather').is(
+        var isChecked4 = $('#YodacastPredictedWeather').is(
                 ':checked');
 
         if (isChecked1) {
@@ -2217,26 +2217,26 @@ function drawFirstYoda() {
 
     });
     $('#Yodacast Predicted Volume').on('change', function() {
-        var isChecked1 = $('#Actual Call Volume').is(':checked');
-        var isChecked2 = $('#Yodacast Predicted Volume').is(':checked');
-        var isChecked3 = $('#Yodacast Predicted Football').is(':checked');
-        var isChecked4 = $('#Yodacast Predicted Weather').is(':checked');
+        var isChecked1 = $('#ActualCallVolume').is(':checked');
+        var isChecked2 = $('#YodacastPredictedVolume').is(':checked');
+        var isChecked3 = $('#YodacastPredictedFootball').is(':checked');
+        var isChecked4 = $('#YodacastPredictedWeather').is(':checked');
         callChart.setData(getBasicData(isChecked1, isChecked2,
                 isChecked3, isChecked4));
     });
     $('#Yodacast Predicted Volume').on('change', function() {
-        var isChecked1 = $('#Actual Call Volume').is(':checked');
-        var isChecked2 = $('#Yodacast Predicted Volume').is(':checked');
-        var isChecked3 = $('#Yodacast Predicted Football').is(':checked');
-        var isChecked4 = $('#Yodacast Predicted Weather').is(':checked');
+        var isChecked1 = $('#ActualCallVolume').is(':checked');
+        var isChecked2 = $('#YodacastPredictedVolume').is(':checked');
+        var isChecked3 = $('#YodacastPredictedFootball').is(':checked');
+        var isChecked4 = $('#YodacastPredictedWeather').is(':checked');
         callChart.setData(getBasicData(isChecked1, isChecked2,
                 isChecked3, isChecked4));
     });
     $('#Yodacast Predicted Weather').on('change', function() {
-        var isChecked1 = $('#Actual Call Volume').is(':checked');
-        var isChecked2 = $('#Yodacast Predicted Volume').is(':checked');
-        var isChecked3 = $('#Yodacast Predicted Football').is(':checked');
-        var isChecked4 = $('#Yodacast Predicted Weather').is(':checked');
+        var isChecked1 = $('#ActualCallVolume').is(':checked');
+        var isChecked2 = $('#YodacastPredictedVolume').is(':checked');
+        var isChecked3 = $('#YodacastPredictedFootball').is(':checked');
+        var isChecked4 = $('#YodacastPredictedWeather').is(':checked');
         callChart.setData(getBasicData(isChecked1, isChecked2,
                 isChecked3, isChecked4));
     });
