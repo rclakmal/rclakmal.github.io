@@ -50,12 +50,12 @@ function getBasicData(a, b) {
 
     if (a == false) {
         for (var i = 0; i < basicYodadata.length; i++)
-            delete basicYodadata[i]."Actual Call Volume";
+            delete basicYodadata[i].["Actual Call Volume"];
     }
     
     if (b == false) {
         for (var i = 0; i < basicYodadata.length; i++)
-            delete basicYodadata[i]."Yodacast Predicted Volume";
+            delete basicYodadata[i]["Yodacast Predicted Volume"];
     }
 }
 
