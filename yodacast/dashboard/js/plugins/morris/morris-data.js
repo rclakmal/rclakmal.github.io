@@ -2119,22 +2119,22 @@ function getUpdateChart(a, b, c,d) {
 
     if (a == false) {
         for (var i = 0; i < updatedChart.length; i++)
-            delete basicYodadata[i]["Actual Call Volume"];
+            delete updatedChart[i]["Actual Call Volume"];
     }
 
     if (b == false) {
         for (var i = 0; i < updatedChart.length; i++)
-            delete basicYodadata[i]["Yodacast Predicted Volume"];
+            delete updatedChart[i]["Yodacast Predicted Volume"];
     }
 
     if (c == false) {
         for (var i = 0; i < updatedChart.length; i++)
-            delete basicYodadata[i]["Yodacast Predicted Football"];
+            delete updatedChart[i]["Yodacast Predicted Football"];
     }
 
     if (d == false) {
         for (var i = 0; i < updatedChart.length; i++)
-            delete basicYodadata[i]["Yodacast Predicted Weather"];
+            delete updatedChart[i]["Yodacast Predicted Weather"];
     }
 
     return updatedChart;
