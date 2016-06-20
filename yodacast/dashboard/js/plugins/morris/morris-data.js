@@ -11,39 +11,75 @@ var lineColorsChoose = [ '#2B431F', '#43762A', '#761E74', '#C359C0', '#7CC359' ]
 
 function getBasicData(a, b) {
     basicYodadata = [ {
-        "period" : 15,
+        "period" : 13,
         "Actual Call Volume" : 7,
         "Yodacast Predicted Volume" : 29
     }, {
-        "period" : 16,
+        "period" : 14,
         "Actual Call Volume" : 1027,
         "Yodacast Predicted Volume" : 1056
     }, {
-        "period" : 17,
+        "period" : 15,
         "Actual Call Volume" : 1240,
         "Yodacast Predicted Volume" : 1432
     }, {
-        "period" : 18,
+        "period" : 16,
         "Actual Call Volume" : 757,
         "Yodacast Predicted Volume" : 784
     }, {
-        "period" : 19,
+        "period" : 17,
         "Actual Call Volume" : 24,
         "Yodacast Predicted Volume" : 57
     }, {
+        "period" : 18,
+         "Actual Call Volume" : 348,
+        "Yodacast Predicted Volume" : 278
+    }, {
+        "period" : 19,
+         "Actual Call Volume" : 1561,
+        "Yodacast Predicted Volume" : 1420
+    }, {
         "period" : 20,
+         "Actual Call Volume" : 849,
+        "Yodacast Predicted Volume" : 859
+    }, {
+        "period" : 21,
+         "Actual Call Volume" : 54,
+        "Yodacast Predicted Volume" : 48
+    }, {
+        "period" : 22,
+        "Actual Call Volume" : 7,
+        "Yodacast Predicted Volume" : 29
+    }, {
+        "period" : 23,
+        "Actual Call Volume" : 1027,
+        "Yodacast Predicted Volume" : 1056
+    }, {
+        "period" : 24,
+        "Actual Call Volume" : 1240,
+        "Yodacast Predicted Volume" : 1432
+    }, {
+        "period" : 25,
+        //"Actual Call Volume" : 757,
+        "Yodacast Predicted Volume" : 784
+    }, {
+        "period" : 26,
+        //"Actual Call Volume" : 24,
+        "Yodacast Predicted Volume" : 57
+    }, {
+        "period" : 27,
         // "Actual Call Volume" : 348,
         "Yodacast Predicted Volume" : 278
     }, {
-        "period" : 21,
+        "period" : 28,
         // "Actual Call Volume" : 1561,
         "Yodacast Predicted Volume" : 1420
     }, {
-        "period" : 22,
+        "period" : 29,
         // "Actual Call Volume" : 849,
         "Yodacast Predicted Volume" : 859
     }, {
-        "period" : 23,
+        "period" : 30,
         // "Actual Call Volume" : 54,
         "Yodacast Predicted Volume" : 48
     } ];
@@ -92,7 +128,7 @@ function drawFirstYoda() {
         hideHover : 'auto',
         lineWidth : 4,
         resize : true,
-        events : [ 19 ],
+        events : [ 24 ],
         eventStrokeWidth : 2,
         eventLineColors : [ '#000000' ],
         xLabels : "day",
@@ -114,7 +150,7 @@ function drawFirstYoda() {
             "black");
     $('#Act').attr('checked', false);
     $('#Yod').attr('checked', true);
-    
+
     $('#Act').on('change', function() {
         var isChecked1 = $('#Act').is(':checked');
         var isChecked2 = $('#Yod').is(':checked');
