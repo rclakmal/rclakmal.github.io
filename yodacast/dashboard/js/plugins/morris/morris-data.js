@@ -119,7 +119,7 @@ function drawFirstYoda() {
     $("#morris-area-chart").empty();
     callChart = Morris.Line({
         element : 'morris-area-chart',
-        data : getBasicData(false, true),
+        data : getBasicData(true, true),
         xkey : 'period',
         ykeys : [ 'Actual Call Volume', 'Yodacast Predicted Volume' ],
         labels : [ 'Actual Call Volume', 'Yodacast Predicted Volume' ],
