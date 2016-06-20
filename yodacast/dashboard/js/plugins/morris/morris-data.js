@@ -47,7 +47,8 @@ function getBasicData(a, b) {
         // "Actual Call Volume" : 54,
         "Yodacast Predicted Volume" : 48
     } ];
-
+    console.log(a);
+    console.log(b);
     if (a == false) {
         for (var i = 0; i < basicYodadata.length; i++)
             delete basicYodadata[i]["Actual Call Volume"];
