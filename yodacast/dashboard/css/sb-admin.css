@@ -625,3 +625,7 @@ canvas {
 .kpiLong{
 	width:115%;
 }
+
+.lineCheckbox{
+	font-size:20px;
+}

@@ -3435,7 +3435,7 @@ function drawFirstYoda() {
     callChart.options.labels.forEach(function(label, i) {
         var legendItem = $('<span></span>').text(label).css('color',
                 callChart.options.lineColors[i])
-        var checkbox = $('<input type="checkbox" name='+label+' checked="">');
+        var checkbox = $('<input type="checkbox" name='+label+' class="lineCheckbox" checked="">');
         $('#legend').append(checkbox);
         $('#legend').append(legendItem);
     })
