@@ -58,6 +58,8 @@ function getBasicData(a, b) {
         for (var i = 0; i < basicYodadata.length; i++)
             delete basicYodadata[i]["Yodacast Predicted Volume"];
     }
+    
+    return basicYodadata;
 }
 
 // Area Chart
