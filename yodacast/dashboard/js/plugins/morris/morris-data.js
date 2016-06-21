@@ -2362,6 +2362,7 @@ function drawFootBallYoda() {
 }
 
 function footballSave(){
+    $("#footBallModal").modal("hide");
     drawFirstYoda("fb");
 }
 
