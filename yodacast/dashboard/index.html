@@ -292,7 +292,20 @@
 							<i class="fa fa-bar-chart-o fa-fw"></i> Call Volume Prediction
 						</h3>
 					</div>
-
+					<div class="col-lg-6">
+						<button type="button" id="addNewEvent"
+							class="addEventButton btn btn-default btn-number"
+							data-type="plus" data-field="quant[1]">
+							<span class="glyphicon glyphicon-plus"></span> Add Event
+						</button>
+					</div>
+					<div class="col-lg-6">
+						<button type="button" id="includeWeatherButton"
+							class="addEventButton btn btn-default btn-number"
+							data-type="refresh" data-field="quant[1]">
+							<span class="glyphicon glyphicon-refresh"></span> Update Weather
+						</button>
+					</div>
 					<div class="dateSelector col-lg-3">
 						<form role="form">
 							<div class="form-group">
@@ -326,22 +339,8 @@
 						</form>
 					</div>
 				</div>
-				<div class="row" style="float: right;padding: 0%;margin-bottom: 0%;">
-					<div class="col-lg-6">
-						<button type="button" id="addNewEvent"
-							class="addEventButton btn btn-default btn-number"
-							data-type="plus" data-field="quant[1]">
-							<span class="glyphicon glyphicon-plus"></span> Add Event
-						</button>
-					</div>
-					<div class="col-lg-6">
-						<button type="button" id="includeWeatherButton"
-							class="addEventButton btn btn-default btn-number"
-							data-type="refresh" data-field="quant[1]">
-							<span class="glyphicon glyphicon-refresh"></span> Update Weather
-						</button>
-					</div>
-				</div>
+				<div class="row"
+					style="float: right; padding: 0%; margin-bottom: 0%;"></div>
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="panel panelMain panel-default ">
