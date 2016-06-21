@@ -2369,5 +2369,6 @@ function updateTable(text) {
 }
 
 $(document).ready(function() {
+	('#legend').hide();
     drawFirstYoda();
 });
