@@ -2163,6 +2163,7 @@ function drawGraph() {
 
 function drawFirstYoda(event) {
     var mydata;
+    var mylabel;
     if (event == "fb"){
         mydata = getUpdateChart(true, false, true, false);
         mylabel= [ 'Actual Call Volume', 'Yodacast Predicted Football'];
@@ -2180,7 +2181,7 @@ function drawFirstYoda(event) {
     $("#morris-area-chart").empty();
     callChart = Morris.Line({
         element : 'morris-area-chart',
-        data : ,
+        data : mydata,
         xkey : 'period',
         ykeys : [ 'Actual Call Volume', 'Yodacast Predicted Volume',
                 'Yodacast Predicted Football', 'Yodacast Predicted Weather' ],
