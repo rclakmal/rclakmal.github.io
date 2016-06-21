@@ -2366,6 +2366,11 @@ function footballSave(){
     drawFirstYoda("fb");
 }
 
+function weatherSave(){
+    $("#weatherModal").modal("hide");
+    drawFirstYoda("w");
+}
+
 function updateTable(text) {
     $("#morris-area-chart").empty();
     if (text == "Monthly") {
