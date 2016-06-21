@@ -2361,6 +2361,10 @@ function drawFootBallYoda() {
     });
 }
 
+function footballSave(){
+    drawFirstYoda("fb");
+}
+
 function updateTable(text) {
     $("#morris-area-chart").empty();
     if (text == "Monthly") {

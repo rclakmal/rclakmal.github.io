@@ -143,17 +143,7 @@
 				+ duration
 				+ ' affecting ' + NoOfUsers + ' customers. </a>');
 		$('.list-group').append(newChild);
-		console.log(eventType);
-		if (eventType == "Sport Event") {
-			drawFirstYoda("fb");;
-			return;
-		}
-		if (eventType == "Weather") {
-			updateTable("weather");
-			return;
-		}
-		updateTable("Event");
-
+		$("#footBallModal").modal();
 	}
 
 	function hotLineSave() {
@@ -536,7 +526,7 @@
 	</div>
 
 	<!-- Modal -->
-	<div class="modal fade" id="hotLineAddModel" role="dialog">
+	<div class="modal fade" id="footBallModal" role="dialog">
 		<div class="modal-dialog">
 
 			<!-- Modal content-->
@@ -544,28 +534,27 @@
 				<div class="modal-header" style="padding: 35px 50px;">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4>
-						<span class="glyphicon glyphicon-phone-alt"></span> Add New
-						HotLine
+						<span class="glyphicon glyphicon-phone-alt"></span> View
+						Prediction Changes
 					</h4>
 				</div>
 				<div class="modal-body" style="padding: 40px 50px;">
 					<form role="form">
-						<div class="form-group">
-							<label for="eventType"><span
-								class="glyphicon glyphicon-calendar"></span>Select HotLines</label>
-							<div class="form-control">
-								<label class="checkbox-inline"><input type="checkbox"
-									value="" checked="">HotLine 1212</label> <label
-									class="checkbox-inline"><input type="checkbox" value="">HotLine
-									1414</label> <label class="checkbox-inline"><input
-									type="checkbox" value="">HotLine 2212</label> <label
-									class="checkbox-inline"><input type="checkbox" value="">HotLine
-									9919</label>
+						<div class="panel panelMain panel-default ">
+							<div class="panel-body">
+								<div id="imagePanel">
+									<img src="img/football.png" alt=""
+										class="img-responsive" />
+								</div>
 							</div>
 						</div>
 						<button type="button" id="hotLineSaveButton"
-							onClick="hotLineSave();" class="btn btn-success btn-block">
-							<span class="glyphicon glyphicon-off"></span> Save
+							onClick="footballSave();" class="btn btn-success btn-block">
+							<span class="glyphicon glyphicon-off"></span> Accept Changes
+						</button>
+						<button type="button" id="hotLineSaveButton"
+							onClick="hotLineSave();" class="btn btn-danger btn-block">
+							<span class="glyphicon glyphicon-off"></span> Reject Changes
 						</button>
 					</form>
 				</div>
