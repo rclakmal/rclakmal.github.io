@@ -378,6 +378,10 @@ div.clickable a {
 	background-color:#7cc359;
 }
 
+#morris-area-chart{
+	height:700px;
+}
+
 .list-group {
 	width: 100%;
 }
