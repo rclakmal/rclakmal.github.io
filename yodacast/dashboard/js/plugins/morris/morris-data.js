@@ -2196,10 +2196,10 @@ function drawFirstYoda() {
     })
     var dashBoard = $('<spanx "></spanx>').text("Today -----").css('color',
             "black");
-    $('#ActualCallVolume').attr('checked', false);
+    $('#ActualCallVolume').attr('checked', true);
     $('#YodacastPredictedVolume').attr('checked', true);
-    $('#YodacastPredictedFootball').attr('checked', false);
-    $('#YodacastPredictedWeather').attr('checked', false);
+    $('#YodacastPredictedFootball').attr('checked', true);
+    $('#YodacastPredictedWeather').attr('checked', true);
 
     $('#ActualCallVolume').on('change',function() {
         var isChecked1 = $('#ActualCallVolume')
