@@ -582,10 +582,10 @@ body {
 }
 
 .kpipanel {
-	float: left;
+/* 	float: left;
 	display: inline-flex;
 	margin-left:-8%;
-	margin-top:5%;
+	margin-top:5%; */
 }
 
 .emptyRadicalDiv {
