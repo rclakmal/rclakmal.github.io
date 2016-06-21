@@ -77,8 +77,8 @@
 	});
 
 	$(document).ready(function() {
-		$("#addHotline").click(function() {
-			$("#hotLineAddModel").modal();
+		$("#updateWeatherButton").click(function() {
+			drawFirstYoda("w");
 		});
 	});
 
@@ -145,7 +145,7 @@
 		$('.list-group').append(newChild);
 		console.log(eventType);
 		if (eventType == "Sport Event") {
-			updateTable("football");
+			drawFirstYoda("fb");;
 			return;
 		}
 		if (eventType == "Weather") {
@@ -302,7 +302,7 @@
 					</div>
 					<div class="col-lg-2" style="float: right; margin: 1%;">
 						<button type="button" id="includeWeatherButton"
-							class="addEventButton btn btn-default btn-number"
+							class="updateWeatherButton btn btn-default btn-number"
 							data-type="refresh" data-field="quant[1]">
 							<span class="glyphicon glyphicon-refresh"></span> Update Weather
 						</button>

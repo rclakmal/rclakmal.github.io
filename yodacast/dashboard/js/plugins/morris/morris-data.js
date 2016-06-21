@@ -2161,16 +2161,30 @@ function drawGraph() {
     });
 }
 
-function drawFirstYoda() {
+function drawFirstYoda(event) {
+    var mydata;
+    if (event == "fb"){
+        mydata = getUpdateChart(true, false, true, false);
+        mylabel= [ 'Actual Call Volume', 'Yodacast Predicted Football'];
+    }
+    if(event == "w"){
+        mydata = getUpdateChart(true, false, false, true);
+        mylabel= [ 'Actual Call Volume', 'Yodacast Predicted Weather'];
+    }
+    
+    if(event =="n"){
+        mydata = getUpdateChart(true, true, false, false);
+        mylabel= [ 'Actual Call Volume', 'Yodacast Predicted Volume'];
+    }
+    
     $("#morris-area-chart").empty();
     callChart = Morris.Line({
         element : 'morris-area-chart',
-        data : getUpdateChart(true, true, false, false),
+        data : ,
         xkey : 'period',
         ykeys : [ 'Actual Call Volume', 'Yodacast Predicted Volume',
                 'Yodacast Predicted Football', 'Yodacast Predicted Weather' ],
-        labels : [ 'Actual Call Volume', 'Yodacast Predicted Volume',
-                'Yodacast Predicted Football', 'Yodacast Predicted Weather' ],
+        labels : mylabel,
         pointSize : 2,
         parseTime : false,
         hideHover : 'auto',
@@ -2183,7 +2197,7 @@ function drawFirstYoda() {
         xLabelFormat : function(d) {
             return '';
         },
-        lineColors : [ '#424242', '#7cc359', 'orange', 'blue' ]
+        lineColors : [ '#424242', '#7cc359']
     });
 
     callChart.options.labels.forEach(function(label, i) {
@@ -2391,5 +2405,5 @@ function updateTable(text) {
 
 $(document).ready(function() {
     $('#legend').hide();
-    drawFirstYoda();
+    drawFirstYoda("n");
 });
