@@ -2211,11 +2211,6 @@ function drawFirstYoda() {
         var isChecked4 = $('#YodacastPredictedWeather').is(
                 ':checked');
 
-        if (isChecked1) {
-            $('#kpiPanel').show()
-        } else {
-            $('#kpiPanel').hide();
-        }
         callChart.setData(getUpdateChart(isChecked1, isChecked2,
                 isChecked3, isChecked4));
 
@@ -2286,11 +2281,7 @@ function drawUpdateYoda() {
     $('#Act').on('change', function() {
         var isChecked1 = $('#Act').is(':checked');
         var isChecked2 = $('#Yod').is(':checked');
-        if (isChecked1) {
-            $('#kpiPanel').show()
-        } else {
-            $('#kpiPanel').hide();
-        }
+  
         callChart.setData(getBasicData(isChecked1, isChecked2));
 
     });
@@ -2378,6 +2369,5 @@ function updateTable(text) {
 }
 
 $(document).ready(function() {
-    $('#kpiPanel').hide();
     drawFirstYoda();
 });
