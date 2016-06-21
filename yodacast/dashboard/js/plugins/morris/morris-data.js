@@ -2165,7 +2165,7 @@ function drawFirstYoda() {
     $("#morris-area-chart").empty();
     callChart = Morris.Line({
         element : 'morris-area-chart',
-        data : getUpdateChart(false, true,false,false),
+        data : getUpdateChart(true, true,true,true),
         xkey : 'period',
         ykeys : [ 'Actual Call Volume', 'Yodacast Predicted Volume',
                 'Yodacast Predicted Football', 'Yodacast Predicted Weather' ],
