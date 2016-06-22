@@ -269,7 +269,7 @@ div.clickable a {
 
 .modal-header, h4, .close {
 	background-color: #7cc359;
-	color: white !important;
+	color: #424242 !important;
 	text-align: center;
 	font-size: 30px;
 }
