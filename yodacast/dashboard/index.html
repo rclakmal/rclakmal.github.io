@@ -137,11 +137,15 @@
     }
     
     function seePrediction(){
-        $('#callVolumeGraph').scrollIntoView();
+        $('html, body').animate({
+            scrollTop: $("#callVolumeGraph").offset().top
+        }, 1000);
     }
     
     function seeHistory(){
-        $('#historyRow').scrollIntoView();
+        $('html, body').animate({
+            scrollTop: $("#historyRow").offset().top
+        }, 1000);
     }
     
 	function eventSave() {
