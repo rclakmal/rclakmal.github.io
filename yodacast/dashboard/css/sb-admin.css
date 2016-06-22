@@ -396,7 +396,7 @@ div.clickable a {
 }
 
 .modalChange {
-	font-size: 18px !important;
+	font-size: 27px !important;
 }
 
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans);
@@ -652,4 +652,8 @@ canvas {
 	display:block;
 	height:400px;
 	width:100%;
+}
+
+.form-control{
+	font-size : 18px !important;
 }
