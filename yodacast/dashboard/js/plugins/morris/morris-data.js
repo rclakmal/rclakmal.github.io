@@ -2166,16 +2166,16 @@ function drawFirstYoda(event) {
     var mylabel;
     if (event == "fb"){
         mydata = getUpdateChart(true, false, true, false);
-        mylabel= [ 'Actual Call Volume', 'Yodacast Predicted Football'];
+        mylabel= [ 'Actual Call Volume', 'Yodacast Predicted Football',"",""];
     }
     if(event == "w"){
         mydata = getUpdateChart(true, false, false, true);
-        mylabel= [ 'Actual Call Volume', 'Yodacast Predicted Weather'];
+        mylabel= [ 'Actual Call Volume', 'Yodacast Predicted Weather',"",""];
     }
     
     if(event =="n"){
         mydata = getUpdateChart(true, true, false, false);
-        mylabel= [ 'Actual Call Volume', 'Yodacast Predicted Volume'];
+        mylabel= [ 'Actual Call Volume', 'Yodacast Predicted Volume',"",""];
     }
     
     $("#morris-area-chart").empty();
