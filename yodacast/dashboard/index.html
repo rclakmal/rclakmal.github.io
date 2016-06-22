@@ -121,6 +121,9 @@
 	   $("#shareModal").modal();
 	}
 
+    function hideShare(){
+        $("#shareModal").modal("hide");
+    }
 	function ucwords(str) {
 		return (str + '').replace(/^([a-z])|\s+([a-z])/g, function($1) {
 			return $1.toUpperCase();
@@ -298,7 +301,7 @@
 					</div>
 					<div class="col-lg-1"
 						style="float: right; margin: 1%; margin-left: -4%;">
-						<button type="button" id="shareButton"
+						<button type="button" id="shareButton" onclick="shareModal();"
 							class="addEventButton btn btn-default btn-number"
 							data-type="plus" data-field="quant[1]">
 							<span class="glyphicon glyphicon-share"></span> Share
@@ -684,7 +687,7 @@
 						</div>
 						<br />
 						<button type="button" id="hotLineSaveButton"
-							onClick="weatherSave();" class="btn btn-success btn-block">
+							onClick="hideShare();" class="btn btn-success btn-block">
 							<span class="glyphicon glyphicon-share"></span> Share Predictions
 						</button>
 					</form>
