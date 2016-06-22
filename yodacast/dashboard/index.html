@@ -137,6 +137,7 @@
     }
     
     function comparePred(){
+        compareYoda();
         $('html, body').animate({
             scrollTop: $("#reportrange").offset().top
         }, 1000);
@@ -488,7 +489,7 @@
 									style="margin: 1%; margin-left: 57%; margin-top: -5%;">
 									<button type="button" id="comparePredictions"
 										class="addEventButton btn btn-default btn-number"
-										onclick="compareYoda();" data-type="plus"
+										onclick="comparePred();" data-type="plus"
 										data-field="quant[1]">
 										<span class="glyphicon glyphicon-plus"></span>Compare
 										predictions with actual data
