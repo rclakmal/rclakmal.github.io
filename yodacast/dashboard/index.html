@@ -131,7 +131,9 @@
 	}
 
     function seeKPI(){
-        $('#kpiPanelRow').scrollIntoView();
+        $('html, body').animate({
+            scrollTop: $("#kpiPanelRow").offset().top
+        }, 1000);
     }
     
     function seePrediction(){
