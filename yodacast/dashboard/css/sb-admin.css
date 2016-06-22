@@ -642,5 +642,12 @@ canvas {
 }
 
 .modal-dialog {
-	width: 40%;
+	width: 65%;
+	height: auto !important;
+}
+
+.img-responsive {
+	display:block;
+	height:400px;
+	width:100%;
 }
