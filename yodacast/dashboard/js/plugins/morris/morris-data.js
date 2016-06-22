@@ -4093,7 +4093,7 @@ function compareYoda() {
         xLabelFormat : function(d) {
             return '';
         },
-        lineColors : [ '#424242', '#7cc359', '#7cc359', '#7cc359' ]
+        lineColors : [ '#424242', 'red', '#7cc359', '#7cc359' ]
     });
 }
 
