@@ -136,6 +136,12 @@
         }, 1000);
     }
     
+    function comparePred(){
+        $('html, body').animate({
+            scrollTop: $("#reportrange").offset().top
+        }, 1000);
+    }
+    
     function seePrediction(){
         $('html, body').animate({
             scrollTop: $("#reportrange").offset().top
@@ -479,11 +485,13 @@
 									</div>
 								</div>
 								<div class="col-lg-1"
-									style="margin: 1%; margin-left: 57%;margin-top: -5%;">
-									<button type="button" id="addNewEvent"
+									style="margin: 1%; margin-left: 57%; margin-top: -5%;">
+									<button type="button" id="comparePredictions"
 										class="addEventButton btn btn-default btn-number"
-										data-type="plus" data-field="quant[1]">
-										<span class="glyphicon glyphicon-plus"></span>Compare predictions with actual data
+										onclick="comparePred();" data-type="plus"
+										data-field="quant[1]">
+										<span class="glyphicon glyphicon-plus"></span>Compare
+										predictions with actual data
 									</button>
 								</div>
 							</div>
