@@ -600,7 +600,7 @@ body {
 
 .dialTitle {
 	font-size: 22px;
-	font-weight:bold;
+	font-weight: bold;
 	margin-left: -7px;
 }
 
@@ -649,11 +649,15 @@ canvas {
 }
 
 .img-responsive {
-	display:block;
-	height:400px;
-	width:100%;
+	display: block;
+	height: 400px;
+	width: 100%;
 }
 
-.form-control{
-	font-size : 18px !important;
+.form-control {
+	font-size: 18px !important;
+}
+
+.dropdown-toggle {
+	font-size: 18px !important;
 }
