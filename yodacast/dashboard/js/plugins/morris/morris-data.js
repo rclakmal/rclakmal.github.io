@@ -4134,7 +4134,7 @@ function drawFirstYoda(event) {
         xLabelFormat : function(d) {
             return '';
         },
-        lineColors : [ '#424242', 'red', '#7cc359', '#7cc359' ]
+        lineColors : [ '#424242', '#00992B', '#7cc359', '#7cc359' ]
     });
 }
 
