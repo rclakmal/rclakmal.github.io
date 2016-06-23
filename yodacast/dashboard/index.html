@@ -110,7 +110,12 @@
 		});
 		
 		$("#callVolumeTitle").click(function() {
-            $.notify("System updated weather information for the weekend. Click here to preview prediction changes", "info");
+		    $(".ui-notification-container").notification();
+            $(".ui-notification-container").notification("create", {
+                title: "Hello world!",
+                content: "I am a default notification"
+            });
+            return false;
         });
 	});
 
@@ -332,6 +337,7 @@
 							<i class="fa fa-bar-chart-o fa-fw"></i> Call Volume Prediction
 						</h3>
 					</div>
+					<div class="ui-notification-container"></div>
 				</div>
 				<!-- /.row -->
                                 <div id="buttonRow" class="infoRowChart row">
