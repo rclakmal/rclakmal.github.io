@@ -218,10 +218,10 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 header {
-    background: url(../img/header-bgnew.jpg) no-repeat center top;
+    background: url(../img/header-bgnew1.jpg) no-repeat center top;
     background-repeat: none;
     background-attachment: scroll;
-    background-position: center;
+    //background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -250,8 +250,8 @@ header .intro-text .intro-heading {
 }
 @media (min-width: 768px) {
     header .intro-text {
-        padding-top: 300px;
-        padding-bottom: 200px
+        padding-top: 700px;
+        padding-bottom: 100px
     }
     header .intro-text .intro-lead-in {
         font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
