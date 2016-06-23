@@ -113,16 +113,16 @@
 	});
 
 	$(document).ready(function() {
-        alertify.alert("This is an alert dialog.", function(){
-            alertify.message('OK');
-       });
+
 		$(".durationButtonClass").click(function() {
 			console.log("Clicked" + $(this).text());
 			updateTable($(this).text());
 		});
 		
 		$("#callVolumeTitle").click(function() {
-
+             bootbox.confirm("System updated weather information for weekend. Do you like preview prediction changes?", function(result) {
+                     Example.show("Confirm result: "+result);
+            }); 
 	   });    
     });  
     
