@@ -6,7 +6,7 @@ body {
     color: #777
 }
 .text-primary {
-    color: #7CC359
+    color: #7cc359 
 }
 p {
     font-size: 14px;
@@ -23,13 +23,13 @@ a.active {
     outline: 0
 }
 a {
-    color: #7CC359
+    color: #7cc359 
 }
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #7CC359
+    color: #7cc359 
 }
 h1,
 h2,
@@ -52,8 +52,8 @@ h6 {
 }
 .btn-primary {
     color: #fff;
-    background-color: #7CC359 ;
-    border-color: #7CC359 ;
+    background-color: #7cc359  ;
+    border-color: #7cc359  ;
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700
@@ -64,7 +64,7 @@ h6 {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #7CC359 ;
+    background-color: #7cc359  ;
     border-color: #f6bf01
 }
 .btn-primary:active,
@@ -87,17 +87,17 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-    background-color: #7CC359 ;
-    border-color: #7CC359
+    background-color: #7cc359  ;
+    border-color: #7cc359 
 }
 .btn-primary .badge {
-    color: #7CC359 ;
+    color: #7cc359  ;
     background-color: #fff
 }
 .btn-xl {
     color: #fff;
-    background-color: #7CC359 ;
-    border-color: #7CC359 ;
+    background-color: #7cc359  ;
+    border-color: #7cc359  ;
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
@@ -111,7 +111,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
     color: #fff;
-    background-color: #7CC359 ;
+    background-color: #7cc359  ;
     border-color: #f6bf01
 }
 .btn-xl:active,
@@ -134,11 +134,11 @@ fieldset[disabled] .btn-xl:active,
 .btn-xl.disabled.active,
 .btn-xl[disabled].active,
 fieldset[disabled] .btn-xl.active {
-    background-color: #7CC359 ;
-    border-color: #7CC359
+    background-color: #7cc359  ;
+    border-color: #7cc359 
 }
 .btn-xl .badge {
-    color: #7CC359 ;
+    color: #7cc359  ;
     background-color: #fff
 }
 .navbar-default {
@@ -146,28 +146,28 @@ fieldset[disabled] .btn-xl.active {
     border-color: transparent
 }
 .navbar-default .navbar-brand {
-    color: #7CC359 ;
+    color: #7cc359  ;
     font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: #7CC359
+    color: #7cc359 
 }
 .navbar-default .navbar-collapse {
     border-color: rgba(255, 255, 255, .02)
 }
 .navbar-default .navbar-toggle {
-    background-color: #7CC359 ;
-    border-color: #7CC359
+    background-color: #7cc359  ;
+    border-color: #7cc359 
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #7CC359
+    background-color: #7cc359 
 }
 .navbar-default .nav li a {
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -178,18 +178,18 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
-    color: #7CC359 ;
+    color: #7cc359  ;
     outline: 0
 }
 .navbar-default .navbar-nav>.active>a {
     border-radius: 0;
     color: #fff;
-    background-color: #7CC359
+    background-color: #7cc359 
 }
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     color: #fff;
-    background-color: #7CC359
+    background-color: #7cc359 
 }
 @media (min-width: 768px) {
     .navbar-default {
@@ -218,10 +218,9 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 header {
-    background: url(../img/header-bgnew.jpg) no-repeat center top;
+    background: url(../img/header-bgnew1.jpg) no-repeat center top;
     background-repeat: none;
     background-attachment: scroll;
-    background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -250,8 +249,8 @@ header .intro-text .intro-heading {
 }
 @media (min-width: 768px) {
     header .intro-text {
-        padding-top: 300px;
-        padding-bottom: 200px
+        padding-top: 700px;
+        padding-bottom: 100px
     }
     header .intro-text .intro-lead-in {
         font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -413,7 +412,7 @@ section h3.section-subheading {
     height: 80px;
     position: absolute;
     z-index: 100;
-    background-color: #7CC359 ;
+    background-color: #7cc359  ;
     color: #fff;
     border-radius: 100%;
     border: 7px solid #f1f1f1;
@@ -568,7 +567,7 @@ section#contact .form-group textarea.form-control {
     height: 236px
 }
 section#contact .form-control:focus {
-    border-color: #7CC359 ;
+    border-color: #7cc359  ;
     box-shadow: none
 }
 section#contact::-webkit-input-placeholder {
@@ -635,7 +634,7 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: #7CC359
+    background-color: #7cc359 
 }
 .btn:focus,
 .btn:active,
@@ -710,11 +709,11 @@ ul.social-buttons li a:active {
 }
 ::-moz-selection {
     text-shadow: none;
-    background: #7CC359
+    background: #7cc359 
 }
 ::selection {
     text-shadow: none;
-    background: #7CC359
+    background: #7cc359 
 }
 img::selection {
     background: 0 0
@@ -723,7 +722,7 @@ img::-moz-selection {
     background: 0 0
 }
 body {
-    webkit-tap-highlight-color: #7CC359
+    webkit-tap-highlight-color: #7cc359 
 }
 .secondrow {
     float: right;
