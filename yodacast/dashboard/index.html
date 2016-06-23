@@ -315,6 +315,14 @@
 				<!-- /.row -->
 
 				<div id="buttonRow" class="infoRowChart row">
+					<div class="col-lg-1" style="float: right; margin: 1%;">
+						<button onclick="weatherButtonSave();" type="button"
+							id="comparePredictions"
+							class="addEventButton btn btn-default btn-number"
+							data-type="refresh" data-field="quant[1]">
+							<span class="glyphicon glyphicon-refresh"></span> Compare Predictions
+						</button>
+					</div>
 					<div class="col-lg-1"
 						style="float: right; margin: 1%; margin-left: -4%;">
 						<button type="button" id="shareButton" onclick="shareModal();"
