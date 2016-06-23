@@ -4132,10 +4132,6 @@ function drawFirstYoda(event) {
         eventStrokeWidth : 2,
         eventLineColors : [ '#000000' ],
         xLabels : "day",
-        hoverCallback : function(index, options, content) {
-            var data = options.data[index];
-            $(".morris-hover").html('<div> Prediction: ' + data.label + '</div>');
-        },
         xLabelFormat : function(d) {
             return '';
         },
