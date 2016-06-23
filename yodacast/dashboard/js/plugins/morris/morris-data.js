@@ -4095,6 +4095,8 @@ function compareYoda() {
         },
         lineColors : [ '#424242', '46C31F', '#7cc359', '#7cc359' ]
     });
+    
+    console.log("compare drawn");
 }
 
 function drawFirstYoda(event) {
