@@ -96,7 +96,9 @@
 			readOnly : true,
 			width : "45px",
 			format : function(value) {
-				return value + '%';
+				value =  value + '%';
+				console.log("yes"+value);
+				return value;
 			}
 		});
 
