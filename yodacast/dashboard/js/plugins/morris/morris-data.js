@@ -4126,16 +4126,20 @@ function drawFirstYoda(event) {
         parseTime : false,
         hideHover : 'auto',
         lineWidth : 7,
-        gridTextSize: 24,
+        gridTextSize : 24,
         resize : true,
         events : [ 190 ],
         eventStrokeWidth : 2,
         eventLineColors : [ '#000000' ],
         xLabels : "day",
+        hoverCallback : function(index, options, content) {
+            var data = options.data[index];
+            $(".morris-hover").html('<div> Prediction: ' + data.label + '</div>');
+        },
         xLabelFormat : function(d) {
             return '';
         },
-        lineColors : [ '#424242', '#46C31F', '#7cc359', '#7cc359' ]
+        lineColors : [ '#424242', '#7cc359', '#7cc359', '#7cc359' ]
     });
 }
 
