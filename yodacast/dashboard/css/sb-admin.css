@@ -783,7 +783,7 @@ canvas {
 	margin-left:31%;
 	width:90%;
 	margin-top:2%;
-	font-size:24px;
+	font-size:20px;
 }
 
 .alertModal > div > div > div{
@@ -793,4 +793,5 @@ canvas {
 
 .modal-footer {
 	background-color:white !important;
+	padding-top:0%;
 }
