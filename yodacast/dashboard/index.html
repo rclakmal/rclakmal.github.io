@@ -44,6 +44,8 @@
 <script type="text/javascript" src="js/test.js"></script>
 <script type="text/javascript" src="js/knob.min.js"></script>
 <script type="text/javascript" src="js/scroll.js"></script>
+<script type="text/javascript"
+	src="js/noty/packaged/jquery.noty.packaged.min.js"></script>
 
 
 <script>
@@ -106,7 +108,15 @@
 		});
 		
 		$("#callVolumeTitle").click(function() {
-		  $("#weatherWarning").show();
+		  var n = noty({
+          text: 'The weather information for the weekend was updated.',
+        animation: {
+	        open: {height: 'toggle'}, // jQuery animate function property object
+	        close: {height: 'toggle'}, // jQuery animate function property object
+	        easing: 'swing', // easing
+	        speed: 500 // opening & closing animation speed
+	    }
+});
         });
 	});
 
@@ -311,7 +321,8 @@
 				<!-- /.row -->
 				<div id="callVolumeGraph" class="infoRowChart row">
 					<div class="col-lg-3">
-						<h3 id="callVolumeTitle" class="panel-title titlePanel mainTitlePanel">
+						<h3 id="callVolumeTitle"
+							class="panel-title titlePanel mainTitlePanel">
 							<i class="fa fa-bar-chart-o fa-fw"></i> Call Volume Prediction
 						</h3>
 					</div>
@@ -741,9 +752,11 @@
 
 		</div>
 	</div>
-	
-	<div id="weatherWarning" style="display:none;" class="alert alert-info">
-		<strong>Info!</strong> System updated with weather information for the weekend
+
+	<div id="weatherWarning" style="display: none;"
+		class="alert alert-info">
+		<strong>Info!</strong> System updated with weather information for the
+		weekend
 	</div>
 </body>
 
