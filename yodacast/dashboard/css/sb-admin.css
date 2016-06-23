@@ -648,8 +648,6 @@ canvas {
 
 .img-responsive {
 	display: block;
-	height: 400px;
-	width: 100%;
 }
 
 .form-control {
@@ -768,4 +766,33 @@ canvas {
 .ui-notification .ui-notification-close span {
     display: block;
     margin: 1px;
+}
+
+.bottom-right{
+	
+}
+
+.alertGen{
+	width:47% !important;
+	color: #424242;
+	font-size:24px;
+	background-color:#7cc359;
+	margin-left:54%;
+}
+
+.alertModal{
+	margin-left:31%;
+	width:90%;
+	margin-top:2%;
+	font-size:20px;
+}
+
+.alertModal > div > div > div{
+    background-color:#7cc329;
+    font-family:"Noto Sans", sans-serif";
+}
+
+.modal-footer {
+	background-color:white !important;
+	padding-top:0%;
 }
