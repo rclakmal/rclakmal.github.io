@@ -683,13 +683,13 @@ canvas {
 .notifyjs-foo-base .buttons {
 	width: 70px;
 	float: right;
-	font-size: 9px;
+	font-size: 18px;
 	padding: 5px;
 	margin: 2px;
 }
 
 .notifyjs-foo-base button {
-	font-size: 9px;
+	font-size: 18px;
 	padding: 5px;
 	margin: 2px;
 	width: 60px;
