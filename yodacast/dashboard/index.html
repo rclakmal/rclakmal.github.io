@@ -242,13 +242,14 @@
 			<ul class="nav navbar-right top-nav">
 				<li class="dropdown"><a onclick="seePrediction();" href="#"
 					class="dropdown-toggle" data-toggle="dropdown"><i
-						class="fa fa-bar-chart"></i> Predictions </a></li>
+
+						class="fa fa-bar-chart"></i>&nbsp;&nbsp;Predictions</a></li>
 				<li class="dropdown"><a onclick="seeKPI();" href="#"
 					class="dropdown-toggle" data-toggle="dropdown"><i
-						class="fa fa-tasks"></i> KPIs </a></li>
+						class="fa fa-tasks"></i>&nbsp;&nbsp;KPIs</a></li>
 				<li class="dropdown"><a onclick="seeHistory();" href="#"
 					class="dropdown-toggle" data-toggle="dropdown"><i
-						class="fa fa-history "></i> History </a></li>
+						class="fa fa-history "></i>&nbsp;&nbsp;History</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown"><i class="fa fa-envelope"></i> <b
 						class="caret"></b></a>
@@ -325,6 +326,20 @@
 						<h3 class="panel-title titlePanel mainTitlePanel">
 							<i class="fa fa-bar-chart-o fa-fw"></i> Call Volume Prediction
 						</h3>
+					</div>
+				</div>
+				<!-- /.row -->
+
+				<div id="buttonRow" class="infoRowChart row">
+					<div class="col-lg-2"
+						style="float: right; margin: 1%; margin-left: -6%;">
+						<button onclick="weatherButtonSave();" type="button"
+							id="comparePredictions"
+							class="addEventButton btn btn-default btn-number"
+							data-type="refresh" data-field="quant[1]">
+							<span class="glyphicon glyphicon-refresh"></span> Compare
+							Predictions
+						</button>
 					</div>
 					<div class="col-lg-1"
 						style="float: right; margin: 1%; margin-left: -4%;">
@@ -418,7 +433,7 @@
 					</div>
 					<div class="col-lg-2 axisX">
 						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i> <b>24/06,Fri <i>(Today)</i></b>
+							<i class=""></i> <b>24/06,Fri</b>
 						</h3>
 					</div>
 					<div class="col-lg-2 axisX">
@@ -464,17 +479,14 @@
 										</h3>
 									</div>
 									<div class="col-lg-3">
-										<h3 class="kpiTitle panel-title dialTitle">
+										<h3 class="kpiTitle panel-title dialTitle" style="margin-left: 0%;">
 											<i class=""></i> Accuracy
 										</h3>
-										<h3 class="kpiTitle panel-title dialTitle">
-											<i class=""></i> <br>
-										</h3>
-										<input type="text" value="80" class="radicalPro dial">
+										<input type="text" value="81" class="radicalPro dial">
 										<h3
-											style="font-size: 39px; color: #7cc359; margin: 15% 15% 15% 0%;"
+											style="font-size: 39px; color: #424242; margin: 15% 15% 15% 0%;"
 											class="kpiAbs kpiTitle panel-title dialTitle">
-											<i class=""></i> ±53
+											<i class=""></i> ± 53
 										</h3>
 									</div>
 									<div class="col-lg-3">
@@ -483,9 +495,9 @@
 										</h3>
 										<input type="text" value="30" class="radicalPro dial">
 										<h3
-											style="font-size: 39px; color: #7cc359; margin: 15% 15% 15% 0%;"
+											style="font-size: 39px; color: #424242; margin: 15% 15% 15% 0%;"
 											class=" kpiAbs kpiTitle panel-title dialTitle">
-											<i class=""></i> +37
+											<i class=""></i> + 37
 										</h3>
 									</div>
 									<div class="col-lg-3">
@@ -494,21 +506,11 @@
 										</h3>
 										<input type="text" value="14" class="radicalPro dial">
 										<h3
-											style="font-size: 39px; color: #7cc359; margin: 15% 15% 15% 0%;"
+											style="font-size: 39px; color: #424242; margin: 15% 15% 15% 0%;"
 											class="kpiAbs kpiTitle panel-title dialTitle">
-											<i class=""></i> -66
+											<i class=""></i> - 66
 										</h3>
 									</div>
-								</div>
-								<div class="col-lg-6"
-									style="margin: 1%; margin-left: 15%; margin-top: -5%;">
-									<button type="button" id="comparePredictions"
-										class="addEventButton btn btn-default btn-number"
-										onclick="comparePred();" data-type="plus"
-										data-field="quant[1]">
-										<span class="glyphicon glyphicon-plus"></span>Compare
-										predictions with actual data
-									</button>
 								</div>
 							</div>
 						</div>
@@ -652,7 +654,7 @@
 							</script>
 						</div>
 						<button id="eventSaveButton" onClick="eventSave();" type="button"
-							class="btnSave btn btn-success btn-block">
+							class="btnModal btnSave btn btn-success btn-block">
 							<span class="glyphicon glyphicon-off"></span> Save
 						</button>
 					</form>
@@ -675,7 +677,7 @@
 						Preview: Sport Event
 					</h4>
 				</div>
-				<div class="modal-body" style="padding: 40px 50px;">
+				<div class="modal-body" style="padding: 53px 50px;">
 					<form role="form">
 						<div class="panel panelMain panel-default ">
 							<div class="panel-body">
@@ -690,15 +692,15 @@
 								<button type="button" id="hotLineSaveButton"
 									onClick="footballSave();"
 									style="margin-left: -25%; width: 99%;"
-									class="btn btn-success btn-block">
+									class="btnModal btn btn-success btn-block">
 									<span class="glyphicon glyphicon-ok"></span> Accept Changes
 								</button>
 							</div>
 							<div class="col-lg-4">
 								<button type="button" id="hotLineSaveButton"
 									onClick="hideFootPredict();"
-									style="margin-left: -66%; width: 130%; background-color: #424242; color: white;"
-									class="btn btn-normal btn-block">
+									style="margin-left: 60%; width: 38%; margin-top: -48px; background-color: #424242; color: white;"
+									class="btnModal btn btn-normal btn-block">
 									<span class="glyphicon glyphicon-remove"></span> Cancel
 								</button>
 							</div>
@@ -720,8 +722,8 @@
 				<div class="modal-header" style="padding: 35px 50px;">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4>
-						<span class="glyphicon glyphicon-tint"></span> View Prediction
-						Changes with Weather
+						<span class="glyphicon glyphicon-tint"></span> Prediction Preview:
+						Weather
 					</h4>
 				</div>
 				<div class="modal-body" style="padding: 40px 50px;">
@@ -734,14 +736,15 @@
 							</div>
 						</div>
 						<button type="button" id="hotLineSaveButton"
-							onClick="weatherSave();" class="btn btn-success btn-block"
+							onClick="weatherSave();"
+							class="btnModal btn btn-success btn-block"
 							style="margin-left: 0%; width: 59%;">
 							<span class="glyphicon glyphicon-ok"></span> Accept Changes
 						</button>
 						<button type="button" id="hotLineSaveButton"
 							onClick="hideWeatherModal();"
-							style="margin-left: 60%; width: 38%; margin-top: -4%; background-color: #424242; color: white;"
-							class="btn btn-normal btn-block">
+							style="margin-left: 60%; width: 38%; margin-top: -48px; background-color: #424242; color: white;"
+							class="btnModal btn btn-normal btn-block">
 							<span class="glyphicon glyphicon-remove"></span> Cancel
 						</button>
 					</form>
@@ -774,7 +777,7 @@
 						</div>
 						<br />
 						<button type="button" id="hotLineSaveButton"
-							onClick="hideShare();" class="btn btn-success btn-block">
+							onClick="hideShare();" class="btnModal btn btn-success btn-block">
 							<span class="glyphicon glyphicon-share"></span> Share Predictions
 						</button>
 					</form>
