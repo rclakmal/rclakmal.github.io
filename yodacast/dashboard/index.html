@@ -124,7 +124,9 @@
 				    size: 'large',
 				    message: "System updated weather information for weekend. Do you like preview prediction changes?",
 				    className:"alertModal",
-				    callback: function(result){ /* your callback code */ }
+				    callback: function(result){ 
+				        $("#weatherModal").modal();
+				    }
               })
 
 	   });    
