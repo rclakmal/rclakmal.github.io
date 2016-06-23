@@ -119,7 +119,9 @@
 		});
 		
 		$("#callVolumeTitle").click(function() {
-                $("#success-alert").alert();
+            alertify.alert("This is an alert dialog.", function(){
+                 alertify.message('OK');
+            });
 	   });    
     });  
     
