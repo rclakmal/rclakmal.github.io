@@ -120,9 +120,12 @@
 		});
 		
 		$("#callVolumeTitle").click(function() {
-             bootbox.confirm("System updated weather information for weekend. Do you like preview prediction changes?", function(result) {
-                     Example.show("Confirm result: "+result);
-            }); 
+		      bootbox.alert({ 
+				    size: 'large',
+				    message: "System updated weather information for weekend. Do you like preview prediction changes?",
+				    className:"alertModal"
+              })
+
 	   });    
     });  
     
