@@ -277,7 +277,6 @@ div.clickable a {
 }
 
 .reportrange {
-	margin-top: -10px;
 	font-size: 18px;
 	width: 85% !important;
 }
@@ -327,8 +326,6 @@ div.clickable a {
 
 .dateSelector {
 	margin-right: -7%;
-	float: right;
-	margin-top: 4px;
 }
 
 .infoRowChart {
@@ -369,10 +366,7 @@ div.clickable a {
 }
 
 .addEventButton {
-	float: right;
-	margin-top: -12px;
 	font-size: 18px;
-	margin-right: 15px;
 	background-color: #7cc359;
 }
 
