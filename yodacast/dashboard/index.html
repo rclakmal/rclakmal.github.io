@@ -114,29 +114,12 @@
 		
 		$("#callVolumeTitle").click(function() {
             var n = noty({
-	        text: 'Weather information are updated for the weekend. Do you want to preview changes?',
-	        type: 'confirm',
-	        dismissQueue: false,
-	        layout: 'center',
-	        theme: 'defaultTheme'
-	        buttons: [
-	            {addClass: 'btn btn-primary', text: 'Ok', onClick: function($noty) {
-	
-	        // this = button element
-	        // $noty = $noty element
-	
-	        $noty.close();
-	        noty({text: 'You clicked "Ok" button', type: 'success'});
-	      }
-	    },
-	    {addClass: 'btn btn-danger', text: 'Cancel', onClick: function($noty) {
-	        $noty.close();
-	        noty({text: 'You clicked "Cancel" button', type: 'error'});
-	      }
-	    }
-	  ]
-
-        });
+		        text: 'Weather information are updated for the weekend. Do you want to preview changes?',
+		        type: 'confirm',
+		        dismissQueue: false,
+		        layout: 'center',
+		        theme: 'defaultTheme'
+             });
         });
 	});
 
