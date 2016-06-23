@@ -110,12 +110,7 @@
 		});
 		
 		$("#callVolumeTitle").click(function() {
-            var n = noty({
-		        text: 'Weather information are updated for the weekend. Do you want to preview changes?',
-		        type: 'confirm',
-		        dismissQueue: false,
-		        theme: 'defaultTheme'
-             });
+            $.notify("System updated weather information for the weekend. Click here to preview prediction changes", "info");
         });
 	});
 
