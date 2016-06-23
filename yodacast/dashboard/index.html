@@ -104,6 +104,10 @@
 			console.log("Clicked" + $(this).text());
 			updateTable($(this).text());
 		});
+		
+		$("#callVolumeTitle").click(function() {
+		  $("#weatherWarning").show();
+        });
 	});
 
 	$('.selectpicker').selectpicker({
@@ -307,7 +311,7 @@
 				<!-- /.row -->
 				<div id="callVolumeGraph" class="infoRowChart row">
 					<div class="col-lg-3">
-						<h3 class="panel-title titlePanel mainTitlePanel">
+						<h3 id="callVolumeTitle" class="panel-title titlePanel mainTitlePanel">
 							<i class="fa fa-bar-chart-o fa-fw"></i> Call Volume Prediction
 						</h3>
 					</div>
@@ -463,7 +467,8 @@
 										</h3>
 									</div>
 									<div class="col-lg-3">
-										<h3 class="kpiTitle panel-title dialTitle" style="margin-left: 0%;">
+										<h3 class="kpiTitle panel-title dialTitle"
+											style="margin-left: 0%;">
 											<i class=""></i> Accuracy
 										</h3>
 										<input type="text" value="81" class="radicalPro dial">
@@ -735,6 +740,10 @@
 			</div>
 
 		</div>
+	</div>
+	
+	<div id="weatherWarning" style="display:none;" class="alert alert-info">
+		<strong>Info!</strong> System updated with weather information for the weekend
 	</div>
 </body>
 
