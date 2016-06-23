@@ -648,8 +648,6 @@ canvas {
 
 .img-responsive {
 	display: block;
-	height: 480px;
-	width: 100%;
 }
 
 .form-control {
