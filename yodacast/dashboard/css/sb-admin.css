@@ -772,3 +772,8 @@ canvas {
 .bottom-right{
 	
 }
+
+.alertGen{
+	width:10% !important;
+	color: #7cc359;
+}
