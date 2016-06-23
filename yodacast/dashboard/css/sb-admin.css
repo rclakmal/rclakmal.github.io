@@ -782,5 +782,12 @@ canvas {
 }
 
 .alertModal{
-	
+	margin-left:31%;
+	width:90%;
+	margin-top:2%;
+	font-size:24px;
+}
+
+.alertModal > div > div > div{
+    background-color:#7cc329
 }
