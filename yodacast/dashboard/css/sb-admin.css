@@ -774,7 +774,9 @@ canvas {
 }
 
 .alertGen{
-	width:10% !important;
-	color: #7cc359;
+	width:47% !important;
+	color: #424242;
 	font-size:24px;
+	background-color:#7cc359;
+	margin-left:54%;
 }
