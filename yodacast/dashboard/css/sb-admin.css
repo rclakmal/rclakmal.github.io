@@ -789,7 +789,8 @@ canvas {
 }
 
 .alertModal > div > div > div{
-    background-color:#7cc329
+    background-color:#7cc329;
+    font-family:"Noto Sans", sans-serif";
 }
 
 .modal-footer {
