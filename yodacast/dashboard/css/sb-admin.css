@@ -43,7 +43,7 @@ body {
 /* Top Navigation */
 .top-nav {
 	padding: 0 15px;
-	font-size: 20px;
+	font-size: 23px;
 }
 
 .top-nav>li {
@@ -659,5 +659,5 @@ canvas {
 }
 
 .dropdown-toggle {
-	font-size: 18px !important;
+	font-size: 23px !important;
 }
