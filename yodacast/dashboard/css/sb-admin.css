@@ -376,7 +376,7 @@ div.clickable a {
 
 .list-group {
 	width: 100%;
-	font-size:25px;
+	font-size: 25px;
 }
 
 .emptyRow {
@@ -598,8 +598,8 @@ body {
 }
 
 .titleKPI {
-    font-size: 25px;
-    margin-left: -51px;
+	font-size: 25px;
+	margin-left: -51px;
 }
 
 .panel-title {
@@ -614,7 +614,7 @@ body {
 	
 }
 
-.kpiAbs { 
+.kpiAbs {
 	margin-top: 28% !important;
 }
 
@@ -663,4 +663,34 @@ canvas {
 .btnModal {
 	font-size: 24px !important;
 	color: #424242;
+}
+
+.notifyjs-foo-base {
+	opacity: 0.85;
+	width: 200px;
+	background: #F5F5F5;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.notifyjs-foo-base .title {
+	width: 100px;
+	float: left;
+	margin: 10px 0 0 10px;
+	text-align: right;
+}
+
+.notifyjs-foo-base .buttons {
+	width: 70px;
+	float: right;
+	font-size: 9px;
+	padding: 5px;
+	margin: 2px;
+}
+
+.notifyjs-foo-base button {
+	font-size: 9px;
+	padding: 5px;
+	margin: 2px;
+	width: 60px;
 }
