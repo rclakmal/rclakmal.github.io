@@ -582,7 +582,7 @@ body {
 
 .radicalPro {
 	margin-top: 20% !important;
-	color:#424242 !important;
+	color: #424242 !important;
 }
 
 .kpipanel { .radicalPro
@@ -614,8 +614,8 @@ body {
 	
 }
 
-.kpiAbs {
-	
+.kpiAbs { 
+	margin-top: 28% !important;
 }
 
 canvas {
@@ -660,7 +660,7 @@ canvas {
 	font-size: 23px !important;
 }
 
-.btnModal{
-	font-size:24px !important;
+.btnModal {
+	font-size: 24px !important;
 	color: #424242;
 }
