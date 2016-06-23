@@ -4126,6 +4126,7 @@ function drawFirstYoda(event) {
         parseTime : false,
         hideHover : 'auto',
         lineWidth : 7,
+        gridTextSize: 20;
         resize : true,
         events : [ 182 ],
         eventStrokeWidth : 2,
