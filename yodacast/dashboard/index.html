@@ -16,7 +16,7 @@
 	href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.css" />
 <!-- Custom CSS -->
 <link href="css/sb-admin.css" rel="stylesheet">
-
+<link rel="stylesheet" type="text/css"	href="css/style.css" />
 <!-- Morris Charts CSS -->
 <link href="css/plugins/morris.css" rel="stylesheet">
 
@@ -201,6 +201,21 @@
 
 	function eventTypeOnChange() {
 		$('#eventName').text($('#eventType').val());
+                if($('#eventType').val() == "Sport Event"){
+                    $("#evt2").removeClass("invisible-drop-down");
+                }
+                else{
+                    $('#evt2').addClass("invisible-drop-down");
+                }
+	}
+        
+        function eventType2OnChange() {
+                if($('#eventType2').val() == "Soccer"){
+                    $("#evt3").removeClass("invisible-drop-down");
+                }
+                else{
+                    $('#evt3').addClass("invisible-drop-down");
+                }
 	}
 </script>
 </head>
@@ -227,13 +242,13 @@
 			<ul class="nav navbar-right top-nav">
 				<li class="dropdown"><a onclick="seePrediction();" href="#"
 					class="dropdown-toggle" data-toggle="dropdown"><i
-						class="fa fa-bar-chart"></i>Predictions</a></li>
+						class="fa fa-bar-chart"></i> Predictions </a></li>
 				<li class="dropdown"><a onclick="seeKPI();" href="#"
 					class="dropdown-toggle" data-toggle="dropdown"><i
-						class="fa fa-tasks"></i>KPIs</a></li>
+						class="fa fa-tasks"></i> KPIs </a></li>
 				<li class="dropdown"><a onclick="seeHistory();" href="#"
 					class="dropdown-toggle" data-toggle="dropdown"><i
-						class="fa fa-history "></i>History</a></li>
+						class="fa fa-history "></i> History </a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown"><i class="fa fa-envelope"></i> <b
 						class="caret"></b></a>
@@ -567,14 +582,14 @@
 				<div class="modal-header" style="padding: 35px 50px;">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4>
-						<span class="glyphicon glyphicon-calendar"></span> Add New Event
+						<span class="glyphicon glyphicon-star-empty"></span> Add New Event
 					</h4>
 				</div>
 				<div class="modal-body" style="padding: 40px 50px;">
 					<form role="form">
 						<div class="form-group">
 							<label for="eventType"><span
-								class="glyphicon glyphicon-calendar"></span>Event Type</label> <select
+								class="glyphicon glyphicon-star-empty"></span> Event Type</label> <select
 								id="eventType" onChange="eventTypeOnChange();"
 								class="form-control selectpicker" title="Choose Event Type"
 								style="font-size: 18px;">
@@ -584,22 +599,56 @@
 								<option>Sport Event</option>
 							</select>
 						</div>
+                                                <div class="form-group invisible-drop-down" id="evt2">
+							<select
+								id="eventType2" onChange="eventType2OnChange();"
+								class="form-control selectpicker" title="Choose Sport"
+								style="font-size: 18px;">
+								<option>Athletics</option>
+                                                                <option>Soccer</option> 
+								<option>Motor Sports</option>
+								<option>Winter Sports</option>
+								<option>Others</option>
+							</select>
+						</div>                                            
+                                                <div class="form-group invisible-drop-down" id="evt3">
+							<select
+								id="eventType3" onChange="eventType3OnChange();"
+								class="form-control selectpicker" title="Choose Match Category"
+								style="font-size: 18px;">
+								<option>Bundesliga</option>
+                                                                <option>Champions League</option>
+								<option>DFB - International Friendly</option>
+								<option>DFB - International Championship</option>
+								<option>Europa League</option>
+							</select>
+						</div>
 						<div class="form-group">
-							<label for="psw"><span class="glyphicon glyphicon-pencil"></span>Event
-								Name</label> <input type="text" class="form-control" id="eventName"
-								placeholder="Enter Unique Event Name">
+							<label for="psw"><span class="glyphicon glyphicon-pencil"></span> Description</label> <input type="text" class="form-control" id="eventName"
+								placeholder="Enter Event Description">
 						</div>
 
 						<div class="form-group">
 							<label for="eventDatePicker"><span
-								class="glyphicon glyphicon-hourglass"></span>Select Event
-								Duration</label> <input type="text" class="form-control"
+								class="glyphicon glyphicon-calendar"></span> Date</label> <input type="text" class="form-control"
+								name="daterange" id="eventDuration"
+								value="Click Here To Select The Date" />
+							<script>
+								$('input[name="daterange"]').daterangepicker();
+								$('input[name="daterange"]').val(
+										'Click Here To Select The Date');
+							</script>
+						</div>
+                                            
+                                                <div class="form-group">
+							<label for="eventDatePicker"><span
+								class="glyphicon glyphicon-time"></span> Time</label> <input type="text" class="form-control"
 								name="daterange" id="eventDuration"
 								value="Click Here To Select Duration" />
 							<script>
 								$('input[name="daterange"]').daterangepicker();
 								$('input[name="daterange"]').val(
-										'Click Here To Select Duration');
+										'Click Here To Select The Start Time');
 							</script>
 						</div>
 						<button id="eventSaveButton" onClick="eventSave();" type="button"
