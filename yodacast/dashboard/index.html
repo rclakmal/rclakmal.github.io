@@ -119,7 +119,13 @@
 		});
 		
 		$("#callVolumeTitle").click(function() {
-          alertify.success("Success notification");        
+          $.notify({
+         // options
+            message: 'Hello World' 
+           },{
+         // settings
+            type: 'danger'
+        });        
         });
 	});
 
