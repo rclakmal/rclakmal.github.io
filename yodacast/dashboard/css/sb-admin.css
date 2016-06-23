@@ -791,3 +791,7 @@ canvas {
 .alertModal > div > div > div{
     background-color:#7cc329
 }
+
+.modal-footer {
+	background-color:white !important;
+}
