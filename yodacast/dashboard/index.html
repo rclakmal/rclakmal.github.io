@@ -16,7 +16,7 @@
 	href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.css" />
 <!-- Custom CSS -->
 <link href="css/sb-admin.css" rel="stylesheet">
-
+<link rel="stylesheet" type="text/css"	href="css/style.css" />
 <!-- Morris Charts CSS -->
 <link href="css/plugins/morris.css" rel="stylesheet">
 
@@ -231,6 +231,21 @@
 
 	function eventTypeOnChange() {
 		$('#eventName').text($('#eventType').val());
+                if($('#eventType').val() == "Sport Event"){
+                    $("#evt2").removeClass("invisible-drop-down");
+                }
+                else{
+                    $('#evt2').addClass("invisible-drop-down");
+                }
+	}
+        
+        function eventType2OnChange() {
+                if($('#eventType2').val() == "Soccer"){
+                    $("#evt3").removeClass("invisible-drop-down");
+                }
+                else{
+                    $('#evt3').addClass("invisible-drop-down");
+                }
 	}
 </script>
 </head>
@@ -242,7 +257,7 @@
 		<!-- Navigation -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
+			<div class="navbar-header" style="padding-left: 10px">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target=".navbar-ex1-collapse">
 					<span class="sr-only">Toggle navigation</span> <span
@@ -257,6 +272,7 @@
 			<ul class="nav navbar-right top-nav">
 				<li class="dropdown"><a onclick="seePrediction();" href="#"
 					class="dropdown-toggle" data-toggle="dropdown"><i
+
 						class="fa fa-bar-chart"></i>&nbsp;&nbsp;Predictions</a></li>
 				<li class="dropdown"><a onclick="seeKPI();" href="#"
 					class="dropdown-toggle" data-toggle="dropdown"><i
@@ -344,11 +360,57 @@
 					</div>
 				</div>
 				<!-- /.row -->
+                                <div id="buttonRow" class="infoRowChart row">
+                                    <div class="dateSelector col-md-3">
+                                            <form role="form">
+                                                    <div class="form-group" style="margin-bottom: 0px;">
+                                                            <div id="reportrange" value="June 20, 2016 - June 27, 2016" class="pull-left reportrange"
+                                                                    style="background: #fff; float: left; margin-bottom: 20px; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                                                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                                                                    <span></span> <b class="caret"></b>
+                                                            </div>
+                                                            <script>
+                                                                    $(function() {
 
-				<div id="buttonRow" class="infoRowChart row">
-					<div class="col-lg-2"
-						style="float: right; margin: 1%; margin-left: -6%;">
-						<button onclick="weatherButtonSave();" type="button"
+                                                                            function cb(start, end) {
+                                                                                    $('#reportrange span')
+                                                                                                    .html(
+                                                                                                                    start
+                                                                                                                                    .format('MMMM D, YYYY')
+                                                                                                                                    + ' - '
+                                                                                                                                    + end
+                                                                                                                                                    .format('MMMM D, YYYY'));
+                                                                            }
+                                                                            cb(moment().subtract(4, 'days'),
+                                                                                            moment().add(4,'days'));
+
+                                                                            $('#reportrange').daterangepicker({
+
+                                                                            }, cb);
+
+                                                                    });
+                                                            </script>
+                                                    </div>
+                                            </form>
+                                    </div>
+                                        <div class="col-md-3 col-md-offset-4 text-right">
+						<button type="button" id="addNewEvent"
+							class="addEventButton btn btn-default btn-number"
+							data-type="plus" data-field="quant[1]">
+							<span class="glyphicon glyphicon-plus"></span> Add Event
+						</button>
+					</div>
+					
+					<div class="col-md-1 text-center">
+						<button type="button" id="shareButton" onclick="shareModal();"
+							class="addEventButton btn btn-default btn-number"
+							data-type="plus" data-field="quant[1]">
+							<span class="glyphicon glyphicon-share"></span> Share
+						</button>
+					</div>
+					
+					<div class="col-md-1 text-left">
+						<button onclick="" type="button"
 							id="comparePredictions"
 							class="addEventButton btn btn-default btn-number"
 							data-type="refresh" data-field="quant[1]">
@@ -356,64 +418,7 @@
 							Predictions
 						</button>
 					</div>
-					<div class="col-lg-1"
-						style="float: right; margin: 1%; margin-left: -4%;">
-						<button type="button" id="shareButton" onclick="shareModal();"
-							class="addEventButton btn btn-default btn-number"
-							data-type="plus" data-field="quant[1]">
-							<span class="glyphicon glyphicon-share"></span> Share
-						</button>
-					</div>
-					<div class="col-lg-1"
-						style="float: right; margin: 1%; margin-left: -2%;">
-						<button type="button" id="addNewEvent"
-							class="addEventButton btn btn-default btn-number"
-							data-type="plus" data-field="quant[1]">
-							<span class="glyphicon glyphicon-plus"></span> Add Event
-						</button>
-					</div>
-					<div class="col-lg-2" style="float: right; margin: 1%;">
-						<button onclick="weatherButtonSave();" type="button"
-							id="includeWeatherButton"
-							class="addEventButton btn btn-default btn-number"
-							data-type="refresh" data-field="quant[1]">
-							<span class="glyphicon glyphicon-refresh"></span> Update Weather
-						</button>
-					</div>
-
-					<div class="dateSelector col-lg-3" style="margin-right: -4%;">
-						<form role="form">
-							<div class="form-group">
-								<div id="reportrange" value="June 20, 2016 - June 27, 2016"
-									class="pull-right reportrange"
-									style="background: #fff; float: right; margin-bottom: 20px; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-									<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
-									<span></span> <b class="caret"></b>
-								</div>
-								<script>
-									$(function() {
-
-										function cb(start, end) {
-											$('#reportrange span')
-													.html(
-															start
-																	.format('MMMM D, YYYY')
-																	+ ' - '
-																	+ end
-																			.format('MMMM D, YYYY'));
-										}
-										cb(moment().subtract(4, 'days'),
-												moment().add(4,'days'));
-
-										$('#reportrange').daterangepicker({
-
-										}, cb);
-
-									});
-								</script>
-							</div>
-						</form>
-					</div>
+					
 				</div>
 				<div class="row"
 					style="float: right; padding: 0%; margin-bottom: 0%;"></div>
@@ -430,40 +435,40 @@
 					</div>
 
 				</div>
-				<div class="row" style="margin-bottom: 3%; padding-left: 10%;">
+				<div class="row" style="margin-bottom: 3%; padding-left: 10%; padding-right: 1.8%">
 					<div class="col-lg-2 axisX">
 						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i> <b>21/06,Tue </b>
+							<i class=""></i>21.06.2016
 						</h3>
 					</div>
 					<div class="col-lg-2 axisX">
 						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i> <b>22/06,Wed </b>
+							<i class=""></i>22.06.2016
 						</h3>
 					</div>
 					<div class="col-lg-2 axisX">
 						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i> <b>23/06,Thu </b>
+							<i class=""></i>23.06.2016
 						</h3>
 					</div>
 					<div class="col-lg-2 axisX">
 						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i> <b>24/06,Fri</b>
+                                                    <i class=""></i> <b>24.06.2016</b>
 						</h3>
 					</div>
 					<div class="col-lg-2 axisX">
 						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i> <b>25/06,Sat </b>
+							<i class=""></i> 25.06.2016
 						</h3>
 					</div>
 					<div class="col-lg-2 axisX">
 						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i><b>26/06,Sun </b>
+							<i class=""></i>26.06.2016
 						</h3>
 					</div>
 					<div class="col-lg-1">
 						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i><b>27/06,Mon </b>
+							<i class=""></i>27.06.2016
 						</h3>
 					</div>
 
@@ -599,14 +604,14 @@
 				<div class="modal-header" style="padding: 35px 50px;">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4>
-						<span class="glyphicon glyphicon-calendar"></span> Add New Event
+						<span class="glyphicon glyphicon-star-empty"></span> Add New Event
 					</h4>
 				</div>
 				<div class="modal-body" style="padding: 40px 50px;">
 					<form role="form">
 						<div class="form-group">
 							<label for="eventType"><span
-								class="glyphicon glyphicon-calendar"></span>Event Type</label> <select
+								class="glyphicon glyphicon-star-empty"></span> Event Type</label> <select
 								id="eventType" onChange="eventTypeOnChange();"
 								class="form-control selectpicker" title="Choose Event Type"
 								style="font-size: 18px;">
@@ -616,22 +621,56 @@
 								<option>Sport Event</option>
 							</select>
 						</div>
+                                                <div class="form-group invisible-drop-down" id="evt2">
+							<select
+								id="eventType2" onChange="eventType2OnChange();"
+								class="form-control selectpicker" title="Choose Sport"
+								style="font-size: 18px;">
+								<option>Athletics</option>
+                                                                <option>Soccer</option> 
+								<option>Motor Sports</option>
+								<option>Winter Sports</option>
+								<option>Others</option>
+							</select>
+						</div>                                            
+                                                <div class="form-group invisible-drop-down" id="evt3">
+							<select
+								id="eventType3" onChange="eventType3OnChange();"
+								class="form-control selectpicker" title="Choose Match Category"
+								style="font-size: 18px;">
+								<option>Bundesliga</option>
+                                                                <option>Champions League</option>
+								<option>DFB - International Friendly</option>
+								<option>DFB - International Championship</option>
+								<option>Europa League</option>
+							</select>
+						</div>
 						<div class="form-group">
-							<label for="psw"><span class="glyphicon glyphicon-pencil"></span>Event
-								Name</label> <input type="text" class="form-control" id="eventName"
-								placeholder="Enter Unique Event Name">
+							<label for="psw"><span class="glyphicon glyphicon-pencil"></span> Description</label> <input type="text" class="form-control" id="eventName"
+								placeholder="Enter Event Description">
 						</div>
 
 						<div class="form-group">
 							<label for="eventDatePicker"><span
-								class="glyphicon glyphicon-hourglass"></span>Select Event
-								Duration</label> <input type="text" class="form-control"
+								class="glyphicon glyphicon-calendar"></span> Date</label> <input type="text" class="form-control"
+								name="daterange" id="eventDuration"
+								value="Click Here To Select The Date" />
+							<script>
+								$('input[name="daterange"]').daterangepicker();
+								$('input[name="daterange"]').val(
+										'Click Here To Select The Date');
+							</script>
+						</div>
+                                            
+                                                <div class="form-group">
+							<label for="eventDatePicker"><span
+								class="glyphicon glyphicon-time"></span> Time</label> <input type="text" class="form-control"
 								name="daterange" id="eventDuration"
 								value="Click Here To Select Duration" />
 							<script>
 								$('input[name="daterange"]').daterangepicker();
 								$('input[name="daterange"]').val(
-										'Click Here To Select Duration');
+										'Click Here To Select The Start Time');
 							</script>
 						</div>
 						<button id="eventSaveButton" onClick="eventSave();" type="button"

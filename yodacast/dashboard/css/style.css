@@ -1,0 +1,21 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 23, 2016, 1:18:25 PM
+    Author     : hagen
+*/
+.dropdown-menu {
+  font-size: 18px;   
+}
+
+.invisible-drop-down {
+   display: none !important;
+}
+
+#callVolumeGraph {
+	margin-top: 30px !important;
+	margin-bottom: 25px;
+}
