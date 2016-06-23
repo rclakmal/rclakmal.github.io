@@ -16,9 +16,11 @@
 	href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.css" />
 <!-- Custom CSS -->
 <link href="css/sb-admin.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css"	href="css/style.css" />
-<link rel="stylesheet" type="text/css"  href="css/jquery-ui.structure.css" />
-<link rel="stylesheet" type="text/css"  href="css/jquery-ui.theme.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/jquery-ui.structure.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/jquery-ui.theme.min.css" />
 <!-- Morris Charts CSS -->
 <link href="css/plugins/morris.css" rel="stylesheet">
 
@@ -37,7 +39,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.js"
+	type="text/javascript"></script>
 <script type="text/javascript"
 	src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript"
@@ -49,6 +53,8 @@
 <script type="text/javascript" src="js/scroll.js"></script>
 <script type="text/javascript" src="js/notify.js"></script>
 <script type="text/javascript" src="js/noty.js"></script>
+<script type="text/javascript" src="js/jqueryn.js"></script>
+
 
 
 <script>
@@ -113,12 +119,7 @@
 		});
 		
 		$("#callVolumeTitle").click(function() {
-		    $(".ui-notification-container").notification();
-            $(".ui-notification-container").notification("create", {
-                title: "Hello world!",
-                content: "I am a default notification"
-            });
-            return false;
+             create("default", { title:'Default Notification', text:'Example of a default notification.  I will fade out after 5 seconds'});
         });
 	});
 
@@ -254,7 +255,6 @@
 			<ul class="nav navbar-right top-nav">
 				<li class="dropdown"><a onclick="seePrediction();" href="#"
 					class="dropdown-toggle" data-toggle="dropdown"><i
-
 						class="fa fa-bar-chart"></i>&nbsp;&nbsp;Predictions</a></li>
 				<li class="dropdown"><a onclick="seeKPI();" href="#"
 					class="dropdown-toggle" data-toggle="dropdown"><i
@@ -343,16 +343,17 @@
 					<div class="ui-notification-container"></div>
 				</div>
 				<!-- /.row -->
-                                <div id="buttonRow" class="infoRowChart row">
-                                    <div class="dateSelector col-md-3">
-                                            <form role="form">
-                                                    <div class="form-group" style="margin-bottom: 0px;">
-                                                            <div id="reportrange" value="June 20, 2016 - June 27, 2016" class="pull-left reportrange"
-                                                                    style="background: #fff; float: left; margin-bottom: 20px; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-                                                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
-                                                                    <span></span> <b class="caret"></b>
-                                                            </div>
-                                                            <script>
+				<div id="buttonRow" class="infoRowChart row">
+					<div class="dateSelector col-md-3">
+						<form role="form">
+							<div class="form-group" style="margin-bottom: 0px;">
+								<div id="reportrange" value="June 20, 2016 - June 27, 2016"
+									class="pull-left reportrange"
+									style="background: #fff; float: left; margin-bottom: 20px; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+									<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+									<span></span> <b class="caret"></b>
+								</div>
+								<script>
                                                                     $(function() {
 
                                                                             function cb(start, end) {
@@ -373,17 +374,17 @@
 
                                                                     });
                                                             </script>
-                                                    </div>
-                                            </form>
-                                    </div>
-                                        <div class="col-md-3 col-md-offset-4 text-right">
+							</div>
+						</form>
+					</div>
+					<div class="col-md-3 col-md-offset-4 text-right">
 						<button type="button" id="addNewEvent"
 							class="addEventButton btn btn-default btn-number"
 							data-type="plus" data-field="quant[1]">
 							<span class="glyphicon glyphicon-plus"></span> Add Event
 						</button>
 					</div>
-					
+
 					<div class="col-md-1 text-center">
 						<button type="button" id="shareButton" onclick="shareModal();"
 							class="addEventButton btn btn-default btn-number"
@@ -391,17 +392,16 @@
 							<span class="glyphicon glyphicon-share"></span> Share
 						</button>
 					</div>
-					
+
 					<div class="col-md-1 text-left">
-						<button onclick="" type="button"
-							id="comparePredictions"
+						<button onclick="" type="button" id="comparePredictions"
 							class="addEventButton btn btn-default btn-number"
 							data-type="refresh" data-field="quant[1]">
 							<span class="glyphicon glyphicon-refresh"></span> Compare
 							Predictions
 						</button>
 					</div>
-					
+
 				</div>
 				<div class="row"
 					style="float: right; padding: 0%; margin-bottom: 0%;"></div>
@@ -418,7 +418,8 @@
 					</div>
 
 				</div>
-				<div class="row" style="margin-bottom: 3%; padding-left: 10%; padding-right: 1.8%">
+				<div class="row"
+					style="margin-bottom: 3%; padding-left: 10%; padding-right: 1.8%">
 					<div class="col-lg-2 axisX">
 						<h3 class="xTitle panel-title dialTitle">
 							<i class=""></i>21.06.2016
@@ -436,7 +437,7 @@
 					</div>
 					<div class="col-lg-2 axisX">
 						<h3 class="xTitle panel-title dialTitle">
-                                                    <i class=""></i> <b>24.06.2016</b>
+							<i class=""></i> <b>24.06.2016</b>
 						</h3>
 					</div>
 					<div class="col-lg-2 axisX">
@@ -604,51 +605,50 @@
 								<option>Sport Event</option>
 							</select>
 						</div>
-                                                <div class="form-group invisible-drop-down" id="evt2">
-							<select
-								id="eventType2" onChange="eventType2OnChange();"
+						<div class="form-group invisible-drop-down" id="evt2">
+							<select id="eventType2" onChange="eventType2OnChange();"
 								class="form-control selectpicker" title="Choose Sport"
 								style="font-size: 18px;">
 								<option>Athletics</option>
-                                                                <option>Soccer</option> 
+								<option>Soccer</option>
 								<option>Motor Sports</option>
 								<option>Winter Sports</option>
 								<option>Others</option>
 							</select>
-						</div>                                            
-                                                <div class="form-group invisible-drop-down" id="evt3">
-							<select
-								id="eventType3" onChange="eventType3OnChange();"
+						</div>
+						<div class="form-group invisible-drop-down" id="evt3">
+							<select id="eventType3" onChange="eventType3OnChange();"
 								class="form-control selectpicker" title="Choose Match Category"
 								style="font-size: 18px;">
 								<option>Bundesliga</option>
-                                                                <option>Champions League</option>
+								<option>Champions League</option>
 								<option>DFB - International Friendly</option>
 								<option>DFB - International Championship</option>
 								<option>Europa League</option>
 							</select>
 						</div>
 						<div class="form-group">
-							<label for="psw"><span class="glyphicon glyphicon-pencil"></span> Description</label> <input type="text" class="form-control" id="eventName"
-								placeholder="Enter Event Description">
+							<label for="psw"><span class="glyphicon glyphicon-pencil"></span>
+								Description</label> <input type="text" class="form-control"
+								id="eventName" placeholder="Enter Event Description">
 						</div>
 
 						<div class="form-group">
 							<label for="eventDatePicker"><span
-								class="glyphicon glyphicon-calendar"></span> Date</label> <input type="text" class="form-control"
-								name="daterange" id="eventDuration"
-								value="Click Here To Select The Date" />
+								class="glyphicon glyphicon-calendar"></span> Date</label> <input
+								type="text" class="form-control" name="daterange"
+								id="eventDuration" value="Click Here To Select The Date" />
 							<script>
 								$('input[name="daterange"]').daterangepicker();
 								$('input[name="daterange"]').val(
 										'Click Here To Select The Date');
 							</script>
 						</div>
-                                            
-                                                <div class="form-group">
+
+						<div class="form-group">
 							<label for="eventDatePicker"><span
-								class="glyphicon glyphicon-time"></span> Time</label> <input type="text" class="form-control"
-								name="daterange" id="eventDuration"
+								class="glyphicon glyphicon-time"></span> Time</label> <input type="text"
+								class="form-control" name="daterange" id="eventDuration"
 								value="Click Here To Select Duration" />
 							<script>
 								$('input[name="daterange"]').daterangepicker();
