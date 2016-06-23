@@ -136,26 +136,26 @@
 
     function seeKPI(){
         $('html, body').animate({
-            scrollTop: $("#kpiPanelRow").offset().top
+            scrollTop: $("#kpiPanelRow").offset().top-$("#navi").outerHeight()-15
         }, 1000);
     }
     
     function comparePred(){
         compareYoda();
         $('html, body').animate({
-            scrollTop: $("#callVolumeGraph").offset().top
+            scrollTop: $("#callVolumeGraph").offset().top-$("#navi").outerHeight()-15
         }, 1000);
     }
     
     function seePrediction(){
         $('html, body').animate({
-            scrollTop: $("#callVolumeGraph").offset().top
+            scrollTop: $("#callVolumeGraph").offset().top-$("#navi").outerHeight()-15
         }, 1000);
     }
     
     function seeHistory(){
         $('html, body').animate({
-            scrollTop: $("#historyRow").offset().top
+            scrollTop: $("#historyRow").offset().top-$("#navi").outerHeight()-15
         }, 1000);
     }
     
@@ -229,7 +229,7 @@
 	<div id="wrapper">
 
 		<!-- Navigation -->
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="navi">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header" style="padding-left: 10px">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -367,7 +367,7 @@
                                                     </div>
                                             </form>
                                     </div>
-                                        <div class="col-md-3 col-md-offset-4 text-right">
+                                        <div class="col-md-3 col-md-offset-4 text-right action-button addevent-btn">
 						<button type="button" id="addNewEvent"
 							class="addEventButton btn btn-default btn-number"
 							data-type="plus" data-field="quant[1]">
@@ -375,7 +375,7 @@
 						</button>
 					</div>
 					
-					<div class="col-md-1 text-center">
+					<div class="col-md-1 text-center action-button share-btn">
 						<button type="button" id="shareButton" onclick="shareModal();"
 							class="addEventButton btn btn-default btn-number"
 							data-type="plus" data-field="quant[1]">
@@ -383,13 +383,12 @@
 						</button>
 					</div>
 					
-					<div class="col-md-1 text-left">
+					<div class="col-md-1 text-left action-button" >
 						<button onclick="" type="button"
 							id="comparePredictions"
 							class="addEventButton btn btn-default btn-number"
 							data-type="refresh" data-field="quant[1]">
 							<span class="glyphicon glyphicon-refresh"></span> Compare
-							Predictions
 						</button>
 					</div>
 					
