@@ -110,7 +110,13 @@
 		});
 		
 		$("#callVolumeTitle").click(function() {
-            $.notify("System updated weather information for the weekend. Click here to preview prediction changes", "info");
+            $.notify(
+            "System updated weather information for the weekend. Click here to preview prediction changes", 
+            "info",
+            {
+            showDuration: 4000,
+            }
+            );
         });
 	});
 
