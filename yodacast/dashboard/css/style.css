@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : hagen
 */
 .dropdown-menu {
-  font-size: 18px;   
+  font-size: 23px;   
 }
 
 .invisible-drop-down {
@@ -35,4 +35,8 @@ and open the template in the editor.
 
 .addevent-btn{
     width: 31%;
+}
+
+#datetimepicker {
+    margin-bottom: 25px;
 }

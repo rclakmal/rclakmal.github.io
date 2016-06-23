@@ -4128,7 +4128,7 @@ function drawFirstYoda(event) {
         lineWidth : 7,
         gridTextSize : 24,
         resize : true,
-        events : [ 185 ],
+        events : [ 184 ],
         eventStrokeWidth : 2,
         eventLineColors : [ '#000000' ],
         xLabels : "day",

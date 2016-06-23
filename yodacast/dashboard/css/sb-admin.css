@@ -653,7 +653,8 @@ canvas {
 }
 
 .form-control {
-	font-size: 18px !important;
+	font-size: 23px !important;
+        height: 46.8px;
 }
 
 .dropdown-toggle {

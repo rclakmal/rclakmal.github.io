@@ -28,6 +28,8 @@
 <link rel="stylesheet" type="text/css"
 	href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
+<link rel="stylesheet" href="css/bootstrap-datetimepicker.css" />
+
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -46,6 +48,9 @@
 <script type="text/javascript" src="js/scroll.js"></script>
 <script type="text/javascript" src="js/notify.js"></script>
 <script type="text/javascript" src="js/noty.js"></script>
+<script type="text/javascript" src="js/transition.js"></script>
+<script type="text/javascript" src="js/collapse.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
 
 
 <script>
@@ -141,26 +146,26 @@
 
     function seeKPI(){
         $('html, body').animate({
-            scrollTop: $("#kpiPanelRow").offset().top-$("#navi").outerHeight()-15
+            scrollTop: $("#kpiPanelRow").offset().top-$("#navi").outerHeight()-30
         }, 1000);
     }
     
     function comparePred(){
         compareYoda();
         $('html, body').animate({
-            scrollTop: $("#callVolumeGraph").offset().top-$("#navi").outerHeight()-15
+            scrollTop: $("#callVolumeGraph").offset().top-$("#navi").outerHeight()-30
         }, 1000);
     }
     
     function seePrediction(){
         $('html, body').animate({
-            scrollTop: $("#callVolumeGraph").offset().top-$("#navi").outerHeight()-15
+            scrollTop: $("#callVolumeGraph").offset().top-$("#navi").outerHeight()-30
         }, 1000);
     }
     
     function seeHistory(){
         $('html, body').animate({
-            scrollTop: $("#historyRow").offset().top-$("#navi").outerHeight()-15
+            scrollTop: $("#historyRow").offset().top-$("#navi").outerHeight()-30
         }, 1000);
     }
     
@@ -226,6 +231,7 @@
                     $('#evt3').addClass("invisible-drop-down");
                 }
 	}
+        
 </script>
 </head>
 
@@ -629,29 +635,26 @@
 								placeholder="Enter Event Description">
 						</div>
 
-						<div class="form-group">
-							<label for="eventDatePicker"><span
-								class="glyphicon glyphicon-calendar"></span> Date</label> <input type="text" class="form-control"
-								name="daterange" id="eventDuration"
-								value="Click Here To Select The Date" />
-							<script>
-								$('input[name="daterange"]').daterangepicker();
-								$('input[name="daterange"]').val(
-										'Click Here To Select The Date');
-							</script>
-						</div>
+                                                <label for="eventDatePicker">
+                                                    <span class="glyphicon glyphicon-time"></span> Time and Date</label> 
+                                                <input type='text' class="form-control" id='datetimepicker' value="Click Here to Select Time and Date" />
+                                                
+                                                <script type="text/javascript">
+                                                    $(function () {
+                                                        $('#datetimepicker').datetimepicker({
+                                                            widgetPositioning:{ 
+                                                                horizontal: 'right',
+                                                                vertical: 'bottom'
+                                                             },
+                                                             format: 'DD.MM.YYYY HH:mm',
+                                                             stepping: '15',
+                                                             toolbarPlacement: 'top',
+                                                             sideBySide: true,
+                                                             debug: false
+                                                        });
+                                                    });
+                                                </script>
                                             
-                                                <div class="form-group">
-							<label for="eventDatePicker"><span
-								class="glyphicon glyphicon-time"></span> Time</label> <input type="text" class="form-control"
-								name="daterange" id="eventDuration"
-								value="Click Here To Select Duration" />
-							<script>
-								$('input[name="daterange"]').daterangepicker();
-								$('input[name="daterange"]').val(
-										'Click Here To Select The Start Time');
-							</script>
-						</div>
 						<button id="eventSaveButton" onClick="eventSave();" type="button"
 							class="btnModal btnSave btn btn-success btn-block">
 							<span class="glyphicon glyphicon-off"></span> Save
@@ -681,7 +684,7 @@
 						<div class="panel panelMain panel-default ">
 							<div class="panel-body">
 								<div id="imagePanel">
-									<img src="img/football1.png" alt="" class="img-responsive" />
+									<img src="img/footballAndWeather.png" alt="" class="img-responsive" />
 								</div>
 							</div>
 						</div>
