@@ -119,16 +119,12 @@
 		});
 		
 		$("#callVolumeTitle").click(function() {
-          $.notify({
-         // options
-            message: 'Hello World' 
-           },{
-         // settings
-            type: 'danger',
-            delay: 50000,
-            });        
-          });
-	});
+          $('.bottom-right').notify({
+            message: {
+                text: 'Aw yeah, It works!'
+            }
+          }).show();
+	});    
 
 
 	$('#eventType').on('change', function() {
@@ -325,7 +321,7 @@
 			</ul>
 
 		</nav>
-
+		<div class='notifications bottom-right'></div>
 		<div id="page-wrapper">
 
 			<div class="container-fluid">
