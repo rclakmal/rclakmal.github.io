@@ -110,13 +110,12 @@
 		});
 		
 		$("#callVolumeTitle").click(function() {
-            $.notify(
-            "System updated weather information for the weekend. Click here to preview prediction changes", 
-            "info",
-            {
-            showDuration: 4000,
-            }
-            );
+            $.notify("Your class starts in 15min", {
+				  className:'info',
+				  clickToHide: true,
+				  autoHide: false,
+				  globalPosition: 'top right'
+				});
         });
 	});
 
