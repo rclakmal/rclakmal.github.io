@@ -1121,8 +1121,8 @@ function getUpdateChart(a, b, c, d) {
         "period" : 185,
         "Actual Call Volume" : 683,
         "Yodacast Predicted Volume" : 645,
-        "Yodacast Predicted Football" : 508,
-        "Yodacast Predicted Weather" : 508
+        "Yodacast Predicted Football" : 645,
+        "Yodacast Predicted Weather" : 645
     }, {
         "period" : 186,
         "Actual Call Volume" : null,
