@@ -6,7 +6,7 @@ var weeklyData;
 var dailyData;
 var hourlyData;
 var basicYodadata;
-var dateObject = new Date("June 21, 2016 16:00:00");
+var dateObject = new Date("June 18, 2016 16:00:00");
 var colorChoice = 4;
 var newDate;
 var lineColorsChoose = [ '#2B431F', '#43762A', '#761E74', '#C359C0', '#7CC359' ]
