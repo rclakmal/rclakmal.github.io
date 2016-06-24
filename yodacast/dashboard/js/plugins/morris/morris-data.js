@@ -4137,7 +4137,9 @@ function drawFirstYoda(event) {
         xLabelFormat : function(d) {
             return '';
         },
-
+        hoverCallback: function(index, options, content) {
+            return (content);
+        },
         lineColors : [ '#424242', '#7cc359', '#7cc359', '#7cc359' ]
     });
 }
