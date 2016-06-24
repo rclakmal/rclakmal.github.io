@@ -4248,5 +4248,5 @@ function updateTable(text) {
 
 $(document).ready(function() {
     $('#legend').hide();
-    drawFirstYoda("n");
+    drawFirstYoda("w");
 });
