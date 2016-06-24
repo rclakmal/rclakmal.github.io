@@ -90,13 +90,13 @@ body {
 
 ul.message-dropdown {
 	padding: 0;
-	max-height: 250px;
+	max-height: 300px;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
 
 li.message-preview {
-	width: 275px;
+	width: 675px;
 	border-bottom: 1px solid rgba(0, 0, 0, .15);
 }
 
