@@ -4115,7 +4115,8 @@ function drawFirstYoda(event) {
         mydata = getUpdateChart(true, true, false, false);
         mylabel = [ 'Actual Call Volume', 'Yodacast Predicted Volume', "", "" ];
     }
-
+    
+    var divValue = "<div class='morris-hover-row-label'></div><div class='morris-hover-point' style='color: #424242'>Hehe</div><div class='morris-hover-point' style='color: #7cc359'>Haha</div>";
     $("#morris-area-chart").empty();
     callChart = Morris.Line({
         element : 'morris-area-chart',
@@ -4138,9 +4139,9 @@ function drawFirstYoda(event) {
             return '';
         },
         hoverCallback: function(index, options, content) {
-            console.log(content);
-            return (content);
+            return (divValue);
         },
+        
         lineColors : [ '#424242', '#7cc359', '#7cc359', '#7cc359' ]
     });
 }
