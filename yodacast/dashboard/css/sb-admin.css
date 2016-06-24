@@ -36,7 +36,7 @@ body {
 		
 	}
 	#page-wrapper {
-		padding: 10px;
+		padding: 25px;
 	}
 }
 
@@ -602,7 +602,7 @@ body {
 }
 
 .panel-title {
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 }
 
 .kpirow {
