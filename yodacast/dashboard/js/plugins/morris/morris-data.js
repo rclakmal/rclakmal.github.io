@@ -4152,15 +4152,17 @@ function drawFirstYoda(event) {
             }
             if(data["Yodacast Predicted Volume"]){
                 predictedValue = data["Yodacast Predicted Volume"];
+                predString = "<div class='morris-hover-point' style='color: #7cc359'>PREDICTED #CALLS: "+predictedValue+"</div>";
             }
             if(data["Yodacast Predicted Football"]){
                 predictedValue = data["Yodacast Predicted Football"];
+                predString = "<div class='morris-hover-point' style='color: #7cc359'>PREDICTED #CALLS: "+predictedValue+"</div>";
             }
             if(data["Yodacast Predicted Weather"]){
                 predictedValue = data["Yodacast Predicted Weather"];
+                predString = "<div class='morris-hover-point' style='color: #7cc359'>PREDICTED #CALLS: "+predictedValue+"</div>";
             }
             
-            predString = "<div class='morris-hover-point' style='color: #7cc359'> PREDICTED #CALLS: "+predictedValue+"</div>";
 
             dateObject.setMinutes ( dateObject.getMinutes() + 30 );
             divValue = "<div class='morris-hover-row-label'></div>" +
