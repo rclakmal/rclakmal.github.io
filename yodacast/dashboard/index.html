@@ -195,9 +195,8 @@
 		var duration = $('#eventDuration').val();
 		var NoOfUsers = $('#eventEffectNo').val();
 		var d = new Date();
-		var currentTimeDate = d.toUTCString();
 		var newChild = $('<a class="list-group-item" href="#"><span class="badge">'
-				+ formatDate(currentTimeDate)
+				+ formatDate(d)
 				+ '</span> <i class="fa fa-fw fa-info"></i><b>'
 				+ currentUser
 				+ '</b> Included <b><i>'
