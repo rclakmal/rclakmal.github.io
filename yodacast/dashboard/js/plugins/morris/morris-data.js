@@ -4138,6 +4138,7 @@ function drawFirstYoda(event) {
             return '';
         },
         hoverCallback: function(index, options, content) {
+            console.log(content);
             return (content);
         },
         lineColors : [ '#424242', '#7cc359', '#7cc359', '#7cc359' ]
