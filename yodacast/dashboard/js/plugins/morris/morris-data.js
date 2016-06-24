@@ -4137,6 +4137,10 @@ function drawFirstYoda(event) {
         xLabelFormat : function(d) {
             return '';
         },
+        hoverCallback: function(index, options, content) {
+            var data = options.data[index];
+              $(".morris-hover").html('<div>Actuall #Calls: ' + data["Actual Call Volume"] + '</div>');
+          },
         lineColors : [ '#424242', '#7cc359', '#7cc359', '#7cc359' ]
     });
 }
