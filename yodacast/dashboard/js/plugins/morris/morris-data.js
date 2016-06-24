@@ -6,6 +6,7 @@ var weeklyData;
 var dailyData;
 var hourlyData;
 var basicYodadata;
+var dateObject = new Date("June 21, 2016 00:00:00");
 var colorChoice = 4;
 var lineColorsChoose = [ '#2B431F', '#43762A', '#761E74', '#C359C0', '#7CC359' ]
 
@@ -3141,25 +3142,25 @@ function compareYoda() {
         "Yodacast Predicted Weather" : null
     }, {
         "period" : 182,
-        "Actual Call Volume" : null,
+        "Actual Call Volume" : 870,
         "Yodacast Predicted Volume" : null,
         "Yodacast Predicted Football" : 879,
         "Yodacast Predicted Weather" : null
     }, {
         "period" : 183,
-        "Actual Call Volume" : null,
+        "Actual Call Volume" : 755,
         "Yodacast Predicted Volume" : null,
         "Yodacast Predicted Football" : 761,
         "Yodacast Predicted Weather" : null
     }, {
         "period" : 184,
-        "Actual Call Volume" : null,
+        "Actual Call Volume" : 633,
         "Yodacast Predicted Volume" : null,
         "Yodacast Predicted Football" : 633,
         "Yodacast Predicted Weather" : null
     }, {
         "period" : 185,
-        "Actual Call Volume" : null,
+        "Actual Call Volume" : 508,
         "Yodacast Predicted Volume" : null,
         "Yodacast Predicted Football" : 508,
         "Yodacast Predicted Weather" : null
@@ -4084,9 +4085,9 @@ function compareYoda() {
         pointSize : 2,
         parseTime : false,
         hideHover : 'auto',
-        lineWidth : 4,
+        lineWidth : 7,
         resize : true,
-        events : [ 182 ],
+        events : [ 184 ],
         eventStrokeWidth : 2,
         eventLineColors : [ '#000000' ],
         xLabels : "day",
@@ -4095,6 +4096,8 @@ function compareYoda() {
         },
         lineColors : [ '#424242', '46C31F', '#7cc359', '#7cc359' ]
     });
+    
+    console.log("compare drawn");
 }
 
 function drawFirstYoda(event) {
@@ -4113,7 +4116,8 @@ function drawFirstYoda(event) {
         mydata = getUpdateChart(true, true, false, false);
         mylabel = [ 'Actual Call Volume', 'Yodacast Predicted Volume', "", "" ];
     }
-
+    
+    var divValue = "<div class='morris-hover-row-label'></div><div class='morris-hover-point' style='color: #424242'>Hehe</div><div class='morris-hover-point' style='color: #7cc359'>Haha</div>";
     $("#morris-area-chart").empty();
     callChart = Morris.Line({
         element : 'morris-area-chart',
@@ -4135,6 +4139,16 @@ function drawFirstYoda(event) {
         xLabelFormat : function(d) {
             return '';
         },
+        hoverCallback: function(index, options, content) {
+            var data = options.data[index];
+            console.log(data);
+            dateObject.setMinutes ( dateObject.getMinutes() + 30 );
+            divValue = "<div class='morris-hover-row-label'></div>" +
+            		"<div class='morris-hover-point' style='color: #424242'> Time: "+dateObject+"</div>" +
+            		"<div class='morris-hover-point' style='color: #7cc359'> Actual #Calls: "+data["Actual Call Volume"]+"</div>";
+            return (divValue);
+        },
+        
         lineColors : [ '#424242', '#7cc359', '#7cc359', '#7cc359' ]
     });
 }
