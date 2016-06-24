@@ -4164,10 +4164,10 @@ function drawFirstYoda(event) {
                 predString = "<div class='morris-hover-point' style='color: #7cc359'>Predicted #Calls: "+predictedValue+"</div>";
             }
             
-            var newDate = dateObject;
-            newDate.setMinutes(newDate.getMinutes() + 30*index );
+            dateObject.setMinutes(dateObject.getMinutes() + 30*index );
             divValue = "<div class='morris-hover-row-label'></div>" +
             		"<div class='morris-hover-point' style='color: black'>"+newDate.toString().substring(0,24)+"</div>" +realString+predString;
+            dateObject = new Date("June 18, 2016 16:00:00");
             return (divValue);
         },
         
