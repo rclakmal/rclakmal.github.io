@@ -279,43 +279,43 @@
 					class="dropdown-toggle" data-toggle="dropdown"><i
 						class="fa fa-history "></i>&nbsp;&nbsp;History</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown"><i class="fa fa-envelope"></i> <b
+					data-toggle="dropdown"><i class="fa fa-bell"></i> <b
 						class="caret"></b></a>
 					<ul class="dropdown-menu message-dropdown">
 						<li class="message-preview"><a href="#">
 								<div class="media">
-									<span class="pull-left"> <img class="media-object"
-										src="http://placehold.it/50x50" alt="">
+                                                                    <span class="pull-left"> <div><img class="media-object" style="width: 70px; float: left; margin-right: 20px;"
+										src="img/weather_720.png" alt="">
 									</span>
 									<div class="userLabel media-body">
-										<h5 class="media-heading">
-											<strong>Andreas</strong>
-										</h5>
-										<p class="small text-muted">
-											<i class="fa fa-clock-o"></i> Yesterday at 4:32 PM
+										<h3 class="media-heading">
+											<strong>Weather API</strong>
+										</h3>
+										<p class="small text-muted" style="margin-bottom: 20px;">
+											<i class="fa fa-clock-o"></i> 2 min ago
 										</p>
-										<p>Could you please send the forecast for next Sunday?</p>
-									</div>
+                                                                                
+                                                                        </div>
+                                                                    <div style="margin-left: 90px;">
+                                                                                <p >Updated weather information available.<br>Do you want to update your current session?</p>
+                                                                                <div style="margin-left: auto; margin-right: 15px; display: table; size:100%;"><button type="button" id="confirmWeather"
+                                                                                    class="addEventButton btn btn-default btn-number"
+                                                                                    data-type="plus" data-field="quant[1]" style="width: 100px;">
+                                                                                    <span class="glyphicon glyphicon-ok"></span> Yes
+                                                                                </button>
+                                                                                <button type="button" id="denyWeather" style="width: 100px; background-color: #424242; color: #7cc359;"
+                                                                                    class="addEventButton btn btn-default btn-number"
+                                                                                    data-type="plus" data-field="quant[1]">
+                                                                                    <span class="glyphicon glyphicon-remove"></span> No
+                                                                                </button>
+                                                                                </div>
+                                                                    </div>
+                                                                    </div>
 								</div>
 						</a></li>
-						<li class="message-preview"><a href="#">
-								<div class="media">
-									<span class="pull-left"> <img class="media-object"
-										src="http://placehold.it/50x50" alt="">
-									</span>
-									<div class="userLabel media-body">
-										<h5 class="media-heading">
-											<strong>David</strong>
-										</h5>
-										<p class="small text-muted">
-											<i class="fa fa-clock-o"></i> Yesterday at 2:32 PM
-										</p>
-										<p>Need an update on forecast for Wednesday</p>
-									</div>
-								</div>
-						</a></li>
-						<li class="message-footer"><a href="#">Read All New
-								Messages</a></li>
+						
+						<li class="message-footer" style="text-align: center;"><a href="#">Read archived
+								messages</a></li>
 					</ul></li>
 				<li class="dropdown"><a id="userLabel" class="userLabel"
 					href="#" class="dropdown-toggle" data-toggle="dropdown"><i
