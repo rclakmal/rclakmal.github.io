@@ -187,13 +187,13 @@
 		var newChild = $('<a class="list-group-item" href="#"><span class="badge">'
 				+ formatDate(d)
 				+ '</span> <i class="fa fa-fw fa-info"></i><b>'
-				+ currentUser
-				+ '</b> Included <b><i>'
 				+ eventType
 				+ '</i></b> named '
 				+ eventName
 				+ ' for the duration of '
-				+ duration+' </a>');
+				+ duration+' included by'
+			    + currentUser
+                + '</a>');
 		$('.list-group').append(newChild);
 		$("#footBallModal").modal();
 	}
