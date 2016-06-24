@@ -4166,7 +4166,7 @@ function drawFirstYoda(event) {
             
             dateObject.setMinutes(dateObject.getMinutes() + 30*index );
             divValue = "<div class='morris-hover-row-label'></div>" +
-            		"<div class='morris-hover-point' style='color: black'>"+newDate.toString().substring(0,24)+"</div>" +realString+predString;
+            		"<div class='morris-hover-point' style='color: black'>"+dateObject.toString().substring(0,24)+"</div>" +realString+predString;
             dateObject = new Date("June 18, 2016 16:00:00");
             return (divValue);
         },
