@@ -4141,10 +4141,11 @@ function drawFirstYoda(event) {
         },
         hoverCallback: function(index, options, content) {
             var data = options.data[index];
+            console.log(data);
             dateObject.setMinutes ( dateObject.getMinutes() + 30 );
             divValue = "<div class='morris-hover-row-label'></div>" +
             		"<div class='morris-hover-point' style='color: #424242'> Time: "+dateObject+"</div>" +
-            		"<div class='morris-hover-point' style='color: #7cc359'> Actual #Calls: "+100+"</div>";
+            		"<div class='morris-hover-point' style='color: #7cc359'> Actual #Calls: "+data["Actual Call Volume"]+"</div>";
             return (divValue);
         },
         
