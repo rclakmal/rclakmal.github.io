@@ -181,7 +181,7 @@
 		var currentUser = ucwords(localStorage.getItem("currentUser"));
 		var eventType = $('#eventType').val();
 		var eventName = $('#eventName').val();
-		var duration = $('#eventDuration').val();
+		var duration = $('#datetimepicker').val();
 		var NoOfUsers = $('#eventEffectNo').val();
 		var d = new Date();
 		var newChild = $('<a class="list-group-item" href="#"><span class="badge">'
@@ -193,8 +193,7 @@
 				+ '</i></b> named '
 				+ eventName
 				+ ' for the duration of '
-				+ duration
-				+ ' affecting ' + NoOfUsers + ' customers. </a>');
+				+ duration+' </a>');
 		$('.list-group').append(newChild);
 		$("#footBallModal").modal();
 	}
