@@ -4148,19 +4148,19 @@ function drawFirstYoda(event) {
             
             if(data["Actual Call Volume"]){
                 realValue = data["Actual Call Volume"];
-                realString = "<div class='morris-hover-point' style='color: #424242'> ACTUAL #CALLS: "+realValue+"</div>";
+                realString = "<div class='morris-hover-point' style='color: #424242'> Actual #Call: "+realValue+"</div>";
             }
             if(data["Yodacast Predicted Volume"]){
                 predictedValue = data["Yodacast Predicted Volume"];
-                predString = "<div class='morris-hover-point' style='color: #7cc359'>PREDICTED #CALLS: "+predictedValue+"</div>";
+                predString = "<div class='morris-hover-point' style='color: #7cc359'>Predicted #Calls: "+predictedValue+"</div>";
             }
             if(data["Yodacast Predicted Football"]){
                 predictedValue = data["Yodacast Predicted Football"];
-                predString = "<div class='morris-hover-point' style='color: #7cc359'>PREDICTED #CALLS: "+predictedValue+"</div>";
+                predString = "<div class='morris-hover-point' style='color: #7cc359'>Predicted #Calls: "+predictedValue+"</div>";
             }
             if(data["Yodacast Predicted Weather"]){
                 predictedValue = data["Yodacast Predicted Weather"];
-                predString = "<div class='morris-hover-point' style='color: #7cc359'>PREDICTED #CALLS: "+predictedValue+"</div>";
+                predString = "<div class='morris-hover-point' style='color: #7cc359'>Predicted #Calls: "+predictedValue+"</div>";
             }
             
 
