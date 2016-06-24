@@ -6,7 +6,7 @@ var weeklyData;
 var dailyData;
 var hourlyData;
 var basicYodadata;
-var dateObject = new Date("June 21, 2016 00:00:00");
+var dateObject = new Date("June 21, 2016 12:00:00");
 var colorChoice = 4;
 var lineColorsChoose = [ '#2B431F', '#43762A', '#761E74', '#C359C0', '#7CC359' ]
 
@@ -4140,12 +4140,31 @@ function drawFirstYoda(event) {
             return '';
         },
         hoverCallback: function(index, options, content) {
+            var realValue ;
+            var predictedValue;
             var data = options.data[index];
-            console.log(data);
+            var realString="";
+            var predString="";
+            
+            if(data["Actual Call Volume"]){
+                realValue = data["Actual Call Volume"];
+                realString = "<div class='morris-hover-point' style='color: #424242'> ACTUAL #CALLS: "+realValue+"</div>";
+            }
+            if(data["Yodacast Predicted Volume"]){
+                predictedValue = data["Yodacast Predicted Volume"];
+            }
+            if(data["Yodacast Predicted Football"]){
+                predictedValue = data["Yodacast Predicted Football"];
+            }
+            if(data["Yodacast Predicted Weather"]){
+                predictedValue = data["Yodacast Predicted Weather"];
+            }
+            
+            predString = "<div class='morris-hover-point' style='color: #7cc359'> PREDICTED #CALLS: "+predictedValue+"</div>";
+
             dateObject.setMinutes ( dateObject.getMinutes() + 30 );
             divValue = "<div class='morris-hover-row-label'></div>" +
-            		"<div class='morris-hover-point' style='color: #424242'> Time: "+dateObject+"</div>" +
-            		"<div class='morris-hover-point' style='color: #7cc359'> Actual #Calls: "+data["Actual Call Volume"]+"</div>";
+            		"<div class='morris-hover-point' style='color: black'> TIME: "+dateObject.toString().substring(0,24)+"</div>" +realString+predString;
             return (divValue);
         },
         
