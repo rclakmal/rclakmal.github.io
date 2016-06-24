@@ -4166,13 +4166,29 @@ function drawFirstYoda(event) {
             
             dateObject.setMinutes(dateObject.getMinutes() + 30*index );
             divValue = "<div class='morris-hover-row-label'></div>" +
-            		"<div class='morris-hover-point' style='color: black'>"+dateObject.toString().substring(0,24)+"</div>" +realString+predString;
+            		"<div class='morris-hover-point' style='color: black'>"+formatDate(dateObject)+"</div>" +realString+predString;
             dateObject = new Date("June 21, 2016 00:00:00");
             return (divValue);
         },
         
         lineColors : [ '#424242', '#7cc359', '#7cc359', '#7cc359' ]
     });
+}
+
+function formatDate(date){
+    day=date.getDate();
+    month=date.getMonth();
+    hours=date.getHours();
+    minutes=date.getMinutes();
+    month=month+1;
+    if((String(day)).length==1)
+    day='0'+day;
+    if((String(month)).length==1)
+    month='0'+month;
+
+    dateT=day+ '.' + month + '.' + date.getFullYear()+" "+hours+":"+minutes;
+    //dateT=String(dateT);
+    return dateT;
 }
 
 function footballSave() {
