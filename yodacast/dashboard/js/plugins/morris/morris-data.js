@@ -8,6 +8,7 @@ var hourlyData;
 var basicYodadata;
 var dateObject = new Date("June 21, 2016 00:00:00");
 var colorChoice = 4;
+var newDate;
 var lineColorsChoose = [ '#2B431F', '#43762A', '#761E74', '#C359C0', '#7CC359' ]
 
 function getUpdateChart(a, b, c, d) {
@@ -1119,7 +1120,7 @@ function getUpdateChart(a, b, c, d) {
     }, {
         "period" : 185,
         "Actual Call Volume" : 683,
-        "Yodacast Predicted Volume" : 683,
+        "Yodacast Predicted Volume" : 645,
         "Yodacast Predicted Football" : 508,
         "Yodacast Predicted Weather" : 508
     }, {
@@ -4140,17 +4141,56 @@ function drawFirstYoda(event) {
             return '';
         },
         hoverCallback: function(index, options, content) {
+            var realValue ;
+            var predictedValue;
             var data = options.data[index];
-            console.log(data);
-            dateObject.setMinutes ( dateObject.getMinutes() + 30 );
+            var realString="";
+            var predString="";
+            
+            if(data["Actual Call Volume"]){
+                realValue = data["Actual Call Volume"];
+                realString = "<div class='morris-hover-point' style='color: #424242'> Actual #Call: "+realValue+"</div>";
+            }
+            if(data["Yodacast Predicted Volume"]){
+                predictedValue = data["Yodacast Predicted Volume"];
+                predString = "<div class='morris-hover-point' style='color: #7cc359'>Predicted #Calls: "+predictedValue+"</div>";
+            }
+            if(data["Yodacast Predicted Football"]){
+                predictedValue = data["Yodacast Predicted Football"];
+                predString = "<div class='morris-hover-point' style='color: #7cc359'>Predicted #Calls: "+predictedValue+"</div>";
+            }
+            if(data["Yodacast Predicted Weather"]){
+                predictedValue = data["Yodacast Predicted Weather"];
+                predString = "<div class='morris-hover-point' style='color: #7cc359'>Predicted #Calls: "+predictedValue+"</div>";
+            }
+            
+            dateObject.setMinutes(dateObject.getMinutes() + 30*index );
             divValue = "<div class='morris-hover-row-label'></div>" +
-            		"<div class='morris-hover-point' style='color: #424242'> Time: "+dateObject+"</div>" +
-            		"<div class='morris-hover-point' style='color: #7cc359'> Actual #Calls: "+data["Actual Call Volume"]+"</div>";
+            		"<div class='morris-hover-point' style='color: black'>"+formatDate(dateObject)+"</div>" +realString+predString;
+            dateObject = new Date("June 21, 2016 00:00:00");
             return (divValue);
         },
         
         lineColors : [ '#424242', '#7cc359', '#7cc359', '#7cc359' ]
     });
+}
+
+function formatDate(date){
+    day=date.getDate();
+    month=date.getMonth();
+    hours=date.getHours();
+    minutes=date.getMinutes();
+    month=month+1;
+    if((String(day)).length==1)
+    day='0'+day;
+    if((String(month)).length==1)
+    month='0'+month;
+    if(minutes =="0"){
+        minutes="00";
+    }
+    dateT=day+ '.' + month + '.' + date.getFullYear()+" "+hours+":"+minutes;
+    //dateT=String(dateT);
+    return dateT;
 }
 
 function footballSave() {
