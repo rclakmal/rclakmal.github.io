@@ -4185,7 +4185,9 @@ function formatDate(date){
     day='0'+day;
     if((String(month)).length==1)
     month='0'+month;
-
+    if(minutes =="0"){
+        minutes="00";
+    }
     dateT=day+ '.' + month + '.' + date.getFullYear()+" "+hours+":"+minutes;
     //dateT=String(dateT);
     return dateT;
