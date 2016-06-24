@@ -4140,7 +4140,7 @@ function drawFirstYoda(event) {
         hoverCallback: function(index, options, content) {
             var data = options.data[index];
               $(".morris-hover").html('<div class="morris-hover-point">Custom label: ' + data.label + '</div>');
-          }
+          },
         lineColors : [ '#424242', '#7cc359', '#7cc359', '#7cc359' ]
     });
 }
