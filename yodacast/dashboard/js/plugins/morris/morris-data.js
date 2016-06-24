@@ -4164,8 +4164,8 @@ function drawFirstYoda(event) {
                 predString = "<div class='morris-hover-point' style='color: #7cc359'>Predicted #Calls: "+predictedValue+"</div>";
             }
             
-            var newDate = new Date();
-            newDate.setMinutes ( dateObject.getMinutes() + 30*index );
+            var newDate = dateObject;
+            newDate.setMinutes(newDate.getMinutes() + 30*index );
             divValue = "<div class='morris-hover-row-label'></div>" +
             		"<div class='morris-hover-point' style='color: black'>"+newDate.toString().substring(0,24)+"</div>" +realString+predString;
             return (divValue);
