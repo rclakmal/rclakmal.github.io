@@ -197,7 +197,7 @@
 		var d = new Date();
 		var currentTimeDate = d.toUTCString();
 		var newChild = $('<a class="list-group-item" href="#"><span class="badge">'
-				+ currentTimeDate
+				+ formatDate(currentTimeDate)
 				+ '</span> <i class="fa fa-fw fa-info"></i><b>'
 				+ currentUser
 				+ '</b> Included <b><i>'
@@ -258,7 +258,8 @@
 	<div id="wrapper">
 
 		<!-- Navigation -->
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="navi">
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
+			id="navi">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header" style="padding-left: 10px">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -288,8 +289,11 @@
 					<ul class="dropdown-menu message-dropdown">
 						<li class="message-preview"><a href="#">
 								<div class="media">
-                                                                    <span class="pull-left"> <div><img class="media-object" style="width: 70px; float: left; margin-right: 20px;"
-										src="img/weather_720.png" alt="">
+									<span class="pull-left">
+										<div>
+											<img class="media-object"
+												style="width: 70px; float: left; margin-right: 20px;"
+												src="img/weather_720.png" alt="">
 									</span>
 									<div class="userLabel media-body">
 										<h3 class="media-heading">
@@ -298,86 +302,92 @@
 										<p class="small text-muted" style="margin-bottom: 20px;">
 											<i class="fa fa-clock-o"></i> 2 min ago
 										</p>
-                                                                                
-                                                                        </div>
-                                                                    <div style="margin-left: 90px;">
-                                                                                <p >System has updated weather information for the weekend.<br>Do you want to see a preview of prediction changes?</p>
-                                                                                <div style="margin-left: auto; margin-right: 15px; display: table; size:100%;"><button type="button" id="confirmWeather"
-                                                                                    class="addEventButton btn btn-default btn-number"
-                                                                                    data-type="plus" onclick="weatherModalOpen();" data-field="quant[1]" style="width: 100px;">
-                                                                                    <span class="glyphicon glyphicon-ok"></span> Yes
-                                                                                </button>
-                                                                                <button type="button" id="denyWeather" style="width: 100px; background-color: #424242; color: #7cc359;"
-                                                                                    class="addEventButton btn btn-default btn-number"
-                                                                                    data-type="plus" data-field="quant[1]">
-                                                                                    <span class="glyphicon glyphicon-remove"></span> No
-                                                                                </button>
-                                                                                </div>
-                                                                    </div>
-                                                                    </div>
+
+									</div>
+									<div style="margin-left: 90px;">
+										<p>
+											System has updated weather information for the weekend.<br>Do
+											you want to see a preview of prediction changes?
+										</p>
+										<div
+											style="margin-left: auto; margin-right: 15px; display: table; size: 100%;">
+											<button type="button" id="confirmWeather"
+												class="addEventButton btn btn-default btn-number"
+												data-type="plus" onclick="weatherModalOpen();"
+												data-field="quant[1]" style="width: 100px;">
+												<span class="glyphicon glyphicon-ok"></span> Yes
+											</button>
+											<button type="button" id="denyWeather"
+												style="width: 100px; background-color: #424242; color: #7cc359;"
+												class="addEventButton btn btn-default btn-number"
+												data-type="plus" data-field="quant[1]">
+												<span class="glyphicon glyphicon-remove"></span> No
+											</button>
+										</div>
+									</div>
 								</div>
-						</a></li>
-						
-						<li class="message-footer" style="text-align: center;"><a href="#">Read archived
-								messages</a></li>
-					</ul></li>
-				<li class="dropdown"><a id="userLabel" class="userLabel"
-					href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-						class="fa fa-user"></i> Demo User <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-						</li>
-						<li><a href="#"><i class="fa fa-fw fa-envelope"></i>
-								Inbox</a></li>
-						<li><a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-						</li>
-						<li class="divider"></li>
-						<li><a id="logoutbutton" onclick="logout()" href="#"><i
-								class="fa fa-fw fa-power-off"></i> Log Out</a></li>
-					</ul></li>
-			</ul>
+	</div>
+	</a>
+	</li>
 
-		</nav>
-		<div id="page-wrapper">
+	<li class="message-footer" style="text-align: center;"><a href="#">Read
+			archived messages</a></li>
+	</ul>
+	</li>
+	<li class="dropdown"><a id="userLabel" class="userLabel" href="#"
+		class="dropdown-toggle" data-toggle="dropdown"><i
+			class="fa fa-user"></i> Demo User <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+			<li><a href="#"><i class="fa fa-fw fa-user"></i> Profile</a></li>
+			<li><a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a></li>
+			<li><a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a></li>
+			<li class="divider"></li>
+			<li><a id="logoutbutton" onclick="logout()" href="#"><i
+					class="fa fa-fw fa-power-off"></i> Log Out</a></li>
+		</ul></li>
+	</ul>
 
-			<div class="container-fluid">
-				<div class="alertGen alert alert-success" style="display: none;"
-					id="success-alert">
-					<button type="button" class="close" data-dismiss="alert">x</button>
-					<strong>Success! </strong>Weather is updated for weekend. Click to
-					preview predictions changes.
-				</div>
-				<!-- 			<!-- Page Heading -->
-				<div class="row">
-					<div class="col-lg-12">
-						<h1 style="display: none; color: #5cb85c" class="page-header">
-							<small>ForeCast Overview</small>
-						</h1>
-					</div>
-				</div>
+	</nav>
+	<div id="page-wrapper">
 
-				<!-- /.row -->
-				<div id="callVolumeGraph" class="infoRowChart row">
-					<div class="col-lg-3">
-						<h3 id="callVolumeTitle"
-							class="panel-title titlePanel mainTitlePanel">
-							<i class="fa fa-bar-chart-o fa-fw"></i> Call Volume Prediction
-						</h3>
-					</div>
-					<div class="ui-notification-container"></div>
+		<div class="container-fluid">
+			<div class="alertGen alert alert-success" style="display: none;"
+				id="success-alert">
+				<button type="button" class="close" data-dismiss="alert">x</button>
+				<strong>Success! </strong>Weather is updated for weekend. Click to
+				preview predictions changes.
+			</div>
+			<!-- 			<!-- Page Heading -->
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 style="display: none; color: #5cb85c" class="page-header">
+						<small>ForeCast Overview</small>
+					</h1>
 				</div>
-				<!-- /.row -->
-				<div id="buttonRow" class="infoRowChart row">
-					<div class="dateSelector col-md-3">
-						<form role="form">
-							<div class="form-group" style="margin-bottom: 0px;">
-								<div id="reportrange" value="June 20, 2016 - June 27, 2016"
-									class="pull-left reportrange"
-									style="background: #fff; float: left; margin-bottom: 20px; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-									<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
-									<span></span> <b class="caret"></b>
-								</div>
-								<script>
+			</div>
+
+			<!-- /.row -->
+			<div id="callVolumeGraph" class="infoRowChart row">
+				<div class="col-lg-3">
+					<h3 id="callVolumeTitle"
+						class="panel-title titlePanel mainTitlePanel">
+						<i class="fa fa-bar-chart-o fa-fw"></i> Call Volume Prediction
+					</h3>
+				</div>
+				<div class="ui-notification-container"></div>
+			</div>
+			<!-- /.row -->
+			<div id="buttonRow" class="infoRowChart row">
+				<div class="dateSelector col-md-3">
+					<form role="form">
+						<div class="form-group" style="margin-bottom: 0px;">
+							<div id="reportrange" value="June 20, 2016 - June 27, 2016"
+								class="pull-left reportrange"
+								style="background: #fff; float: left; margin-bottom: 20px; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+								<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+								<span></span> <b class="caret"></b>
+							</div>
+							<script>
                                                                     $(function() {
 
                                                                             function cb(start, end) {
@@ -399,195 +409,193 @@
                                                                     });
                                                             </script>
 
-                                                    </div>
-                                            </form>
-                                    </div>
-                                        <div class="col-md-3 col-md-offset-4 text-right action-button addevent-btn">
-
-						<button type="button" id="addNewEvent"
-							class="addEventButton btn btn-default btn-number"
-							data-type="plus" data-field="quant[1]">
-							<span class="glyphicon glyphicon-plus"></span> Add Event
-						</button>
-					</div>
-
-					
-					<div class="col-md-1 text-center action-button share-btn">
-
-						<button type="button" id="shareButton" onclick="shareModal();"
-							class="addEventButton btn btn-default btn-number"
-							data-type="plus" data-field="quant[1]">
-							<span class="glyphicon glyphicon-share"></span> Share
-						</button>
-					</div>
-
-					
-					<div class="col-md-1 text-left action-button" >
-						<button onclick="compareYoda();" type="button"
-							id="comparePredictions"
-
-							class="addEventButton btn btn-default btn-number"
-							data-type="refresh" data-field="quant[1]">
-							<span class="glyphicon glyphicon-refresh"></span> Compare
-						</button>
-					</div>
-
+						</div>
+					</form>
 				</div>
-				<div class="row"
-					style="float: right; padding: 0%; margin-bottom: 0%;"></div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="panel panelMain panel-default ">
-							<div class="panel-body">
-								<div id="morris-area-chart"></div>
-							</div>
+				<div
+					class="col-md-3 col-md-offset-4 text-right action-button addevent-btn">
+
+					<button type="button" id="addNewEvent"
+						class="addEventButton btn btn-default btn-number" data-type="plus"
+						data-field="quant[1]">
+						<span class="glyphicon glyphicon-plus"></span> Add Event
+					</button>
+				</div>
+
+
+				<div class="col-md-1 text-center action-button share-btn">
+
+					<button type="button" id="shareButton" onclick="shareModal();"
+						class="addEventButton btn btn-default btn-number" data-type="plus"
+						data-field="quant[1]">
+						<span class="glyphicon glyphicon-share"></span> Share
+					</button>
+				</div>
+
+
+				<div class="col-md-1 text-left action-button">
+					<button onclick="compareYoda();" type="button"
+						id="comparePredictions"
+						class="addEventButton btn btn-default btn-number"
+						data-type="refresh" data-field="quant[1]">
+						<span class="glyphicon glyphicon-refresh"></span> Compare
+					</button>
+				</div>
+
+			</div>
+			<div class="row"
+				style="float: right; padding: 0%; margin-bottom: 0%;"></div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panelMain panel-default ">
+						<div class="panel-body">
+							<div id="morris-area-chart"></div>
 						</div>
 					</div>
-					<div class="legendClass col-lg-8">
-						<div id="legend"></div>
-					</div>
-
 				</div>
-				<div class="row"
-					style="margin-bottom: 3%; padding-left: 10%; padding-right: 1.8%">
-					<div class="col-lg-2 axisX">
-						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i>21.06.2016
-						</h3>
-					</div>
-					<div class="col-lg-2 axisX">
-						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i>22.06.2016
-						</h3>
-					</div>
-					<div class="col-lg-2 axisX">
-						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i>23.06.2016
-						</h3>
-					</div>
-					<div class="col-lg-2 axisX">
-						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i> <b>24.06.2016</b>
-						</h3>
-					</div>
-					<div class="col-lg-2 axisX">
-						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i> 25.06.2016
-						</h3>
-					</div>
-					<div class="col-lg-2 axisX">
-						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i>26.06.2016
-						</h3>
-					</div>
-					<div class="col-lg-1">
-						<h3 class="xTitle panel-title dialTitle">
-							<i class=""></i>27.06.2016
-						</h3>
-					</div>
-
+				<div class="legendClass col-lg-8">
+					<div id="legend"></div>
 				</div>
-				<!-- /.row -->
-				<div id="kpiPanelRow" class="row" style="margin-top: 7%;">
-					<div class="col-md-12">
-						<div id="kpiPanel" class="panel panel-default panelMain">
-							<div class="">
-								<h3 class="panel-title titlePanel">
-									<i class="fa fa-tasks fa-fw"></i> Key Performance Indicators
-								</h3>
-							</div>
-							<div class="kpipanel panel-body" style="margin-top: 1%;">
-								<div class="kpirow row">
-									<div class="col-md-3">
-										<h3 style="visibility: hidden;"
-											class="kpiTitle panel-title dialTitle">
-											<i class=""></i> Percentage Deviation
-										</h3>
-										<h3 style="margin: 30%; margin-top: 30%; margin-right: 2%;"
-											class="kpiTitle panel-title dialTitle">
-											<i class=""></i> Percentage Deviation
-										</h3>
-										<h3 style="margin: 30%; margin-top: 25%; margin-right: 2%;"
-											class="kpiTitle panel-title dialTitle">
-											<i class=""></i> Absolute Deviation<br>(#Calls)
-										</h3>
-									</div>
-									<div class="col-md-2">
-										<h3 class="kpiTitle panel-title dialTitle"
-											style="margin-left: 0%;">
-											<i class=""></i> Accuracy
-										</h3>
-										<input type="text" value="81" class="radicalPro dial">
-										<h3
-											style="font-size: 39px; color: #424242; margin: 15% 10% 15% 0%;"
-											class="kpiAbs kpiTitle panel-title dialTitle">
-											<i class=""></i> ± 53
-										</h3>
-									</div>
-									<div class="col-md-2">
-										<h3 class="titleKPI kpiLong kpiTitle panel-title dialTitle">
-											<i class=""></i> Ø Overprediction
-										</h3>
-										<input type="text" value="30" class="radicalPro dial">
-										<h3
-											style="font-size: 39px; color: #424242; margin: 15% 8% 15% 0%;"
-											class=" kpiAbs kpiTitle panel-title dialTitle">
-											<i class=""></i> + 37
-										</h3>
-									</div>
-									<div class="col-md-2">
-										<h3 class="titleKPI kpiLong kpiTitle panel-title dialTitle">
-											<i class=""></i> Ø Underprediction
-										</h3>
-										<input type="text" value="14" class="radicalPro dial">
-										<h3
-											style="font-size: 39px; color: #424242; margin: 15% 6% 15% 0%;"
-											class="kpiAbs kpiTitle panel-title dialTitle">
-											<i class=""></i> - 66
-										</h3>
-									</div>
-								</div>
-							</div>
+
+			</div>
+			<div class="row"
+				style="margin-bottom: 3%; padding-left: 10%; padding-right: 1.8%">
+				<div class="col-lg-2 axisX">
+					<h3 class="xTitle panel-title dialTitle">
+						<i class=""></i>21.06.2016
+					</h3>
+				</div>
+				<div class="col-lg-2 axisX">
+					<h3 class="xTitle panel-title dialTitle">
+						<i class=""></i>22.06.2016
+					</h3>
+				</div>
+				<div class="col-lg-2 axisX">
+					<h3 class="xTitle panel-title dialTitle">
+						<i class=""></i>23.06.2016
+					</h3>
+				</div>
+				<div class="col-lg-2 axisX">
+					<h3 class="xTitle panel-title dialTitle">
+						<i class=""></i> <b>24.06.2016</b>
+					</h3>
+				</div>
+				<div class="col-lg-2 axisX">
+					<h3 class="xTitle panel-title dialTitle">
+						<i class=""></i> 25.06.2016
+					</h3>
+				</div>
+				<div class="col-lg-2 axisX">
+					<h3 class="xTitle panel-title dialTitle">
+						<i class=""></i>26.06.2016
+					</h3>
+				</div>
+				<div class="col-lg-1">
+					<h3 class="xTitle panel-title dialTitle">
+						<i class=""></i>27.06.2016
+					</h3>
+				</div>
+
+			</div>
+			<!-- /.row -->
+			<div id="kpiPanelRow" class="row" style="margin-top: 7%;">
+				<div class="col-md-12">
+					<div id="kpiPanel" class="panel panel-default panelMain">
+						<div class="">
+							<h3 class="panel-title titlePanel">
+								<i class="fa fa-tasks fa-fw"></i> Key Performance Indicators
+							</h3>
 						</div>
-					</div>
-
-				</div>
-				<!-- /.row -->
-
-				<div id="historyRow" class="row">
-					<div class="col-lg-12">
-						<div class="eventpanel panel panel-default panelMain">
-							<div class="row">
-								<div class="col-lg-5">
-									<h3 class="panel-title titlePanel">
-										<i class="fa fa-clock-o fa-fw"></i> Included Events
+						<div class="kpipanel panel-body" style="margin-top: 1%;">
+							<div class="kpirow row">
+								<div class="col-md-3">
+									<h3 style="visibility: hidden;"
+										class="kpiTitle panel-title dialTitle">
+										<i class=""></i> Percentage Deviation
+									</h3>
+									<h3 style="margin: 30%; margin-top: 30%; margin-right: 2%;"
+										class="kpiTitle panel-title dialTitle">
+										<i class=""></i> Percentage Deviation
+									</h3>
+									<h3 style="margin: 30%; margin-top: 25%; margin-right: 2%;"
+										class="kpiTitle panel-title dialTitle">
+										<i class=""></i> Absolute Deviation<br>(#Calls)
 									</h3>
 								</div>
-
-							</div>
-							<div class="panel-body">
-								<div class="list-group">
-									<a class="list-group-item" href="#"><span class="badge">Sun,
-											19 Jun 2016 11:29:38 GMT</span> <i class="fa fa-fw fa-info"></i><b>David</b>
-										Included <b><i>Technical Fault</i></b> named Technical Fault
-										123XX for the duration of 06/24/2016 - 06/29/2016 affecting
-										12,000 customers. </a> <a class="list-group-item" href="#"><span
-										class="badge">Tue, 22 Jun 2016 12:34:43 GMT</span> <i
-										class="fa fa-fw fa-info"></i><b>Demo</b> Included <b><i>Billing
-												Cycle</i></b> named Billing Cycle May for the duration of 05/24/2016
-										- 06/01/2016 effecting 35,000 customers. </a>
+								<div class="col-md-2">
+									<h3 class="kpiTitle panel-title dialTitle"
+										style="margin-left: 0%;">
+										<i class=""></i> Accuracy
+									</h3>
+									<input type="text" value="81" class="radicalPro dial">
+									<h3
+										style="font-size: 39px; color: #424242; margin: 15% 10% 15% 0%;"
+										class="kpiAbs kpiTitle panel-title dialTitle">
+										<i class=""></i> ± 53
+									</h3>
 								</div>
-
+								<div class="col-md-2">
+									<h3 class="titleKPI kpiLong kpiTitle panel-title dialTitle">
+										<i class=""></i> Ø Overprediction
+									</h3>
+									<input type="text" value="30" class="radicalPro dial">
+									<h3
+										style="font-size: 39px; color: #424242; margin: 15% 8% 15% 0%;"
+										class=" kpiAbs kpiTitle panel-title dialTitle">
+										<i class=""></i> + 37
+									</h3>
+								</div>
+								<div class="col-md-2">
+									<h3 class="titleKPI kpiLong kpiTitle panel-title dialTitle">
+										<i class=""></i> Ø Underprediction
+									</h3>
+									<input type="text" value="14" class="radicalPro dial">
+									<h3
+										style="font-size: 39px; color: #424242; margin: 15% 6% 15% 0%;"
+										class="kpiAbs kpiTitle panel-title dialTitle">
+										<i class=""></i> - 66
+									</h3>
+								</div>
 							</div>
 						</div>
 					</div>
-
 				</div>
-			</div>
-			<!-- /.container-fluid -->
 
+			</div>
+			<!-- /.row -->
+
+			<div id="historyRow" class="row">
+				<div class="col-lg-12">
+					<div class="eventpanel panel panel-default panelMain">
+						<div class="row">
+							<div class="col-lg-5">
+								<h3 class="panel-title titlePanel">
+									<i class="fa fa-clock-o fa-fw"></i> Included Events
+								</h3>
+							</div>
+
+						</div>
+						<div class="panel-body">
+							<div class="list-group">
+								<a class="list-group-item" href="#"><span class="badge">Tue,
+										20.06.2016 12:34</span> <i class="fa fa-fw fa-info"></i><b>Technical
+										Fault</b> named 'Broadband network 3XX' on 21.06.2016 was included by <i>Andreas</i> </a> <a
+									class="list-group-item" href="#"><span class="badge">Tue,
+										18.06.2016 12:34</span> <i class="fa fa-fw fa-info"></i><b>Billing
+										Cycle</b> named 'Billing Cycle for May' for the duration of
+									24.05.2016 - 24.06.2016 was included by <i>David</i> </a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
 		</div>
-		<!-- /#page-wrapper -->
+		<!-- /.container-fluid -->
+
+	</div>
+	<!-- /#page-wrapper -->
 
 	</div>
 	<!-- /#wrapper -->
@@ -663,11 +671,12 @@
 								id="eventName" placeholder="Enter Event Description">
 						</div>
 
-                                                <label for="eventDatePicker">
-                                                    <span class="glyphicon glyphicon-time"></span> Time and Date</label> 
-                                                <input type='text' class="form-control" id='datetimepicker' value="Click Here to Select Time and Date" />
-                                                
-                                                <script type="text/javascript">
+						<label for="eventDatePicker"> <span
+							class="glyphicon glyphicon-time"></span> Time and Date
+						</label> <input type='text' class="form-control" id='datetimepicker'
+							value="Click Here to Select Time and Date" />
+
+						<script type="text/javascript">
                                                     $(function () {
                                                         $('#datetimepicker').datetimepicker({
                                                             widgetPositioning:{ 
@@ -712,7 +721,8 @@
 						<div class="panel panelMain panel-default ">
 							<div class="panel-body">
 								<div id="imagePanel">
-									<img src="img/footballAndWeather.png" alt="" class="img-responsive" />
+									<img src="img/footballAndWeather.png" alt=""
+										class="img-responsive" />
 								</div>
 							</div>
 						</div>
@@ -721,7 +731,7 @@
 							<div class="col-lg-8">
 								<button type="button" id="hotLineSaveButton"
 									onClick="footballSave();"
-									style="margin-left: 0%; width: 99%;margin-top: -6%;"
+									style="margin-left: 0%; width: 99%; margin-top: -6%;"
 									class="btnModal btn btn-success btn-block">
 									<span class="glyphicon glyphicon-ok"></span> OK
 								</button>
@@ -805,8 +815,8 @@
 
 	<div id="weatherWarning" style="display: none;"
 		class="alert alert-info">
-		<strong>Info!</strong> <i class="fa fa-fw fa-info"></i>System updated with weather information for the
-		weekend
+		<strong>Info!</strong> <i class="fa fa-fw fa-info"></i>System updated
+		with weather information for the weekend
 	</div>
 </body>
 
