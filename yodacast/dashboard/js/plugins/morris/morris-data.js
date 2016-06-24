@@ -6,6 +6,7 @@ var weeklyData;
 var dailyData;
 var hourlyData;
 var basicYodadata;
+var dateObject = new Date("June 21, 2016 00:00:00");
 var colorChoice = 4;
 var lineColorsChoose = [ '#2B431F', '#43762A', '#761E74', '#C359C0', '#7CC359' ]
 
@@ -4139,6 +4140,11 @@ function drawFirstYoda(event) {
             return '';
         },
         hoverCallback: function(index, options, content) {
+            var data = options.data[index];
+            dateObject.setMinutes ( dateObject.getMinutes() + 30 );
+            divValue = "<div class='morris-hover-row-label'></div>" +
+            		"<div class='morris-hover-point' style='color: #424242'> Time: "+dateObject+"</div>" +
+            		"<div class='morris-hover-point' style='color: #7cc359'> Actual #Calls: "+100+"</div>";
             return (divValue);
         },
         
