@@ -4138,7 +4138,8 @@ function drawFirstYoda(event) {
             return '';
         },
         hoverCallback: function(index, options, content) {
-            var data = options.data[index];
+              var data = options.data[index];
+              console.log(data);
               $(".morris-hover").html('<div>Actuall #Calls: ' + data["Actual Call Volume"] + '</div>');
           },
         lineColors : [ '#424242', '#7cc359', '#7cc359', '#7cc359' ]
