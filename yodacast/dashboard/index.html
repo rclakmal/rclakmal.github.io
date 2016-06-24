@@ -109,7 +109,7 @@
 			fgColor : '#7cc359',
 			bgColor: '#424242',
 			readOnly : true,
-			width : "45px",
+			width : "75px",
 			format : function(value) {
 				value =  value + '%';
 				console.log("yes"+value);
@@ -380,10 +380,10 @@
                                                                                     $('#reportrange span')
                                                                                                     .html(
                                                                                                                     start
-                                                                                                                                    .format('MMMM D, YYYY')
+                                                                                                                                    .format('DD.MM.YYYY')
                                                                                                                                     + ' - '
                                                                                                                                     + end
-                                                                                                                                                    .format('MMMM D, YYYY'));
+                                                                                                                                                    .format('DD.MM.YYYY'));
                                                                             }
                                                                             cb(moment().subtract(4, 'days'),
                                                                                             moment().add(4,'days'));
@@ -485,59 +485,59 @@
 				</div>
 				<!-- /.row -->
 				<div id="kpiPanelRow" class="row" style="margin-top: 7%;">
-					<div class="col-lg-12">
+					<div class="col-md-12">
 						<div id="kpiPanel" class="panel panel-default panelMain">
 							<div class="">
 								<h3 class="panel-title titlePanel">
 									<i class="fa fa-tasks fa-fw"></i> Key Performance Indicators
 								</h3>
 							</div>
-							<div class="kpipanel panel-body" style="margin-top: 4%;">
+							<div class="kpipanel panel-body" style="margin-top: 1%;">
 								<div class="kpirow row">
-									<div class="col-lg-3">
+									<div class="col-md-3">
 										<h3 style="visibility: hidden;"
 											class="kpiTitle panel-title dialTitle">
 											<i class=""></i> Percentage Deviation
 										</h3>
-										<h3 style="margin: 30%;"
+										<h3 style="margin: 30%; margin-top: 30%; margin-right: 2%;"
 											class="kpiTitle panel-title dialTitle">
 											<i class=""></i> Percentage Deviation
 										</h3>
-										<h3 style="margin: 30%; margin-top: 31%;"
+										<h3 style="margin: 30%; margin-top: 25%; margin-right: 2%;"
 											class="kpiTitle panel-title dialTitle">
 											<i class=""></i> Absolute Deviation<br>(#Calls)
 										</h3>
 									</div>
-									<div class="col-lg-3">
+									<div class="col-md-2">
 										<h3 class="kpiTitle panel-title dialTitle"
 											style="margin-left: 0%;">
 											<i class=""></i> Accuracy
 										</h3>
 										<input type="text" value="81" class="radicalPro dial">
 										<h3
-											style="font-size: 39px; color: #424242; margin: 15% 15% 15% 0%;"
+											style="font-size: 39px; color: #424242; margin: 15% 10% 15% 0%;"
 											class="kpiAbs kpiTitle panel-title dialTitle">
 											<i class=""></i> ± 53
 										</h3>
 									</div>
-									<div class="col-lg-3">
+									<div class="col-md-2">
 										<h3 class="titleKPI kpiLong kpiTitle panel-title dialTitle">
 											<i class=""></i> Ø Overprediction
 										</h3>
 										<input type="text" value="30" class="radicalPro dial">
 										<h3
-											style="font-size: 39px; color: #424242; margin: 15% 15% 15% 0%;"
+											style="font-size: 39px; color: #424242; margin: 15% 8% 15% 0%;"
 											class=" kpiAbs kpiTitle panel-title dialTitle">
 											<i class=""></i> + 37
 										</h3>
 									</div>
-									<div class="col-lg-3">
+									<div class="col-md-2">
 										<h3 class="titleKPI kpiLong kpiTitle panel-title dialTitle">
 											<i class=""></i> Ø Underprediction
 										</h3>
 										<input type="text" value="14" class="radicalPro dial">
 										<h3
-											style="font-size: 39px; color: #424242; margin: 15% 15% 15% 0%;"
+											style="font-size: 39px; color: #424242; margin: 15% 6% 15% 0%;"
 											class="kpiAbs kpiTitle panel-title dialTitle">
 											<i class=""></i> - 66
 										</h3>

@@ -278,7 +278,7 @@ div.clickable a {
 
 .reportrange {
 	font-size: 18px;
-	width: 85% !important;
+	width: 70% !important;
 }
 
 .yodamain {
@@ -576,7 +576,7 @@ body {
 }
 
 .radicalPro {
-	margin-top: 20% !important;
+	margin-top: 27% !important;
 	color: #424242 !important;
 }
 
@@ -594,16 +594,15 @@ body {
 
 .dialTitle {
 	font-size: 25px;
-	margin-left: -7px;
+	margin-left: 0px;
 }
 
 .titleKPI {
 	font-size: 25px;
-	margin-left: -51px;
 }
 
 .panel-title {
-	
+	margin-bottom: 25px;
 }
 
 .kpirow {
@@ -611,20 +610,20 @@ body {
 }
 
 .kpiTitle {
-	
+	text-align: center;
 }
 
 .kpiAbs {
-	margin-top: 28% !important;
+	margin-top: 15% !important;
 }
 
 canvas {
 	margin-top: 6%;
-	margin-left: -11%;
+	margin-left: 0%;
 }
 
 .kpiLong {
-	width: 115%;
+	width: 100%;
 }
 
 .lineCheckbox {
