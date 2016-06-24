@@ -8,6 +8,7 @@ var hourlyData;
 var basicYodadata;
 var dateObject = new Date("June 21, 2016 16:00:00");
 var colorChoice = 4;
+var newDate;
 var lineColorsChoose = [ '#2B431F', '#43762A', '#761E74', '#C359C0', '#7CC359' ]
 
 function getUpdateChart(a, b, c, d) {
@@ -4163,10 +4164,10 @@ function drawFirstYoda(event) {
                 predString = "<div class='morris-hover-point' style='color: #7cc359'>Predicted #Calls: "+predictedValue+"</div>";
             }
             
-            console.log(index);
-            dateObject.setMinutes ( dateObject.getMinutes() + 30 );
+            var newDate = new Date();
+            newDate.setMinutes ( dateObject.getMinutes() + 30*index );
             divValue = "<div class='morris-hover-row-label'></div>" +
-            		"<div class='morris-hover-point' style='color: black'>"+dateObject.toString().substring(0,24)+"</div>" +realString+predString;
+            		"<div class='morris-hover-point' style='color: black'>"+newDate.toString().substring(0,24)+"</div>" +realString+predString;
             return (divValue);
         },
         
