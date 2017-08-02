@@ -2,7 +2,7 @@ var scene = new THREE.Scene(),
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000),
     renderer = new THREE.WebGLRenderer({alpha: true}),
     sol, tierra, luna;
-console.log("Version 1");
+console.log("Version 2");
 function renderScene() {
     tierra.animate();
     sol.animate();
@@ -29,13 +29,13 @@ function main() {
     luzCamara.model(scene);
 
     // Modelo
-    sol = new Astro(6 / 2, "res/sol.jpg", 0, 0, 0.002, false, true);
+    sol = new Astro(109, "res/sol.jpg", 0, 0, 0.002, false, true);
     sol.model();
 
-    tierra = new Astro(1.27 / 2, "res/tierra.jpg", 6, 0.001, 0.005, false, false);
+    tierra = new Astro(1, "res/tierra.jpg", 6, 0.001, 0.005, false, false);
     tierra.model();
 
-    luna = new Astro(0.34 / 2, "res/luna.jpg", 1, 0.01, 0, true, false);
+    luna = new Astro(1/ 6, "res/luna.jpg", 1, 0.01, 0, true, false);
     luna.model();
 
     scene.add(sol.get());
