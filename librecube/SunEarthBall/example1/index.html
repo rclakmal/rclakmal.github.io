@@ -60,7 +60,7 @@
 	scene.add(containerEarth)
 
 	var sunMesh	= THREEx.Planets.createSun()
-	sunMesh.position.set(0.5,0.5,0.5)
+	sunMesh.position.set(1000,1000,1000)
 	sunMesh.receiveShadow	= true
 	sunMesh.castShadow	= true
 	containerEarth.add(sunMesh)
@@ -95,13 +95,13 @@
 	// containerEarth.add( mesh );
 	// // new THREEx.addAtmosphereMaterial2DatGui(material, datGUI)
 
-	var earthCloud	= THREEx.Planets.createEarthCloud()
-	earthCloud.receiveShadow	= true
-	earthCloud.castShadow	= true
-	containerEarth.add(earthCloud)
-	onRenderFcts.push(function(delta, now){
-		earthCloud.rotation.y += 1/8 * delta;
-	})
+	// var earthCloud	= THREEx.Planets.createEarthCloud()
+	// earthCloud.receiveShadow	= true
+	// earthCloud.castShadow	= true
+	// containerEarth.add(earthCloud)
+	// onRenderFcts.push(function(delta, now){
+	// 	earthCloud.rotation.y += 1/8 * delta;
+	// })
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		Camera Controls							//
