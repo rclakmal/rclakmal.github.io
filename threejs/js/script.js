@@ -2,7 +2,7 @@ var scene = new THREE.Scene(),
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000),
     renderer = new THREE.WebGLRenderer({alpha: true}),
     sol, tierra, luna;
-console.log("Version 9");
+console.log("Version 10");
 var fov = camera.fov, zoom = 1.0, inc = -0.01;
 function renderScene() {
     tierra.animate();
