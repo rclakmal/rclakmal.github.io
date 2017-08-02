@@ -9,7 +9,7 @@
 	var renderer	= new THREE.WebGLRenderer({
 		antialias	: true
 	});
-	console.log("Version 2");
+	console.log("Version 3");
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
 	renderer.shadowMapEnabled	= true
@@ -61,7 +61,7 @@
 	// scene.add(containerEarth)
 
 	var sunMesh	= THREEx.Planets.createSun()
-	sunMesh.position.set(0, 0, 0)
+	sunMesh.position.set(1, 1, 0)
 	sunMesh.receiveShadow	= true
 	sunMesh.castShadow	= true
 	scene.add(sunMesh)
@@ -74,9 +74,8 @@
 
 	var earthMesh	= THREEx.Planets.createEarth()
 	earthMesh.receiveShadow	= true
-	earthMesh.position.set(1, 1, 1)
+	earthMesh.position.set(0, 0, 0)
 	earthMesh.castShadow	= true
-	earthMesh.rotateY(0);
 	earthMesh.scale.multiplyScalar(1/5)
 	scene.add(earthMesh)
 	onRenderFcts.push(function(delta, now){
