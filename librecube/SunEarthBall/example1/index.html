@@ -60,13 +60,14 @@
 	// scene.add(containerEarth)
 
 	var sunMesh	= THREEx.Planets.createSun()
-	sunMesh.position.set(1000,1000,1000)
+	sunMesh.position.set(38900,0,0)
 	sunMesh.receiveShadow	= true
 	sunMesh.castShadow	= true
 	scene.add(sunMesh)
 
 	var earthMesh	= THREEx.Planets.createEarth()
 	earthMesh.receiveShadow	= true
+	earthMesh.position.set(0,0,0)
 	earthMesh.castShadow	= true
 	earthMesh.scale.multiplyScalar(1/5)
 	scene.add(earthMesh)
