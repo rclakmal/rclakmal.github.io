@@ -2,7 +2,7 @@ var scene = new THREE.Scene(),
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000),
     renderer = new THREE.WebGLRenderer({alpha: true}),
     sol, tierra, luna;
-console.log("Version 8");
+console.log("Version 9");
 var fov = camera.fov, zoom = 1.0, inc = -0.01;
 function renderScene() {
     tierra.animate();
@@ -12,8 +12,15 @@ function renderScene() {
     renderer.render(scene, camera);
 }
 
-window.addEventListener('DOMMouseScroll', mousewheel, false);
- window.addEventListener('mousewheel', mousewheel, false);
+window.addEventListener('DOMMouseScroll', onDocumentMouseWheel, false);
+ window.addEventListener('mousewheel', onDocumentMouseWheel, false);
+
+ function onDocumentMouseWheel( event ) {
+
+     fov -= event.wheelDeltaY * 0.05;
+     camera.projectionMatrix = THREE.Matrix4.makePerspective( fov, window.innerWidth / window.innerHeight, 1, 1100 );
+
+ }
 
  function mousewheel( e )
  {
