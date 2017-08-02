@@ -122,7 +122,7 @@
 	onRenderFcts.push(function(delta, now){
 		camera.position.x += (mouse.x*5 - camera.position.x) * (delta*3)
 		camera.position.y += (mouse.y*5 - camera.position.y) * (delta*3)
-		camera.lookAt( scene.position )
+		camera.lookAt( earthMesh.position )
 	})
 
 
