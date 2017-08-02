@@ -76,6 +76,7 @@
 	earthMesh.receiveShadow	= true
 	earthMesh.position.set(1, 1, 1)
 	earthMesh.castShadow	= true
+	earthMesh.rotateY(0);
 	earthMesh.scale.multiplyScalar(1/5)
 	scene.add(earthMesh)
 	onRenderFcts.push(function(delta, now){
