@@ -9,7 +9,7 @@
 	var renderer	= new THREE.WebGLRenderer({
 		antialias	: true
 	});
-	console.log("Version 1");
+	console.log("Version 2");
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
 	renderer.shadowMapEnabled	= true
@@ -66,18 +66,18 @@
 	sunMesh.castShadow	= true
 	scene.add(sunMesh)
 
-	var theEarthAndMoon = new THREE.Object3D();
-	theEarthAndMoon.rotation.z = 23.439281 * Math.PI / 180; //tilt of earth in radians;
-	scene.add(theEarthAndMoon);
-	var axes = new THREE.AxisHelper(10);
-	theEarthAndMoon.add(axes);
+	// var theEarthAndMoon = new THREE.Object3D();
+	// theEarthAndMoon.rotation.z = 23.439281 * Math.PI / 180; //tilt of earth in radians;
+	// scene.add(theEarthAndMoon);
+	// var axes = new THREE.AxisHelper(10);
+	// theEarthAndMoon.add(axes);
 
 	var earthMesh	= THREEx.Planets.createEarth()
 	earthMesh.receiveShadow	= true
 	earthMesh.position.set(5, 16, 15)
 	earthMesh.castShadow	= true
 	earthMesh.scale.multiplyScalar(1/5)
-	theEarthAndMoon.add(earthMesh)
+	scene.add(earthMesh)
 	onRenderFcts.push(function(delta, now){
 		earthMesh.rotation.y += 1/32 * delta;
 	})
