@@ -2,7 +2,7 @@ var scene = new THREE.Scene(),
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000),
     renderer = new THREE.WebGLRenderer({alpha: true}),
     sol, tierra, luna;
-console.log("Version 6");
+console.log("Version 7");
 var fov = camera.fov, zoom = 1.0, inc = -0.01;
 function renderScene() {
     tierra.animate();
@@ -12,30 +12,37 @@ function renderScene() {
     renderer.render(scene, camera);
 }
 
-function mousewheel( e ) {
-    var d = ((typeof e.wheelDelta != "undefined")?(-e.wheelDelta):e.detail);
-    d = 100 * ((d>0)?1:-1);
+window.addEventListener('DOMMouseScroll', mousewheel, false);
+ window.addEventListener('mousewheel', mousewheel, false);
 
-    var cPos = camera.position;
-    if (isNaN(cPos.x) || isNaN(cPos.y) || isNaN(cPos.y))
-      return;
+ function mousewheel( event )
+ {
+     var amount = 100; // parameter
 
-    var r = cPos.x*cPos.x + cPos.y*cPos.y;
-    var sqr = Math.sqrt(r);
-    var sqrZ = Math.sqrt(cPos.z*cPos.z + r);
+     // get wheel direction
+      var d = ((typeof e.wheelDelta != "undefined")?(-e.wheelDelta):e.detail);
+       d = 100 * ((d>0)?1:-1);
 
+       // do calculations, I'm not using any three.js internal methods here, maybe there is a better way of doing this
+       // applies movement in the direction of (0,0,0), assuming this is where the camera is pointing
+       var cPos = camera.position;
+       var r = cPos.x*cPos.x + cPos.y*cPos.y;
+       var sqr = Math.sqrt(r);
+       var sqrZ = Math.sqrt(cPos.z*cPos.z + r);
 
-    var nx = cPos.x + ((r==0)?0:(d * cPos.x/sqr));
-    var ny = cPos.y + ((r==0)?0:(d * cPos.y/sqr));
-    var nz = cPos.z + ((sqrZ==0)?0:(d * cPos.z/sqrZ));
+       var nx = cPos.x + ((r==0)?0:(d * cPos.x/sqr));
+       var ny = cPos.y + ((r==0)?0:(d * cPos.y/sqr));
+       var nz = cPos.z + ((sqrZ==0)?0:(d * cPos.z/sqrZ));
 
-    if (isNaN(nx) || isNaN(ny) || isNaN(nz))
-      return;
+       // verify we're applying valid numbers
+       if (isNaN(nx) || isNaN(ny) || isNaN(nz))
+         return;
 
-    cPos.x = nx;
-    cPos.y = ny;
-    cPos.z = nz;
-}
+       cPos.x = nx;
+       cPos.y = ny;
+       cPos.z = nz;
+ }
+
 
 function main() {
     renderer.setClearColor(0x000000, 0.0);
@@ -70,8 +77,6 @@ function main() {
     $("#canvas").append(renderer.domElement);
 
     renderScene();
-    document.body.addEventListener( 'mousewheel', mousewheel, false );
-    document.body.addEventListener( 'DOMMouseScroll', mousewheel, false ); // firefox
 }
 
 main();
