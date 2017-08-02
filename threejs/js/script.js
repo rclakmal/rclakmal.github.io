@@ -41,7 +41,6 @@ function main() {
     scene.add(sol.get());
     sol.addSatelite(tierra.get());
     tierra.addSatelite(luna.get());
-    camera.lookAt(sol.position);
     $("#canvas").append(renderer.domElement);
 
     renderScene();
