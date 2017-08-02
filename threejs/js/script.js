@@ -2,22 +2,40 @@ var scene = new THREE.Scene(),
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000),
     renderer = new THREE.WebGLRenderer({alpha: true}),
     sol, tierra, luna;
-console.log("Version 3");
+console.log("Version 4");
 var fov = camera.fov, zoom = 1.0, inc = -0.01;
 function renderScene() {
     tierra.animate();
     sol.animate();
     luna.animate();
-    camera.fov = fov * zoom;
-    camera.updateProjectionMatrix();
-
-    zoom += inc;
-    if ( zoom <= 0.2 || zoom >= 1.0 ){
-         inc = -inc;
-    }
-
     requestAnimationFrame(renderScene);
     renderer.render(scene, camera);
+}
+document.body.addEventListener( 'mousewheel', mousewheel, false );
+document.body.addEventListener( 'DOMMouseScroll', mousewheel, false ); // firefox
+function mousewheel( e ) {
+    var d = ((typeof e.wheelDelta != "undefined")?(-e.wheelDelta):e.detail);
+    d = 100 * ((d>0)?1:-1);
+
+    var cPos = camera.position;
+    if (isNaN(cPos.x) || isNaN(cPos.y) || isNaN(cPos.y))
+      return;
+
+    var r = cPos.x*cPos.x + cPos.y*cPos.y;
+    var sqr = Math.sqrt(r);
+    var sqrZ = Math.sqrt(cPos.z*cPos.z + r);
+
+
+    var nx = cPos.x + ((r==0)?0:(d * cPos.x/sqr));
+    var ny = cPos.y + ((r==0)?0:(d * cPos.y/sqr));
+    var nz = cPos.z + ((sqrZ==0)?0:(d * cPos.z/sqrZ));
+
+    if (isNaN(nx) || isNaN(ny) || isNaN(nz))
+      return;
+
+    cPos.x = nx;
+    cPos.y = ny;
+    cPos.z = nz;
 }
 
 function main() {
