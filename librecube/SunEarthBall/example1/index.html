@@ -60,17 +60,23 @@
 	// scene.add(containerEarth)
 
 	var sunMesh	= THREEx.Planets.createSun()
-	sunMesh.position.set(30,0,0)
+	sunMesh.position.set(30, 16, 15)
 	sunMesh.receiveShadow	= true
 	sunMesh.castShadow	= true
 	scene.add(sunMesh)
 
+	var theEarthAndMoon = new THREE.Object3D();
+	theEarthAndMoon.rotation.z = 23.439281 * Math.PI / 180; //tilt of earth in radians;
+	scene.add(theEarthAndMoon);
+	var axes = new THREE.AxisHelper(10);
+	theEarthAndMoon.add(axes);
+
 	var earthMesh	= THREEx.Planets.createEarth()
 	earthMesh.receiveShadow	= true
-	earthMesh.position.set(0,0,0)
+	earthMesh.position.set(5, 16, 15)
 	earthMesh.castShadow	= true
 	earthMesh.scale.multiplyScalar(1/5)
-	scene.add(earthMesh)
+	theEarthAndMoon.add(earthMesh)
 	onRenderFcts.push(function(delta, now){
 		earthMesh.rotation.y += 1/32 * delta;
 	})
