@@ -2,17 +2,18 @@ var scene = new THREE.Scene(),
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000),
     renderer = new THREE.WebGLRenderer({alpha: true}),
     sol, tierra, luna;
-console.log("Version 4");
+console.log("Version 5");
 var fov = camera.fov, zoom = 1.0, inc = -0.01;
 function renderScene() {
+  document.body.addEventListener( 'mousewheel', mousewheel, false );
+  document.body.addEventListener( 'DOMMouseScroll', mousewheel, false ); // firefox
     tierra.animate();
     sol.animate();
     luna.animate();
     requestAnimationFrame(renderScene);
     renderer.render(scene, camera);
 }
-document.body.addEventListener( 'mousewheel', mousewheel, false );
-document.body.addEventListener( 'DOMMouseScroll', mousewheel, false ); // firefox
+
 function mousewheel( e ) {
     var d = ((typeof e.wheelDelta != "undefined")?(-e.wheelDelta):e.detail);
     d = 100 * ((d>0)?1:-1);
