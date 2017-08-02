@@ -2,7 +2,7 @@ var scene = new THREE.Scene(),
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000),
     renderer = new THREE.WebGLRenderer({alpha: true}),
     sol, tierra, luna;
-
+console.log("Version 1");
 function renderScene() {
     tierra.animate();
     sol.animate();
@@ -14,7 +14,6 @@ function renderScene() {
 function main() {
     renderer.setClearColor(0x000000, 0.0);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.shadowMapEnabled = true;
 
     // Eventos del raton
     MOUSE.initialize("#canvas");
