@@ -1,4 +1,3 @@
-// Created by Bjorn Sandvik - thematicmapping.org
 (function () {
 
 	var webglEl = document.getElementById('webgl');
