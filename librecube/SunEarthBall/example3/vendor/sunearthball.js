@@ -55,6 +55,7 @@ function switchValue(type){
   currentMesh && scene.remove(currentMesh)
   if( type === 'Sun' ){
     var mesh	= THREEx.Planets.createSun()
+    var mesh1	= THREEx.Planets.createEarth()
   }else if( type === 'Mercury' ){
     var mesh	= THREEx.Planets.createMercury()
   }else if( type === 'Venus' ){
@@ -91,8 +92,13 @@ function switchValue(type){
     var mesh	= THREEx.Planets.createNeptune()
   }else if( type === 'Pluto' ){
     var mesh	= THREEx.Planets.createPluto()
-  }else	console.assert(false)
+  }else	{
+    console.assert(false)
+  }
+  mesh.position.set(1, 0, 0)
+  mesh.position.set(0, 0, 0)
   scene.add(mesh)
+  scene.add(mesh1)
   currentMesh	= mesh
   location.hash	= type
 }
