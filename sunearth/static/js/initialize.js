@@ -20,60 +20,14 @@
 
     var sunSize = 348.15;
 
-    var mercurySize = 1.2,
-        mercuryOrbitRadius = sunSize + (AU * 0.4),
-        mercuryOrbitAngle = getRandomArbitrary(0, 360),
-        mercuryOrbitSpeed = 0.8,
-        mercuryRotateSpeed = 0.05;
-
-    var venusSize = 3,
-        venusOrbitRadius = sunSize + (AU * 0.7),
-        venusOrbitAngle = getRandomArbitrary(0, 360),
-        venusOrbitSpeed = 0.7,
-        venusRotateSpeed = 0.05;
-
     var earthSize = 3,
         earthOrbitRadius = sunSize + AU,
         earthOrbitAngle = getRandomArbitrary(0, 360),
         earthOrbitSpeed = 0.6,
         earthRotateSpeed = 0.05;
 
-    var marsSize = 1.6,
-        marsOrbitRadius = sunSize + (AU * 1.5),
-        marsOrbitAngle = getRandomArbitrary(0, 360),
-        marsOrbitSpeed = 0.48,
-        marsRotateSpeed = 0.05;
 
-    var asteroidOrbitStart = sunSize + (AU * 2.3),
-        asteroidOrbitEnd = sunSize + (AU * 3.3);
 
-    var jupiterSize = 34.99,
-        jupiterOrbitRadius = sunSize + (AU * 5.2),
-        jupiterOrbitAngle = getRandomArbitrary(0, 360),
-        jupiterOrbitSpeed = 0.26,
-        jupiterRotateSpeed = 0.05;
-
-    var saturnSize = 29.1,
-        saturnOrbitRadius = sunSize + (AU * 9.5),
-        saturnOrbitAngle = getRandomArbitrary(0, 360),
-        saturnOrbitSpeed = 0.18,
-        saturnRotateSpeed = 0.05;
-
-    var saturnRingStart = saturnSize + 3.3,
-        saturnRingEnd = saturnSize + 60;
-
-    var uranusSize = 12.7,
-        uranusOrbitRadius = sunSize + (AU * 19.2),
-        uranusRotateSpeed = 0.05;
-
-    var uranusRingStart = uranusSize + 3,
-        uranusRingEnd = uranusSize + 40;
-
-    var neptuneSize = 12.3,
-        neptuneOrbitRadius = sunSize + (AU * 30.1),
-        neptuneOrbitAngle = getRandomArbitrary(0, 360),
-        neptuneOrbitSpeed = 0.1,
-        neptuneRotateSpeed = 0.05;
 
     var WIDTH = window.innerWidth,
         HEIGHT = window.innerHeight;
@@ -138,7 +92,7 @@
         });
         earth = new THREE.Mesh(new THREE.SphereGeometry(earthSize, 15, 15), material);
         scene.add(earth);
-    
+
         window.addEventListener('resize', onWindowResize, false);
 
         renderer.domElement.addEventListener('mousemove', onMouseMove);
@@ -167,26 +121,6 @@
         controls.update();
 
         theSun.rotation.y += 0.001;
-        asteroidBelt.rotation.y += 0.0001;
-
-        uranus.rotation.x -= uranusRotateSpeed;
-
-
-        //run mercury's orbit around the Sun
-        mercuryOrbitAngle -= mercuryOrbitSpeed;
-        var radians = mercuryOrbitAngle * Math.PI / 180;
-        mercury.position.x = Math.cos(radians) * mercuryOrbitRadius;
-        mercury.position.z = Math.sin(radians) * mercuryOrbitRadius;
-        mercury.rotation.y += mercuryRotateSpeed;
-
-
-        //run venus's orbit around the Sun
-        venusOrbitAngle -= venusOrbitSpeed;
-        var radians = venusOrbitAngle * Math.PI / 180;
-        venus.position.x = Math.cos(radians) * venusOrbitRadius;
-        venus.position.z = Math.sin(radians) * venusOrbitRadius;
-        venus.rotation.y -= venusRotateSpeed;
-
 
         //run earth's orbit around the Sun
         earthOrbitAngle -= earthOrbitSpeed;
@@ -194,38 +128,6 @@
         earth.position.x = Math.cos(radians) * earthOrbitRadius;
         earth.position.z = Math.sin(radians) * earthOrbitRadius;
         earth.rotation.y += earthRotateSpeed;
-
-
-        //run mars's orbit around the Sun
-        marsOrbitAngle -= marsOrbitSpeed;
-        var radians = marsOrbitAngle * Math.PI / 180;
-        mars.position.x = Math.cos(radians) * marsOrbitRadius;
-        mars.position.z = Math.sin(radians) * marsOrbitRadius;
-        mars.rotation.y += marsRotateSpeed;
-
-
-        //run jupiter's orbit around the Sun
-        jupiterOrbitAngle -= jupiterOrbitSpeed;
-        var radians = jupiterOrbitAngle * Math.PI / 180;
-        jupiter.position.x = Math.cos(radians) * jupiterOrbitRadius;
-        jupiter.position.z = Math.sin(radians) * jupiterOrbitRadius;
-        jupiter.rotation.y += jupiterRotateSpeed;
-
-
-        //run saturn's orbit around the Sun
-        saturnOrbitAngle -= saturnOrbitSpeed;
-        var radians = saturnOrbitAngle * Math.PI / 180;
-        saturn.position.x = Math.cos(radians) * saturnOrbitRadius;
-        saturn.position.z = Math.sin(radians) * saturnOrbitRadius;
-        saturn.rotation.y += saturnRotateSpeed;
-
-
-        //run neptune's orbit around the Sun
-        neptuneOrbitAngle -= neptuneOrbitSpeed;
-        var radians = neptuneOrbitAngle * Math.PI / 180;
-        neptune.position.x = Math.cos(radians) * neptuneOrbitRadius;
-        neptune.position.z = Math.sin(radians) * neptuneOrbitRadius;
-        neptune.rotation.y += neptuneRotateSpeed;
 
         renderer.render( scene, camera );
     }
