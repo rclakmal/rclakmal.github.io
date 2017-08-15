@@ -96,7 +96,7 @@ function switchValue(type){
     console.assert(false)
   }
   mesh.position.set(1, 0, 0)
-  mesh.position.set(0, 0, 0)
+  mesh1.position.set(0, 0, 0)
   scene.add(mesh)
   scene.add(mesh1)
   currentMesh	= mesh
