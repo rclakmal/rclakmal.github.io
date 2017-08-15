@@ -50,58 +50,15 @@ scene.add(starSphere)
 //		comment								//
 //////////////////////////////////////////////////////////////////////////////////
 
-var currentMesh	= null
-function switchValue(type){
-  currentMesh && scene.remove(currentMesh)
-  if( type === 'Sun' ){
-    var mesh	= THREEx.Planets.createSun()
-    var mesh1	= THREEx.Planets.createEarth()
-  }else if( type === 'Mercury' ){
-    var mesh	= THREEx.Planets.createMercury()
-  }else if( type === 'Venus' ){
-    var mesh	= THREEx.Planets.createVenus()
-  }else if( type === 'Moon' ){
-    var mesh	= THREEx.Planets.createMoon()
-  }else if( type === 'Earth' ){
-    var mesh	= THREEx.Planets.createEarth()
-    var cloud	= THREEx.Planets.createEarthCloud()
-    mesh.add(cloud)
-  }else if( type === 'Moon' ){
-    var mesh	= THREEx.Planets.createMoon()
-  }else if( type === 'Mars' ){
-    var mesh	= THREEx.Planets.createMars()
-  }else if( type === 'Jupiter' ){
-    var mesh	= THREEx.Planets.createJupiter()
-  }else if( type === 'Saturn' ){
-    var mesh	= THREEx.Planets.createSaturn()
-    mesh.receiveShadow	= true
-    mesh.castShadow		= true
-    var ring	= THREEx.Planets.createSaturnRing()
-    ring.receiveShadow	= true
-    ring.castShadow		= true
-    mesh.add(ring)
-  }else if( type === 'Uranus' ){
-    var mesh	= THREEx.Planets.createUranus()
-    mesh.receiveShadow	= true
-    mesh.castShadow		= true
-    var ring	= THREEx.Planets.createUranusRing()
-    ring.receiveShadow	= true
-    ring.castShadow		= true
-    mesh.add(ring)
-  }else if( type === 'Neptune' ){
-    var mesh	= THREEx.Planets.createNeptune()
-  }else if( type === 'Pluto' ){
-    var mesh	= THREEx.Planets.createPluto()
-  }else	{
-    console.assert(false)
-  }
-  mesh.position.set(1, 0, 0)
-  mesh1.position.set(0, 0, 0)
-  scene.add(mesh)
-  scene.add(mesh1)
-  currentMesh	= mesh
-  location.hash	= type
-}
+
+var mesh	= THREEx.Planets.createSun()
+var mesh1	= THREEx.Planets.createEarth()
+mesh.position.set(1, 0, 0)
+mesh1.position.set(0, 0, 0)
+scene.add(mesh)
+scene.add(mesh1)
+location.hash	= type
+
 var initialType	= location.hash.substr(1)	|| 'Earth'
 switchValue(initialType)
 
