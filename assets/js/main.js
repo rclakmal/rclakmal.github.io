@@ -6,6 +6,8 @@
 
 (function($) {
 
+	$('[title=blog],[title=profile]').hide();
+
 	skel
 		.breakpoints({
 			desktop: '(min-width: 737px)',
