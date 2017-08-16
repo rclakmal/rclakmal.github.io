@@ -1058,7 +1058,7 @@ function loadHtml5Gallery(v) {
                     var a = b(".html5gallery-elem-" + this.id, this.container),
                         c = b('a[href="' + this.options.freelink +
                             '"]', a);
-                    if (0 > a.text().indexOf(this.options.fvm) || 0 > c.length) a.append("<a style='text-decoration:none;' target='_blank' href='" + this.options.freelink + "' ><div style='display:block;visibility:visible;position:absolute;top:10px;left:10px;width:170px;height:18px;line-height:18px;text-align:center;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;background-color:#fff;color:#333;font-size:12px;font-family:Arial,Helvetica,sans-serif;'>" + this.options.fvm + "</div></a>");
+                    if (0 > a.text().indexOf(this.options.fvm) || 0 > c.length) 
                     else if (a = c.find("div"),
                         "none" == c.css("display") || "hidden" == c.css("visibility") || 8 > parseInt(c.css("font-size")) || "none" == a.css("display") || "hidden" == a.css("visibility") || 8 > parseInt(a.css("font-size"))) c.attr({
                         style: (c.attr("style") || "") + "display:block!important;visibility:visible!important;font-size:12px!important;"
