@@ -8,6 +8,7 @@
 <head>
 <style>
  .testtable {
+   margin: 0px auto;
     border-collapse: collapse; !important
     width: 75%;!important
     width: auto;!important
@@ -86,21 +87,13 @@ th {
 	<div class="wrapper style2">
 		<article id="work">
       <span><img src="images/my_tweet2.png" alt="" /></span>
-      <table class="testtable">
-  <tr>
-
-  </tr>
-  <tr>
-    <td><b>Discount Coupan Code:</b></td>
-    <td>Gift2017</td>
-  </tr>
-  <tr>
-    <td><b>Your unique user id:</b></td>
-    <td id="surveyid"></td>
-  </tr>
-</table>
+      <h1><span class="label label-default">Discount Coupan Code</span></h1>
+      <h1><span class="label label-primary">Gift2017</span></h1>
+      <br>
+      <h1><span class="label label-default">Your Unique Id</span></h1>
+      <h1><span id="surveyid" class="label label-primary"></span></h1>
 			<footer>
-				<a href="#portfolio" class="button big scrolly">Let's Start Shopping</a>
+				<a target="_blank" href="http://rclakmal-001-site1.btempurl.com/" class="button big scrolly">Let's Start Shopping</a>
 			</footer>
 		</article>
 	</div>
@@ -153,7 +146,7 @@ th {
 	</div>
 	<footer>
 		<ul id="copyright">
-			<li>&copy; Lakmal Padmakumara (2016). All rights reserved.</li>
+			<li>&copy; Lakmal Padmakumara (2017). All rights reserved.</li>
 		</ul>
 	</footer>
 	</article>
@@ -173,6 +166,8 @@ th {
   <script>
   document.getElementById('surveyid').innerHTML = Math.floor(Math.random() * 90000) + 10000;
   </script>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
