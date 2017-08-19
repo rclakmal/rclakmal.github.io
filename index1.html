@@ -7,21 +7,25 @@
 <html>
 <head>
 <style>
-table {
-  border-collapse: collapse;
-  width: 100%;
+.zui-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
 }
-
-th, td {
-  text-align: left;
-  padding: 8px;
+.zui-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
 }
-
-tr:nth-child(even){background-color: #f2f2f2}
-
-th {
-  background-color: #4CAF50;
-  color: white;
+.zui-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
 }
 </style>
 	<!-- Hotjar Tracking Code for http://rclakmal.github.io -->
@@ -34,7 +38,6 @@ th {
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-    document.getElementById('surveyId').innerHTML = Math.floor(Math.random() * 90000) + 10000;
 </script>
 <title>Lakmal Padmakumara| Personal Web Page| rclakmal</title>
 <meta name="description"
@@ -110,7 +113,7 @@ th {
           You have a budget of 1500$ to buy these gift(s) which you get through a discount coupon. The challenge is to make the maximum use out of this discount coupan.
         </p>
         <h3>Here are the user details</h3>
-        <table class="responstable">
+        <table class="zui-table">
 
           <tr>
             <th>Details</th>
@@ -206,6 +209,9 @@ th {
 	<!--[if lte IE 8]>
 <script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
+  <script>
+  document.getElementById('surveyId').innerHTML = Math.floor(Math.random() * 90000) + 10000;
+  </script>
 
 </body>
 </html>
