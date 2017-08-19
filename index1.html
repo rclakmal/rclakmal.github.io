@@ -7,28 +7,26 @@
 <html>
 <head>
 <style>
-.zui-table {
-    border: solid 1px #DDEEEE;
+table {
     border-collapse: collapse;
-    border-spacing: 0;
-    font: normal 13px Arial, sans-serif;
+    width: 75%;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
-.zui-table thead th {
-    background-color: #DDEFEF;
-    border: solid 1px #DDEEEE;
-    color: #336B6B;
-    padding: 10px;
+
+th, td {
     text-align: left;
-    text-shadow: 1px 1px 1px #fff;
+    padding: 8px;
 }
-.zui-table tbody td {
-    border: solid 1px #DDEEEE;
-    color: #333;
-    padding: 10px;
-    text-shadow: 1px 1px 1px #fff;
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
 }
-</style>
-	<!-- Hotjar Tracking Code for http://rclakmal.github.io -->
+</style>	<!-- Hotjar Tracking Code for http://rclakmal.github.io -->
 <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -63,9 +61,7 @@
 			<li><a alt="About Lakmal Padmakumara"
 				title="About Lakmal Padmakumara" href="#top">About This Study</a></li>
 			<li><a alt="More About Lakmal Padmakumara"
-				title="More About Lakmal Padmakumara" href="#work">More Information</a></li>
-			<li><a alt="Memories of Lakmal Padmakumara"
-				title="Memories of Lakmal Padmakumara" href="#portfolio">Background Research</a></li>
+				title="More About Lakmal Padmakumara" href="#work">Challenge</a></li>
 			<li><a alt="Contact Lakmal Padmakumara"
 				title="Contact Lakmal Padmakumara" href="#contact">Get In Touch</a></li>
 		</ul>
@@ -90,6 +86,19 @@
 	<div class="wrapper style2">
 		<article id="work">
       <span><img src="images/my_tweet2.png" alt="" /></span>
+      <table>
+  <tr>
+
+  </tr>
+  <tr>
+    <td><b>Discount Coupan Code:</b></td>
+    <td>Gift2017</td>
+  </tr>
+  <tr>
+    <td><b>Your unique user id:</b></td>
+    <td id="surveyid"></td>
+  </tr>
+</table>
 			<footer>
 				<a href="#portfolio" class="button big scrolly">Let's Start Shopping</a>
 			</footer>
@@ -162,7 +171,7 @@
 <script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
   <script>
-  document.getElementById('surveyId').innerHTML = Math.floor(Math.random() * 90000) + 10000;
+  document.getElementById('surveyid').innerHTML = Math.floor(Math.random() * 90000) + 10000;
   </script>
 
 </body>
