@@ -7,6 +7,136 @@
 <html>
 <head>
 	<!-- Hotjar Tracking Code for http://rclakmal.github.io -->
+  <style>
+  @import "compass/css3";
+
+/*
+
+RESPONSTABLE 2.0 by jordyvanraaij
+  Designed mobile first!
+
+If you like this solution, you might also want to check out the 1.0 version:
+  https://gist.github.com/jordyvanraaij/9069194
+
+*/
+
+// Default options for table style
+$table-breakpoint: 480px;
+$table-background-color: #FFF;
+$table-text-color: #024457;
+$table-outer-border: 1px solid #167F92;
+$table-cell-border: 1px solid #D9E4E6;
+
+// Extra options for table style (parse these arguments when including your mixin)
+$table-border-radius: 10px;
+$table-highlight-color: #EAF3F3;
+$table-header-background-color: #167F92;
+$table-header-text-color: #FFF;
+$table-header-border: 1px solid #FFF;
+
+// The Responstable mixin
+
+@mixin responstable(
+  $breakpoint: $table-breakpoint,
+  $background-color: $table-background-color,
+  $text-color: $table-text-color,
+  $outer-border: $table-outer-border,
+  $cell-border: $table-cell-border,
+  $border-radius: none,
+  $highlight-color: none,
+  $header-background-color: $table-background-color,
+  $header-text-color: $table-text-color,
+  $header-border: $table-cell-border) {
+
+  .responstable {
+    margin: 1em 0;
+    width: 100%;
+    overflow: hidden;
+    background: $background-color;
+    color: $text-color;
+    border-radius: $border-radius;
+    border: $outer-border;
+
+    tr {
+      border: $cell-border;
+      &:nth-child(odd) { // highlight the odd rows with a color
+        background-color: $highlight-color;
+      }
+    }
+
+    th {
+      display: none; // hide all the table header for mobile
+      border: $header-border;
+      background-color: $header-background-color;
+      color: $header-text-color;
+      padding: 1em;
+      &:first-child { // show the first table header for mobile
+        display: table-cell;
+        text-align: center;
+      }
+      &:nth-child(2) { // show the second table header but replace the content with the data-th from the markup for mobile
+        display: table-cell;
+        span {display:none;}
+        &:after {content:attr(data-th);}
+      }
+      @media (min-width: $breakpoint) {
+        &:nth-child(2) { // hide the data-th and show the normal header for tablet and desktop
+          span {display: block;}
+          &:after {display: none;}
+        }
+      }
+    }
+
+    td {
+      display: block; // display the table data as one block for mobile
+      word-wrap: break-word;
+      max-width: 7em;
+      &:first-child {
+        display: table-cell; // display the first one as a table cell (radio button) for mobile
+        text-align: center;
+        border-right: $cell-border;
+      }
+      @media (min-width: $breakpoint) {
+        border: $cell-border;
+      }
+    }
+
+    th, td {
+      text-align: left;
+      margin: .5em 1em;
+      @media (min-width: $breakpoint) {
+        display: table-cell; // show the table as a normal table for tablet and desktop
+        padding: 1em;
+      }
+    }
+  }
+}
+
+// Include the mixin (with extra options as overrides)
+
+@include responstable(
+  $border-radius: $table-border-radius,
+  $highlight-color: $table-highlight-color,
+  $header-background-color: $table-header-background-color,
+  $header-text-color: $table-header-text-color,
+  $header-border: $table-header-border);
+
+// General styles
+
+body {
+  padding: 0 2em;
+  font-family: Arial, sans-serif;
+  color: #024457;
+  background: #f2f2f2;
+}
+
+h1 {
+  font-family: Verdana;
+  font-weight: normal;
+  color: #024457;
+  span {color: #167F92;}
+}
+  </style>
 <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -16,6 +146,7 @@
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    document.getElementById('surveyId').innerHTML = Math.floor(Math.random() * 90000) + 10000;
 </script>
 <title>Lakmal Padmakumara| Personal Web Page| rclakmal</title>
 <meta name="description"
@@ -59,24 +190,19 @@
 				<div class="8u 12u(mobile)">
 					<header>
 						<h1>Welcome</h1>
-						<h2>
-							I'm <strong>Thanks for taking part in this study and helping us</strong>.
-						</h3>
 					</header>
 					<p style="text-align:justify">
-		          This study is part of my master thesis at Technical University of Munich. 
+            A big heartfelt thank from my side for taking part in this study and helping out. &#x263A;
+            This study is part of my master thesis at Informatics Department, Technical University of Munich.
 					</p>
+          <br>
+          <h2>Let me briefly explain about the study</h2>
+  				<p>The study contain two steps. First I present you a small online shopping challenge.
+            Later, I would request you to fill out a quick survey on your shopping experience. That's it!
+          Not that hard! And it would not take more than 5-7 mins. I promise! &#x263A;
+        </p>
 
-					<p style="text-align:justify">
-						Oh btw, if you were wondering about those strange but beautiful
-						characters on top of my name, ආයුබෝවන්, that's how you say
-						'Welcome' in my mother toungue, <a style="color: rgb(38, 74, 255)"
-							target="_blank"
-							href="http://www.omniglot.com/writing/sinhala.htm">Sinhalese</a>.
-						Actually, it's not just a simple welcome rather a wish for a long
-						& healthy life.
-					</p>
-					<a href="#work" class="button big scrolly">Read more about me</a>
+					<a href="#work" class="button big scrolly">Let's Checkout the Challenge</a>
 				</div>
 			</div>
 		</article>
@@ -86,102 +212,51 @@
 	<div class="wrapper style2">
 		<article id="work">
 			<header>
-				<h2>Here're more stuff I do</h2>
-				<p>Interested in what I am up to? Check out these!</p>
-			</header>
-			<div class="container">
-				<div class="row">
-					<div class="4u 12u(mobile)">
-						<a title="Lakmal Padmakumara Blog" alt="Lakmal Padmakumara Blog"
-							target="_blank" style="text-decoration: none; color: inherit"
-							href="http://codecompiles.blogspot.de/">
-							<section class="box style1">
-								<span class="icon featured fa-edit"></span>
-								<h3>Personal Blog</h3>
-								<p align="justify">This is where I share my thoughts on
-									programming, research, traveling, current issues and all sort
-									of other crazy stuff I enjoy. Promise to keep it clean!</p>
-							</section>
-						</a>
-					</div>
-					<div class="4u 12u(mobile)">
-						<a title="Lakmal Padmakumara GitHub"
-							alt="Lakmal Padmakumara GitHub" target="_blank"
-							style="text-decoration: none; color: inherit"
-							href="https://github.com/rclakmal">
+				<h2>Here is the challenge</h2>
+				<p>Imagine one out of these two situations.<br>
+          <ul>
+            <li>Your best friend is graduating soon. You plan to make their day special by a nice graduation gift(s)</li>
+            <li>One of your family member has their birthday next week. You plan to shop for a nice birthday gift(s)</li>
+          </ul>
+          Did you choose one ? Nice! <br>
 
-							<section class="box style1">
-								<span class="icon featured fa-code"></span>
-								<h3>Fork me on GitHub</h3>
-								<p align="justify">Visit my github, which is the playfield
-									for all my personal projects.</p>
-							</section>
-						</a>
-					</div>
-					<div class="4u 12u(mobile)">
-						<section class="box style1">
-							<span class="icon featured fa-thumbs-o-up"></span>
-							<h3>More stuff I enjoy</h3>
-							<p align="justify">
-								Traveling (<i>Catch me via <a
-									style="color: rgb(38, 74, 255)"
-									title="Lakmal Padmakumara CouchSurf"
-									alt="Lakmal Padmakumara CouchSurf"
-									href="https://www.couchsurfing.com/people/rclakmal">CouchSurf</a></i>).
-								Epic/fantasy/scifi stories. Queen, Beatles and <a
-									style="color: rgb(38, 74, 255)" target="_blank"
-									href="https://www.youtube.com/playlist?list=PL3e4wy8RfSneSf0PtH957sC3Vu_uzBOLP">Old
-									Sinhala Classics.</a> <a style="color: rgb(38, 74, 255)"
-									target="_blank"
-									href="https://www.youtube.com/watch?v=AqtpNkMvj5Y">Cricket</a>
-								& Basketball. Time with my family.
-							</p>
-						</section>
-					</div>
-				</div>
-			</div>
+          You have a budget of 1500$ to buy these gift(s) which you get through a discount coupon. The challenge is to make the maximum use out of this discount coupan.
+        </p>
+        <h1>Here are the user details</h1>
+
+        <h1>Here are the user details</h1>
+
+        <table class="responstable">
+
+          <tr>
+            <th>Details</th>
+            <th>Value</th>
+          </tr>
+
+          <tr>
+            <td><b>UserName/Password</b></td>
+            <td>test@test.com/test123</td>
+          </tr>
+
+          <tr>
+            <td><b>Unique Survey Id</b></td>
+            <td id="surveyId"></td>
+          </tr>
+
+          <tr>
+            <td><b>Discount Coupan Code</b></td>
+            <td>Gift2017</td>
+          </tr>
+
+        </table>
+
+			</header>
 			<footer>
-				<a href="#portfolio" class="button big scrolly">See some of my
-					travel memories</a>
+				<a href="#portfolio" class="button big scrolly">Let's Start Shopping</a>
 			</footer>
 		</article>
 	</div>
 
-	<!-- Portfolio -->
-	<div class="wrapper style3">
-		<article id="portfolio">
-			<header>
-				<h2>Here are some memories captured in to pictures during my
-					travels.</h2>
-			</header>
-			<div class="container">
-        <div style="display:none; margin:auto;" data-responsive="true" class="html5gallery" data-skin="darkness" data-width="200" data-height="200">
-
-          <!-- Add images to Gallery -->
-          <a href="images/france.jpg"><img src="images/france.jpg" alt="Lakmal Padmakumara France"></a>
-          <a href="images/italy.jpg"><img src="images/italy.jpg" alt="Lakmal Padmakumara Italy"></a>
-          <a href="images/austria.jpg"><img src="images/austria.jpg" alt="Lakmal Padmakumara Austria"></a>
-          <a href="images/czk.jpg"><img src="images/czk.jpg" alt="Lakmal Padmakumara Czech"></a>
-          <a href="images/ger.jpg"><img src="images/ger.jpg" alt="Lakmal Padmakumara Germany"></a>
-          <a href="images/netherland.jpg"><img src="images/netherland.jpg" alt="Lakmal Padmakumara Netherland"></a>
-          <a href="images/norway.jpg"><img src="images/norway.jpg" alt="Lakmal Padmakumara Norway"></a>
-          <a href="images/singapore.jpg"><img src="images/singapore.jpg" alt="Lakmal Padmakumara Singapore"></a>
-          <a href="images/srilanka.jpg"><img src="images/srilanka.jpg" alt="Lakmal Padmakumara Sri Lanka"></a>
-          <a href="images/padova.jpg"><img src="images/padova.jpg" alt="Lakmal Padmakumara Italy"></a>
-          <a href="images/konigsee.jpg"><img src="images/konigsee.jpg" alt="Lakmal Padmakumara Germany"></a>
-          <a href="images/munich.jpg"><img src="images/munich.jpg" alt="Lakmal Padmakumara Germany"></a>
-          <a href="images/dublin.jpg"><img src="images/dublin.jpg" alt="Lakmal Padmakumara Ireland"></a>
-          <a href="images/srilanka1.jpg"><img src="images/srilanka1.jpg" alt="Lakmal Padmakumara Sri Lanka"></a>
-
-        </div>
-			</div>
-			<footer>
-				<h2>Do we share an interest? Awesome!</h2>
-				<a href="#contact" class="button big scrolly">Get in touch with
-					me</a>
-			</footer>
-		</article>
-	</div>
 
 	<!-- Contact -->
 	<div class="wrapper style4">
