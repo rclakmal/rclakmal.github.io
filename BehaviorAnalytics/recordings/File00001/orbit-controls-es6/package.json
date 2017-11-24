@@ -1,0 +1,114 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "orbit-controls-es6",
+        "scope": null,
+        "escapedName": "orbit-controls-es6",
+        "name": "orbit-controls-es6",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/rclakmal/Projects/WP-1007"
+    ]
+  ],
+  "_from": "orbit-controls-es6@latest",
+  "_id": "orbit-controls-es6@1.0.10",
+  "_inCache": true,
+  "_location": "/orbit-controls-es6",
+  "_nodeVersion": "8.1.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/orbit-controls-es6-1.0.10.tgz_1501532641779_0.5497508321423084"
+  },
+  "_npmUser": {
+    "name": "silviopaganini",
+    "email": "s2paganini@gmail.com"
+  },
+  "_npmVersion": "5.0.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "orbit-controls-es6",
+    "scope": null,
+    "escapedName": "orbit-controls-es6",
+    "name": "orbit-controls-es6",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/orbit-controls-es6/-/orbit-controls-es6-1.0.10.tgz",
+  "_shasum": "c8b6770b6cd22870f5a90afae89b6e62d0f60b1b",
+  "_shrinkwrap": null,
+  "_spec": "orbit-controls-es6",
+  "_where": "/Users/rclakmal/Projects/WP-1007",
+  "author": {
+    "name": "Silvio Paganini | s2paganini.com"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/silviopaganini/orbit-controls-es6/issues"
+  },
+  "contributors": [
+    {
+      "name": "qiao / https://github.com/qiao"
+    },
+    {
+      "name": "mrdoob / http://mrdoob.com"
+    },
+    {
+      "name": "alteredq / http://alteredqualia.com/"
+    },
+    {
+      "name": "WestLangley / http://github.com/WestLangley"
+    },
+    {
+      "name": "erich666 / http://erichaines.com"
+    }
+  ],
+  "dependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "three": "^0.83.0"
+  },
+  "description": "Threejs orbit controls update for ES6",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-vz4b73kQmR1aUOA+p1kNLQcQT4XGbZediQnY/x2Kw2AYmExUbni89rp0nfACYHX3oGV/cY1eMOx2J1Eqfiyg/g==",
+    "shasum": "c8b6770b6cd22870f5a90afae89b6e62d0f60b1b",
+    "tarball": "https://registry.npmjs.org/orbit-controls-es6/-/orbit-controls-es6-1.0.10.tgz"
+  },
+  "gitHead": "eca21b8098dfe59cb10d8e1aa3179fe3550d21ae",
+  "homepage": "https://github.com/silviopaganini/orbit-controls-es6#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "maintainers": [
+    {
+      "name": "silviopaganini",
+      "email": "s2paganini@gmail.com"
+    }
+  ],
+  "module": "src/index.js",
+  "name": "orbit-controls-es6",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silviopaganini/orbit-controls-es6.git"
+  },
+  "scripts": {
+    "build": "browserify src/index.js > build/orbit-controls-es6.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.10"
+}

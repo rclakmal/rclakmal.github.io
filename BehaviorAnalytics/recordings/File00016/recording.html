@@ -1,0 +1,209 @@
+
+<!doctype html>
+<!--[if lt IE 7]>      <html class="bg-checker no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="bg-checker no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="bg-checker no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="bg-checker no-js gt-ie8"> <!--<![endif]-->    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Playback &ndash; Mouseflow</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+    <meta property="og:title" content="#1 Website Heatmap &amp; Session Replay Tool - Mouseflow" />
+    <meta property="og:description" content="Mouseflow is the most popular session replay / recording and website heatmap tool. Sign up today or call +1 (855) 668-7335 for a personal demonstration!" />
+    <meta property="og:image" content="https://eu.mouseflow.com/img/share_recording.jpg" />
+
+        <link href="http://fonts.googleapis.com/css?family=Cabin:400|Droid+Sans:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css?v=228">
+        <!--[if IE 9]><link rel="stylesheet" href="css/ie9.css"><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="css/no-mq.css"><![endif]-->
+        <script src="js/modernizr-2.8.0.min.js"></script>
+        <script src="resources/lang_en?v=228"></script>
+        <style>.icon-device { background: url('img/devices-sda6debb8fd.png') no-repeat; } .icon-flag { background: url('img/flags-s8967039ba7.png') no-repeat; }</style>
+        <style type="text/css">
+            
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->        
+        
+<div id="player" class=" 
+       
+     ">
+    <div class="head detail-head">
+        <div class="detail-head__col detail-links detail-links-playback">
+            <div class="page-selector-website-name"></div>
+            <select id="page-selector" name="refine-select" class="refine-select js-refine-page"></select>
+        </div>
+        <div class="detail-head__col detail-player-controls">
+            <div class="detail-player-controls--inner">
+                <span id="js-time-elapsed" class="player-timer">00:00</span>
+                <a href="#" title="Previous page <kbd>PgUp</kbd>" data-tip="hover bottom html" class="player-control player-control--skip js-skip js-skip--start"><i class="icon-previous"></i></a>
+                <a href="#" title="Play/Pause <kbd>Space</kbd>" data-tip="hover bottom html" class="player-control player-control--play-pause js-play-pause-toggle is-paused"><i class="icon-play-2"></i></a>
+                <a href="#" title="Next page <kbd>PgDn</kbd>" data-tip="hover bottom html" class="player-control player-control--skip js-skip js-skip--end"><i class="icon-next"></i><span>Skip to End</span></a>
+                <span id="js-time-total" class="player-timer">00:00</span>
+                <a href="#" title="Change speed <kbd>+/&ndash;</kbd>" data-tip="hover bottom html" class="player-control player-control--gauge is-active js-speed-adjust"><i class="icon-gauge-2"></i> <span>x1</span></a>
+            </div>
+        </div>
+        <div class="detail-head__col detail-head__col--right detail-tools">
+            <nav>
+                <ul class="js-table js-menu">
+                    <li><a href="#" title="Toggle details <kbd>D</kbd>" data-tip="hover left html"><i class="icon-chevron-down js-toggle-drawer"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="player-scrub-bar">
+            <div class="player-scrub-bar__skip" style="left: 9%;"></div>
+            <div class="form__fields">
+                <input id="js-scrub-input" type="range" min="0" max="10000" step="1" value="0">
+            </div>
+            <div class="player-scrub-bar__skippauses-text" style="left: 162px;">SKIPPING <span></span></div>
+        </div>
+        <div class="detail-view-drawer">
+            <div class="detail-view-drawer__inner">
+                <div class="detail-view-drawer__col">
+                    <table class="detail-view-table">
+                        <tr>
+                            <td class="detail-view-table__label">Location</td>
+                            <td class="detail-view-table__data" id="recording-detail-location"></td>
+                        </tr>
+                        <tr>
+                            <td class="detail-view-table__label">IP</td>
+                            <td class="detail-view-table__data" id="recording-detail-ip"></td>
+                        </tr>
+                        <tr>
+                            <td class="detail-view-table__label">Visitor name</td>
+                            <td class="detail-view-table__data">
+                                <span id="recording-detail-visitor-name"></span>
+                                <a href="#" class="js-identify detail-view-table__clickable-icon"><i class="icon-pencil"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="detail-view-drawer__col">
+                    <table class="detail-view-table">
+                        <tr>
+                            <td class="detail-view-table__label">Device</td>
+                            <td class="detail-view-table__data">
+                                <span id="recording-detail-device"></span>
+                                (<span id="recording-detail-screenres"></span>)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="detail-view-table__label">Language</td>
+                            <td class="detail-view-table__data" id="recording-detail-language"></td>
+                        </tr>
+                        <tr>
+                            <td class="detail-view-table__label">ISP</td>
+                            <td class="detail-view-table__data" id="recording-detail-isp"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="detail-view-drawer__col">
+                    <table class="detail-view-table">
+                        <tr>
+                            <td class="detail-view-table__label">Referrer</td>
+                            <td class="detail-view-table__data" id="recording-detail-referrer"></td>
+                        </tr>
+                        <tr>
+                            <td class="detail-view-table__label">Start time</td>
+                            <td class="detail-view-table__data" id="recording-detail-starttime"></td>
+                        </tr>
+                        <tr>
+                            <td class="detail-view-table__label">Duration</td>
+                            <td class="detail-view-table__data" id="recording-detail-duration"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="detail-view-drawer__col detail-view-drawer__col--last">
+                    <table class="detail-view-table">
+                        <tr>
+                            <td class="detail-view-table__label">Tags and variables</td>
+                        </tr>
+                        <tr>
+                            <td class="detail-view-table__visual table__data data-tags" id="recording-detail-tags"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="notification notification--error">
+        <p class="notification__content">A system error occurred. Please try again in a few minutes.</p>
+    </div>
+    <div>
+        <iframe id="play-iframe" class="details-iframe details-iframe-playback"></iframe>
+        <div class="playback-zoom-indicator" title="This playback is zoomed because your window is currently smaller than the user&#39;s window." data-tip="hover top"></div>
+        <div class="playback-legend is-hidden">
+            <div class="legend_color legend_color--red"></div>
+            <p class="legend_color__text">Mouse movement &amp; scroll</p>
+            <div class="legend_color legend_color--yellow"></div>
+            <p class="legend_color__text">Click &amp; tap</p>
+            <div class="legend_color legend_color--green"></div>
+            <p class="legend_color__text">Form interaction</p>
+            <div class="legend_color legend_color--black"></div>
+            <p class="legend_color__text">Inactivity</p>
+        </div>
+        <div class="keyboard-legend is-hidden">
+            <div class="legend_key"><kbd>Space</kbd></div>
+            <p class="legend_key__text">Play/Pause</p>
+            <div class="legend_key"><kbd><i class="icon icon-arrow-left"></i></kbd></div>
+            <p class="legend_key__text">10 sec back</p>
+            <div class="legend_key"><kbd><i class="icon icon-arrow-right"></i></kbd></div>
+            <p class="legend_key__text">10 sec forward</p>
+            <div class="legend_key"><kbd>+</kbd></div>
+            <p class="legend_key__text">Speed up</p>
+            <div class="legend_key"><kbd>&ndash;</kbd></div>
+            <p class="legend_key__text">Speed down</p>
+            <div class="legend_key"><kbd>PgUp</kbd></div>
+            <p class="legend_key__text">Previous page</p>
+            <div class="legend_key"><kbd>PgDn</kbd></div>
+            <p class="legend_key__text">Next page</p>
+            <div class="legend_key"><kbd>Home</kbd></div>
+            <p class="legend_key__text">Go to start</p>
+            <div class="legend_key"><kbd>End</kbd></div>
+            <p class="legend_key__text">Next page</p>
+        </div>
+        <div class="spinner-large">
+            <div class="spinner-large__box">
+                <div class="spinner-large__content">
+                    <div>Preparing ...</div>
+                    <img class="spinner__img" src="img/spinner.png">
+                </div>
+            </div>
+        </div>
+        <div id="modal-finished" class="modal modal--centered mfp-hide">
+            <h2 class="modal__heading">Playback finished</h2>
+            <div class="modal__content">
+                    <div class="trim trim--60 l-padding-bs">
+                        <a id="player-replay" class="btn btn--secondary btn--large btn--full" href="#">Replay</a>
+                    </div>
+                    <div class="trim trim--60">
+                        <a id="player-close" class="btn btn--secondary btn--large btn--full" href="#">Close window</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-upgrade" class="modal modal--centered mfp-hide">
+        <h2 class="modal__heading">Upgrade</h2>
+        <div class="modal__content">
+            <h2 class="modal__interior-heading">Download is not available on your current plan. <a href="/account/billing?upgrade" target="_blank">Click here to upgrade now</a>.</h2>
+        </div>
+    </div>
+
+        <script src="js/player-offline.min.js?v=228"></script>
+    <script src="data/session.js"></script><script src="data/09012530623d318c610100806c199550c8d465cf.js"></script><script src="data/0901028413bafff53bec002f2abdc19df22c2fe4.js"></script><script src="data/090118019e78c09232699717db54ba4b046119c6.js"></script><script src="data/09012209d898e84bdafff731001e1ee373b29825.js"></script><script src="data/0901333193f870c78dc7e5e07be81bf97c72a6ba.js"></script><script src="data/090136721bcdb5a82c36dafff0961cf6f67cb516.js"></script><script src="data/090145305348e61faa5e3b09afd509bf890e06f9.js"></script><script src="data/09015524760aa5f009c77efed9d8b9c14bc64716.js"></script><script src="data/09011949b137c77c42f754f30dd48d165d311e61.js"></script><script src="data/0901310191aa6b1f8560777dea1e1d9aef84ce3b.js"></script><script src="data/0901416054f13d06e0cbdaf00c8d3aa366e75681.js"></script><script src="data/0901167997a56106f58a4e062cae9cc3edec4c9e.js"></script><script src="data/090121304d9afe754d91aff37032cab7fabb4be3.js"></script><script src="data/09015917e83e330d4531c3efd13366444a8cbb4c.js"></script><script src="data/0901074443eac4431d96819217f585ee344eeaab.js"></script><script src="data/09011539b97bc80cc7f0a00caa5ba9765e3cab4a.js"></script><script src="data/09013441f942a4bf0af8a79f7185d654a1f27c30.js"></script><script src="data/090100011a23a17548ed9e7779d3beba258bf166.js"></script><script src="data/09011042d1ac7f5726f59c47f528945461a27175.js"></script><script src="data/090124981aa50cefa86f42916c27a7991aa949a7.js"></script><script src="data/09013519aa2853dfdc34649a508fe87314b3fffe.js"></script><script src="data/090109067d3e56c5099389ba64e79bd45d00a60e.js"></script><script src="data/090127641603ab6aee09e78c07a19d465a1f8c93.js"></script><script src="data/090153171bde3ee2d065478e537e738831d8a148.js"></script><script src="data/090156027d994d0571493c909541d5566158ae99.js"></script><script src="data/09010503ba9da5a78f0319e30031631a9afc25d9.js"></script><script src="data/09010983e512a269d9f150e7f5d47e49cb2bfc91.js"></script>
+</div>
+
+
+
+        <script type="text/javascript">
+            
+    MF.Views.player.init('cccd22ee-7957-4d2d-9ddd-fc88649fc91e', 'cee51c01fe2525b37b79eecf271aa7e4', '', '', false, true, 'Could not load recording data');
+
+        </script>       
+    </body>
+</html>
