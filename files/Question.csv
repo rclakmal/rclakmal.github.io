@@ -1,0 +1,25 @@
+Question,,,,,
+,Title,Lowercase and merge words together in JavaScript value,,,
+,Body,"I have a quick question and I can't seem to figure out what's going on on a form field input that gets stored inside a SharePoint column data collection.
+
+I have a form field set when someone inputs a name that it automatically gets populated in a SharePoint list
+
+",,,
+,Tags,Abc,,,
+,Space,Development,,,
+,Link,http://localhost:8080/confluence/display/DEM/qa/questions/103,,,
+,,,,,
+,Comments,,,,
+,,1,comment 1,,
+,,2,comment 2,,
+,,,,,
+,Answers,,,,
+,,1,"The A in Ajax stands for asynchronous . That means sending the request (or rather receiving the response) is taken out of the normal execution flow. In your example, $.ajax returns immediately and the next statement, return result;, is executed before the function you passed as success callback was even called.
+
+Here is an analogy which hopefully makes the difference between synchronous and asynchronous flow clearer:",,
+,,,Comments,,
+,,,,1,comment 1
+,,,,2,comment 2
+,,,,3,comment 3
+,,,,,
+,,2,This is one of the places which two ways data binding that's used in many new JavaScript frameworks will work greatly for you…,,
