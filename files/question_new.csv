@@ -1,2 +1,2 @@
 questionid,question_title,question_description,question_tags,question_link,question_space,comments,answers
-1,Hi how can I do XYZ,XYZ is very important for me,XYZ,,,,
+1,Hi how can I do XYZ,XYZ is very important for me,XYZ,jira.com/qa/xyz,development,"comment1, comment2","answer1, answer2"
