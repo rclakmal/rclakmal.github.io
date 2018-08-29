@@ -1,2 +1,21 @@
-questionid,question_title,question_description,question_tags,question_link,question_space,comments,answers
-1,Hi how can I do XYZ,XYZ is very important for me,XYZ,jira.com/qa/xyz,development,"comment1, comment2","answer1, answer2"
+question_id, question_title, question_description, question_tags, question_link, question_space, accepted_answers
+47, Which kind of partner types are there?, This is a test description., "faq,partner", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/47, , 
+46, Where do I find more information about the ordering process? (intern), , "pricing,faq", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/46, , 
+45, Is there a promotion to give new customers a discount for a certain period of time?, , "pricing,faq,discount", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/45, , 
+44, Are customer specific prices for enterprise customer possible?, , "pricing,faq", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/44, , 
+43, What does API stability mean?, , "faq,api,application", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/43, , 
+42, Which support cases offers your company? , "Do you provide companies support in: development (architecture, security, optimization of pricings ...), demonstration of services (professional Services), Nomination of partners from the partner network?", "support,faq,product_area", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/42, , 
+41, Is there an online documentation?, , "faq,platform", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/41, , 
+40, Is there a blog? , , "faq,platform", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/40, , 
+39, Is there a forum? , , "faq,platform", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/39, , 
+38, What parts of the platform are based on open source versus proprietary solutions?, , "faq,platform", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/38, , 
+37, Is the service owned by the service provider or a third party?, , "platform,faq", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/37, , 
+36, What is the duration of the contract?, , "platform,faq", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/36, , 
+35, Since when has the relevant solutions of your IoT cloud solution been available at the market?, , "platform,faq", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/35, , 
+34, How does your companies offer differentiate from the competition market? What are the unique selling points?, , "general,faq", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/34, , 
+33, Why Cloud?     , , "faq,general", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/33, , 
+30, Why IoT?     , , "faq,general,mindaccessplans", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/30, , 
+29, Are there new features in planning or development? , , "faq,general,mindaccessplans", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/29, , 
+28, How will the roadmap of your IoT cloud solution look like in the next years?, , "faq,general,mindaccessplans", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/28, , 
+27, Is MindSphere available in China? , , "faq,general", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/27, , 
+26, How will the data center be provided in the following countries? , , "faq,general", https://gojira-q.siemens.com/mindsphere_wiki/qa/questions/26, , 
