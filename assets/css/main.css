@@ -1701,7 +1701,7 @@ a[href^="http://html5box.com"] {
 		}
 
 	#top p a {
-		color: inherit;
+		color: black;
 	}
 
 /* Copyright */
@@ -1878,6 +1878,7 @@ a[href^="http://html5box.com"] {
 				#top p {
 					font-size: -0.5em;
 					line-height: 1.75em;
+					color: black;
 				}
 
 			#contact footer {
