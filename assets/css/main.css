@@ -647,6 +647,7 @@ a[href^="http://html5box.com"] {
 
 		.row {
 			margin: -25px 0 -1px -25px;
+			color:black;
 		}
 
 		.row.uniform > * {
