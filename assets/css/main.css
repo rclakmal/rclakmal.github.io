@@ -643,6 +643,8 @@ a[href^="http://html5box.com"] {
 
 		.row > * {
 			padding: 25px 0 0 25px;
+			color:black;
+
 		}
 
 		.row {
